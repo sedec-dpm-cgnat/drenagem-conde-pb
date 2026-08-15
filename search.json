@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "",
+    "text": "Drenagem urbana — Conde/PB\n\n\nConcepção preliminar · Bacias A e B · MDT híbrido · SWMM\nEste site documentará, de forma versionada e reproduzível, a construção da base cartográfica, do MDT híbrido, do lançamento da rede e do modelo hidrológico-hidráulico preliminar de drenagem de Conde/PB."
+  },
+  {
+    "objectID": "index.html#finalidade-do-relatório",
+    "href": "index.html#finalidade-do-relatório",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Finalidade do relatório",
+    "text": "Finalidade do relatório\nO objetivo é organizar evidências, hipóteses de diagnóstico, alternativas de intervenção e metas verificáveis para apoiar a elaboração do Plano de Trabalho de Reconstrução de Conde/PB. O escopo inicial não propõe a implantação imediata de toda a rede de drenagem municipal. Propõe priorizar os troncos principais, coletores indispensáveis e dissipadores localizados nos setores críticos, sem perder de vista que a solução definitiva depende da concepção integrada da bacia.\nComo diagnóstico preliminar, os processos erosivos observados são compatíveis com a combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura de drenagem urbana. Essa relação deve ser confirmada por vistoria, cadastro de ocorrências, levantamento das seções e análise hidráulica; por isso, a minuta não apresenta a hipótese como causalidade já comprovada.\nO princípio orientador é reconstruir melhor: as intervenções de recuperação devem reduzir o risco futuro, proteger os trechos a jusante e evitar a simples reposição de uma condição que reproduza a vulnerabilidade existente. A abordagem é compatível com a prioridade do Marco de Sendai de investir na redução de riscos e com a orientação de integrar redução de riscos à recuperação, reabilitação e reconstrução.\n\n\n\n\n\n\nEscopo atual. A primeira versão do projeto SWMM da Bacia A já foi montada com a rede importada, nós topológicos e áreas de contribuição preliminares. A etapa de revisão de quadras, conexões, cotas de fundo e diâmetros ainda é necessária antes de qualquer uso como projeto básico."
+  },
+  {
+    "objectID": "index.html#painel-espacial",
+    "href": "index.html#painel-espacial",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Painel espacial",
+    "text": "Painel espacial\n\n\n\n\nBase de imagem: Esri World Imagery. As geometrias do modelo estão em SIRGAS 2000 / UTM 25S nos arquivos de trabalho; o mapa web reprojeta as camadas para visualização em WGS84."
+  },
+  {
+    "objectID": "index.html#números-da-versão-preliminar",
+    "href": "index.html#números-da-versão-preliminar",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Números da versão preliminar",
+    "text": "Números da versão preliminar\n\n\n187links nodais\n\n\n200nós\n\n\n208áreas preliminares\n\n\n21,65 kmrede importada\n\n\nEPSG:31985SIRGAS 2000 / UTM 25S"
+  },
+  {
+    "objectID": "index.html#como-ler-este-projeto",
+    "href": "index.html#como-ler-este-projeto",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Como ler este projeto",
+    "text": "Como ler este projeto\n\nContexto e objetivo\nBase cartográfica e referência espacial\nConstrução e limitações do MDT híbrido\nRede importada e modelo SWMM\nChuva de projeto e mudança climática\nEntregáveis, revisão e próximos passos\nMinuta do Plano de Trabalho\n\n\nPadrão editorial inspirado nos projetos DPM/SEDEC de documentação versionada no GitHub Pages e na identidade visual SEDEC do ICPM."
+  },
+  {
+    "objectID": "06_entregaveis.html",
+    "href": "06_entregaveis.html",
+    "title": "6. Entregáveis e próximos passos",
+    "section": "",
+    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json"
+  },
+  {
+    "objectID": "06_entregaveis.html#pacote-local-atual",
+    "href": "06_entregaveis.html#pacote-local-atual",
+    "title": "6. Entregáveis e próximos passos",
+    "section": "",
+    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json"
+  },
+  {
+    "objectID": "06_entregaveis.html#sequência-de-revisão",
+    "href": "06_entregaveis.html#sequência-de-revisão",
+    "title": "6. Entregáveis e próximos passos",
+    "section": "Sequência de revisão",
+    "text": "Sequência de revisão\n\nRevisar a continuidade dos 16 componentes da rede.\nAjustar os traçados dos troncos e coletores.\nDesenhar as áreas reais de contribuição das quadras.\nVincular cada área ao nó de entrada correto.\nIncorporar cotas de fundo, diâmetros e condições de jusante.\nRodar TR25 e TR50 no SWMM e verificar balanço de massa, sobrecarga e alagamento.\nRepetir os cenários com a atualização climática.\nConsolidar mapas, resultados, metas prioritárias e relatório final."
+  },
+  {
+    "objectID": "06_entregaveis.html#publicação",
+    "href": "06_entregaveis.html#publicação",
+    "title": "6. Entregáveis e próximos passos",
+    "section": "Publicação",
+    "text": "Publicação\nO repositório GitHub Pages será criado como projeto específico drenagem-conde-pb, seguindo o padrão editorial dos projetos DPM/SEDEC. A publicação deve ocorrer depois da revisão dos arquivos vetoriais e da confirmação de quais dados podem ser disponibilizados publicamente."
+  },
+  {
+    "objectID": "04_rede_swmm.html",
+    "href": "04_rede_swmm.html",
+    "title": "4. Rede importada e modelo SWMM",
+    "section": "",
+    "text": "A rede foi reunida a partir dos arquivos TroncoA*.shp, ColetorA*.shp e ColetarA6.shp. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.\n\n\n9arquivos/traçados de tronco\n\n\n95feições coletoras de origem\n\n\n16componentes conectados\n\n\n40saídas provisórias\n\n\n\n\n\n\n\n\nAlerta topológico. Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição."
+  },
+  {
+    "objectID": "04_rede_swmm.html#rede-de-partida",
+    "href": "04_rede_swmm.html#rede-de-partida",
+    "title": "4. Rede importada e modelo SWMM",
+    "section": "",
+    "text": "A rede foi reunida a partir dos arquivos TroncoA*.shp, ColetorA*.shp e ColetarA6.shp. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.\n\n\n9arquivos/traçados de tronco\n\n\n95feições coletoras de origem\n\n\n16componentes conectados\n\n\n40saídas provisórias\n\n\n\n\n\n\n\n\nAlerta topológico. Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição."
+  },
+  {
+    "objectID": "04_rede_swmm.html#arquivos-swmm",
+    "href": "04_rede_swmm.html#arquivos-swmm",
+    "title": "4. Rede importada e modelo SWMM",
+    "section": "Arquivos SWMM",
+    "text": "Arquivos SWMM\n\nCONDE_BACIA_A_REDE_PRELIM_TR25.inp — chuva tradicional TR25;\nCONDE_BACIA_A_REDE_PRELIM_TR50.inp — chuva tradicional TR50.\n\nOs arquivos são preliminares. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados."
+  },
+  {
+    "objectID": "04_rede_swmm.html#áreas-de-contribuição",
+    "href": "04_rede_swmm.html#áreas-de-contribuição",
+    "title": "4. Rede importada e modelo SWMM",
+    "section": "Áreas de contribuição",
+    "text": "Áreas de contribuição\nAs 208 áreas atuais são um template Voronoi para não deixar a estrutura do SWMM vazia. Elas devem ser redesenhadas ou mescladas no ArcMap conforme o escoamento de ruas, quadras, sarjetas e pontos de entrada."
+  },
+  {
+    "objectID": "02_base_cartografica.html",
+    "href": "02_base_cartografica.html",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "",
+    "text": "O padrão de trabalho é SIRGAS 2000 / UTM zona 25S — EPSG:31985. As camadas da rede foram normalizadas para esse CRS; o TroncoA2.shp, que estava em WGS84 / UTM 25S, foi reprojetado somente na cópia de trabalho."
+  },
+  {
+    "objectID": "02_base_cartografica.html#sistema-de-referência",
+    "href": "02_base_cartografica.html#sistema-de-referência",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "",
+    "text": "O padrão de trabalho é SIRGAS 2000 / UTM zona 25S — EPSG:31985. As camadas da rede foram normalizadas para esse CRS; o TroncoA2.shp, que estava em WGS84 / UTM 25S, foi reprojetado somente na cópia de trabalho."
+  },
+  {
+    "objectID": "02_base_cartografica.html#camadas-principais",
+    "href": "02_base_cartografica.html#camadas-principais",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "Camadas principais",
+    "text": "Camadas principais\n\n\n\n\n\n\n\nCamada\nUso\n\n\n\n\nBacia A revisada D8\nLimite usado para recorte da rede e das áreas preliminares\n\n\nMDT híbrido recortado\nCotas superficiais, declividade e orientação preliminar da rede\n\n\nOrtomosaico WebODM\nAlta resolução local, onde houver cobertura\n\n\nImagem Esri World Imagery\nReferência visual para ruas e quadras no mapa web/ArcMap\n\n\nTroncos e coletores lançados\nRede de partida para a modelagem SWMM"
+  },
+  {
+    "objectID": "02_base_cartografica.html#limitação-da-imagem-de-drone",
+    "href": "02_base_cartografica.html#limitação-da-imagem-de-drone",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "Limitação da imagem de drone",
+    "text": "Limitação da imagem de drone\nO ortomosaico disponível não cobre integralmente a Bacia A. Por isso, ele é mantido como camada de alta resolução local, enquanto a imagem de satélite/basemap será utilizada para o contexto completo da bacia. A imagem de referência anexada na conversa orienta apenas o padrão visual do mapa; não foi usada para extrair geometrias."
+  },
+  {
+    "objectID": "02_base_cartografica.html#verificação-das-fotos-brutas",
+    "href": "02_base_cartografica.html#verificação-das-fotos-brutas",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "Verificação das fotos brutas",
+    "text": "Verificação das fotos brutas\nUma leitura rápida dos metadados da pasta Paraíba/Conde PB encontrou 965 fotografias JPG, todas com GPS. Os centros de câmera cobrem apenas parte da extensão da Bacia A: o casco convexo das posições cobre aproximadamente 14,58% da área da bacia. Portanto, não será iniciado um novo processamento fotogramétrico com esse conjunto para tentar produzir um ortomosaico integral.\nPara o background completo, a opção operacional será a imagem Esri no ArcMap/QGIS ou um raster de satélite georreferenciado. O arquivo legado basemap_aereo_Esri_georref.jpg é visualmente amplo, mas não apresenta CRS/worldfile verificável; ele precisa ser georreferenciado antes de ser usado como camada de análise."
+  },
+  {
+    "objectID": "01_contexto.html",
+    "href": "01_contexto.html",
+    "title": "1. Contexto e objetivo",
+    "section": "",
+    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
+  },
+  {
+    "objectID": "01_contexto.html#objetivo",
+    "href": "01_contexto.html#objetivo",
+    "title": "1. Contexto e objetivo",
+    "section": "",
+    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
+  },
+  {
+    "objectID": "01_contexto.html#fases-do-estudo",
+    "href": "01_contexto.html#fases-do-estudo",
+    "title": "1. Contexto e objetivo",
+    "section": "Fases do estudo",
+    "text": "Fases do estudo\n\n\n\n\n\n\n\n\nFase\nConteúdo\nSituação\n\n\n\n\n1\nRede importada, MDT híbrido e estrutura preliminar SWMM\nEm revisão\n\n\n2\nÁreas reais de quadras e contribuição\nPróxima etapa\n\n\n3\nVerificação hidráulica TR25/TR50\nApós revisão da rede\n\n\n4\nAtualização climática com NEX-GDDP-CMIP6\nSegunda etapa hidrológica\n\n\n5\nRelatório técnico, mapas finais e plano de trabalho\nApós validação"
+  },
+  {
+    "objectID": "01_contexto.html#princípio-de-rastreabilidade",
+    "href": "01_contexto.html#princípio-de-rastreabilidade",
+    "title": "1. Contexto e objetivo",
+    "section": "Princípio de rastreabilidade",
+    "text": "Princípio de rastreabilidade\nCada etapa será mantida em arquivos versionados, com fontes preservadas, premissas declaradas, limitações e histórico de alterações. A publicação no GitHub ocorrerá depois da revisão da geometria e da confirmação do conteúdo que poderá ser tornado público."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html",
+    "href": "03_mdt_hibrido.html",
+    "title": "3. MDT híbrido",
+    "section": "",
+    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em 5 m, no CRS EPSG:31985. Ele combina a base legada com o levantamento de maior resolução do drone na área coberta, mantendo a cobertura regional necessária para a análise."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#produto-de-referência",
+    "href": "03_mdt_hibrido.html#produto-de-referência",
+    "title": "3. MDT híbrido",
+    "section": "",
+    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em 5 m, no CRS EPSG:31985. Ele combina a base legada com o levantamento de maior resolução do drone na área coberta, mantendo a cobertura regional necessária para a análise."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#uso-nesta-concepção",
+    "href": "03_mdt_hibrido.html#uso-nesta-concepção",
+    "title": "3. MDT híbrido",
+    "section": "Uso nesta concepção",
+    "text": "Uso nesta concepção\nO MDT foi usado para:\n\namostrar cotas superficiais dos nós da rede;\nestimar declividades preliminares das áreas de contribuição;\norientar o sentido inicial dos links pelo declive superficial;\napoiar a revisão das bacias e dos caminhos naturais de escoamento."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#limitações",
+    "href": "03_mdt_hibrido.html#limitações",
+    "title": "3. MDT híbrido",
+    "section": "Limitações",
+    "text": "Limitações\nAs cotas amostradas são de superfície do terreno, não de fundo de galerias. O MDT não substitui nivelamento de poços de visita, levantamento de soleiras, cadastro de redes enterradas ou levantamento topográfico para projeto básico.\nO procedimento de criação, fontes e limitações do MDT está organizado na pasta 04_MDT_HIBRIDO e será incorporado como capítulo metodológico do relatório final."
+  },
+  {
+    "objectID": "05_hidrologia.html",
+    "href": "05_hidrologia.html",
+    "title": "5. Chuva de projeto e mudança climática",
+    "section": "",
+    "text": "Nesta primeira versão foi preservada a lógica hidrológica do relatório anterior:\n\nestação INMET 82798;\nIDF SGB/CPRM 2023;\nhietogramas TR25 e TR50;\ninfiltração CN-SCS;\nCN médio preliminar 79;\n30% de impermeabilização como premissa inicial.\n\nAs séries foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos dois arquivos .inp."
+  },
+  {
+    "objectID": "05_hidrologia.html#linha-de-base-tradicional",
+    "href": "05_hidrologia.html#linha-de-base-tradicional",
+    "title": "5. Chuva de projeto e mudança climática",
+    "section": "",
+    "text": "Nesta primeira versão foi preservada a lógica hidrológica do relatório anterior:\n\nestação INMET 82798;\nIDF SGB/CPRM 2023;\nhietogramas TR25 e TR50;\ninfiltração CN-SCS;\nCN médio preliminar 79;\n30% de impermeabilização como premissa inicial.\n\nAs séries foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos dois arquivos .inp."
+  },
+  {
+    "objectID": "05_hidrologia.html#segunda-etapa-nex-gddp-cmip6",
+    "href": "05_hidrologia.html#segunda-etapa-nex-gddp-cmip6",
+    "title": "5. Chuva de projeto e mudança climática",
+    "section": "Segunda etapa: NEX-GDDP-CMIP6",
+    "text": "Segunda etapa: NEX-GDDP-CMIP6\nA atualização climática será feita separadamente, consultando o banco NEX-GDDP-CMIP6 para a célula mais próxima da área de estudo e comparando os cenários ssp126, ssp245, ssp370 e ssp585 com o histórico.\nO procedimento deverá documentar seleção espacial, modelos, período de referência, janela futura, quantis/medianas, ajuste estatístico e transformação de máximas diárias em curvas IDF. Nenhum fator climático foi aplicado nesta versão preliminar.\n\n\n\n\n\n\nManter a linha de base tradicional separada dos cenários climáticos permitirá comparar diretamente o desempenho da rede no cenário atual e nos cenários futuros, sem esconder o efeito da mudança de premissa."
+  },
+  {
+    "objectID": "07_plano_trabalho.html",
+    "href": "07_plano_trabalho.html",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "",
+    "text": "Documento em construção. As metas abaixo são uma estrutura técnica inicial para discussão intersetorial. Os limites, quantitativos, trechos, vazões, custos e soluções construtivas só devem ser fechados após a revisão de campo, da rede e do modelo SWMM."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#finalidade",
+    "href": "07_plano_trabalho.html#finalidade",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.1 Finalidade",
+    "text": "7.1 Finalidade\nInstruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB, priorizando as áreas afetadas por processos erosivos e escoamentos concentrados e organizando intervenções capazes de reduzir o risco sem fragmentar a compreensão da bacia.\nO plano deverá distinguir:\n\na reconstrução ou implantação de trechos críticos, que pode ser objeto de metas específicas;\na concepção integrada da drenagem das bacias A e B, necessária para verificar se cada intervenção tem continuidade hidráulica;\na contratação posterior de levantamento, projeto básico e projeto executivo, quando a precisão exigida superar a base preliminar disponível."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#escopo-preliminar",
+    "href": "07_plano_trabalho.html#escopo-preliminar",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.2 Escopo preliminar",
+    "text": "7.2 Escopo preliminar\nO Plano de Trabalho não incluirá, nesta etapa, a implantação de toda a rede municipal. A estratégia preliminar é concentrar recursos nos troncos principais e dissipadores associados aos setores mais afetados, complementando-os com os coletores indispensáveis para que a solução funcione e seja verificável hidraulicamente.\nEssa delimitação não significa tratar os trechos isoladamente. Cada meta deverá ser avaliada no contexto da bacia contribuinte, do caminho de escoamento superficial, da capacidade a jusante e da manutenção futura. Uma obra que apenas transfira a erosão ou o alagamento para o trecho seguinte será considerada solução incompleta."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#evidências-e-setores-a-confirmar",
+    "href": "07_plano_trabalho.html#evidências-e-setores-a-confirmar",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.3 Evidências e setores a confirmar",
+    "text": "7.3 Evidências e setores a confirmar\nO inventário de trabalho atualmente disponível contém:\n\n\n\n\n\n\n\n\nEvidência\nSituação no projeto\nUso previsto\n\n\n\n\nConde_Pontos_metas.kmz\nconvertido para 12 pontos em SIRGAS 2000 / UTM 25S\nreferência para metas a conferir em campo\n\n\npontos_erosao_fotos_conde.kmz\n9 pontos com registro fotográfico e coordenadas\nevidência de ocorrências; requer validação e vínculo com as bacias A/B\n\n\nTrechosDissipacao.shp\n5 linhas em EPSG:31985, com campo Id igual a 0 em todas as feições\ndefinir conexão, sentido e parâmetros hidráulicos de cada trecho\n\n\nBacias A e B\nlimites e revisões D8 disponíveis no pacote GIS\nrecorte territorial e controle da continuidade\n\n\nMDT híbrido e curvas integradas\ndisponíveis em EPSG:31985\nleitura preliminar de cotas, declividades e caminhos de escoamento\n\n\n\nO registro detalhado da conferência está em inventario_pontos_criticos.json. Quatro linhas coincidem exatamente com nós de saída provisórios da rede; uma delas se aproxima do nó N_A_0195, mas requer revisão de snap. A camada ainda não foi incorporada automaticamente ao SWMM.\n\nConferência da cobertura da rede\nO modelo nodal preliminar possui 16 componentes conectados e 40 saídas provisórias. Os cinco trechos de dissipação se associam preliminarmente aos componentes 16, 15, 2, 9 e 3. Portanto, a afirmação de que toda a água coletada deverá sair por um desses trechos será adotada como regra de concepção, mas ainda não como resultado verificado: os outros 11 componentes precisam ser conectados a esses exutórios, receber uma saída própria justificada ou ser eliminados após a revisão da rede.\nOs 12 pontos de metas têm identificações originais como 1i, 1f, 2i - foto?, 2f, 3i, 3f, 4i, 4f, 5i, 5f, 6i e 6f. A nomenclatura sugere pares início/fim, mas não será interpretada como definição hidráulica final sem conferência espacial, fotográfica e de campo."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#metas-preliminares-do-plano-de-trabalho",
+    "href": "07_plano_trabalho.html#metas-preliminares-do-plano-de-trabalho",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.4 Metas preliminares do Plano de Trabalho",
+    "text": "7.4 Metas preliminares do Plano de Trabalho\n\n\n\n\n\n\n\n\n\nCódigo\nMeta proposta\nProduto verificável\nCondição de aceite\n\n\n\n\nM-01\nValidar os pontos críticos, os pares de início/fim e a relação com as bacias A e B\nmapa de ocorrências e ficha de campo\ncoordenadas, fotos, causa provável, risco a jusante e prioridade registrados\n\n\nM-02\nConsolidar a concepção integrada da drenagem das bacias\nplanta de bacias, caminhos de escoamento e rede proposta\ncontinuidade entre contribuição, tronco, coletor, dissipador e exutório\n\n\nM-03\nRecuperar ou implantar troncos principais nos setores prioritários\nprojeto/anteprojeto dos trechos selecionados\nseção, material, cota, declividade, capacidade e interferências definidos\n\n\nM-04\nImplantar ou complementar coletores indispensáveis aos troncos\ncadastro de coletores e ligações\náreas de contribuição e nós de entrada vinculados ao modelo\n\n\nM-05\nImplantar dissipadores nos pontos de descarga que apresentem energia ou desnível incompatível\nsolução conceitual de dissipação por ponto\nvazão de projeto, desnível, comprimento, largura, número de degraus e proteção a jusante verificados\n\n\nM-06\nAvaliar a suficiência hidráulica das metas no SWMM\narquivos .inp, cenários e relatório de resultados\nbalanço de massa, sobrecargas, alagamentos e condições de jusante revisados\n\n\nM-07\nPreparar a contratação do projeto básico/executivo\ntermo de referência e pacote de dados\nescopo, levantamentos, sondagens, produtos, responsabilidades e critérios de medição definidos\n\n\n\nOs códigos são administrativos e preliminares. Eles não correspondem ainda a um quantitativo de obras nem autorizam a execução física."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#dissipadores-critério-para-a-etapa-seguinte",
+    "href": "07_plano_trabalho.html#dissipadores-critério-para-a-etapa-seguinte",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.5 Dissipadores: critério para a etapa seguinte",
+    "text": "7.5 Dissipadores: critério para a etapa seguinte\nOs pontos de início e fim serão marcados pelo usuário em camada vetorial. Depois disso, a estimativa preliminar será feita a partir do MDT híbrido, das curvas de nível integradas e das vazões de chegada calculadas para a rede. Para cada dissipador serão estimados, quando os dados permitirem:\n\ndesnível e comprimento disponível;\ndeclividade média e mudanças de declividade;\nvazão de projeto e cenários de recorrência;\nnecessidade de degraus, soleiras, bacia de dissipação, proteção de talude e proteção contra erosão a jusante;\nconexão com o tronco/coletor e condição de descarga.\n\nSe uma grandeza não puder ser determinada com os dados disponíveis, ela será registrada como não determinada. A solução final dependerá de levantamento topográfico de detalhe, inspeção geotécnica, verificação de materiais e dimensionamento hidráulico estrutural."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#enquadramento-federal-a-verificar",
+    "href": "07_plano_trabalho.html#enquadramento-federal-a-verificar",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.6 Enquadramento federal a verificar",
+    "text": "7.6 Enquadramento federal a verificar\n\nCadastro Casa Civil\nNa consulta à relação oficial publicada pela Casa Civil, o Município de Conde/PB (código IBGE 2504603) não foi localizado na lista de 2.086 municípios suscetíveis a enxurradas e inundações, elaborada com base de dados até 2024. Isso significa que o Plano não deve afirmar, sem nova atualização oficial, que Conde está incluído no cadastro.\nO cadastro tem efeito específico sobre condicionantes legais para alocação de recursos e financiamentos em drenagem e manejo de águas pluviais; ele não equivale a uma garantia de seleção ou de repasse. A situação deve ser conferida novamente no momento da inscrição.\n\n\nMinistério das Cidades / Novo PAC\nA página oficial da seleção de Prevenção a Desastres Naturais: Drenagem Urbana informa que municípios fora da lista podem participar desde que demonstrem a existência de setores de risco que atendam aos critérios da seleção. Também informa a necessidade de carta-consulta no Transferegov.br, projeto de engenharia ou anteprojeto, composição básica do investimento, comprovação das áreas de risco, delimitação das áreas/pontos de intervenção e relatório fotográfico.\nPor isso, a estratégia recomendada para o município é preparar um dossiê técnico com: (i) evidências de campo; (ii) delimitação dos setores críticos; (iii) concepção integrada da drenagem; (iv) metas priorizadas de troncos, coletores e dissipadores; (v) resultados hidráulicos; e (vi) documentação municipal exigida pelo edital ou linha de financiamento vigente.\nA seleção vigente informa ainda que não serão enquadradas propostas caracterizadas majoritariamente como pavimentação e microdrenagem. O Plano deverá, portanto, apresentar a pavimentação como componente de uma solução de drenagem urbana e redução de risco, e não como objeto isolado."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#próximas-decisões-técnicas",
+    "href": "07_plano_trabalho.html#próximas-decisões-técnicas",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.7 Próximas decisões técnicas",
+    "text": "7.7 Próximas decisões técnicas\n\nMarcar os pontos de início e fim dos dissipadores e entregar a camada vetorial no CRS de trabalho.\nRevisar no ArcMap a continuidade dos troncos e coletores e indicar o que é tronco, coletor, descarga e dissipador.\nEditar as áreas de contribuição das quadras e associá-las aos nós de entrada.\nAtualizar cotas de fundo, diâmetros, rugosidades, condições de jusante e parâmetros de infiltração.\nRodar os cenários tradicionais de chuva e verificar os resultados antes de incorporar as projeções NEX-GDDP-CMIP6.\nSelecionar as metas que serão levadas ao Plano de Trabalho, com justificativa de risco, população/infraestrutura protegida, dependências e estimativa de custo."
+  },
+  {
+    "objectID": "07_plano_trabalho.html#referências-institucionais",
+    "href": "07_plano_trabalho.html#referências-institucionais",
+    "title": "7. Minuta do Plano de Trabalho",
+    "section": "7.8 Referências institucionais",
+    "text": "7.8 Referências institucionais\n\nCadastro de Municípios Suscetíveis a Eventos de Enxurradas e Inundações — Casa Civil.\nNota Técnica nº 2/2025 e lista do cadastro — Casa Civil.\nPrevenção a Desastres Naturais: Drenagem Urbana — Ministério das Cidades, Novo PAC Seleções 2026.\nConde/PB — código municipal 2504603 — IBGE.\nSendai Framework for Disaster Risk Reduction 2015–2030 — UNDRR.\nBuild Back Better — terminologia UNDRR.\n\n\n\n\n\n\n\nNota de governança. A publicação do relatório em repositório público deverá ocorrer somente depois da revisão institucional, da confirmação dos autores e da triagem de dados que possam conter informações pessoais, fotografias ou elementos que não devam ser disponibilizados publicamente."
+  }
+]

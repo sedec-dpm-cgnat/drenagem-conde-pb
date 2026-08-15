@@ -1,0 +1,30 @@
+{
+  "projeto": "Drenagem urbana — Conde/PB",
+  "data_verificacao": "2026-08-15",
+  "crs_trabalho": "EPSG:31985 - SIRGAS 2000 / UTM 25S",
+  "pontos_metas": {
+    "fonte": "Conde_Pontos_metas.kmz",
+    "quantidade": 12,
+    "identificacoes_originais": ["1i", "1f", "2f", "2i - foto?", "4i", "4f", "3i", "3f", "5i", "5f", "6f", "6i"],
+    "interpretacao": "Referências de metas. A leitura como pares de início/fim é uma hipótese e requer confirmação espacial e de campo."
+  },
+  "pontos_erosao_fotografias": {
+    "fonte": "pontos_erosao_fotos_conde.kmz",
+    "quantidade": 9,
+    "identificacoes": ["P01 - WA0029", "P02 - WA0030", "P03 - WA0050", "P04 - WA0038", "P05 - WA0039", "P06 - WA0037", "P07 - WA0051", "P08 - WA0054", "P09 - WA0055"],
+    "observacao": "Pontos com coordenadas e referência fotográfica; requerem vínculo com as bacias A/B e revisão de campo."
+  },
+  "trechos_dissipacao": {
+    "fonte": "TrechosDissipacao.shp",
+    "quantidade_de_feicoes_na_verificacao": 5,
+    "crs": "EPSG:31985 - SIRGAS 2000 / UTM 25S",
+    "mapeamento_preliminar": [
+      {"id_interno": "DISS_01", "no_rede_mais_proximo": "N_A_0200", "componente": 16, "distancia_m": 0.0},
+      {"id_interno": "DISS_02", "no_rede_mais_proximo": "N_A_0190", "componente": 15, "distancia_m": 0.0},
+      {"id_interno": "DISS_03", "no_rede_mais_proximo": "N_A_0191", "componente": 2, "distancia_m": 0.0},
+      {"id_interno": "DISS_04", "no_rede_mais_proximo": "N_A_0195", "componente": 9, "distancia_m": 28.31, "alerta": "Revisar snap da outra extremidade; afastamento máximo aproximado de 71.35 m."},
+      {"id_interno": "DISS_05", "no_rede_mais_proximo": "N_A_0193", "componente": 3, "distancia_m": 0.0}
+    ],
+    "situacao": "Cinco linhas recebidas; a integração hidráulica aguarda confirmação do sentido e do ponto de conexão do trecho DISS_04."
+  }
+}

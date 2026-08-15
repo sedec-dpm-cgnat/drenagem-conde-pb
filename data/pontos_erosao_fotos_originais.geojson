@@ -1,0 +1,150 @@
+{
+  "type": "FeatureCollection",
+  "name": "pontos_erosao_fotos_originais.geojson",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P01 - WA0029",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 13:51 | -7.267888,-34.817722 | Village Jacuma | Foto IMG-20260721-WA0029.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.817722,
+          -7.267888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P02 - WA0030",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 13:56 | -7.266716,-34.817668 | Village Jacuma | Foto IMG-20260721-WA0030.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.817668,
+          -7.266716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P03 - WA0050",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:13:52 | -7.270692,-34.847797 | Conde 58322-000 | Foto IMG-20260721-WA0050.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.847797,
+          -7.270692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P04 - WA0038",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:17:42 | -7.275873,-34.844218 | Conde 58322-000 | Foto IMG-20260721-WA0038.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.844218,
+          -7.275873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P05 - WA0039",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:19:10 | -7.276309,-34.843947 | Conde 58322-000 | Foto IMG-20260721-WA0039.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.843947,
+          -7.276309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P06 - WA0037",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:19:50 | -7.276546,-34.843755 | Conde 58322-000 | Foto IMG-20260721-WA0037.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.843755,
+          -7.276546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P07 - WA0051",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:21:58 | -7.276530,-34.843782 | Conde 58322-000 | Foto IMG-20260721-WA0051.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.843782,
+          -7.27653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P08 - WA0054",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:49:47 | -7.267995,-34.918131 | R. Ary de Almeida Pereira, N. Sra. das Neves | Foto IMG-20260721-WA0054.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.918131,
+          -7.267995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "P09 - WA0055",
+        "classe_original": "e",
+        "fonte_original": "pontos_erosao_fotos_conde.kmz",
+        "descricao": "21/07/2026 14:55:41 | -7.267958,-34.919685 | R. Zilda Arns Neumann, N. Sra. das Neves | Foto IMG-20260721-WA0055.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.919685,
+          -7.267958
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+:root {
+  --sedec-navy: #16224e;
+  --sedec-navy-2: #1a2340;
+  --sedec-cream: #f4f0e7;
+  --sedec-panel: #ffffff;
+  --sedec-panel-2: #f8f4ea;
+  --sedec-line: #e4dccb;
+  --sedec-ink: #1a2340;
+  --sedec-muted: #5f6b82;
+  --sedec-orange: #994b00;
+  --sedec-teal: #187d78;
+  --sedec-chip: #f5e9d3;
+  --sedec-shadow: 0 1px 2px #16222e0f, 0 4px 16px #16222e12;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--sedec-cream);
+  color: var(--sedec-ink);
+  font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+.quarto-title-block { display: none; }
+.navbar {
+  background: var(--sedec-navy) !important;
+  box-shadow: 0 2px 12px #16224e35;
+}
+.navbar .navbar-brand, .navbar .nav-link { color: var(--sedec-cream) !important; }
+.navbar .nav-link:hover { color: #ffffff !important; }
+.navbar-brand img { max-height: 36px; width: auto; margin-right: .45rem; }
+.quarto-title-banner, .institutional-hero {
+  background: var(--sedec-navy);
+  color: var(--sedec-cream);
+  border-radius: 0 0 18px 18px;
+  padding: 1.6rem 1.8rem 1.8rem;
+  margin: -1rem -1rem 1.7rem;
+}
+.institutional-hero { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; }
+.institutional-hero .hero-title { color: var(--sedec-cream); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.15; }
+.institutional-hero .hero-subtitle { color: #dce2f4; margin-top: .3rem; }
+.institutional-hero img { max-height: 66px; max-width: 150px; object-fit: contain; }
+.institutional-hero h1 { color: var(--sedec-cream); margin: 0; font-weight: 700; }
+.institutional-hero p { color: #dce2f4; margin: .25rem 0 0; }
+h1, h2, h3 { color: var(--sedec-ink); }
+h2 { border-left: 5px solid var(--sedec-teal); padding-left: .65rem; margin-top: 2.2rem; }
+h3 { margin-top: 1.5rem; }
+a { color: var(--sedec-orange); }
+a:hover { color: var(--sedec-teal); }
+.card, .metric-card, .callout { background: var(--sedec-panel); border: 1px solid var(--sedec-line); border-radius: 12px; box-shadow: var(--sedec-shadow); }
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin: 1rem 0 1.5rem; }
+.metric-card { padding: 1rem; }
+.metric-card .metric { display: block; color: var(--sedec-orange); font-size: 1.65rem; font-weight: 700; line-height: 1.05; }
+.metric-card .label { color: var(--sedec-muted); font-size: .88rem; }
+.callout { padding: 1rem 1.2rem; margin: 1rem 0; }
+.callout.warning { border-left: 5px solid var(--sedec-orange); background: #fff8ee; }
+.callout.info { border-left: 5px solid var(--sedec-teal); background: #eef8f6; }
+.badge { display: inline-block; background: var(--sedec-chip); color: var(--sedec-orange); border-radius: 999px; padding: .18rem .6rem; font-size: .78rem; font-weight: 700; }
+table { background: var(--sedec-panel); border-color: var(--sedec-line) !important; box-shadow: var(--sedec-shadow); }
+thead th { background: var(--sedec-navy); color: var(--sedec-cream); }
+code { color: var(--sedec-navy); background: #eee9df; }
+#map { height: 600px; border: 1px solid var(--sedec-line); border-radius: 12px; box-shadow: var(--sedec-shadow); margin: 1rem 0; }
+.map-note { color: var(--sedec-muted); font-size: .9rem; }
+.dissipador-note { color: var(--sedec-muted); font-size: .9rem; border-left: 4px solid var(--sedec-teal); padding-left: .7rem; }
+.site-credit { color: var(--sedec-muted); font-size: .88rem; }
+.author-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+.author-block > div { background: var(--sedec-panel); border: 1px solid var(--sedec-line); border-top: 4px solid var(--sedec-orange); border-radius: 12px; box-shadow: var(--sedec-shadow); padding: 1rem 1.2rem; }
+.author-block strong { color: var(--sedec-orange); text-transform: uppercase; letter-spacing: .04em; font-size: .82rem; }
+.author-block span { color: var(--sedec-muted); font-size: .92rem; }
+@media (max-width: 700px) {
+  .institutional-hero { grid-template-columns: 1fr 1fr; }
+  .institutional-hero h1, .institutional-hero p { grid-column: 1 / -1; grid-row: 1; padding-top: 4.5rem; }
+  .institutional-hero img { max-height: 52px; }
+  #map { height: 440px; }
+}

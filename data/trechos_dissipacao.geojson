@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id_diss": "DISS_01",
+        "no_provavel": "N_A_0200",
+        "componente": 16,
+        "dist_rede_m": 0.0,
+        "orig_id": 0,
+        "comprimento_m": 30.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.918373045,
+            -7.262425743
+          ],
+          [
+            -34.91835384,
+            -7.26269869
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_diss": "DISS_02",
+        "no_provavel": "N_A_0190",
+        "componente": 15,
+        "dist_rede_m": 0.0,
+        "orig_id": 0,
+        "comprimento_m": 51.07
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.917718782,
+            -7.262397149
+          ],
+          [
+            -34.917991981,
+            -7.262769633
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_diss": "DISS_03",
+        "no_provavel": "N_A_0191",
+        "componente": 2,
+        "dist_rede_m": 0.0,
+        "orig_id": 0,
+        "comprimento_m": 64.31
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.917453469,
+            -7.263450288
+          ],
+          [
+            -34.917983532,
+            -7.263209713
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_diss": "DISS_04",
+        "no_provavel": "N_A_0195",
+        "componente": 9,
+        "dist_rede_m": 28.31,
+        "alerta": "Revisar snap; afastamento máximo aproximado de 71.35 m.",
+        "orig_id": 0,
+        "comprimento_m": 99.65
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.92268256,
+            -7.262918596
+          ],
+          [
+            -34.923560493,
+            -7.263126379
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_diss": "DISS_05",
+        "no_provavel": "N_A_0193",
+        "componente": 3,
+        "dist_rede_m": 0.0,
+        "orig_id": 0,
+        "comprimento_m": 115.7
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -34.9221616,
+            -7.267890777
+          ],
+          [
+            -34.923205418,
+            -7.267979281
+          ]
+        ]
+      }
+    }
+  ]
+}

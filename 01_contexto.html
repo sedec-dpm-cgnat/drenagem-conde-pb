@@ -134,6 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <a class="nav-link" href="./07_plano_trabalho.html"> 
 <span class="menu-text">Plano de trabalho</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./08_dados.html"> 
+<span class="menu-text">Dados para download</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -158,7 +162,10 @@ document.addEventListener('DOMContentLoaded', function () {
    
   <ul>
   <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#fases-do-estudo" id="toc-fases-do-estudo" class="nav-link" data-scroll-target="#fases-do-estudo">Fases do estudo</a></li>
+  <li><a href="#fases-do-estudo" id="toc-fases-do-estudo" class="nav-link" data-scroll-target="#fases-do-estudo">Fases do estudo</a>
+  <ul class="collapse">
+  <li><a href="#situação-territorial-das-duas-bacias" id="toc-situação-territorial-das-duas-bacias" class="nav-link" data-scroll-target="#situação-territorial-das-duas-bacias">Situação territorial das duas bacias</a></li>
+  </ul></li>
   <li><a href="#princípio-de-rastreabilidade" id="toc-princípio-de-rastreabilidade" class="nav-link" data-scroll-target="#princípio-de-rastreabilidade">Princípio de rastreabilidade</a></li>
   </ul>
 </nav>
@@ -188,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="objetivo" class="level2">
 <h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
 <p>Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.</p>
+<p>Neste relatório, a expressão <strong>Bacia A</strong> identifica a unidade em que o lançamento da rede de troncos e coletores já avançou e será revisado antes da simulação final. <strong>Bacia B</strong> identifica a unidade já delimitada no GIS, cujo lançamento da rede ainda será realizado. A separação é mantida em mapas, camadas, arquivos de entrada, áreas de contribuição, cenários e metas para evitar misturar resultados de etapas diferentes.</p>
 <p>O material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.</p>
 <p>O relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante.</p>
 </section>
@@ -234,6 +242,35 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
+<section id="situação-territorial-das-duas-bacias" class="level3">
+<h3 class="anchored" data-anchor-id="situação-territorial-das-duas-bacias">Situação territorial das duas bacias</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Unidade</th>
+<th>Situação atual</th>
+<th>Próxima decisão</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bacia A</td>
+<td>Rede preliminar, nós, dissipadores e áreas template já organizados</td>
+<td>Revisar continuidade, áreas reais e parâmetros do SWMM</td>
+</tr>
+<tr class="even">
+<td>Bacia B</td>
+<td>Limite revisado e produtos topográficos disponíveis</td>
+<td>Lançar troncos, coletores, áreas de contribuição e saídas</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="princípio-de-rastreabilidade" class="level2">
 <h2 class="anchored" data-anchor-id="princípio-de-rastreabilidade">Princípio de rastreabilidade</h2>

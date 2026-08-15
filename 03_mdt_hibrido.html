@@ -134,6 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <a class="nav-link" href="./07_plano_trabalho.html"> 
 <span class="menu-text">Plano de trabalho</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./08_dados.html"> 
+<span class="menu-text">Dados para download</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -158,8 +162,11 @@ document.addEventListener('DOMContentLoaded', function () {
    
   <ul>
   <li><a href="#produto-de-referência" id="toc-produto-de-referência" class="nav-link active" data-scroll-target="#produto-de-referência">Produto de referência</a></li>
+  <li><a href="#histórico-e-metodologia-de-construção" id="toc-histórico-e-metodologia-de-construção" class="nav-link" data-scroll-target="#histórico-e-metodologia-de-construção">Histórico e metodologia de construção</a></li>
+  <li><a href="#base-hidrográfica-derivada" id="toc-base-hidrográfica-derivada" class="nav-link" data-scroll-target="#base-hidrográfica-derivada">Base hidrográfica derivada</a></li>
   <li><a href="#uso-nesta-concepção" id="toc-uso-nesta-concepção" class="nav-link" data-scroll-target="#uso-nesta-concepção">Uso nesta concepção</a></li>
   <li><a href="#limitações" id="toc-limitações" class="nav-link" data-scroll-target="#limitações">Limitações</a></li>
+  <li><a href="#limitações-e-requisitos-para-projeto-básico" id="toc-limitações-e-requisitos-para-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-requisitos-para-projeto-básico">Limitações e requisitos para projeto básico</a></li>
   </ul>
 </nav>
     </div>
@@ -187,7 +194,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <section id="produto-de-referência" class="level2">
 <h2 class="anchored" data-anchor-id="produto-de-referência">Produto de referência</h2>
-<p>O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em 5 m, no CRS EPSG:31985. Ele combina a base legada com o levantamento de maior resolução do drone na área coberta, mantendo a cobertura regional necessária para a análise.</p>
+<p>O modelo usado nesta etapa é o <strong>MDT híbrido recortado para as Bacias A e B</strong>, em grade de 5 m e CRS EPSG:31985. O arquivo de referência é <code>MDT_hibrido_Bacias_AB_5m_EPSG31985.tif</code>; o arquivo <code>MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif</code> preserva a extensão maior para contexto e complementação.</p>
+</section>
+<section id="histórico-e-metodologia-de-construção" class="level2">
+<h2 class="anchored" data-anchor-id="histórico-e-metodologia-de-construção">Histórico e metodologia de construção</h2>
+<p>O produto foi organizado em uma sequência de integração de fontes, mantendo os arquivos intermediários e os registros de processamento na pasta <code>04_MDT_HIBRIDO</code>:</p>
+<ol type="1">
+<li><strong>Base altimétrica legada.</strong> Foi preservado o modelo mais abrangente derivado de ANADEM e das curvas de nível anteriormente disponíveis. Essa fonte fornece a cobertura territorial necessária, mas tem resolução e incerteza maiores que o levantamento local.</li>
+<li><strong>Levantamento fotogramétrico.</strong> As imagens do drone foram processadas no WebODM para obter produtos de superfície e terreno. O drone cobre apenas parte do território; por isso, seu produto não foi usado para preencher automaticamente toda a extensão das Bacias A e B.</li>
+<li><strong>Harmonização espacial.</strong> As fontes foram reprojetadas para SIRGAS 2000 / UTM 25S, conferidas quanto à extensão e reamostradas em grade métrica de 5 m. A área de sobreposição foi usada para comparar a superfície local com a base legada.</li>
+<li><strong>Ajuste altimétrico.</strong> Onde houve sobreposição e observações de referência, foi aplicado o ajuste documentado nos registros do projeto. A relação entre a fonte local e a referência foi usada para reduzir diferenças sistemáticas, sem afirmar precisão cadastral onde não há pontos de controle suficientes.</li>
+<li><strong>Composição híbrida.</strong> O levantamento do drone tem prioridade na área coberta e compatível; fora dela, a base legada mantém a continuidade espacial. A máscara de cobertura do drone permite identificar qual fonte domina cada pixel.</li>
+<li><strong>Correção hidrológica e recorte.</strong> O MDT foi verificado para orientar o fluxo superficial, derivar declividade e apoiar a revisão das bacias. Em seguida, foi recortado pela união das Bacias A e B, mantendo o mesmo CRS e tamanho de pixel.</li>
+</ol>
+<p>O procedimento detalhado, os nomes das bases, as máscaras, as estatísticas e as limitações estão documentados em <code>04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md</code>, <code>relatorio_hibrido_completo_curvas_KMZ.json</code> e <code>01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json</code>.</p>
+</section>
+<section id="base-hidrográfica-derivada" class="level2">
+<h2 class="anchored" data-anchor-id="base-hidrográfica-derivada">Base hidrográfica derivada</h2>
+<p>Do MDT híbrido foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Esses produtos são <strong>apoio à concepção</strong>: não representam automaticamente galerias enterradas, sarjetas, soleiras, bueiros ou divisores artificiais criados pela urbanização. A hidrologia urbana deve ser confrontada com ruas, quadras, pontos de entrada e cadastro de drenagem.</p>
 </section>
 <section id="uso-nesta-concepção" class="level2">
 <h2 class="anchored" data-anchor-id="uso-nesta-concepção">Uso nesta concepção</h2>
@@ -203,6 +227,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <h2 class="anchored" data-anchor-id="limitações">Limitações</h2>
 <p>As cotas amostradas são de superfície do terreno, não de fundo de galerias. O MDT não substitui nivelamento de poços de visita, levantamento de soleiras, cadastro de redes enterradas ou levantamento topográfico para projeto básico.</p>
 <p>O procedimento de criação, fontes e limitações do MDT está organizado na pasta <code>04_MDT_HIBRIDO</code> e será incorporado como capítulo metodológico do relatório final.</p>
+</section>
+<section id="limitações-e-requisitos-para-projeto-básico" class="level2">
+<h2 class="anchored" data-anchor-id="limitações-e-requisitos-para-projeto-básico">Limitações e requisitos para projeto básico</h2>
+<p>O MDT híbrido não substitui levantamento topográfico cadastral, nivelamento de poços de visita, cadastro de redes enterradas, sondagens, investigação geotécnica, controle de qualidade fotogramétrico ou pontos de controle GNSS vinculados ao Sistema Geodésico Brasileiro. Para um projeto básico, será necessário conferir a referência vertical, densificar pontos de controle, validar as cotas de entrada e saída, levantar seções e verificar as estruturas de dissipação. Qualquer grandeza não determinada deve permanecer registrada como <code>null</code> ou “não determinada”, sem estimativa não documentada.</p>
 
 
 </section>

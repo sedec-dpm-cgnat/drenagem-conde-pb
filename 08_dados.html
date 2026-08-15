@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4. Rede importada e modelo SWMM – Drenagem Conde/PB</title>
+<title>8. Dados para download – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">MDT híbrido</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./04_rede_swmm.html" aria-current="page"> 
+    <a class="nav-link" href="./04_rede_swmm.html"> 
 <span class="menu-text">Rede e SWMM</span></a>
   </li>  
   <li class="nav-item">
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">Plano de trabalho</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./08_dados.html"> 
+    <a class="nav-link active" href="./08_dados.html" aria-current="page"> 
 <span class="menu-text">Dados para download</span></a>
   </li>  
 </ul>
@@ -161,10 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#rede-de-partida-da-bacia-a" id="toc-rede-de-partida-da-bacia-a" class="nav-link active" data-scroll-target="#rede-de-partida-da-bacia-a">Rede de partida da Bacia A</a></li>
-  <li><a href="#arquivos-swmm" id="toc-arquivos-swmm" class="nav-link" data-scroll-target="#arquivos-swmm">Arquivos SWMM</a></li>
-  <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">Áreas de contribuição</a></li>
-  <li><a href="#próxima-frente-bacia-b" id="toc-próxima-frente-bacia-b" class="nav-link" data-scroll-target="#próxima-frente-bacia-b">Próxima frente: Bacia B</a></li>
+  <li><a href="#bacias-de-drenagem-de-trabalho" id="toc-bacias-de-drenagem-de-trabalho" class="nav-link active" data-scroll-target="#bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</a></li>
+  <li><a href="#mdt-híbrido-e-produtos-derivados" id="toc-mdt-híbrido-e-produtos-derivados" class="nav-link" data-scroll-target="#mdt-híbrido-e-produtos-derivados">MDT híbrido e produtos derivados</a></li>
+  <li><a href="#curvas-de-nível" id="toc-curvas-de-nível" class="nav-link" data-scroll-target="#curvas-de-nível">Curvas de nível</a></li>
+  <li><a href="#fluxo-superficial-e-rede" id="toc-fluxo-superficial-e-rede" class="nav-link" data-scroll-target="#fluxo-superficial-e-rede">Fluxo superficial e rede</a></li>
+  <li><a href="#o-que-ainda-não-está-no-pacote-público" id="toc-o-que-ainda-não-está-no-pacote-público" class="nav-link" data-scroll-target="#o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</a></li>
   </ul>
 </nav>
     </div>
@@ -173,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">4. Rede importada e modelo SWMM</h1>
+<h1 class="title">8. Dados para download</h1>
 </div>
 
 
@@ -190,49 +191,186 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="rede-de-partida-da-bacia-a" class="level2">
-<h2 class="anchored" data-anchor-id="rede-de-partida-da-bacia-a">Rede de partida da Bacia A</h2>
-<p>A rede foi reunida a partir dos arquivos <code>TroncoA*.shp</code>, <code>ColetorA*.shp</code> e <code>ColetarA6.shp</code>. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.</p>
-<div class="metric-grid">
-<div class="metric-card">
-<span class="metric">9</span><span class="label">arquivos/traçados de tronco</span>
-</div>
-<div class="metric-card">
-<span class="metric">95</span><span class="label">feições coletoras de origem</span>
-</div>
-<div class="metric-card">
-<span class="metric">16</span><span class="label">componentes conectados</span>
-</div>
-<div class="metric-card">
-<span class="metric">40</span><span class="label">saídas provisórias</span>
-</div>
-</div>
+<p>Esta página reúne os arquivos públicos de trabalho usados na concepção preliminar. Os produtos de análise estão em <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>, salvo os GeoJSON preparados para o painel web, que estão em WGS84 para visualização.</p>
+<section id="bacias-de-drenagem-de-trabalho" class="level2">
+<h2 class="anchored" data-anchor-id="bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/bacia_A.geojson">Bacia A — revisão D8</a></td>
+<td>GeoJSON</td>
+<td>Bacia em que o lançamento da rede e o modelo SWMM já avançaram</td>
+</tr>
+<tr class="even">
+<td><a href="data/bacia_B.geojson">Bacia B — revisão D8</a></td>
+<td>GeoJSON</td>
+<td>Bacia delimitada; lançamento da rede ainda pendente</td>
+</tr>
+<tr class="odd">
+<td><a href="data/bacias_AB_revisadas_D8.geojson">Bacias A+B — revisão D8</a></td>
+<td>GeoJSON</td>
+<td>Referência conjunta do painel web</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/bacias/Bacias_AB_revisadas_D8.gpkg">Bacias A+B — GeoPackage</a></td>
+<td>GPKG</td>
+<td>Camada de análise em EPSG:31985</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/bacias/Bacia_A_revisada_D8.kmz">Bacia A — KMZ</a></td>
+<td>KMZ</td>
+<td>Abrir no Google Earth Pro</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/bacias/Bacia_B_revisada_D8.kmz">Bacia B — KMZ</a></td>
+<td>KMZ</td>
+<td>Abrir no Google Earth Pro</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/bacias/Bacia_A_revisada_D8.zip">Bacia A — shapefile</a></td>
+<td>ZIP/SHP</td>
+<td>Inclui SHP, SHX, DBF e PRJ</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/bacias/Bacia_B_revisada_D8.zip">Bacia B — shapefile</a></td>
+<td>ZIP/SHP</td>
+<td>Inclui SHP, SHX, DBF e PRJ</td>
+</tr>
+</tbody>
+</table>
+<p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B será lançada na próxima etapa.</p>
+</section>
+<section id="mdt-híbrido-e-produtos-derivados" class="level2">
+<h2 class="anchored" data-anchor-id="mdt-híbrido-e-produtos-derivados">MDT híbrido e produtos derivados</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/mdt/MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif">MDT híbrido completo com curvas KMZ — 5 m</a></td>
+<td>GeoTIFF</td>
+<td>Modelo regional de referência, com cobertura necessária para o entorno</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/mdt/MDT_hibrido_Bacias_AB_5m_EPSG31985.tif">MDT híbrido recortado A+B — 5 m</a></td>
+<td>GeoTIFF</td>
+<td>Modelo de partida para as duas bacias de trabalho</td>
+</tr>
+</tbody>
+</table>
+<p>O MDT de trabalho foi construído a partir da base altimétrica legada derivada de ANADEM/curvas de nível, com complementação pelo levantamento fotogramétrico do drone na área efetivamente coberta. A base foi harmonizada em grade de 5 m, ajustada à referência altimétrica disponível, verificada por sobreposição e recortada para as Bacias A+B. O levantamento de drone melhora a representação local onde existe cobertura, mas não transforma automaticamente o produto em levantamento cadastral ou projeto básico.</p>
+</section>
+<section id="curvas-de-nível" class="level2">
+<h2 class="anchored" data-anchor-id="curvas-de-nível">Curvas de nível</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_1m.gpkg">Curvas A+B de 1 m — GeoPackage</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_5m.gpkg">Curvas A+B de 5 m — GeoPackage</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_combinadas.gpkg">Curvas A+B combinadas — GeoPackage</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_1m.kmz">Curvas A+B de 1 m — KMZ</a></td>
+<td>KMZ</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_5m.kmz">Curvas A+B de 5 m — KMZ</a></td>
+<td>KMZ</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_1m.zip">Curvas A+B de 1 m — shapefile</a></td>
+<td>ZIP/SHP</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_5m.zip">Curvas A+B de 5 m — shapefile</a></td>
+<td>ZIP/SHP</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/curvas/curvas_nivel_AB_combinadas.zip">Curvas A+B combinadas — shapefile</a></td>
+<td>ZIP/SHP</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fluxo-superficial-e-rede" class="level2">
+<h2 class="anchored" data-anchor-id="fluxo-superficial-e-rede">Fluxo superficial e rede</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/fluxo/linhas_fluxo_principais_AB.gpkg">Linhas de fluxo principais A+B</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/fluxo/linhas_fluxo_principais_AB.kmz">Linhas de fluxo principais A+B</a></td>
+<td>KMZ</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/fluxo/setas_fluxo_terreno_AB_densas.gpkg">Setas de fluxo densas A+B</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/metas/Conde_Pontos_metas.gpkg">Pontos de metas</a></td>
+<td>GPKG</td>
+</tr>
+<tr class="odd">
+<td><a href="data/rede_linhas_A_nodal.geojson">Rede nodal da Bacia A</a></td>
+<td>GeoJSON</td>
+</tr>
+<tr class="even">
+<td><a href="data/rede_nos_A.geojson">Nós da rede da Bacia A</a></td>
+<td>GeoJSON</td>
+</tr>
+<tr class="odd">
+<td><a href="data/trechos_dissipacao.geojson">Trechos de dissipação</a></td>
+<td>GeoJSON</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="o-que-ainda-não-está-no-pacote-público" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</h2>
+<p>Os rasters brutos do WebODM — ortomosaico, DSM e DTM de alta resolução — são arquivos muito grandes para o limite operacional deste repositório. Eles permanecem organizados na pasta local do projeto e serão disponibilizados por armazenamento próprio quando houver definição institucional para publicação. O produto altimétrico de referência para esta fase é o <strong>MDT híbrido recortado A+B</strong> acima.</p>
 <div class="warning callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Alerta topológico.</strong> Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição.</p>
+<p><strong>Controle de versão.</strong> Antes de usar qualquer arquivo para contratação, conferir a versão do relatório, o CRS, a origem, a data de processamento, a cobertura do drone e as limitações registradas no capítulo do MDT híbrido.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="arquivos-swmm" class="level2">
-<h2 class="anchored" data-anchor-id="arquivos-swmm">Arquivos SWMM</h2>
-<ul>
-<li><code>CONDE_BACIA_A_REDE_PRELIM_TR25.inp</code> — chuva tradicional TR25;</li>
-<li><code>CONDE_BACIA_A_REDE_PRELIM_TR50.inp</code> — chuva tradicional TR50.</li>
-</ul>
-<p>Os arquivos são preliminares. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados.</p>
-</section>
-<section id="áreas-de-contribuição" class="level2">
-<h2 class="anchored" data-anchor-id="áreas-de-contribuição">Áreas de contribuição</h2>
-<p>As 208 áreas atuais são um template Voronoi para não deixar a estrutura do SWMM vazia. Elas devem ser redesenhadas ou mescladas no ArcMap conforme o escoamento de ruas, quadras, sarjetas e pontos de entrada.</p>
-</section>
-<section id="próxima-frente-bacia-b" class="level2">
-<h2 class="anchored" data-anchor-id="próxima-frente-bacia-b">Próxima frente: Bacia B</h2>
-<p>A Bacia B já possui limite revisado, MDT híbrido conjunto, curvas e linhas de fluxo. Ainda falta lançar seus troncos principais, coletores, pontos de saída e áreas de contribuição. O modelo SWMM será mantido separado por bacia durante a montagem e depois poderá receber uma verificação conjunta de continuidade, desde que exista conexão hidráulica comprovada entre as unidades.</p>
 
 
 </section>

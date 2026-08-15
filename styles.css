@@ -38,7 +38,7 @@ body {
 .institutional-hero { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; }
 .institutional-hero .hero-title { color: var(--sedec-cream); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.15; }
 .institutional-hero .hero-subtitle { color: #dce2f4; margin-top: .3rem; }
-.institutional-hero img { max-height: 88px; max-width: 195px; object-fit: contain; }
+.institutional-hero img { width: 118px; height: 118px; max-height: none; max-width: none; object-fit: contain; border-radius: 50%; background: #ffffff; }
 .institutional-hero h1 { color: var(--sedec-cream); margin: 0; font-weight: 700; }
 .institutional-hero p { color: #dce2f4; margin: .25rem 0 0; }
 h1, h2, h3 { color: var(--sedec-ink); }
@@ -74,6 +74,6 @@ code { color: var(--sedec-navy); background: #eee9df; }
 @media (max-width: 700px) {
   .institutional-hero { grid-template-columns: 1fr 1fr; }
   .institutional-hero h1, .institutional-hero p { grid-column: 1 / -1; grid-row: 1; padding-top: 4.5rem; }
-  .institutional-hero img { max-height: 64px; max-width: 145px; }
+  .institutional-hero img { width: 82px; height: 82px; max-height: none; max-width: none; }
   .map-figure img { max-height: none; }
 }

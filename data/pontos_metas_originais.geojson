@@ -1,0 +1,198 @@
+{
+  "type": "FeatureCollection",
+  "name": "pontos_metas_originais.geojson",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "1i",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.913314,
+          -7.269335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "1f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.918025,
+          -7.275745000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "2f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.915097,
+          -7.274733999999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "2i - foto?",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.91281676925527,
+          -7.271781090663317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "4i",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.817668,
+          -7.266716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "4f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.81781647965214,
+          -7.268824418747595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "3i",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.918156,
+          -7.267894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "3f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.92196031340875,
+          -7.26773831190425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "5i",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.920593,
+          -7.261715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "5f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.919952,
+          -7.260452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "6f",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.91723436187772,
+          -7.262630955907704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nome_original": "6i",
+        "classe_original": "Conde",
+        "fonte_original": "Conde_Pontos_metas.kmz",
+        "descricao": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.91707927535207,
+          -7.262312980213921
+        ]
+      }
+    }
+  ]
+}

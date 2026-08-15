@@ -67,8 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3R9j9bJ8j1iT4s3d6W4p4U6G9J0fI=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const note = document.createElement('div');
@@ -167,7 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul class="collapse">
   <li><a href="#conferência-da-cobertura-da-rede" id="toc-conferência-da-cobertura-da-rede" class="nav-link" data-scroll-target="#conferência-da-cobertura-da-rede">Conferência da cobertura da rede</a></li>
   </ul></li>
-  <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a></li>
+  <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a>
+  <ul class="collapse">
+  <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</a></li>
+  </ul></li>
   <li><a href="#dissipadores-critério-para-a-etapa-seguinte" id="toc-dissipadores-critério-para-a-etapa-seguinte" class="nav-link" data-scroll-target="#dissipadores-critério-para-a-etapa-seguinte">6.1.5 Dissipadores: critério para a etapa seguinte</a></li>
   <li><a href="#enquadramento-federal-a-verificar" id="toc-enquadramento-federal-a-verificar" class="nav-link" data-scroll-target="#enquadramento-federal-a-verificar">6.1.6 Enquadramento federal a verificar</a>
   <ul class="collapse">
@@ -345,6 +346,51 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>Os códigos são administrativos e preliminares. Eles não correspondem ainda a um quantitativo de obras nem autorizam a execução física.</p>
+<section id="associação-preliminar-entre-bacias-rede-e-metas" class="level3">
+<h3 class="anchored" data-anchor-id="associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frente</th>
+<th>Bacia A</th>
+<th>Bacia B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Concepção integrada</td>
+<td>Rede preliminar em revisão; conferir todos os componentes, áreas, saídas e dissipadores</td>
+<td>Lançamento ainda pendente sobre o MDT híbrido e as linhas de fluxo</td>
+</tr>
+<tr class="even">
+<td>Troncos principais</td>
+<td>Prioridade inicial nos trechos críticos confirmados e conectados a descarga segura</td>
+<td>Prioridade a definir após o lançamento e a identificação dos setores críticos</td>
+</tr>
+<tr class="odd">
+<td>Coletores indispensáveis</td>
+<td>Somente os necessários para alimentar e fechar os troncos priorizados</td>
+<td>Serão definidos junto com as áreas de contribuição das quadras</td>
+</tr>
+<tr class="even">
+<td>Dissipadores e saídas</td>
+<td>Usar <code>TrechosDissipacao.shp</code> como referência de campo e integrar após a validação das vazões</td>
+<td>Identificar e marcar após a definição dos exutórios e da energia de descarga</td>
+</tr>
+<tr class="odd">
+<td>Metas do Plano</td>
+<td>M-03, M-04, M-05 e M-06 podem ser detalhadas primeiro nesta frente</td>
+<td>M-02 a M-06 serão detalhadas após o lançamento da rede</td>
+</tr>
+</tbody>
+</table>
+<p>Essa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal.</p>
+</section>
 </section>
 <section id="dissipadores-critério-para-a-etapa-seguinte" class="level2">
 <h2 class="anchored" data-anchor-id="dissipadores-critério-para-a-etapa-seguinte">6.1.5 Dissipadores: critério para a etapa seguinte</h2>

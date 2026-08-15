@@ -67,8 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3R9j9bJ8j1iT4s3d6W4p4U6G9J0fI=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const note = document.createElement('div');
@@ -167,9 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">4.4 Áreas de contribuição</a></li>
   <li><a href="#dissipadores-e-saídas" id="toc-dissipadores-e-saídas" class="nav-link" data-scroll-target="#dissipadores-e-saídas">4.5 Dissipadores e saídas</a></li>
   <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</a></li>
-  <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.7 Critérios de verificação hidráulica</a></li>
-  <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.8 Próxima rodada</a></li>
-  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.9 Validação paralela que deve ser feita no SWMM</a>
+  <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.7 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
+  <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.8 Critérios de verificação hidráulica</a></li>
+  <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.9 Próxima rodada</a></li>
+  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.10 Validação paralela que deve ser feita no SWMM</a>
   <ul class="collapse">
   <li><a href="#checklist-de-conferência" id="toc-checklist-de-conferência" class="nav-link" data-scroll-target="#checklist-de-conferência">Checklist de conferência</a></li>
   </ul></li>
@@ -324,8 +323,49 @@ document.addEventListener('DOMContentLoaded', function () {
 <h2 class="anchored" data-anchor-id="bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</h2>
 <p>A Bacia B possui limite, MDT, curvas e linhas de fluxo organizados, mas ainda falta lançar seus troncos, coletores, áreas e saídas. Os modelos serão mantidos separados durante a montagem para evitar conectar unidades sem comprovação hidráulica. Uma verificação conjunta só será feita onde a conexão entre bacias, exutórios ou sistemas for demonstrada.</p>
 </section>
+<section id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="level2">
+<h2 class="anchored" data-anchor-id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.7 Rede proposta para as duas bacias e recorte do Plano de Trabalho</h2>
+<p>O desenho final do relatório deverá distinguir claramente <strong>rede de concepção</strong> de <strong>trechos que serão convertidos em metas</strong>. A rede de concepção cobre as duas unidades de drenagem; a seleção para o Plano de Trabalho será feita por criticidade, continuidade hidráulica, população/infraestrutura protegida, risco de erosão a jusante e viabilidade de execução.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Unidade</th>
+<th>Concepção de rede</th>
+<th>Trechos candidatos às metas</th>
+<th>Fechamento esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bacia A</strong></td>
+<td>Rede preliminar já lançada, com troncos, coletores, nós, áreas template e dissipadores/saídas em revisão</td>
+<td><code>TroncoA*.shp</code>, <code>ColetorA*.shp</code>/<code>ColetarA6.shp</code> e <code>TrechosDissipacao.shp</code>, restringidos aos setores críticos confirmados</td>
+<td>Rede revisada, áreas vinculadas, dissipadores conectados e cenários TR25/TR50 rodados</td>
+</tr>
+<tr class="even">
+<td><strong>Bacia B</strong></td>
+<td>Rede a lançar a partir do MDT híbrido, curvas, linhas de fluxo, ruas, quadras e ocorrências</td>
+<td>Troncos e coletores que conectem os setores críticos a saídas verificadas; quantitativos ainda não determinados</td>
+<td>Lançamento GIS, áreas, saídas, dissipadores e modelo SWMM próprios da Bacia B</td>
+</tr>
+<tr class="odd">
+<td><strong>Bacias A + B</strong></td>
+<td>Concepção integrada, sem conectar automaticamente uma bacia à outra</td>
+<td>Metas M-02 a M-06 do Plano de Trabalho, com prioridade para troncos e dissipadores e coletores indispensáveis</td>
+<td>Integração somente onde houver comprovação topográfica e hidráulica</td>
+</tr>
+</tbody>
+</table>
+<p>Assim, o relatório poderá apresentar a rede proposta para as duas bacias sem afirmar que a Bacia B já possui uma rede executável. Os nomes dos links, extensões, diâmetros, vazões e quantitativos da Bacia B permanecerão <strong>não determinados</strong> até a conclusão do lançamento e da validação.</p>
+</section>
 <section id="critérios-de-verificação-hidráulica" class="level2">
-<h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.7 Critérios de verificação hidráulica</h2>
+<h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.8 Critérios de verificação hidráulica</h2>
 <p>Cada rodada deverá reportar:</p>
 <ul>
 <li>continuidade da rede e componentes desconectados;</li>
@@ -340,11 +380,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 </section>
 <section id="próxima-rodada" class="level2">
-<h2 class="anchored" data-anchor-id="próxima-rodada">4.8 Próxima rodada</h2>
+<h2 class="anchored" data-anchor-id="próxima-rodada">4.9 Próxima rodada</h2>
 <p>A sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
 </section>
 <section id="validação-paralela-que-deve-ser-feita-no-swmm" class="level2">
-<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.9 Validação paralela que deve ser feita no SWMM</h2>
+<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.10 Validação paralela que deve ser feita no SWMM</h2>
 <p>Enquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.</p>
 <p>O modelo atual possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Os diâmetros de 0,60 m e 0,80 m, a rugosidade 0,013, o CN médio 79 e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
 <section id="checklist-de-conferência" class="level3">

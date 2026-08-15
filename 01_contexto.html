@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1. Contexto e objetivo – Drenagem Conde/PB</title>
+<title>1. Introdução e contextualização – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,35 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./01_contexto.html" aria-current="page"> 
-<span class="menu-text">Contexto</span></a>
+<span class="menu-text">1 · Introdução e contextualização</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_base_cartografica.html"> 
-<span class="menu-text">Base cartográfica</span></a>
+<span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_mdt_hibrido.html"> 
-<span class="menu-text">MDT híbrido</span></a>
+<span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_rede_swmm.html"> 
-<span class="menu-text">Rede e SWMM</span></a>
+<span class="menu-text">4 · Modelagem hidráulica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./05_hidrologia.html"> 
-<span class="menu-text">Hidrologia</span></a>
+<span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./06_entregaveis.html"> 
-<span class="menu-text">Entregáveis</span></a>
+<span class="menu-text">6 · Conclusões e encaminhamentos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./07_plano_trabalho.html"> 
-<span class="menu-text">Plano de trabalho</span></a>
+<span class="menu-text">6.1 · Modelo de Plano de Trabalho</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./08_dados.html"> 
-<span class="menu-text">Dados para download</span></a>
+<span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -161,12 +161,16 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link active" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#fases-do-estudo" id="toc-fases-do-estudo" class="nav-link" data-scroll-target="#fases-do-estudo">Fases do estudo</a>
+  <li><a href="#finalidade" id="toc-finalidade" class="nav-link active" data-scroll-target="#finalidade">1.1 Finalidade</a></li>
+  <li><a href="#contextualização-do-problema" id="toc-contextualização-do-problema" class="nav-link" data-scroll-target="#contextualização-do-problema">1.2 Contextualização do problema</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">1.3 Objetivos</a>
   <ul class="collapse">
-  <li><a href="#situação-territorial-das-duas-bacias" id="toc-situação-territorial-das-duas-bacias" class="nav-link" data-scroll-target="#situação-territorial-das-duas-bacias">Situação territorial das duas bacias</a></li>
+  <li><a href="#objetivo-geral" id="toc-objetivo-geral" class="nav-link" data-scroll-target="#objetivo-geral">Objetivo geral</a></li>
+  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos">Objetivos específicos</a></li>
   </ul></li>
-  <li><a href="#princípio-de-rastreabilidade" id="toc-princípio-de-rastreabilidade" class="nav-link" data-scroll-target="#princípio-de-rastreabilidade">Princípio de rastreabilidade</a></li>
+  <li><a href="#escopo-e-fases" id="toc-escopo-e-fases" class="nav-link" data-scroll-target="#escopo-e-fases">1.4 Escopo e fases</a></li>
+  <li><a href="#situação-territorial-das-bacias" id="toc-situação-territorial-das-bacias" class="nav-link" data-scroll-target="#situação-territorial-das-bacias">1.5 Situação territorial das bacias</a></li>
+  <li><a href="#rastreabilidade-e-governança" id="toc-rastreabilidade-e-governança" class="nav-link" data-scroll-target="#rastreabilidade-e-governança">1.6 Rastreabilidade e governança</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">1. Contexto e objetivo</h1>
+<h1 class="title">1. Introdução e contextualização</h1>
 </div>
 
 
@@ -192,15 +196,51 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="objetivo" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
-<p>Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.</p>
-<p>Neste relatório, a expressão <strong>Bacia A</strong> identifica a unidade em que o lançamento da rede de troncos e coletores já avançou e será revisado antes da simulação final. <strong>Bacia B</strong> identifica a unidade já delimitada no GIS, cujo lançamento da rede ainda será realizado. A separação é mantida em mapas, camadas, arquivos de entrada, áreas de contribuição, cenários e metas para evitar misturar resultados de etapas diferentes.</p>
-<p>O material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.</p>
-<p>O relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante.</p>
+<div class="warning callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<strong>Minuta técnica preliminar em construção.</strong> O relatório será atualizado à medida que forem revisados o lançamento da rede, as áreas de contribuição, os dissipadores e os cenários do SWMM. As conclusões desta versão orientam o Plano de Trabalho, mas não substituem projeto básico ou executivo.
+</div>
+</div>
+</div>
+<section id="finalidade" class="level2">
+<h2 class="anchored" data-anchor-id="finalidade">1.1 Finalidade</h2>
+<p>Este relatório organiza a concepção preliminar para instruir a elaboração do <strong>Plano de Trabalho de Reconstrução do Município de Conde/PB</strong>, com foco na redução de processos erosivos, alagamentos e transferências de risco associados ao escoamento superficial concentrado.</p>
+<p>O estudo parte de duas unidades territoriais de trabalho:</p>
+<ul>
+<li><strong>Bacia A:</strong> frente já avançada, com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição template;</li>
+<li><strong>Bacia B:</strong> bacia delimitada e preparada no GIS, cujo lançamento da rede ainda será realizado.</li>
+</ul>
+<p>Essa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas.</p>
 </section>
-<section id="fases-do-estudo" class="level2">
-<h2 class="anchored" data-anchor-id="fases-do-estudo">Fases do estudo</h2>
+<section id="contextualização-do-problema" class="level2">
+<h2 class="anchored" data-anchor-id="contextualização-do-problema">1.2 Contextualização do problema</h2>
+<p>A hipótese de trabalho é que os processos erosivos observados resultam da combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura urbana de drenagem. A hipótese deverá ser confrontada com vistoria, cadastro de ocorrências, levantamento topográfico, inspeção das ruas e verificação hidráulica.</p>
+<p>A reconstrução não deve apenas repor uma condição vulnerável. O princípio orientador é <strong>reconstruir melhor</strong>, priorizando soluções que reduzam o risco futuro, mantenham continuidade hidráulica e protejam os trechos a jusante. Por isso, o escopo preliminar não propõe implantar toda a rede municipal nesta etapa: propõe selecionar troncos principais, coletores indispensáveis e dissipadores nos setores críticos, sempre verificando a bacia contribuinte.</p>
+</section>
+<section id="objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos">1.3 Objetivos</h2>
+<section id="objetivo-geral" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-geral">Objetivo geral</h3>
+<p>Construir uma base técnica, espacial e hidrológico-hidráulica reproduzível para priorizar intervenções de drenagem nas Bacias A e B e apoiar a elaboração do Plano de Trabalho de Reconstrução.</p>
+</section>
+<section id="objetivos-específicos" class="level3">
+<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos específicos</h3>
+<ol type="1">
+<li>Consolidar a base cartográfica em SIRGAS 2000 / UTM zona 25S.</li>
+<li>Documentar a construção do MDT híbrido, suas fontes, limitações e condições de uso.</li>
+<li>Revisar a drenagem natural e o lançamento preliminar de troncos, coletores e saídas.</li>
+<li>Montar o modelo SWMM com áreas de contribuição, chuvas de projeto e dissipadores.</li>
+<li>Identificar trechos prioritários, necessidades de levantamento e metas verificáveis.</li>
+<li>Separar o que é evidência disponível, hipótese de concepção, resultado de simulação e decisão a confirmar.</li>
+</ol>
+</section>
+</section>
+<section id="escopo-e-fases" class="level2">
+<h2 class="anchored" data-anchor-id="escopo-e-fases">1.4 Escopo e fases</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -217,33 +257,39 @@ document.addEventListener('DOMContentLoaded', function () {
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Rede importada, MDT híbrido e estrutura preliminar SWMM</td>
-<td>Em revisão</td>
+<td>Base cartográfica, MDT híbrido e revisão das Bacias A e B</td>
+<td>Organizada</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Áreas reais de quadras e contribuição</td>
-<td>Próxima etapa</td>
+<td>Lançamento da rede da Bacia A e estrutura inicial do SWMM</td>
+<td>Em revisão</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Verificação hidráulica TR25/TR50</td>
-<td>Após revisão da rede</td>
+<td>Lançamento da rede da Bacia B</td>
+<td>Próxima etapa</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Atualização climática com NEX-GDDP-CMIP6</td>
-<td>Segunda etapa hidrológica</td>
+<td>Áreas reais de contribuição, dissipadores e conexões</td>
+<td>Em desenvolvimento</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>Relatório técnico, mapas finais e plano de trabalho</td>
+<td>Chuvas tradicionais e cenários climáticos</td>
+<td>Linha de base montada; atualização climática posterior</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Análise, metas do Plano de Trabalho e relatório final</td>
 <td>Após validação</td>
 </tr>
 </tbody>
 </table>
-<section id="situação-territorial-das-duas-bacias" class="level3">
-<h3 class="anchored" data-anchor-id="situação-territorial-das-duas-bacias">Situação territorial das duas bacias</h3>
+</section>
+<section id="situação-territorial-das-bacias" class="level2">
+<h2 class="anchored" data-anchor-id="situação-territorial-das-bacias">1.5 Situação territorial das bacias</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -260,21 +306,26 @@ document.addEventListener('DOMContentLoaded', function () {
 <tbody>
 <tr class="odd">
 <td>Bacia A</td>
-<td>Rede preliminar, nós, dissipadores e áreas template já organizados</td>
-<td>Revisar continuidade, áreas reais e parâmetros do SWMM</td>
+<td>Rede preliminar, nós, saídas e áreas template disponíveis</td>
+<td>Revisar continuidade, trechos, áreas e parâmetros do SWMM</td>
 </tr>
 <tr class="even">
 <td>Bacia B</td>
-<td>Limite revisado e produtos topográficos disponíveis</td>
-<td>Lançar troncos, coletores, áreas de contribuição e saídas</td>
+<td>Limite revisado, MDT, curvas e fluxos disponíveis</td>
+<td>Lançar troncos, coletores, áreas e pontos de saída</td>
+</tr>
+<tr class="odd">
+<td>A+B</td>
+<td>Base híbrida e produtos derivados organizados</td>
+<td>Usar como referência territorial conjunta, sem misturar redes não conectadas</td>
 </tr>
 </tbody>
 </table>
 </section>
-</section>
-<section id="princípio-de-rastreabilidade" class="level2">
-<h2 class="anchored" data-anchor-id="princípio-de-rastreabilidade">Princípio de rastreabilidade</h2>
-<p>Cada etapa será mantida em arquivos versionados, com fontes preservadas, premissas declaradas, limitações e histórico de alterações. A publicação no GitHub ocorrerá depois da revisão da geometria e da confirmação do conteúdo que poderá ser tornado público.</p>
+<section id="rastreabilidade-e-governança" class="level2">
+<h2 class="anchored" data-anchor-id="rastreabilidade-e-governança">1.6 Rastreabilidade e governança</h2>
+<p>Cada etapa será mantida com fonte, CRS, data, premissa, limitação e histórico de alteração. O conteúdo publicado é uma minuta técnica pública em construção. Antes de qualquer contratação ou compartilhamento institucional ampliado, devem ser revisados os autores, os dados pessoais, as fotografias, a situação de publicação dos arquivos e a responsabilidade técnica pelos produtos.</p>
+<p>O padrão editorial segue a organização visual e documental usada pelo DPM/SEDEC, com identidade institucional, mapas verificáveis, arquivos para download e versionamento no GitHub Pages.</p>
 
 
 </section>

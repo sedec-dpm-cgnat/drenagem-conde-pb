@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3. MDT híbrido – Drenagem Conde/PB</title>
+<title>3. Estudos hidrológicos – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,35 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./01_contexto.html"> 
-<span class="menu-text">Contexto</span></a>
+<span class="menu-text">1 · Introdução e contextualização</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_base_cartografica.html"> 
-<span class="menu-text">Base cartográfica</span></a>
+<span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./03_mdt_hibrido.html" aria-current="page"> 
-<span class="menu-text">MDT híbrido</span></a>
+<span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_rede_swmm.html"> 
-<span class="menu-text">Rede e SWMM</span></a>
+<span class="menu-text">4 · Modelagem hidráulica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./05_hidrologia.html"> 
-<span class="menu-text">Hidrologia</span></a>
+<span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./06_entregaveis.html"> 
-<span class="menu-text">Entregáveis</span></a>
+<span class="menu-text">6 · Conclusões e encaminhamentos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./07_plano_trabalho.html"> 
-<span class="menu-text">Plano de trabalho</span></a>
+<span class="menu-text">6.1 · Modelo de Plano de Trabalho</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./08_dados.html"> 
-<span class="menu-text">Dados para download</span></a>
+<span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -161,12 +161,12 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#produto-de-referência" id="toc-produto-de-referência" class="nav-link active" data-scroll-target="#produto-de-referência">Produto de referência</a></li>
-  <li><a href="#histórico-e-metodologia-de-construção" id="toc-histórico-e-metodologia-de-construção" class="nav-link" data-scroll-target="#histórico-e-metodologia-de-construção">Histórico e metodologia de construção</a></li>
-  <li><a href="#base-hidrográfica-derivada" id="toc-base-hidrográfica-derivada" class="nav-link" data-scroll-target="#base-hidrográfica-derivada">Base hidrográfica derivada</a></li>
-  <li><a href="#uso-nesta-concepção" id="toc-uso-nesta-concepção" class="nav-link" data-scroll-target="#uso-nesta-concepção">Uso nesta concepção</a></li>
-  <li><a href="#limitações" id="toc-limitações" class="nav-link" data-scroll-target="#limitações">Limitações</a></li>
-  <li><a href="#limitações-e-requisitos-para-projeto-básico" id="toc-limitações-e-requisitos-para-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-requisitos-para-projeto-básico">Limitações e requisitos para projeto básico</a></li>
+  <li><a href="#linha-de-base-tradicional" id="toc-linha-de-base-tradicional" class="nav-link active" data-scroll-target="#linha-de-base-tradicional">3.1 Linha de base tradicional</a></li>
+  <li><a href="#áreas-de-contribuição-e-perdas" id="toc-áreas-de-contribuição-e-perdas" class="nav-link" data-scroll-target="#áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</a></li>
+  <li><a href="#transformação-chuva-vazão" id="toc-transformação-chuva-vazão" class="nav-link" data-scroll-target="#transformação-chuva-vazão">3.3 Transformação chuva-vazão</a></li>
+  <li><a href="#atualização-climática-com-nex-gddp-cmip6" id="toc-atualização-climática-com-nex-gddp-cmip6" class="nav-link" data-scroll-target="#atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</a></li>
+  <li><a href="#cenários-hidrológicos-propostos" id="toc-cenários-hidrológicos-propostos" class="nav-link" data-scroll-target="#cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</a></li>
+  <li><a href="#entregas-hidrológicas" id="toc-entregas-hidrológicas" class="nav-link" data-scroll-target="#entregas-hidrológicas">3.6 Entregas hidrológicas</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. MDT híbrido</h1>
+<h1 class="title">3. Estudos hidrológicos</h1>
 </div>
 
 
@@ -192,45 +192,140 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="produto-de-referência" class="level2">
-<h2 class="anchored" data-anchor-id="produto-de-referência">Produto de referência</h2>
-<p>O modelo usado nesta etapa é o <strong>MDT híbrido recortado para as Bacias A e B</strong>, em grade de 5 m e CRS EPSG:31985. O arquivo de referência é <code>MDT_hibrido_Bacias_AB_5m_EPSG31985.tif</code>; o arquivo <code>MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif</code> preserva a extensão maior para contexto e complementação.</p>
-</section>
-<section id="histórico-e-metodologia-de-construção" class="level2">
-<h2 class="anchored" data-anchor-id="histórico-e-metodologia-de-construção">Histórico e metodologia de construção</h2>
-<p>O produto foi organizado em uma sequência de integração de fontes, mantendo os arquivos intermediários e os registros de processamento na pasta <code>04_MDT_HIBRIDO</code>:</p>
-<ol type="1">
-<li><strong>Base altimétrica legada.</strong> Foi preservado o modelo mais abrangente derivado de ANADEM e das curvas de nível anteriormente disponíveis. Essa fonte fornece a cobertura territorial necessária, mas tem resolução e incerteza maiores que o levantamento local.</li>
-<li><strong>Levantamento fotogramétrico.</strong> As imagens do drone foram processadas no WebODM para obter produtos de superfície e terreno. O drone cobre apenas parte do território; por isso, seu produto não foi usado para preencher automaticamente toda a extensão das Bacias A e B.</li>
-<li><strong>Harmonização espacial.</strong> As fontes foram reprojetadas para SIRGAS 2000 / UTM 25S, conferidas quanto à extensão e reamostradas em grade métrica de 5 m. A área de sobreposição foi usada para comparar a superfície local com a base legada.</li>
-<li><strong>Ajuste altimétrico.</strong> Onde houve sobreposição e observações de referência, foi aplicado o ajuste documentado nos registros do projeto. A relação entre a fonte local e a referência foi usada para reduzir diferenças sistemáticas, sem afirmar precisão cadastral onde não há pontos de controle suficientes.</li>
-<li><strong>Composição híbrida.</strong> O levantamento do drone tem prioridade na área coberta e compatível; fora dela, a base legada mantém a continuidade espacial. A máscara de cobertura do drone permite identificar qual fonte domina cada pixel.</li>
-<li><strong>Correção hidrológica e recorte.</strong> O MDT foi verificado para orientar o fluxo superficial, derivar declividade e apoiar a revisão das bacias. Em seguida, foi recortado pela união das Bacias A e B, mantendo o mesmo CRS e tamanho de pixel.</li>
-</ol>
-<p>O procedimento detalhado, os nomes das bases, as máscaras, as estatísticas e as limitações estão documentados em <code>04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md</code>, <code>relatorio_hibrido_completo_curvas_KMZ.json</code> e <code>01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json</code>.</p>
-</section>
-<section id="base-hidrográfica-derivada" class="level2">
-<h2 class="anchored" data-anchor-id="base-hidrográfica-derivada">Base hidrográfica derivada</h2>
-<p>Do MDT híbrido foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Esses produtos são <strong>apoio à concepção</strong>: não representam automaticamente galerias enterradas, sarjetas, soleiras, bueiros ou divisores artificiais criados pela urbanização. A hidrologia urbana deve ser confrontada com ruas, quadras, pontos de entrada e cadastro de drenagem.</p>
-</section>
-<section id="uso-nesta-concepção" class="level2">
-<h2 class="anchored" data-anchor-id="uso-nesta-concepção">Uso nesta concepção</h2>
-<p>O MDT foi usado para:</p>
+<div class="info callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<strong>Estratégia hidrológica.</strong> A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas.
+</div>
+</div>
+</div>
+<section id="linha-de-base-tradicional" class="level2">
+<h2 class="anchored" data-anchor-id="linha-de-base-tradicional">3.1 Linha de base tradicional</h2>
+<p>A linha de base preliminar utiliza:</p>
 <ul>
-<li>amostrar cotas superficiais dos nós da rede;</li>
-<li>estimar declividades preliminares das áreas de contribuição;</li>
-<li>orientar o sentido inicial dos links pelo declive superficial;</li>
-<li>apoiar a revisão das bacias e dos caminhos naturais de escoamento.</li>
+<li>estação INMET 82798;</li>
+<li>relação IDF SGB/CPRM 2023;</li>
+<li>hietogramas de projeto TR25 e TR50;</li>
+<li>método de infiltração CN-SCS;</li>
+<li>CN médio preliminar igual a 79;</li>
+<li>30% de impermeabilização como premissa inicial.</li>
 </ul>
+<p>As chuvas foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos arquivos .inp preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo.</p>
 </section>
-<section id="limitações" class="level2">
-<h2 class="anchored" data-anchor-id="limitações">Limitações</h2>
-<p>As cotas amostradas são de superfície do terreno, não de fundo de galerias. O MDT não substitui nivelamento de poços de visita, levantamento de soleiras, cadastro de redes enterradas ou levantamento topográfico para projeto básico.</p>
-<p>O procedimento de criação, fontes e limitações do MDT está organizado na pasta <code>04_MDT_HIBRIDO</code> e será incorporado como capítulo metodológico do relatório final.</p>
+<section id="áreas-de-contribuição-e-perdas" class="level2">
+<h2 class="anchored" data-anchor-id="áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</h2>
+<p>As 208 áreas disponíveis no modelo atual são um template Voronoi. Elas preservam a estrutura do SWMM, mas ainda não representam definitivamente quadras, lotes, sarjetas ou pontos de entrada.</p>
+<p>Na revisão, cada subárea deverá receber:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th>Dados a confirmar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geometria</td>
+<td>área, largura característica e declividade</td>
+</tr>
+<tr class="even">
+<td>Superfície</td>
+<td>frações impermeável e permeável</td>
+</tr>
+<tr class="odd">
+<td>Infiltração</td>
+<td>CN, perdas iniciais e parâmetros do método escolhido</td>
+</tr>
+<tr class="even">
+<td>Conexão</td>
+<td>nó de entrada, caminho superficial ou ligação à galeria</td>
+</tr>
+<tr class="odd">
+<td>Controle</td>
+<td>origem da cota, ponto de saída e hipótese de contribuição</td>
+</tr>
+</tbody>
+</table>
+<p>A estrutura deve permitir distinguir a contribuição natural do terreno, a contribuição urbana concentrada e a contribuição captada pela rede.</p>
 </section>
-<section id="limitações-e-requisitos-para-projeto-básico" class="level2">
-<h2 class="anchored" data-anchor-id="limitações-e-requisitos-para-projeto-básico">Limitações e requisitos para projeto básico</h2>
-<p>O MDT híbrido não substitui levantamento topográfico cadastral, nivelamento de poços de visita, cadastro de redes enterradas, sondagens, investigação geotécnica, controle de qualidade fotogramétrico ou pontos de controle GNSS vinculados ao Sistema Geodésico Brasileiro. Para um projeto básico, será necessário conferir a referência vertical, densificar pontos de controle, validar as cotas de entrada e saída, levantar seções e verificar as estruturas de dissipação. Qualquer grandeza não determinada deve permanecer registrada como <code>null</code> ou “não determinada”, sem estimativa não documentada.</p>
+<section id="transformação-chuva-vazão" class="level2">
+<h2 class="anchored" data-anchor-id="transformação-chuva-vazão">3.3 Transformação chuva-vazão</h2>
+<p>O modelo deve ser avaliado por:</p>
+<ul>
+<li>balanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;</li>
+<li>coerência entre tempo de concentração, duração da chuva e tempo de simulação;</li>
+<li>sensibilidade a CN, impermeabilização e largura característica;</li>
+<li>comparação entre TR25 e TR50;</li>
+<li>identificação de subáreas que concentram vazões nos troncos e dissipadores;</li>
+<li>verificação de eventuais transferências de pico entre componentes.</li>
+</ul>
+<p>Nenhum resultado de vazão final deve ser apresentado como definitivo enquanto as áreas de quadras e as conexões topológicas permanecerem preliminares.</p>
+</section>
+<section id="atualização-climática-com-nex-gddp-cmip6" class="level2">
+<h2 class="anchored" data-anchor-id="atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</h2>
+<p>O banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
+<ol type="1">
+<li>período histórico de referência;</li>
+<li>janelas futuras;</li>
+<li>modelos climáticos e medida de consenso;</li>
+<li>máximas anuais e quantis;</li>
+<li>viés entre o histórico modelado e a estação observada;</li>
+<li>transformação de máximas diárias em curvas de duração e frequência;</li>
+<li>efeito dos cenários sobre a chuva de projeto e o dimensionamento.</li>
+</ol>
+<p>A conexão ao banco é somente leitura. O relatório deverá registrar consulta, célula, modelos, período, cenário, quantil, método de correção e versão do script. Não será aplicado um fator climático único sem justificar sua origem e sua faixa de incerteza.</p>
+</section>
+<section id="cenários-hidrológicos-propostos" class="level2">
+<h2 class="anchored" data-anchor-id="cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cenário</th>
+<th>Finalidade</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TR25 tradicional</td>
+<td>linha de base operacional</td>
+<td>arquivo preliminar disponível</td>
+</tr>
+<tr class="even">
+<td>TR50 tradicional</td>
+<td>verificação de maior recorrência</td>
+<td>arquivo preliminar disponível</td>
+</tr>
+<tr class="odd">
+<td>Histórico ajustado</td>
+<td>comparação com observações e viés</td>
+<td>próxima etapa</td>
+</tr>
+<tr class="even">
+<td>SSP126/245</td>
+<td>faixa de menor/intermediária emissão</td>
+<td>segunda etapa</td>
+</tr>
+<tr class="odd">
+<td>SSP370/585</td>
+<td>faixa de maior severidade climática</td>
+<td>segunda etapa</td>
+</tr>
+</tbody>
+</table>
+<p>A atualização climática não substitui a linha de base: ela deve permitir enxergar como a rede responde quando as premissas de precipitação são alteradas.</p>
+</section>
+<section id="entregas-hidrológicas" class="level2">
+<h2 class="anchored" data-anchor-id="entregas-hidrológicas">3.6 Entregas hidrológicas</h2>
+<p>A etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada.</p>
 
 
 </section>

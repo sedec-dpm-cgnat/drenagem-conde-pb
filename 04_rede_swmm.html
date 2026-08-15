@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4. Rede importada e modelo SWMM – Drenagem Conde/PB</title>
+<title>4. Modelagem hidráulica – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,35 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./01_contexto.html"> 
-<span class="menu-text">Contexto</span></a>
+<span class="menu-text">1 · Introdução e contextualização</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_base_cartografica.html"> 
-<span class="menu-text">Base cartográfica</span></a>
+<span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_mdt_hibrido.html"> 
-<span class="menu-text">MDT híbrido</span></a>
+<span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./04_rede_swmm.html" aria-current="page"> 
-<span class="menu-text">Rede e SWMM</span></a>
+<span class="menu-text">4 · Modelagem hidráulica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./05_hidrologia.html"> 
-<span class="menu-text">Hidrologia</span></a>
+<span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./06_entregaveis.html"> 
-<span class="menu-text">Entregáveis</span></a>
+<span class="menu-text">6 · Conclusões e encaminhamentos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./07_plano_trabalho.html"> 
-<span class="menu-text">Plano de trabalho</span></a>
+<span class="menu-text">6.1 · Modelo de Plano de Trabalho</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./08_dados.html"> 
-<span class="menu-text">Dados para download</span></a>
+<span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -161,10 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#rede-de-partida-da-bacia-a" id="toc-rede-de-partida-da-bacia-a" class="nav-link active" data-scroll-target="#rede-de-partida-da-bacia-a">Rede de partida da Bacia A</a></li>
-  <li><a href="#arquivos-swmm" id="toc-arquivos-swmm" class="nav-link" data-scroll-target="#arquivos-swmm">Arquivos SWMM</a></li>
-  <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">Áreas de contribuição</a></li>
-  <li><a href="#próxima-frente-bacia-b" id="toc-próxima-frente-bacia-b" class="nav-link" data-scroll-target="#próxima-frente-bacia-b">Próxima frente: Bacia B</a></li>
+  <li><a href="#rede-de-partida-da-bacia-a" id="toc-rede-de-partida-da-bacia-a" class="nav-link active" data-scroll-target="#rede-de-partida-da-bacia-a">4.1 Rede de partida da Bacia A</a></li>
+  <li><a href="#elementos-do-modelo" id="toc-elementos-do-modelo" class="nav-link" data-scroll-target="#elementos-do-modelo">4.2 Elementos do modelo</a></li>
+  <li><a href="#arquivos-swmm-preliminares" id="toc-arquivos-swmm-preliminares" class="nav-link" data-scroll-target="#arquivos-swmm-preliminares">4.3 Arquivos SWMM preliminares</a></li>
+  <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">4.4 Áreas de contribuição</a></li>
+  <li><a href="#dissipadores-e-saídas" id="toc-dissipadores-e-saídas" class="nav-link" data-scroll-target="#dissipadores-e-saídas">4.5 Dissipadores e saídas</a></li>
+  <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</a></li>
+  <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.7 Critérios de verificação hidráulica</a></li>
+  <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.8 Próxima rodada</a></li>
   </ul>
 </nav>
     </div>
@@ -173,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">4. Rede importada e modelo SWMM</h1>
+<h1 class="title">4. Modelagem hidráulica</h1>
 </div>
 
 
@@ -190,9 +194,19 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
+<div class="warning callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<strong>Modelo de concepção.</strong> A rede atual é uma estrutura de partida para revisão no ArcMap/QGIS e no SWMM. Os resultados só poderão orientar metas depois que a continuidade dos trechos, as áreas de contribuição, as cotas, os diâmetros e as condições de jusante forem conferidos.
+</div>
+</div>
+</div>
 <section id="rede-de-partida-da-bacia-a" class="level2">
-<h2 class="anchored" data-anchor-id="rede-de-partida-da-bacia-a">Rede de partida da Bacia A</h2>
-<p>A rede foi reunida a partir dos arquivos <code>TroncoA*.shp</code>, <code>ColetorA*.shp</code> e <code>ColetarA6.shp</code>. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.</p>
+<h2 class="anchored" data-anchor-id="rede-de-partida-da-bacia-a">4.1 Rede de partida da Bacia A</h2>
+<p>A rede foi reunida a partir dos arquivos TroncoA<em>.shp, ColetorA</em>.shp e ColetarA6.shp. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.</p>
 <div class="metric-grid">
 <div class="metric-card">
 <span class="metric">9</span><span class="label">arquivos/traçados de tronco</span>
@@ -213,26 +227,117 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Alerta topológico.</strong> Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição.</p>
+<p><strong>Alerta topológico.</strong> Os 16 componentes mostram que o desenho atual ainda não representa uma rede única contínua. Cada componente deverá ser conectado a um exutório/dissipador, receber uma justificativa hidráulica ou ser eliminado após a revisão.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="arquivos-swmm" class="level2">
-<h2 class="anchored" data-anchor-id="arquivos-swmm">Arquivos SWMM</h2>
+<section id="elementos-do-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="elementos-do-modelo">4.2 Elementos do modelo</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Representação preliminar</th>
+<th>Revisão necessária</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tronco principal</td>
+<td>link com maior função de transporte</td>
+<td>continuidade, seção, material e capacidade</td>
+</tr>
+<tr class="even">
+<td>Coletor</td>
+<td>link de captação e conexão</td>
+<td>nó de entrada, áreas e sentido</td>
+</tr>
+<tr class="odd">
+<td>Nó</td>
+<td>cruzamento, entrada ou mudança de seção</td>
+<td>cota de terreno, fundo, tampa e condição</td>
+</tr>
+<tr class="even">
+<td>Dissipador</td>
+<td>trecho entre início e fim marcado em shapefile</td>
+<td>vazão, desnível, comprimento e proteção</td>
+</tr>
+<tr class="odd">
+<td>Exutório</td>
+<td>saída da rede ou fronteira hidráulica</td>
+<td>cota, condição de jusante e destino</td>
+</tr>
+<tr class="even">
+<td>Área de contribuição</td>
+<td>subcatchment SWMM</td>
+<td>geometria real, perdas e nó de lançamento</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arquivos-swmm-preliminares" class="level2">
+<h2 class="anchored" data-anchor-id="arquivos-swmm-preliminares">4.3 Arquivos SWMM preliminares</h2>
 <ul>
-<li><code>CONDE_BACIA_A_REDE_PRELIM_TR25.inp</code> — chuva tradicional TR25;</li>
-<li><code>CONDE_BACIA_A_REDE_PRELIM_TR50.inp</code> — chuva tradicional TR50.</li>
+<li>CONDE_BACIA_A_REDE_PRELIM_TR25.inp — chuva tradicional TR25;</li>
+<li>CONDE_BACIA_A_REDE_PRELIM_TR50.inp — chuva tradicional TR50.</li>
 </ul>
-<p>Os arquivos são preliminares. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados.</p>
+<p>Os arquivos contêm a estrutura inicial para a Bacia A. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados.</p>
 </section>
 <section id="áreas-de-contribuição" class="level2">
-<h2 class="anchored" data-anchor-id="áreas-de-contribuição">Áreas de contribuição</h2>
-<p>As 208 áreas atuais são um template Voronoi para não deixar a estrutura do SWMM vazia. Elas devem ser redesenhadas ou mescladas no ArcMap conforme o escoamento de ruas, quadras, sarjetas e pontos de entrada.</p>
+<h2 class="anchored" data-anchor-id="áreas-de-contribuição">4.4 Áreas de contribuição</h2>
+<p>O passo seguinte é editar no GIS as áreas de quadras e ruas, quebrá-las quando houver mudança de sentido, associá-las aos nós corretos e registrar a origem de cada contribuição. O desenho deve combinar:</p>
+<ul>
+<li>MDT híbrido e linhas de fluxo;</li>
+<li>meio-fio, sarjeta, pavimentação e declividade das ruas;</li>
+<li>quadras, lotes e pontos de captação;</li>
+<li>travessias e obstáculos;</li>
+<li>limite das Bacias A e B;</li>
+<li>conexão à rede subterrânea.</li>
+</ul>
+<p>O template Voronoi não deve ser interpretado como resultado final de delimitação.</p>
 </section>
-<section id="próxima-frente-bacia-b" class="level2">
-<h2 class="anchored" data-anchor-id="próxima-frente-bacia-b">Próxima frente: Bacia B</h2>
-<p>A Bacia B já possui limite revisado, MDT híbrido conjunto, curvas e linhas de fluxo. Ainda falta lançar seus troncos principais, coletores, pontos de saída e áreas de contribuição. O modelo SWMM será mantido separado por bacia durante a montagem e depois poderá receber uma verificação conjunta de continuidade, desde que exista conexão hidráulica comprovada entre as unidades.</p>
+<section id="dissipadores-e-saídas" class="level2">
+<h2 class="anchored" data-anchor-id="dissipadores-e-saídas">4.5 Dissipadores e saídas</h2>
+<p>A camada TrechosDissipacao.shp marca o início e o fim de trechos de dissipação e saída da rede. A regra de concepção é que toda água captada pelo sistema deve ser conduzida a uma saída verificada, preferencialmente por um desses trechos.</p>
+<p>A integração no SWMM será feita após:</p>
+<ol type="1">
+<li>conferir o sentido da linha e o nó de início/fim;</li>
+<li>amostrar cotas no MDT e nas curvas integradas;</li>
+<li>calcular desnível e declividade;</li>
+<li>obter vazões de chegada dos cenários hidrológicos;</li>
+<li>selecionar representação conceitual — canal, degraus, bacia, saída ou combinação;</li>
+<li>verificar erosão e estabilidade a jusante.</li>
+</ol>
+<p>A solução de dissipação será descrita como concepção, não como dimensionamento estrutural definitivo, até que haja topografia e geotecnia de detalhe.</p>
+</section>
+<section id="bacia-b-e-simulação-conjunta" class="level2">
+<h2 class="anchored" data-anchor-id="bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</h2>
+<p>A Bacia B possui limite, MDT, curvas e linhas de fluxo organizados, mas ainda falta lançar seus troncos, coletores, áreas e saídas. Os modelos serão mantidos separados durante a montagem para evitar conectar unidades sem comprovação hidráulica. Uma verificação conjunta só será feita onde a conexão entre bacias, exutórios ou sistemas for demonstrada.</p>
+</section>
+<section id="critérios-de-verificação-hidráulica" class="level2">
+<h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.7 Critérios de verificação hidráulica</h2>
+<p>Cada rodada deverá reportar:</p>
+<ul>
+<li>continuidade da rede e componentes desconectados;</li>
+<li>balanço de massa;</li>
+<li>nós com alagamento ou sobrecarga;</li>
+<li>links com capacidade insuficiente;</li>
+<li>velocidades e condições de escoamento;</li>
+<li>vazões de chegada aos dissipadores;</li>
+<li>condições de jusante;</li>
+<li>sensibilidade a TR25, TR50 e cenários climáticos;</li>
+<li>arquivos de entrada, versão do modelo e parâmetros usados.</li>
+</ul>
+</section>
+<section id="próxima-rodada" class="level2">
+<h2 class="anchored" data-anchor-id="próxima-rodada">4.8 Próxima rodada</h2>
+<p>A sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
 
 
 </section>

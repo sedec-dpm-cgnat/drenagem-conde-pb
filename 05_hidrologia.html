@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5. Chuva de projeto e mudança climática – Drenagem Conde/PB</title>
+<title>5. Análise e discussões – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,35 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./01_contexto.html"> 
-<span class="menu-text">Contexto</span></a>
+<span class="menu-text">1 · Introdução e contextualização</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_base_cartografica.html"> 
-<span class="menu-text">Base cartográfica</span></a>
+<span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_mdt_hibrido.html"> 
-<span class="menu-text">MDT híbrido</span></a>
+<span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_rede_swmm.html"> 
-<span class="menu-text">Rede e SWMM</span></a>
+<span class="menu-text">4 · Modelagem hidráulica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./05_hidrologia.html" aria-current="page"> 
-<span class="menu-text">Hidrologia</span></a>
+<span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./06_entregaveis.html"> 
-<span class="menu-text">Entregáveis</span></a>
+<span class="menu-text">6 · Conclusões e encaminhamentos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./07_plano_trabalho.html"> 
-<span class="menu-text">Plano de trabalho</span></a>
+<span class="menu-text">6.1 · Modelo de Plano de Trabalho</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./08_dados.html"> 
-<span class="menu-text">Dados para download</span></a>
+<span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -161,8 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#linha-de-base-tradicional" id="toc-linha-de-base-tradicional" class="nav-link active" data-scroll-target="#linha-de-base-tradicional">Linha de base tradicional</a></li>
-  <li><a href="#segunda-etapa-nex-gddp-cmip6" id="toc-segunda-etapa-nex-gddp-cmip6" class="nav-link" data-scroll-target="#segunda-etapa-nex-gddp-cmip6">Segunda etapa: NEX-GDDP-CMIP6</a></li>
+  <li><a href="#situação-atual-das-duas-bacias" id="toc-situação-atual-das-duas-bacias" class="nav-link active" data-scroll-target="#situação-atual-das-duas-bacias">5.1 Situação atual das duas bacias</a></li>
+  <li><a href="#o-que-a-base-topográfica-permite-discutir" id="toc-o-que-a-base-topográfica-permite-discutir" class="nav-link" data-scroll-target="#o-que-a-base-topográfica-permite-discutir">5.2 O que a base topográfica permite discutir</a></li>
+  <li><a href="#risco-de-solução-fragmentada" id="toc-risco-de-solução-fragmentada" class="nav-link" data-scroll-target="#risco-de-solução-fragmentada">5.3 Risco de solução fragmentada</a></li>
+  <li><a href="#hidrologia-e-hidráulica-como-cadeia-única" id="toc-hidrologia-e-hidráulica-como-cadeia-única" class="nav-link" data-scroll-target="#hidrologia-e-hidráulica-como-cadeia-única">5.4 Hidrologia e hidráulica como cadeia única</a></li>
+  <li><a href="#incertezas-que-afetam-a-decisão" id="toc-incertezas-que-afetam-a-decisão" class="nav-link" data-scroll-target="#incertezas-que-afetam-a-decisão">5.5 Incertezas que afetam a decisão</a></li>
+  <li><a href="#prioridades-para-decisão" id="toc-prioridades-para-decisão" class="nav-link" data-scroll-target="#prioridades-para-decisão">5.6 Prioridades para decisão</a></li>
+  <li><a href="#discussão-sobre-mudança-climática" id="toc-discussão-sobre-mudança-climática" class="nav-link" data-scroll-target="#discussão-sobre-mudança-climática">5.7 Discussão sobre mudança climática</a></li>
+  <li><a href="#síntese-crítica" id="toc-síntese-crítica" class="nav-link" data-scroll-target="#síntese-crítica">5.8 Síntese crítica</a></li>
   </ul>
 </nav>
     </div>
@@ -171,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">5. Chuva de projeto e mudança climática</h1>
+<h1 class="title">5. Análise e discussões</h1>
 </div>
 
 
@@ -188,33 +194,161 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="linha-de-base-tradicional" class="level2">
-<h2 class="anchored" data-anchor-id="linha-de-base-tradicional">Linha de base tradicional</h2>
-<p>Nesta primeira versão foi preservada a lógica hidrológica do relatório anterior:</p>
-<ul>
-<li>estação INMET 82798;</li>
-<li>IDF SGB/CPRM 2023;</li>
-<li>hietogramas TR25 e TR50;</li>
-<li>infiltração CN-SCS;</li>
-<li>CN médio preliminar 79;</li>
-<li>30% de impermeabilização como premissa inicial.</li>
-</ul>
-<p>As séries foram copiadas para <code>04_CHUVAS_PROJETO</code> e incorporadas aos dois arquivos <code>.inp</code>.</p>
-</section>
-<section id="segunda-etapa-nex-gddp-cmip6" class="level2">
-<h2 class="anchored" data-anchor-id="segunda-etapa-nex-gddp-cmip6">Segunda etapa: NEX-GDDP-CMIP6</h2>
-<p>A atualização climática será feita separadamente, consultando o banco NEX-GDDP-CMIP6 para a célula mais próxima da área de estudo e comparando os cenários <code>ssp126</code>, <code>ssp245</code>, <code>ssp370</code> e <code>ssp585</code> com o histórico.</p>
-<p>O procedimento deverá documentar seleção espacial, modelos, período de referência, janela futura, quantis/medianas, ajuste estatístico e transformação de máximas diárias em curvas IDF. Nenhum fator climático foi aplicado nesta versão preliminar.</p>
 <div class="info callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Manter a linha de base tradicional separada dos cenários climáticos permitirá comparar diretamente o desempenho da rede no cenário atual e nos cenários futuros, sem esconder o efeito da mudança de premissa.</p>
+<strong>Leitura desta seção.</strong> A análise separa o que já está organizado do que ainda é hipótese. Como a Bacia A está mais avançada que a Bacia B, a comparação deve ser feita por maturidade da informação e não por desempenho hidráulico definitivo.
 </div>
 </div>
 </div>
+<section id="situação-atual-das-duas-bacias" class="level2">
+<h2 class="anchored" data-anchor-id="situação-atual-das-duas-bacias">5.1 Situação atual das duas bacias</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tema</th>
+<th>Bacia A</th>
+<th>Bacia B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Delimitação</td>
+<td>revisada e disponível</td>
+<td>revisada e disponível</td>
+</tr>
+<tr class="even">
+<td>MDT e curvas</td>
+<td>disponíveis na base conjunta</td>
+<td>disponíveis na base conjunta</td>
+</tr>
+<tr class="odd">
+<td>Rede</td>
+<td>lançamento preliminar realizado</td>
+<td>ainda será lançado</td>
+</tr>
+<tr class="even">
+<td>Áreas de contribuição</td>
+<td>template preliminar</td>
+<td>ainda não lançadas</td>
+</tr>
+<tr class="odd">
+<td>Dissipadores/saídas</td>
+<td>camada marcada e em integração</td>
+<td>a conferir após o lançamento</td>
+</tr>
+<tr class="even">
+<td>SWMM</td>
+<td>arquivos TR25/TR50 de partida</td>
+<td>será montado após a rede</td>
+</tr>
+<tr class="odd">
+<td>Grau de maturidade</td>
+<td>concepção em revisão</td>
+<td>preparação cartográfica</td>
+</tr>
+</tbody>
+</table>
+<p>A Bacia A não deve ser usada como referência final para a Bacia B sem repetir as etapas de lançamento, conexão e verificação. A assimetria entre as bacias é uma condição do projeto, não uma falha a ser escondida.</p>
+</section>
+<section id="o-que-a-base-topográfica-permite-discutir" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-a-base-topográfica-permite-discutir">5.2 O que a base topográfica permite discutir</h2>
+<p>O MDT híbrido permite reconhecer desníveis, declividades, caminhos naturais e possíveis zonas de concentração. As curvas de 1 m ajudam na leitura local dos dissipadores; as de 5 m funcionam como referência geral e curvas mestras.</p>
+<p>Entretanto, o terreno natural não descreve sozinho a drenagem urbana. O fluxo real pode ser alterado por pavimentação, meio-fio, muros, aterros, travessias e galerias enterradas. A interpretação correta exige sobrepor o MDT às ruas, quadras, pontos de entrada e rede lançada.</p>
+</section>
+<section id="risco-de-solução-fragmentada" class="level2">
+<h2 class="anchored" data-anchor-id="risco-de-solução-fragmentada">5.3 Risco de solução fragmentada</h2>
+<p>A rede preliminar da Bacia A apresenta 16 componentes conectados e 40 saídas provisórias. Esse resultado não é uma vazão nem uma falha hidráulica: é um alerta de modelagem. Antes de dimensionar, é necessário responder para cada componente:</p>
+<ul>
+<li>qual é a área que contribui;</li>
+<li>qual é o tronco ou coletor responsável;</li>
+<li>qual é o nó de destino;</li>
+<li>qual é a saída;</li>
+<li>qual é a condição de jusante;</li>
+<li>se a água deve passar por um dissipador ou por outro controle.</li>
+</ul>
+<p>Sem essa rastreabilidade, a reconstrução de trechos isolados pode deslocar erosão e alagamento para jusante.</p>
+</section>
+<section id="hidrologia-e-hidráulica-como-cadeia-única" class="level2">
+<h2 class="anchored" data-anchor-id="hidrologia-e-hidráulica-como-cadeia-única">5.4 Hidrologia e hidráulica como cadeia única</h2>
+<p>A sequência de decisão deve ser:</p>
+<p><strong>chuva → área de contribuição → nó de entrada → coletor → tronco → dissipador/exutório → proteção a jusante</strong></p>
+<p>Uma mudança em qualquer elo altera a vazão e o nível de solicitação dos demais. Por isso, a estimativa de dissipadores será feita somente depois da revisão das áreas e da obtenção das vazões de chegada no SWMM.</p>
+</section>
+<section id="incertezas-que-afetam-a-decisão" class="level2">
+<h2 class="anchored" data-anchor-id="incertezas-que-afetam-a-decisão">5.5 Incertezas que afetam a decisão</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fonte de incerteza</th>
+<th>Efeito possível</th>
+<th>Como reduzir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cobertura parcial do drone</td>
+<td>diferenças locais de cota e declividade</td>
+<td>levantamento complementar e controles</td>
+</tr>
+<tr class="even">
+<td>MDT legado suavizado</td>
+<td>subestimação de microdrenagem</td>
+<td>topografia de detalhe e seções</td>
+</tr>
+<tr class="odd">
+<td>Áreas Voronoi</td>
+<td>vazões distribuídas em nós incorretos</td>
+<td>delimitação por ruas/quadras</td>
+</tr>
+<tr class="even">
+<td>Rede desconectada</td>
+<td>saídas e vazões sem continuidade física</td>
+<td>revisão topológica e inspeção</td>
+</tr>
+<tr class="odd">
+<td>CN/impermeabilização</td>
+<td>alteração de pico e volume</td>
+<td>cadastro de uso do solo e calibração</td>
+</tr>
+<tr class="even">
+<td>Chuva futura</td>
+<td>faixa de demanda hidráulica</td>
+<td>cenários NEX-GDDP e análise de sensibilidade</td>
+</tr>
+<tr class="odd">
+<td>Dissipadores sem geotecnia</td>
+<td>instabilidade e erosão a jusante</td>
+<td>sondagem, inspeção e projeto específico</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prioridades-para-decisão" class="level2">
+<h2 class="anchored" data-anchor-id="prioridades-para-decisão">5.6 Prioridades para decisão</h2>
+<p>A prioridade preliminar deve combinar: evidência de dano, concentração de escoamento, população/infraestrutura protegida, continuidade da solução, risco a jusante, facilidade de implantação e dependências de projeto.</p>
+<p>Os trechos mais críticos não são necessariamente os mais longos. Um pequeno dissipador mal localizado pode ser mais urgente que uma extensão de coletor, enquanto um tronco sem saída pode representar uma solução incompleta. As metas devem ser comparadas por critérios explícitos e atualizadas após a simulação.</p>
+</section>
+<section id="discussão-sobre-mudança-climática" class="level2">
+<h2 class="anchored" data-anchor-id="discussão-sobre-mudança-climática">5.7 Discussão sobre mudança climática</h2>
+<p>A linha TR25/TR50 mantém a comparabilidade com o relatório anterior. Os cenários NEX-GDDP-CMIP6 devem ampliar a faixa de teste, não substituir a observação local. A decisão de reconstrução deve considerar a robustez da solução sob mais de uma premissa, indicando quais trechos continuam adequados, quais ficam críticos e quais exigem adaptação.</p>
+</section>
+<section id="síntese-crítica" class="level2">
+<h2 class="anchored" data-anchor-id="síntese-crítica">5.8 Síntese crítica</h2>
+<p>O projeto já possui uma base espacial organizada e uma frente SWMM inicial, mas ainda não possui resultado hidráulico definitivo para contratação. O avanço mais importante agora é transformar geometrias desenhadas em uma cadeia verificável de bacia, área, nó, link, saída e dissipador, com parâmetros documentados e resultados reproduzíveis.</p>
 
 
 </section>

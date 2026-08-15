@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2. Base cartográfica e referência espacial – Drenagem Conde/PB</title>
+<title>2. Modelo digital de elevação – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,35 +108,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./01_contexto.html"> 
-<span class="menu-text">Contexto</span></a>
+<span class="menu-text">1 · Introdução e contextualização</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./02_base_cartografica.html" aria-current="page"> 
-<span class="menu-text">Base cartográfica</span></a>
+<span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_mdt_hibrido.html"> 
-<span class="menu-text">MDT híbrido</span></a>
+<span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_rede_swmm.html"> 
-<span class="menu-text">Rede e SWMM</span></a>
+<span class="menu-text">4 · Modelagem hidráulica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./05_hidrologia.html"> 
-<span class="menu-text">Hidrologia</span></a>
+<span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./06_entregaveis.html"> 
-<span class="menu-text">Entregáveis</span></a>
+<span class="menu-text">6 · Conclusões e encaminhamentos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./07_plano_trabalho.html"> 
-<span class="menu-text">Plano de trabalho</span></a>
+<span class="menu-text">6.1 · Modelo de Plano de Trabalho</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./08_dados.html"> 
-<span class="menu-text">Dados para download</span></a>
+<span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -161,11 +161,18 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#sistema-de-referência" id="toc-sistema-de-referência" class="nav-link active" data-scroll-target="#sistema-de-referência">Sistema de referência</a></li>
-  <li><a href="#camadas-principais" id="toc-camadas-principais" class="nav-link" data-scroll-target="#camadas-principais">Camadas principais</a></li>
-  <li><a href="#regra-de-organização-espacial" id="toc-regra-de-organização-espacial" class="nav-link" data-scroll-target="#regra-de-organização-espacial">Regra de organização espacial</a></li>
-  <li><a href="#limitação-da-imagem-de-drone" id="toc-limitação-da-imagem-de-drone" class="nav-link" data-scroll-target="#limitação-da-imagem-de-drone">Limitação da imagem de drone</a></li>
-  <li><a href="#verificação-das-fotos-brutas" id="toc-verificação-das-fotos-brutas" class="nav-link" data-scroll-target="#verificação-das-fotos-brutas">Verificação das fotos brutas</a></li>
+  <li><a href="#sistema-de-referência-e-organização" id="toc-sistema-de-referência-e-organização" class="nav-link active" data-scroll-target="#sistema-de-referência-e-organização">2.1 Sistema de referência e organização</a></li>
+  <li><a href="#fontes-e-histórico-de-construção" id="toc-fontes-e-histórico-de-construção" class="nav-link" data-scroll-target="#fontes-e-histórico-de-construção">2.2 Fontes e histórico de construção</a></li>
+  <li><a href="#fluxo-metodológico" id="toc-fluxo-metodológico" class="nav-link" data-scroll-target="#fluxo-metodológico">2.3 Fluxo metodológico</a>
+  <ul class="collapse">
+  <li><a href="#harmonização-espacial" id="toc-harmonização-espacial" class="nav-link" data-scroll-target="#harmonização-espacial">Harmonização espacial</a></li>
+  <li><a href="#comparação-e-correção-vertical" id="toc-comparação-e-correção-vertical" class="nav-link" data-scroll-target="#comparação-e-correção-vertical">Comparação e correção vertical</a></li>
+  <li><a href="#composição-híbrida" id="toc-composição-híbrida" class="nav-link" data-scroll-target="#composição-híbrida">Composição híbrida</a></li>
+  <li><a href="#derivados-e-recorte-ab" id="toc-derivados-e-recorte-ab" class="nav-link" data-scroll-target="#derivados-e-recorte-ab">Derivados e recorte A+B</a></li>
+  </ul></li>
+  <li><a href="#produtos-derivados-para-a-drenagem" id="toc-produtos-derivados-para-a-drenagem" class="nav-link" data-scroll-target="#produtos-derivados-para-a-drenagem">2.4 Produtos derivados para a drenagem</a></li>
+  <li><a href="#limitações-e-requisitos-para-projeto-básico" id="toc-limitações-e-requisitos-para-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-requisitos-para-projeto-básico">2.5 Limitações e requisitos para projeto básico</a></li>
+  <li><a href="#referências-metodológicas" id="toc-referências-metodológicas" class="nav-link" data-scroll-target="#referências-metodológicas">2.6 Referências metodológicas</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2. Base cartográfica e referência espacial</h1>
+<h1 class="title">2. Modelo digital de elevação</h1>
 </div>
 
 
@@ -191,12 +198,69 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="sistema-de-referência" class="level2">
-<h2 class="anchored" data-anchor-id="sistema-de-referência">Sistema de referência</h2>
-<p>O padrão de trabalho é <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>. As camadas da rede foram normalizadas para esse CRS; o <code>TroncoA2.shp</code>, que estava em WGS84 / UTM 25S, foi reprojetado somente na cópia de trabalho.</p>
+<div class="warning callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<strong>Produto de referência.</strong> O MDT híbrido recortado para as Bacias A e B é a base de partida desta concepção. Ele deve ser usado para análise preliminar, lançamento da rede e comparação de alternativas; não equivale a levantamento topográfico cadastral nem autoriza o fechamento de cotas executivas.
+</div>
+</div>
+</div>
+<section id="sistema-de-referência-e-organização" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-referência-e-organização">2.1 Sistema de referência e organização</h2>
+<p>O padrão de trabalho é <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>. Os rasters e vetores de análise devem permanecer nesse CRS métrico. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.</p>
+<p>O arquivo de trabalho principal é:</p>
+<p><strong>MDT_hibrido_Bacias_AB_5m_EPSG31985.tif</strong></p>
+<p>O arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho.</p>
 </section>
-<section id="camadas-principais" class="level2">
-<h2 class="anchored" data-anchor-id="camadas-principais">Camadas principais</h2>
+<section id="fontes-e-histórico-de-construção" class="level2">
+<h2 class="anchored" data-anchor-id="fontes-e-histórico-de-construção">2.2 Fontes e histórico de construção</h2>
+<p>A base foi organizada pela integração de três famílias de informação:</p>
+<ol type="1">
+<li><strong>Base legada:</strong> modelo derivado de ANADEM e curvas de nível previamente produzidas. Sua função principal é garantir cobertura territorial e continuidade, reconhecendo que resolução, suavização e incerteza podem ser maiores.</li>
+<li><strong>Levantamento fotogramétrico:</strong> imagens de drone processadas no WebODM para produzir ortomosaico e modelos de superfície/terreno na área efetivamente coberta.</li>
+<li><strong>Controles e referências altimétricas:</strong> pontos de controle e referências vinculadas ao sistema geodésico brasileiro, quando disponíveis e documentados, para verificar diferenças verticais e orientar a correção do modelo legado.</li>
+</ol>
+<p>O levantamento do drone não cobre integralmente as Bacias A e B. Assim, a integração não é uma simples substituição do raster antigo: é uma composição com prioridade local do produto de maior resolução, complementada pela base legada fora da cobertura.</p>
+</section>
+<section id="fluxo-metodológico" class="level2">
+<h2 class="anchored" data-anchor-id="fluxo-metodológico">2.3 Fluxo metodológico</h2>
+<section id="harmonização-espacial" class="level3">
+<h3 class="anchored" data-anchor-id="harmonização-espacial">Harmonização espacial</h3>
+<p>As fontes são reprojetadas para EPSG:31985, conferidas quanto a extensão, resolução, nodata e alinhamento de grade e reamostradas para uma malha de 5 m. A sobreposição é preservada para comparação e diagnóstico.</p>
+</section>
+<section id="comparação-e-correção-vertical" class="level3">
+<h3 class="anchored" data-anchor-id="comparação-e-correção-vertical">Comparação e correção vertical</h3>
+<p>Na área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:</p>
+<p><strong>h_ortométrica = a × valor_MDE + b</strong></p>
+<p>O relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é <a href="https://doi.org/10.5194/nhess-19-237-2019">Araújo et al.&nbsp;(2019), NHESS 19:237–250</a>.</p>
+<p>A rotina deve ainda:</p>
+<ul>
+<li>descartar e contar amostras em nodata;</li>
+<li>informar RMSE antes e depois;</li>
+<li>separar RMSE dentro da amostra de RMSE validado;</li>
+<li>usar leave-one-out quando n &lt; 50 e 20% para teste quando n &gt;= 50;</li>
+<li>registrar a faixa mínima/máxima dos controles;</li>
+<li>contar pixels fora da faixa e a magnitude máxima de extrapolação;</li>
+<li>alertar para inclinação a &lt; 0,9 ou a &gt; 1,1;</li>
+<li>avaliar amplitude, distribuição espacial e distância de Cook;</li>
+<li>registrar null quando uma métrica não puder ser determinada.</li>
+</ul>
+<p>A média dos resíduos após OLS não é indicador suficiente de qualidade, porque a regressão força o equilíbrio dos resíduos. O indicador principal para acurácia é o RMSE validado, acompanhado do diagnóstico da amostra.</p>
+</section>
+<section id="composição-híbrida" class="level3">
+<h3 class="anchored" data-anchor-id="composição-híbrida">Composição híbrida</h3>
+<p>Depois da verificação vertical, o produto do drone recebe prioridade somente na máscara em que sua cobertura e qualidade são conhecidas. Fora dessa máscara, a base legada mantém a cobertura. As bordas devem ser examinadas para evitar degraus artificiais, vazios ou mudanças abruptas de declividade.</p>
+</section>
+<section id="derivados-e-recorte-ab" class="level3">
+<h3 class="anchored" data-anchor-id="derivados-e-recorte-ab">Derivados e recorte A+B</h3>
+<p>Do modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução e metadados.</p>
+</section>
+</section>
+<section id="produtos-derivados-para-a-drenagem" class="level2">
+<h2 class="anchored" data-anchor-id="produtos-derivados-para-a-drenagem">2.4 Produtos derivados para a drenagem</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -204,54 +268,57 @@ document.addEventListener('DOMContentLoaded', function () {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Camada</th>
-<th>Uso</th>
+<th>Produto</th>
+<th>Uso preliminar</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bacia A revisada D8</td>
-<td>Unidade de trabalho da rede preliminar e do primeiro modelo SWMM</td>
+<td>MDT híbrido A+B — 5 m</td>
+<td>cotas superficiais, declividades e comparação de alternativas</td>
 </tr>
 <tr class="even">
-<td>Bacia B revisada D8</td>
-<td>Unidade de trabalho que receberá o próximo lançamento da rede</td>
+<td>Curvas de 1 m</td>
+<td>leitura detalhada de desníveis e apoio ao lançamento</td>
 </tr>
 <tr class="odd">
-<td>Bacias A+B revisadas D8</td>
-<td>Recorte territorial conjunto para MDT, curvas e fluxos</td>
+<td>Curvas de 5 m</td>
+<td>leitura geral e curvas mestras</td>
 </tr>
 <tr class="even">
-<td>MDT híbrido recortado</td>
-<td>Cotas superficiais, declividade e orientação preliminar da rede</td>
+<td>Linhas/setas de fluxo</td>
+<td>orientação dos caminhos naturais; não substituem cadastro de ruas e galerias</td>
 </tr>
 <tr class="odd">
-<td>Ortomosaico WebODM</td>
-<td>Alta resolução local, onde houver cobertura</td>
-</tr>
-<tr class="even">
-<td>Imagem Esri World Imagery</td>
-<td>Referência visual para ruas e quadras no mapa web/ArcMap</td>
-</tr>
-<tr class="odd">
-<td>Troncos e coletores lançados</td>
-<td>Rede de partida para a modelagem SWMM</td>
+<td>Bacias revisadas D8</td>
+<td>referência de delimitação hidrográfica de trabalho</td>
 </tr>
 </tbody>
 </table>
+<p>As linhas de fluxo representam o terreno modelado. Não incorporam automaticamente sarjetas, muros, pavimentos, bueiros, galerias enterradas, soleiras ou outras estruturas urbanas que alteram o escoamento.</p>
 </section>
-<section id="regra-de-organização-espacial" class="level2">
-<h2 class="anchored" data-anchor-id="regra-de-organização-espacial">Regra de organização espacial</h2>
-<p>Os arquivos com sufixo <code>A</code>, <code>B</code> ou <code>AB</code> devem ser interpretados respectivamente como pertencentes à Bacia A, à Bacia B ou ao conjunto das duas bacias. O painel espacial inicial mostra as duas delimitações com simbologia distinta: Bacia A em laranja e Bacia B em teal. Essa convenção será repetida nos mapas do relatório, no ArcMap/QGIS e nos produtos finais.</p>
+<section id="limitações-e-requisitos-para-projeto-básico" class="level2">
+<h2 class="anchored" data-anchor-id="limitações-e-requisitos-para-projeto-básico">2.5 Limitações e requisitos para projeto básico</h2>
+<p>Para evoluir a concepção para contratação, será necessário levantar:</p>
+<ul>
+<li>topografia cadastral de detalhe, com pontos, eixos, seções e cotas de soleira;</li>
+<li>referências altimétricas vinculadas ao SGB e documentação do MAPGEO;</li>
+<li>pontos de controle suficientes e distribuídos espacialmente;</li>
+<li>inspeção de ruas, quadras, entradas, galerias, travessias e exutórios;</li>
+<li>sondagens e avaliação geotécnica nos dissipadores e taludes;</li>
+<li>verificação da cobertura, data e precisão do ortomosaico;</li>
+<li>validação independente das cotas e dos resultados hidráulicos.</li>
+</ul>
+<p>A integração atual melhora a base de concepção onde o drone cobre o terreno, mas deve ser apresentada como <strong>MDT híbrido preliminar com faixa de validade declarada</strong>. Não se deve ocultar a extrapolação para áreas fora da faixa dos controles nem tratar a correção estatística como prova de precisão cadastral.</p>
 </section>
-<section id="limitação-da-imagem-de-drone" class="level2">
-<h2 class="anchored" data-anchor-id="limitação-da-imagem-de-drone">Limitação da imagem de drone</h2>
-<p>O ortomosaico disponível não cobre integralmente a Bacia A. Por isso, ele é mantido como camada de alta resolução local, enquanto a imagem de satélite/basemap será utilizada para o contexto completo da bacia. A imagem de referência anexada na conversa orienta apenas o padrão visual do mapa; não foi usada para extrair geometrias.</p>
-</section>
-<section id="verificação-das-fotos-brutas" class="level2">
-<h2 class="anchored" data-anchor-id="verificação-das-fotos-brutas">Verificação das fotos brutas</h2>
-<p>Uma leitura rápida dos metadados da pasta <code>Paraíba/Conde PB</code> encontrou 965 fotografias JPG, todas com GPS. Os centros de câmera cobrem apenas parte da extensão da Bacia A: o casco convexo das posições cobre aproximadamente 14,58% da área da bacia. Portanto, não será iniciado um novo processamento fotogramétrico com esse conjunto para tentar produzir um ortomosaico integral.</p>
-<p>Para o background completo, a opção operacional será a imagem Esri no ArcMap/QGIS ou um raster de satélite georreferenciado. O arquivo legado <code>basemap_aereo_Esri_georref.jpg</code> é visualmente amplo, mas não apresenta CRS/worldfile verificável; ele precisa ser georreferenciado antes de ser usado como camada de análise.</p>
+<section id="referências-metodológicas" class="level2">
+<h2 class="anchored" data-anchor-id="referências-metodológicas">2.6 Referências metodológicas</h2>
+<ul>
+<li><a href="https://doi.org/10.5194/nhess-19-237-2019">Araújo et al.&nbsp;(2019) — NHESS 19:237–250</a>.</li>
+<li><a href="https://rpubs.com/cassiorampinelli/1436630">Referência de comunicação e organização do relatório</a>.</li>
+<li>Documentação local do processamento: 04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md.</li>
+<li>Manifestos e registros locais: relatorio_hibrido_completo_curvas_KMZ.json e 01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json.</li>
+</ul>
 
 
 </section>

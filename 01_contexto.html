@@ -163,14 +163,15 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
   <li><a href="#finalidade" id="toc-finalidade" class="nav-link active" data-scroll-target="#finalidade">1.1 Finalidade</a></li>
   <li><a href="#contextualização-do-problema" id="toc-contextualização-do-problema" class="nav-link" data-scroll-target="#contextualização-do-problema">1.2 Contextualização do problema</a></li>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">1.3 Objetivos</a>
+  <li><a href="#diagnóstico-municipal-utilizado-na-contextualização" id="toc-diagnóstico-municipal-utilizado-na-contextualização" class="nav-link" data-scroll-target="#diagnóstico-municipal-utilizado-na-contextualização">1.3 Diagnóstico municipal utilizado na contextualização</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">1.4 Objetivos</a>
   <ul class="collapse">
   <li><a href="#objetivo-geral" id="toc-objetivo-geral" class="nav-link" data-scroll-target="#objetivo-geral">Objetivo geral</a></li>
   <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos">Objetivos específicos</a></li>
   </ul></li>
-  <li><a href="#escopo-e-fases" id="toc-escopo-e-fases" class="nav-link" data-scroll-target="#escopo-e-fases">1.4 Escopo e fases</a></li>
-  <li><a href="#situação-territorial-das-bacias" id="toc-situação-territorial-das-bacias" class="nav-link" data-scroll-target="#situação-territorial-das-bacias">1.5 Situação territorial das bacias</a></li>
-  <li><a href="#rastreabilidade-e-governança" id="toc-rastreabilidade-e-governança" class="nav-link" data-scroll-target="#rastreabilidade-e-governança">1.6 Rastreabilidade e governança</a></li>
+  <li><a href="#escopo-e-fases" id="toc-escopo-e-fases" class="nav-link" data-scroll-target="#escopo-e-fases">1.5 Escopo e fases</a></li>
+  <li><a href="#situação-territorial-das-bacias" id="toc-situação-territorial-das-bacias" class="nav-link" data-scroll-target="#situação-territorial-das-bacias">1.6 Situação territorial das bacias</a></li>
+  <li><a href="#rastreabilidade-e-governança" id="toc-rastreabilidade-e-governança" class="nav-link" data-scroll-target="#rastreabilidade-e-governança">1.7 Rastreabilidade e governança</a></li>
   </ul>
 </nav>
     </div>
@@ -221,8 +222,25 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A hipótese de trabalho é que os processos erosivos observados resultam da combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura urbana de drenagem. A hipótese deverá ser confrontada com vistoria, cadastro de ocorrências, levantamento topográfico, inspeção das ruas e verificação hidráulica.</p>
 <p>A reconstrução não deve apenas repor uma condição vulnerável. O princípio orientador é <strong>reconstruir melhor</strong>, priorizando soluções que reduzam o risco futuro, mantenham continuidade hidráulica e protejam os trechos a jusante. Por isso, o escopo preliminar não propõe implantar toda a rede municipal nesta etapa: propõe selecionar troncos principais, coletores indispensáveis e dissipadores nos setores críticos, sempre verificando a bacia contribuinte.</p>
 </section>
+<section id="diagnóstico-municipal-utilizado-na-contextualização" class="level2">
+<h2 class="anchored" data-anchor-id="diagnóstico-municipal-utilizado-na-contextualização">1.3 Diagnóstico municipal utilizado na contextualização</h2>
+<p>O documento municipal <strong>REC-PB-2504603-20260802-01 Conde</strong>, datado de agosto de 2026, registra a ocorrência de <strong>tempestade local/convectiva com chuvas intensas</strong> em 1º de maio de 2026. Segundo o diagnóstico, os danos atingiram principalmente vias não pavimentadas, com processos erosivos, alagamentos, enxurradas e isolamento de comunidades. O documento informa, como estimativas preliminares municipais, que 88,3% das vias urbanas não eram pavimentadas, que aproximadamente 495,17 km de vias teriam sido afetados direta ou indiretamente e que 297,11 km já haviam sido catalogados em levantamentos locais. Esses números são apresentados aqui como informação de diagnóstico a ser conferida, não como medição independente deste estudo.</p>
+<p>O diagnóstico detalha como ocorrências prioritárias a <strong>Rua São Francisco</strong>, com trecho de aproximadamente 890 m associado a erosão severa, e a <strong>Rua Projetada 03 / Rua Zilda Arns Neumann</strong>, com intervenção de drenagem profunda indicada em aproximadamente 510 m. Para as duas ocorrências, o documento relaciona a concentração do escoamento superficial, a diferença de declividade entre montante e jusante, a precariedade do leito viário e a perda de trafegabilidade. Também informa impactos diretos estimados de 1.320 pessoas na primeira ocorrência e 670 na segunda.</p>
+<p>Essas informações reforçam a hipótese de que a recuperação viária precisa estar associada à drenagem. Elas não substituem a delimitação das Bacias A e B, a revisão da rede ou a simulação no SWMM: servem para priorizar a investigação e cruzar os pontos do diagnóstico com o MDT híbrido, as áreas de contribuição, os troncos, os coletores e os dissipadores.</p>
+<div class="warning callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Conferência necessária antes do Plano de Trabalho final.</strong> O arquivo municipal usa nomenclaturas diferentes em partes do documento: as primeiras páginas apresentam duas metas, enquanto o orçamento e as memórias de cálculo também mencionam Meta 3, Meta 4, Meta 5, Meta 6 e Meta 7, com nomes de ruas que precisam ser reconciliados. As extensões, diâmetros, pontos de lançamento, quantitativos e valores devem ser confrontados com a camada GIS e com o modelo SWMM antes de serem adotados como metas definitivas.</p>
+</div>
+</div>
+</div>
+<p>O diagnóstico também registra lançamento de rede ao final da Rua São Francisco, em área de canavial. Esse ponto deverá ser tratado como saída hidráulica a verificar: é necessário conferir propriedade e uso do solo, condição de jusante, risco de erosão, necessidade de dissipação e eventuais licenças. A solução proposta no diagnóstico não será considerada automaticamente como exutório adequado.</p>
+</section>
 <section id="objetivos" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos">1.3 Objetivos</h2>
+<h2 class="anchored" data-anchor-id="objetivos">1.4 Objetivos</h2>
 <section id="objetivo-geral" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo-geral">Objetivo geral</h3>
 <p>Construir uma base técnica, espacial e hidrológico-hidráulica reproduzível para priorizar intervenções de drenagem nas Bacias A e B e apoiar a elaboração do Plano de Trabalho de Reconstrução.</p>
@@ -240,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 </section>
 <section id="escopo-e-fases" class="level2">
-<h2 class="anchored" data-anchor-id="escopo-e-fases">1.4 Escopo e fases</h2>
+<h2 class="anchored" data-anchor-id="escopo-e-fases">1.5 Escopo e fases</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -289,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </table>
 </section>
 <section id="situação-territorial-das-bacias" class="level2">
-<h2 class="anchored" data-anchor-id="situação-territorial-das-bacias">1.5 Situação territorial das bacias</h2>
+<h2 class="anchored" data-anchor-id="situação-territorial-das-bacias">1.6 Situação territorial das bacias</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -323,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </table>
 </section>
 <section id="rastreabilidade-e-governança" class="level2">
-<h2 class="anchored" data-anchor-id="rastreabilidade-e-governança">1.6 Rastreabilidade e governança</h2>
+<h2 class="anchored" data-anchor-id="rastreabilidade-e-governança">1.7 Rastreabilidade e governança</h2>
 <p>Cada etapa será mantida com fonte, CRS, data, premissa, limitação e histórico de alteração. O conteúdo publicado é uma minuta técnica pública em construção. Antes de qualquer contratação ou compartilhamento institucional ampliado, devem ser revisados os autores, os dados pessoais, as fotografias, a situação de publicação dos arquivos e a responsabilidade técnica pelos produtos.</p>
 <p>O padrão editorial segue a organização visual e documental usada pelo DPM/SEDEC, com identidade institucional, mapas verificáveis, arquivos para download e versionamento no GitHub Pages.</p>
 

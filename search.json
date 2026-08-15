@@ -35,6 +35,13 @@
     "text": "Fluxo superficial e rede\n\n\n\nProduto\nFormato\n\n\n\n\nLinhas de fluxo principais A+B\nGPKG\n\n\nLinhas de fluxo principais A+B\nKMZ\n\n\nSetas de fluxo densas A+B\nGPKG\n\n\nPontos de metas\nGPKG\n\n\nRede nodal da Bacia A\nGeoJSON\n\n\nNós da rede da Bacia A\nGeoJSON\n\n\nTrechos de dissipação\nGeoJSON"
   },
   {
+    "objectID": "08_dados.html#modelos-swmm-e-guia-de-validação",
+    "href": "08_dados.html#modelos-swmm-e-guia-de-validação",
+    "title": "Anexo A — Dados para download",
+    "section": "Modelos SWMM e guia de validação",
+    "text": "Modelos SWMM e guia de validação\nOs arquivos abaixo são os modelos de partida processáveis da Bacia A. Eles ainda não são modelos finais de contratação: a topologia, as áreas, os diâmetros, as cotas, os outfalls e os dissipadores dependem da validação paralela no SWMM e no GIS.\n\n\n\nProduto\nFormato\nSituação\n\n\n\n\nModelo Bacia A — TR25\nINP\nModelo de partida; linha de base tradicional\n\n\nModelo Bacia A — TR50\nINP\nModelo de partida; verificação de maior recorrência\n\n\nGuia de validação paralela no SWMM\nMarkdown\nChecklist de topologia, parâmetros e resultados\n\n\nIntegração de dissipadores\nMarkdown\nCritérios para saídas, dissipadores e escadas\n\n\n\nDepois que a camada GIS revisada for entregue, os INP, RPT e OUT serão regenerados e publicados em uma versão identificada como validada. O modelo final só será chamado de final após a execução e revisão de TR25 e TR50, com balanço de continuidade e saídas conferidos."
+  },
+  {
     "objectID": "08_dados.html#o-que-ainda-não-está-no-pacote-público",
     "href": "08_dados.html#o-que-ainda-não-está-no-pacote-público",
     "title": "Anexo A — Dados para download",
@@ -145,6 +152,13 @@
     "title": "4. Modelagem hidráulica",
     "section": "4.8 Próxima rodada",
     "text": "4.8 Próxima rodada\nA sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho."
+  },
+  {
+    "objectID": "04_rede_swmm.html#validação-paralela-que-deve-ser-feita-no-swmm",
+    "href": "04_rede_swmm.html#validação-paralela-que-deve-ser-feita-no-swmm",
+    "title": "4. Modelagem hidráulica",
+    "section": "4.9 Validação paralela que deve ser feita no SWMM",
+    "text": "4.9 Validação paralela que deve ser feita no SWMM\nEnquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.\nO modelo atual possui 187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments. Os diâmetros de 0,60 m e 0,80 m, a rugosidade 0,013, o CN médio 79 e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.\n\nChecklist de conferência\n\nConferir o sentido de cada link e se o nó de montante está compatível com o nó de jusante.\nIdentificar links invertidos, nós duplicados, nós órfãos e componentes sem caminho hidráulico.\nRevisar os 40 outfalls: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.\nConferir os 187 links contra a camada GIS, classificando cada um como TRONCO ou COLETOR.\nEditar as áreas de quadras no ArcMap/QGIS, e não diretamente no SWMM, mantendo o vínculo de cada subcatchment ao nó de entrada.\nRodar TR25 como teste de consistência e depois TR50, observando erro de continuidade, alagamentos, sobrecargas, velocidades e vazões de saída.\nRegistrar as vazões nos pontos que receberão dissipadores; elas serão a entrada para a estimativa de degraus, bacias e proteção a jusante.\n\nO guia operacional GUIA_VALIDACAO_SWMM_BACIA_A.md contém a tabela mínima de atributos e o critério para considerar uma versão final. A autoridade geométrica continua sendo a camada editada no GIS; o INP será regenerado a partir dela para evitar divergência entre mapa e simulação."
   },
   {
     "objectID": "02_base_cartografica.html",

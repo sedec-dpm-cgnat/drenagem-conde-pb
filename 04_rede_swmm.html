@@ -169,6 +169,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</a></li>
   <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.7 Critérios de verificação hidráulica</a></li>
   <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.8 Próxima rodada</a></li>
+  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.9 Validação paralela que deve ser feita no SWMM</a>
+  <ul class="collapse">
+  <li><a href="#checklist-de-conferência" id="toc-checklist-de-conferência" class="nav-link" data-scroll-target="#checklist-de-conferência">Checklist de conferência</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -338,8 +342,26 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="próxima-rodada" class="level2">
 <h2 class="anchored" data-anchor-id="próxima-rodada">4.8 Próxima rodada</h2>
 <p>A sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
+</section>
+<section id="validação-paralela-que-deve-ser-feita-no-swmm" class="level2">
+<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.9 Validação paralela que deve ser feita no SWMM</h2>
+<p>Enquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.</p>
+<p>O modelo atual possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Os diâmetros de 0,60 m e 0,80 m, a rugosidade 0,013, o CN médio 79 e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
+<section id="checklist-de-conferência" class="level3">
+<h3 class="anchored" data-anchor-id="checklist-de-conferência">Checklist de conferência</h3>
+<ol type="1">
+<li>Conferir o sentido de cada link e se o nó de montante está compatível com o nó de jusante.</li>
+<li>Identificar links invertidos, nós duplicados, nós órfãos e componentes sem caminho hidráulico.</li>
+<li>Revisar os 40 outfalls: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.</li>
+<li>Conferir os 187 links contra a camada GIS, classificando cada um como TRONCO ou COLETOR.</li>
+<li>Editar as áreas de quadras no ArcMap/QGIS, e não diretamente no SWMM, mantendo o vínculo de cada subcatchment ao nó de entrada.</li>
+<li>Rodar TR25 como teste de consistência e depois TR50, observando erro de continuidade, alagamentos, sobrecargas, velocidades e vazões de saída.</li>
+<li>Registrar as vazões nos pontos que receberão dissipadores; elas serão a entrada para a estimativa de degraus, bacias e proteção a jusante.</li>
+</ol>
+<p>O guia operacional <a href="data/downloads/swmm/GUIA_VALIDACAO_SWMM_BACIA_A.md"><code>GUIA_VALIDACAO_SWMM_BACIA_A.md</code></a> contém a tabela mínima de atributos e o critério para considerar uma versão final. A autoridade geométrica continua sendo a camada editada no GIS; o INP será regenerado a partir dela para evitar divergência entre mapa e simulação.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

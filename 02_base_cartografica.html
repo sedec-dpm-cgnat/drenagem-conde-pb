@@ -134,6 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
     <a class="nav-link" href="./07_plano_trabalho.html"> 
 <span class="menu-text">Plano de trabalho</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./08_dados.html"> 
+<span class="menu-text">Dados para download</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -159,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
   <li><a href="#sistema-de-referência" id="toc-sistema-de-referência" class="nav-link active" data-scroll-target="#sistema-de-referência">Sistema de referência</a></li>
   <li><a href="#camadas-principais" id="toc-camadas-principais" class="nav-link" data-scroll-target="#camadas-principais">Camadas principais</a></li>
+  <li><a href="#regra-de-organização-espacial" id="toc-regra-de-organização-espacial" class="nav-link" data-scroll-target="#regra-de-organização-espacial">Regra de organização espacial</a></li>
   <li><a href="#limitação-da-imagem-de-drone" id="toc-limitação-da-imagem-de-drone" class="nav-link" data-scroll-target="#limitação-da-imagem-de-drone">Limitação da imagem de drone</a></li>
   <li><a href="#verificação-das-fotos-brutas" id="toc-verificação-das-fotos-brutas" class="nav-link" data-scroll-target="#verificação-das-fotos-brutas">Verificação das fotos brutas</a></li>
   </ul>
@@ -206,7 +211,15 @@ document.addEventListener('DOMContentLoaded', function () {
 <tbody>
 <tr class="odd">
 <td>Bacia A revisada D8</td>
-<td>Limite usado para recorte da rede e das áreas preliminares</td>
+<td>Unidade de trabalho da rede preliminar e do primeiro modelo SWMM</td>
+</tr>
+<tr class="even">
+<td>Bacia B revisada D8</td>
+<td>Unidade de trabalho que receberá o próximo lançamento da rede</td>
+</tr>
+<tr class="odd">
+<td>Bacias A+B revisadas D8</td>
+<td>Recorte territorial conjunto para MDT, curvas e fluxos</td>
 </tr>
 <tr class="even">
 <td>MDT híbrido recortado</td>
@@ -226,6 +239,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="regra-de-organização-espacial" class="level2">
+<h2 class="anchored" data-anchor-id="regra-de-organização-espacial">Regra de organização espacial</h2>
+<p>Os arquivos com sufixo <code>A</code>, <code>B</code> ou <code>AB</code> devem ser interpretados respectivamente como pertencentes à Bacia A, à Bacia B ou ao conjunto das duas bacias. O painel espacial inicial mostra as duas delimitações com simbologia distinta: Bacia A em laranja e Bacia B em teal. Essa convenção será repetida nos mapas do relatório, no ArcMap/QGIS e nos produtos finais.</p>
 </section>
 <section id="limitação-da-imagem-de-drone" class="level2">
 <h2 class="anchored" data-anchor-id="limitação-da-imagem-de-drone">Limitação da imagem de drone</h2>

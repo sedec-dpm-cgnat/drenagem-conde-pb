@@ -1,52 +1,59 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Drenagem urbana — Conde/PB",
+    "objectID": "08_dados.html",
+    "href": "08_dados.html",
+    "title": "8. Dados para download",
     "section": "",
-    "text": "Drenagem urbana — Conde/PB\n\n\nConcepção preliminar · Bacias A e B · MDT híbrido · SWMM\nEste site documentará, de forma versionada e reproduzível, a construção da base cartográfica, do MDT híbrido, do lançamento da rede e do modelo hidrológico-hidráulico preliminar de drenagem de Conde/PB."
+    "text": "Esta página reúne os arquivos públicos de trabalho usados na concepção preliminar. Os produtos de análise estão em SIRGAS 2000 / UTM zona 25S — EPSG:31985, salvo os GeoJSON preparados para o painel web, que estão em WGS84 para visualização."
   },
   {
-    "objectID": "index.html#finalidade-do-relatório",
-    "href": "index.html#finalidade-do-relatório",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Finalidade do relatório",
-    "text": "Finalidade do relatório\nO objetivo é organizar evidências, hipóteses de diagnóstico, alternativas de intervenção e metas verificáveis para apoiar a elaboração do Plano de Trabalho de Reconstrução de Conde/PB. O escopo inicial não propõe a implantação imediata de toda a rede de drenagem municipal. Propõe priorizar os troncos principais, coletores indispensáveis e dissipadores localizados nos setores críticos, sem perder de vista que a solução definitiva depende da concepção integrada da bacia.\nComo diagnóstico preliminar, os processos erosivos observados são compatíveis com a combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura de drenagem urbana. Essa relação deve ser confirmada por vistoria, cadastro de ocorrências, levantamento das seções e análise hidráulica; por isso, a minuta não apresenta a hipótese como causalidade já comprovada.\nO princípio orientador é reconstruir melhor: as intervenções de recuperação devem reduzir o risco futuro, proteger os trechos a jusante e evitar a simples reposição de uma condição que reproduza a vulnerabilidade existente. A abordagem é compatível com a prioridade do Marco de Sendai de investir na redução de riscos e com a orientação de integrar redução de riscos à recuperação, reabilitação e reconstrução.\n\n\n\n\n\n\nEscopo atual. A primeira versão do projeto SWMM da Bacia A já foi montada com a rede importada, nós topológicos e áreas de contribuição preliminares. A etapa de revisão de quadras, conexões, cotas de fundo e diâmetros ainda é necessária antes de qualquer uso como projeto básico."
+    "objectID": "08_dados.html#bacias-de-drenagem-de-trabalho",
+    "href": "08_dados.html#bacias-de-drenagem-de-trabalho",
+    "title": "8. Dados para download",
+    "section": "Bacias de drenagem de trabalho",
+    "text": "Bacias de drenagem de trabalho\n\n\n\nProduto\nFormato\nObservação\n\n\n\n\nBacia A — revisão D8\nGeoJSON\nBacia em que o lançamento da rede e o modelo SWMM já avançaram\n\n\nBacia B — revisão D8\nGeoJSON\nBacia delimitada; lançamento da rede ainda pendente\n\n\nBacias A+B — revisão D8\nGeoJSON\nReferência conjunta do painel web\n\n\nBacias A+B — GeoPackage\nGPKG\nCamada de análise em EPSG:31985\n\n\nBacia A — KMZ\nKMZ\nAbrir no Google Earth Pro\n\n\nBacia B — KMZ\nKMZ\nAbrir no Google Earth Pro\n\n\nBacia A — shapefile\nZIP/SHP\nInclui SHP, SHX, DBF e PRJ\n\n\nBacia B — shapefile\nZIP/SHP\nInclui SHP, SHX, DBF e PRJ\n\n\n\nNeste relatório, Bacia A e Bacia B são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B será lançada na próxima etapa."
   },
   {
-    "objectID": "index.html#painel-espacial",
-    "href": "index.html#painel-espacial",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Painel espacial",
-    "text": "Painel espacial\n\n\n\n\nBase de imagem: Esri World Imagery. As geometrias do modelo estão em SIRGAS 2000 / UTM 25S nos arquivos de trabalho; o mapa web reprojeta as camadas para visualização em WGS84."
+    "objectID": "08_dados.html#mdt-híbrido-e-produtos-derivados",
+    "href": "08_dados.html#mdt-híbrido-e-produtos-derivados",
+    "title": "8. Dados para download",
+    "section": "MDT híbrido e produtos derivados",
+    "text": "MDT híbrido e produtos derivados\n\n\n\nProduto\nFormato\nUso\n\n\n\n\nMDT híbrido completo com curvas KMZ — 5 m\nGeoTIFF\nModelo regional de referência, com cobertura necessária para o entorno\n\n\nMDT híbrido recortado A+B — 5 m\nGeoTIFF\nModelo de partida para as duas bacias de trabalho\n\n\n\nO MDT de trabalho foi construído a partir da base altimétrica legada derivada de ANADEM/curvas de nível, com complementação pelo levantamento fotogramétrico do drone na área efetivamente coberta. A base foi harmonizada em grade de 5 m, ajustada à referência altimétrica disponível, verificada por sobreposição e recortada para as Bacias A+B. O levantamento de drone melhora a representação local onde existe cobertura, mas não transforma automaticamente o produto em levantamento cadastral ou projeto básico."
   },
   {
-    "objectID": "index.html#números-da-versão-preliminar",
-    "href": "index.html#números-da-versão-preliminar",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Números da versão preliminar",
-    "text": "Números da versão preliminar\n\n\n187links nodais\n\n\n200nós\n\n\n208áreas preliminares\n\n\n21,65 kmrede importada\n\n\nEPSG:31985SIRGAS 2000 / UTM 25S"
+    "objectID": "08_dados.html#curvas-de-nível",
+    "href": "08_dados.html#curvas-de-nível",
+    "title": "8. Dados para download",
+    "section": "Curvas de nível",
+    "text": "Curvas de nível\n\n\n\nProduto\nFormato\n\n\n\n\nCurvas A+B de 1 m — GeoPackage\nGPKG\n\n\nCurvas A+B de 5 m — GeoPackage\nGPKG\n\n\nCurvas A+B combinadas — GeoPackage\nGPKG\n\n\nCurvas A+B de 1 m — KMZ\nKMZ\n\n\nCurvas A+B de 5 m — KMZ\nKMZ\n\n\nCurvas A+B de 1 m — shapefile\nZIP/SHP\n\n\nCurvas A+B de 5 m — shapefile\nZIP/SHP\n\n\nCurvas A+B combinadas — shapefile\nZIP/SHP"
   },
   {
-    "objectID": "index.html#como-ler-este-projeto",
-    "href": "index.html#como-ler-este-projeto",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Como ler este projeto",
-    "text": "Como ler este projeto\n\nContexto e objetivo\nBase cartográfica e referência espacial\nConstrução e limitações do MDT híbrido\nRede importada e modelo SWMM\nChuva de projeto e mudança climática\nEntregáveis, revisão e próximos passos\nMinuta do Plano de Trabalho\n\n\nPadrão editorial inspirado nos projetos DPM/SEDEC de documentação versionada no GitHub Pages e na identidade visual SEDEC do ICPM."
+    "objectID": "08_dados.html#fluxo-superficial-e-rede",
+    "href": "08_dados.html#fluxo-superficial-e-rede",
+    "title": "8. Dados para download",
+    "section": "Fluxo superficial e rede",
+    "text": "Fluxo superficial e rede\n\n\n\nProduto\nFormato\n\n\n\n\nLinhas de fluxo principais A+B\nGPKG\n\n\nLinhas de fluxo principais A+B\nKMZ\n\n\nSetas de fluxo densas A+B\nGPKG\n\n\nPontos de metas\nGPKG\n\n\nRede nodal da Bacia A\nGeoJSON\n\n\nNós da rede da Bacia A\nGeoJSON\n\n\nTrechos de dissipação\nGeoJSON"
+  },
+  {
+    "objectID": "08_dados.html#o-que-ainda-não-está-no-pacote-público",
+    "href": "08_dados.html#o-que-ainda-não-está-no-pacote-público",
+    "title": "8. Dados para download",
+    "section": "O que ainda não está no pacote público",
+    "text": "O que ainda não está no pacote público\nOs rasters brutos do WebODM — ortomosaico, DSM e DTM de alta resolução — são arquivos muito grandes para o limite operacional deste repositório. Eles permanecem organizados na pasta local do projeto e serão disponibilizados por armazenamento próprio quando houver definição institucional para publicação. O produto altimétrico de referência para esta fase é o MDT híbrido recortado A+B acima.\n\n\n\n\n\n\nControle de versão. Antes de usar qualquer arquivo para contratação, conferir a versão do relatório, o CRS, a origem, a data de processamento, a cobertura do drone e as limitações registradas no capítulo do MDT híbrido."
   },
   {
     "objectID": "06_entregaveis.html",
     "href": "06_entregaveis.html",
     "title": "6. Entregáveis e próximos passos",
     "section": "",
-    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json"
+    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json\n\n\nPacote público de dados\npágina Dados para download\n\n\nPDF completo\nrelatorio_completo.pdf"
   },
   {
     "objectID": "06_entregaveis.html#pacote-local-atual",
     "href": "06_entregaveis.html#pacote-local-atual",
     "title": "6. Entregáveis e próximos passos",
     "section": "",
-    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json"
+    "text": "Produto\nLocal\n\n\n\n\nRede nodal para ArcMap\n01_REDE_IMPORTADA/rede_linhas_A_nodal.shp\n\n\nNós da rede\n01_REDE_IMPORTADA/rede_nos_A.shp\n\n\nÁreas preliminares\n02_AREAS_CONTRIBUICAO/areas_contribuicao_A_template.shp\n\n\nSWMM TR25\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR25.inp\n\n\nSWMM TR50\n03_MODELO_SWMM/CONDE_BACIA_A_REDE_PRELIM_TR50.inp\n\n\nManifesto técnico\nmanifesto_projeto_swmm_bacia_A.json\n\n\nPacote público de dados\npágina Dados para download\n\n\nPDF completo\nrelatorio_completo.pdf"
   },
   {
     "objectID": "06_entregaveis.html#sequência-de-revisão",
@@ -60,7 +67,7 @@
     "href": "06_entregaveis.html#publicação",
     "title": "6. Entregáveis e próximos passos",
     "section": "Publicação",
-    "text": "Publicação\nO repositório GitHub Pages será criado como projeto específico drenagem-conde-pb, seguindo o padrão editorial dos projetos DPM/SEDEC. A publicação deve ocorrer depois da revisão dos arquivos vetoriais e da confirmação de quais dados podem ser disponibilizados publicamente."
+    "text": "Publicação\nO repositório GitHub Pages drenagem-conde-pb está ativo e será atualizado progressivamente. A página de dados separa produtos públicos compactos de arquivos brutos muito grandes ou que dependam de triagem institucional. A publicação não substitui a validação dos autores, do município e dos responsáveis técnicos."
   },
   {
     "objectID": "04_rede_swmm.html",
@@ -70,8 +77,8 @@
     "text": "A rede foi reunida a partir dos arquivos TroncoA*.shp, ColetorA*.shp e ColetarA6.shp. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.\n\n\n9arquivos/traçados de tronco\n\n\n95feições coletoras de origem\n\n\n16componentes conectados\n\n\n40saídas provisórias\n\n\n\n\n\n\n\n\nAlerta topológico. Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição."
   },
   {
-    "objectID": "04_rede_swmm.html#rede-de-partida",
-    "href": "04_rede_swmm.html#rede-de-partida",
+    "objectID": "04_rede_swmm.html#rede-de-partida-da-bacia-a",
+    "href": "04_rede_swmm.html#rede-de-partida-da-bacia-a",
     "title": "4. Rede importada e modelo SWMM",
     "section": "",
     "text": "A rede foi reunida a partir dos arquivos TroncoA*.shp, ColetorA*.shp e ColetarA6.shp. As linhas foram recortadas na Bacia A, divididas em interseções, conectadas por snap de até 2 m e transformadas em links nodais.\n\n\n9arquivos/traçados de tronco\n\n\n95feições coletoras de origem\n\n\n16componentes conectados\n\n\n40saídas provisórias\n\n\n\n\n\n\n\n\nAlerta topológico. Os 16 componentes indicam que o desenho atual ainda não representa uma rede única contínua. As conexões devem ser revisadas no ArcMap antes da definição de galerias tronco, coletores, exutórios e áreas de contribuição."
@@ -89,6 +96,13 @@
     "title": "4. Rede importada e modelo SWMM",
     "section": "Áreas de contribuição",
     "text": "Áreas de contribuição\nAs 208 áreas atuais são um template Voronoi para não deixar a estrutura do SWMM vazia. Elas devem ser redesenhadas ou mescladas no ArcMap conforme o escoamento de ruas, quadras, sarjetas e pontos de entrada."
+  },
+  {
+    "objectID": "04_rede_swmm.html#próxima-frente-bacia-b",
+    "href": "04_rede_swmm.html#próxima-frente-bacia-b",
+    "title": "4. Rede importada e modelo SWMM",
+    "section": "Próxima frente: Bacia B",
+    "text": "Próxima frente: Bacia B\nA Bacia B já possui limite revisado, MDT híbrido conjunto, curvas e linhas de fluxo. Ainda falta lançar seus troncos principais, coletores, pontos de saída e áreas de contribuição. O modelo SWMM será mantido separado por bacia durante a montagem e depois poderá receber uma verificação conjunta de continuidade, desde que exista conexão hidráulica comprovada entre as unidades."
   },
   {
     "objectID": "02_base_cartografica.html",
@@ -109,7 +123,14 @@
     "href": "02_base_cartografica.html#camadas-principais",
     "title": "2. Base cartográfica e referência espacial",
     "section": "Camadas principais",
-    "text": "Camadas principais\n\n\n\n\n\n\n\nCamada\nUso\n\n\n\n\nBacia A revisada D8\nLimite usado para recorte da rede e das áreas preliminares\n\n\nMDT híbrido recortado\nCotas superficiais, declividade e orientação preliminar da rede\n\n\nOrtomosaico WebODM\nAlta resolução local, onde houver cobertura\n\n\nImagem Esri World Imagery\nReferência visual para ruas e quadras no mapa web/ArcMap\n\n\nTroncos e coletores lançados\nRede de partida para a modelagem SWMM"
+    "text": "Camadas principais\n\n\n\n\n\n\n\nCamada\nUso\n\n\n\n\nBacia A revisada D8\nUnidade de trabalho da rede preliminar e do primeiro modelo SWMM\n\n\nBacia B revisada D8\nUnidade de trabalho que receberá o próximo lançamento da rede\n\n\nBacias A+B revisadas D8\nRecorte territorial conjunto para MDT, curvas e fluxos\n\n\nMDT híbrido recortado\nCotas superficiais, declividade e orientação preliminar da rede\n\n\nOrtomosaico WebODM\nAlta resolução local, onde houver cobertura\n\n\nImagem Esri World Imagery\nReferência visual para ruas e quadras no mapa web/ArcMap\n\n\nTroncos e coletores lançados\nRede de partida para a modelagem SWMM"
+  },
+  {
+    "objectID": "02_base_cartografica.html#regra-de-organização-espacial",
+    "href": "02_base_cartografica.html#regra-de-organização-espacial",
+    "title": "2. Base cartográfica e referência espacial",
+    "section": "Regra de organização espacial",
+    "text": "Regra de organização espacial\nOs arquivos com sufixo A, B ou AB devem ser interpretados respectivamente como pertencentes à Bacia A, à Bacia B ou ao conjunto das duas bacias. O painel espacial inicial mostra as duas delimitações com simbologia distinta: Bacia A em laranja e Bacia B em teal. Essa convenção será repetida nos mapas do relatório, no ArcMap/QGIS e nos produtos finais."
   },
   {
     "objectID": "02_base_cartografica.html#limitação-da-imagem-de-drone",
@@ -126,25 +147,67 @@
     "text": "Verificação das fotos brutas\nUma leitura rápida dos metadados da pasta Paraíba/Conde PB encontrou 965 fotografias JPG, todas com GPS. Os centros de câmera cobrem apenas parte da extensão da Bacia A: o casco convexo das posições cobre aproximadamente 14,58% da área da bacia. Portanto, não será iniciado um novo processamento fotogramétrico com esse conjunto para tentar produzir um ortomosaico integral.\nPara o background completo, a opção operacional será a imagem Esri no ArcMap/QGIS ou um raster de satélite georreferenciado. O arquivo legado basemap_aereo_Esri_georref.jpg é visualmente amplo, mas não apresenta CRS/worldfile verificável; ele precisa ser georreferenciado antes de ser usado como camada de análise."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "",
+    "text": "Drenagem urbana — Conde/PB\n\n\nConcepção preliminar · Bacias A e B · MDT híbrido · SWMM\nEste site documentará, de forma versionada e reproduzível, a construção da base cartográfica, do MDT híbrido, do lançamento da rede e do modelo hidrológico-hidráulico preliminar de drenagem de Conde/PB."
+  },
+  {
+    "objectID": "index.html#finalidade-do-relatório",
+    "href": "index.html#finalidade-do-relatório",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Finalidade do relatório",
+    "text": "Finalidade do relatório\nO objetivo é organizar evidências, hipóteses de diagnóstico, alternativas de intervenção e metas verificáveis para apoiar a elaboração do Plano de Trabalho de Reconstrução de Conde/PB. O escopo inicial não propõe a implantação imediata de toda a rede de drenagem municipal. Propõe priorizar os troncos principais, coletores indispensáveis e dissipadores localizados nos setores críticos, sem perder de vista que a solução definitiva depende da concepção integrada da bacia.\nComo diagnóstico preliminar, os processos erosivos observados são compatíveis com a combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura de drenagem urbana. Essa relação deve ser confirmada por vistoria, cadastro de ocorrências, levantamento das seções e análise hidráulica; por isso, a minuta não apresenta a hipótese como causalidade já comprovada.\nO princípio orientador é reconstruir melhor: as intervenções de recuperação devem reduzir o risco futuro, proteger os trechos a jusante e evitar a simples reposição de uma condição que reproduza a vulnerabilidade existente. A abordagem é compatível com a prioridade do Marco de Sendai de investir na redução de riscos e com a orientação de integrar redução de riscos à recuperação, reabilitação e reconstrução.\n\n\n\n\n\n\nEscopo atual. A primeira versão do projeto SWMM da Bacia A já foi montada com a rede importada, nós topológicos e áreas de contribuição preliminares. A etapa de revisão de quadras, conexões, cotas de fundo e diâmetros ainda é necessária antes de qualquer uso como projeto básico."
+  },
+  {
+    "objectID": "index.html#painel-espacial-das-bacias-a-e-b",
+    "href": "index.html#painel-espacial-das-bacias-a-e-b",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Painel espacial das Bacias A e B",
+    "text": "Painel espacial das Bacias A e B\n\n\n\n\n\n\nUnidades de trabalho. A Bacia A é a frente já avançada, com rede preliminar, nós e áreas de contribuição template. A Bacia B já está delimitada e será lançada na etapa seguinte. A terminologia de rede, áreas, metas e cenários hidrológicos deste relatório seguirá sempre essa divisão.\n\n\n\n\n\n\n\nBase de imagem: Esri World Imagery. As camadas de análise permanecem em SIRGAS 2000 / UTM 25S; o painel reprojeta as geometrias para WGS84 somente para visualização."
+  },
+  {
+    "objectID": "index.html#números-da-versão-preliminar",
+    "href": "index.html#números-da-versão-preliminar",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Números da versão preliminar",
+    "text": "Números da versão preliminar\n\n\n187links nodais\n\n\n200nós\n\n\n208áreas preliminares\n\n\n21,65 kmrede importada\n\n\nEPSG:31985SIRGAS 2000 / UTM 25S"
+  },
+  {
+    "objectID": "index.html#como-ler-este-projeto",
+    "href": "index.html#como-ler-este-projeto",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Como ler este projeto",
+    "text": "Como ler este projeto\n\nContexto e objetivo\nBase cartográfica e referência espacial\nConstrução e limitações do MDT híbrido\nRede importada e modelo SWMM\nChuva de projeto e mudança climática\nEntregáveis, revisão e próximos passos\nMinuta do Plano de Trabalho\nDados para download"
+  },
+  {
+    "objectID": "index.html#relatório-completo-em-pdf",
+    "href": "index.html#relatório-completo-em-pdf",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Relatório completo em PDF",
+    "text": "Relatório completo em PDF\nO PDF completo do relatório reúne a minuta técnica, a metodologia do MDT híbrido, a situação das Bacias A e B, a rede/SWMM, a hidrologia, o plano de trabalho e o catálogo de dados. O arquivo será atualizado junto com cada versão publicada do site.\n\nPadrão editorial inspirado nos projetos DPM/SEDEC de documentação versionada no GitHub Pages e na identidade visual SEDEC do ICPM."
+  },
+  {
     "objectID": "01_contexto.html",
     "href": "01_contexto.html",
     "title": "1. Contexto e objetivo",
     "section": "",
-    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
+    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nNeste relatório, a expressão Bacia A identifica a unidade em que o lançamento da rede de troncos e coletores já avançou e será revisado antes da simulação final. Bacia B identifica a unidade já delimitada no GIS, cujo lançamento da rede ainda será realizado. A separação é mantida em mapas, camadas, arquivos de entrada, áreas de contribuição, cenários e metas para evitar misturar resultados de etapas diferentes.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
   },
   {
     "objectID": "01_contexto.html#objetivo",
     "href": "01_contexto.html#objetivo",
     "title": "1. Contexto e objetivo",
     "section": "",
-    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
+    "text": "Construir uma concepção preliminar de reconstrução e otimização da drenagem urbana de Conde/PB, com foco inicial nas Bacias A e B, usando a rede lançada em GIS, o MDT híbrido e a simulação hidrológica-hidráulica no SWMM.\nNeste relatório, a expressão Bacia A identifica a unidade em que o lançamento da rede de troncos e coletores já avançou e será revisado antes da simulação final. Bacia B identifica a unidade já delimitada no GIS, cujo lançamento da rede ainda será realizado. A separação é mantida em mapas, camadas, arquivos de entrada, áreas de contribuição, cenários e metas para evitar misturar resultados de etapas diferentes.\nO material é uma base de trabalho para definir trechos prioritários, metas do plano de trabalho e necessidades de levantamento para a contratação de um projeto básico.\nO relatório será utilizado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. O escopo da reconstrução deverá priorizar os trechos críticos — especialmente troncos principais e dissipadores — sem apresentar a implantação de toda a rede como objeto desta etapa. A solução deverá, entretanto, ser verificada no contexto integrado das bacias para evitar transferências de risco para jusante."
   },
   {
     "objectID": "01_contexto.html#fases-do-estudo",
     "href": "01_contexto.html#fases-do-estudo",
     "title": "1. Contexto e objetivo",
     "section": "Fases do estudo",
-    "text": "Fases do estudo\n\n\n\n\n\n\n\n\nFase\nConteúdo\nSituação\n\n\n\n\n1\nRede importada, MDT híbrido e estrutura preliminar SWMM\nEm revisão\n\n\n2\nÁreas reais de quadras e contribuição\nPróxima etapa\n\n\n3\nVerificação hidráulica TR25/TR50\nApós revisão da rede\n\n\n4\nAtualização climática com NEX-GDDP-CMIP6\nSegunda etapa hidrológica\n\n\n5\nRelatório técnico, mapas finais e plano de trabalho\nApós validação"
+    "text": "Fases do estudo\n\n\n\n\n\n\n\n\nFase\nConteúdo\nSituação\n\n\n\n\n1\nRede importada, MDT híbrido e estrutura preliminar SWMM\nEm revisão\n\n\n2\nÁreas reais de quadras e contribuição\nPróxima etapa\n\n\n3\nVerificação hidráulica TR25/TR50\nApós revisão da rede\n\n\n4\nAtualização climática com NEX-GDDP-CMIP6\nSegunda etapa hidrológica\n\n\n5\nRelatório técnico, mapas finais e plano de trabalho\nApós validação\n\n\n\n\nSituação territorial das duas bacias\n\n\n\n\n\n\n\n\nUnidade\nSituação atual\nPróxima decisão\n\n\n\n\nBacia A\nRede preliminar, nós, dissipadores e áreas template já organizados\nRevisar continuidade, áreas reais e parâmetros do SWMM\n\n\nBacia B\nLimite revisado e produtos topográficos disponíveis\nLançar troncos, coletores, áreas de contribuição e saídas"
   },
   {
     "objectID": "01_contexto.html#princípio-de-rastreabilidade",
@@ -158,14 +221,28 @@
     "href": "03_mdt_hibrido.html",
     "title": "3. MDT híbrido",
     "section": "",
-    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em 5 m, no CRS EPSG:31985. Ele combina a base legada com o levantamento de maior resolução do drone na área coberta, mantendo a cobertura regional necessária para a análise."
+    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em grade de 5 m e CRS EPSG:31985. O arquivo de referência é MDT_hibrido_Bacias_AB_5m_EPSG31985.tif; o arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva a extensão maior para contexto e complementação."
   },
   {
     "objectID": "03_mdt_hibrido.html#produto-de-referência",
     "href": "03_mdt_hibrido.html#produto-de-referência",
     "title": "3. MDT híbrido",
     "section": "",
-    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em 5 m, no CRS EPSG:31985. Ele combina a base legada com o levantamento de maior resolução do drone na área coberta, mantendo a cobertura regional necessária para a análise."
+    "text": "O modelo usado nesta etapa é o MDT híbrido recortado para as Bacias A e B, em grade de 5 m e CRS EPSG:31985. O arquivo de referência é MDT_hibrido_Bacias_AB_5m_EPSG31985.tif; o arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva a extensão maior para contexto e complementação."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#histórico-e-metodologia-de-construção",
+    "href": "03_mdt_hibrido.html#histórico-e-metodologia-de-construção",
+    "title": "3. MDT híbrido",
+    "section": "Histórico e metodologia de construção",
+    "text": "Histórico e metodologia de construção\nO produto foi organizado em uma sequência de integração de fontes, mantendo os arquivos intermediários e os registros de processamento na pasta 04_MDT_HIBRIDO:\n\nBase altimétrica legada. Foi preservado o modelo mais abrangente derivado de ANADEM e das curvas de nível anteriormente disponíveis. Essa fonte fornece a cobertura territorial necessária, mas tem resolução e incerteza maiores que o levantamento local.\nLevantamento fotogramétrico. As imagens do drone foram processadas no WebODM para obter produtos de superfície e terreno. O drone cobre apenas parte do território; por isso, seu produto não foi usado para preencher automaticamente toda a extensão das Bacias A e B.\nHarmonização espacial. As fontes foram reprojetadas para SIRGAS 2000 / UTM 25S, conferidas quanto à extensão e reamostradas em grade métrica de 5 m. A área de sobreposição foi usada para comparar a superfície local com a base legada.\nAjuste altimétrico. Onde houve sobreposição e observações de referência, foi aplicado o ajuste documentado nos registros do projeto. A relação entre a fonte local e a referência foi usada para reduzir diferenças sistemáticas, sem afirmar precisão cadastral onde não há pontos de controle suficientes.\nComposição híbrida. O levantamento do drone tem prioridade na área coberta e compatível; fora dela, a base legada mantém a continuidade espacial. A máscara de cobertura do drone permite identificar qual fonte domina cada pixel.\nCorreção hidrológica e recorte. O MDT foi verificado para orientar o fluxo superficial, derivar declividade e apoiar a revisão das bacias. Em seguida, foi recortado pela união das Bacias A e B, mantendo o mesmo CRS e tamanho de pixel.\n\nO procedimento detalhado, os nomes das bases, as máscaras, as estatísticas e as limitações estão documentados em 04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md, relatorio_hibrido_completo_curvas_KMZ.json e 01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#base-hidrográfica-derivada",
+    "href": "03_mdt_hibrido.html#base-hidrográfica-derivada",
+    "title": "3. MDT híbrido",
+    "section": "Base hidrográfica derivada",
+    "text": "Base hidrográfica derivada\nDo MDT híbrido foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Esses produtos são apoio à concepção: não representam automaticamente galerias enterradas, sarjetas, soleiras, bueiros ou divisores artificiais criados pela urbanização. A hidrologia urbana deve ser confrontada com ruas, quadras, pontos de entrada e cadastro de drenagem."
   },
   {
     "objectID": "03_mdt_hibrido.html#uso-nesta-concepção",
@@ -180,6 +257,13 @@
     "title": "3. MDT híbrido",
     "section": "Limitações",
     "text": "Limitações\nAs cotas amostradas são de superfície do terreno, não de fundo de galerias. O MDT não substitui nivelamento de poços de visita, levantamento de soleiras, cadastro de redes enterradas ou levantamento topográfico para projeto básico.\nO procedimento de criação, fontes e limitações do MDT está organizado na pasta 04_MDT_HIBRIDO e será incorporado como capítulo metodológico do relatório final."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#limitações-e-requisitos-para-projeto-básico",
+    "href": "03_mdt_hibrido.html#limitações-e-requisitos-para-projeto-básico",
+    "title": "3. MDT híbrido",
+    "section": "Limitações e requisitos para projeto básico",
+    "text": "Limitações e requisitos para projeto básico\nO MDT híbrido não substitui levantamento topográfico cadastral, nivelamento de poços de visita, cadastro de redes enterradas, sondagens, investigação geotécnica, controle de qualidade fotogramétrico ou pontos de controle GNSS vinculados ao Sistema Geodésico Brasileiro. Para um projeto básico, será necessário conferir a referência vertical, densificar pontos de controle, validar as cotas de entrada e saída, levantar seções e verificar as estruturas de dissipação. Qualquer grandeza não determinada deve permanecer registrada como null ou “não determinada”, sem estimativa não documentada."
   },
   {
     "objectID": "05_hidrologia.html",

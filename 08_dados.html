@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Anexo A — Dados para download – Drenagem Conde/PB</title>
+<title>Concepção preliminar de drenagem urbana — Conde/PB – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,12 +159,15 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#bacias-de-drenagem-de-trabalho" id="toc-bacias-de-drenagem-de-trabalho" class="nav-link active" data-scroll-target="#bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</a></li>
+  <li><a href="#anexo-a-dados-para-download" id="toc-anexo-a-dados-para-download" class="nav-link active" data-scroll-target="#anexo-a-dados-para-download">Anexo A — Dados para download</a>
+  <ul class="collapse">
+  <li><a href="#bacias-de-drenagem-de-trabalho" id="toc-bacias-de-drenagem-de-trabalho" class="nav-link" data-scroll-target="#bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</a></li>
   <li><a href="#mdt-híbrido-e-produtos-derivados" id="toc-mdt-híbrido-e-produtos-derivados" class="nav-link" data-scroll-target="#mdt-híbrido-e-produtos-derivados">MDT híbrido e produtos derivados</a></li>
   <li><a href="#curvas-de-nível" id="toc-curvas-de-nível" class="nav-link" data-scroll-target="#curvas-de-nível">Curvas de nível</a></li>
   <li><a href="#fluxo-superficial-e-rede" id="toc-fluxo-superficial-e-rede" class="nav-link" data-scroll-target="#fluxo-superficial-e-rede">Fluxo superficial e rede</a></li>
   <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a></li>
   <li><a href="#o-que-ainda-não-está-no-pacote-público" id="toc-o-que-ainda-não-está-no-pacote-público" class="nav-link" data-scroll-target="#o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -173,7 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anexo A — Dados para download</h1>
+<h1 class="title">Concepção preliminar de drenagem urbana — Conde/PB</h1>
+<p class="subtitle lead">Bacias A e B · MDT híbrido · rede e SWMM</p>
 </div>
 
 
@@ -190,6 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
+<section id="anexo-a-dados-para-download" class="level1">
+<h1>Anexo A — Dados para download</h1>
 <p>Esta página reúne os arquivos públicos de trabalho usados na concepção preliminar. Os produtos de análise estão em <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>, salvo os GeoJSON preparados para o painel web, que estão em WGS84 para visualização.</p>
 <div class="download-card">
 <div>
@@ -234,6 +240,16 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>Áreas de erosão, metas e pontos fotográficos originalmente marcados</td>
 </tr>
 <tr class="even">
+<td><a href="assets/mapa_suscetibilidade_erosao_metas_originais.png">Mapa de suscetibilidade e metas originais</a></td>
+<td>PNG</td>
+<td>Mapa de referência com manchas de suscetibilidade, rede e ocorrências fotográficas</td>
+</tr>
+<tr class="odd">
+<td><a href="data/evidencia_suscetibilidade/mapa_suscetibilidade_erosao_metas_originais_alta_resolucao.png">Mapa de suscetibilidade e metas — alta resolução</a></td>
+<td>PNG</td>
+<td>Arquivo original preservado para inspeção cartográfica detalhada</td>
+</tr>
+<tr class="even">
 <td><a href="data/areas_erosao_originais.geojson">Áreas de erosão originais</a></td>
 <td>GeoJSON</td>
 <td>Conversão pública dos polígonos do KMZ original</td>
@@ -249,26 +265,41 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>Conversão pública dos pontos fotográficos do KMZ original</td>
 </tr>
 <tr class="odd">
+<td><a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv">Evidência de suscetibilidade e metas</a></td>
+<td>CSV</td>
+<td>Cruzamento dos pontos com suscetibilidade e Bacias A/B</td>
+</tr>
+<tr class="even">
+<td><a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.geojson">Evidência de suscetibilidade e metas</a></td>
+<td>GeoJSON</td>
+<td>Camada enriquecida em EPSG:31985</td>
+</tr>
+<tr class="odd">
+<td><a href="data/evidencia_suscetibilidade/resumo_suscetibilidade.json">Resumo do cruzamento</a></td>
+<td>JSON</td>
+<td>Contagens, critérios e interpretação</td>
+</tr>
+<tr class="even">
 <td><a href="data/downloads/bacias/Bacias_AB_revisadas_D8.gpkg">Bacias A+B — GeoPackage</a></td>
 <td>GPKG</td>
 <td>Camada de análise em EPSG:31985</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/bacias/Bacia_A_revisada_D8.kmz">Bacia A — KMZ</a></td>
 <td>KMZ</td>
 <td>Abrir no Google Earth Pro</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/downloads/bacias/Bacia_B_revisada_D8.kmz">Bacia B — KMZ</a></td>
 <td>KMZ</td>
 <td>Abrir no Google Earth Pro</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/bacias/Bacia_A_revisada_D8.zip">Bacia A — shapefile</a></td>
 <td>ZIP/SHP</td>
 <td>Inclui SHP, SHX, DBF e PRJ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/downloads/bacias/Bacia_B_revisada_D8.zip">Bacia B — shapefile</a></td>
 <td>ZIP/SHP</td>
 <td>Inclui SHP, SHX, DBF e PRJ</td>
@@ -439,6 +470,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

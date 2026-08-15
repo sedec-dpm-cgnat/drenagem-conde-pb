@@ -1,0 +1,21 @@
+{
+  "crs": "EPSG:31985",
+  "manchas_suscetibilidade": {
+    "alta": 9,
+    "media": 22,
+    "outras": 2
+  },
+  "pontos_metas": {
+    "total": 12,
+    "dentro_bacias_A_B": 10,
+    "coincidencia_direta_suscetibilidade": 4,
+    "fora_escopo_A_B": 2
+  },
+  "pontos_erosao_fotografias": {
+    "total": 9,
+    "dentro_bacias_A_B": 2,
+    "coincidencia_direta_suscetibilidade": 2,
+    "fora_escopo_A_B": 7
+  },
+  "interpretacao": "Coincidência direta significa que o ponto está contido em polígono de suscetibilidade original; distância fora do polígono é apenas indicador de proximidade, não validação de risco."
+}

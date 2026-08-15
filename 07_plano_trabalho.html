@@ -163,11 +163,13 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#escopo-preliminar" id="toc-escopo-preliminar" class="nav-link" data-scroll-target="#escopo-preliminar">6.1.2 Escopo preliminar</a></li>
   <li><a href="#evidências-e-setores-a-confirmar" id="toc-evidências-e-setores-a-confirmar" class="nav-link" data-scroll-target="#evidências-e-setores-a-confirmar">6.1.3 Evidências e setores a confirmar</a>
   <ul class="collapse">
+  <li><a href="#evidência-de-suscetibilidade-e-recorte-das-metas" id="toc-evidência-de-suscetibilidade-e-recorte-das-metas" class="nav-link" data-scroll-target="#evidência-de-suscetibilidade-e-recorte-das-metas">Evidência de suscetibilidade e recorte das metas</a></li>
   <li><a href="#conferência-da-cobertura-da-rede" id="toc-conferência-da-cobertura-da-rede" class="nav-link" data-scroll-target="#conferência-da-cobertura-da-rede">Conferência da cobertura da rede</a></li>
   </ul></li>
   <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a>
   <ul class="collapse">
   <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</a></li>
+  <li><a href="#limite-territorial-do-plano-de-trabalho" id="toc-limite-territorial-do-plano-de-trabalho" class="nav-link" data-scroll-target="#limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</a></li>
   </ul></li>
   <li><a href="#dissipadores-critério-para-a-etapa-seguinte" id="toc-dissipadores-critério-para-a-etapa-seguinte" class="nav-link" data-scroll-target="#dissipadores-critério-para-a-etapa-seguinte">6.1.5 Dissipadores: critério para a etapa seguinte</a></li>
   <li><a href="#enquadramento-federal-a-verificar" id="toc-enquadramento-federal-a-verificar" class="nav-link" data-scroll-target="#enquadramento-federal-a-verificar">6.1.6 Enquadramento federal a verificar</a>
@@ -277,6 +279,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>O registro detalhado da conferência está em <a href="data/inventario_pontos_criticos.json"><code>inventario_pontos_criticos.json</code></a>. Quatro linhas coincidem exatamente com nós de saída provisórios da rede; uma delas se aproxima do nó <code>N_A_0195</code>, mas requer revisão de snap. A camada ainda não foi incorporada automaticamente ao SWMM.</p>
+<section id="evidência-de-suscetibilidade-e-recorte-das-metas" class="level3">
+<h3 class="anchored" data-anchor-id="evidência-de-suscetibilidade-e-recorte-das-metas">Evidência de suscetibilidade e recorte das metas</h3>
+<p>O mapa de suscetibilidade à erosão e o cruzamento espacial das marcações originais mostram que <strong>10 dos 12 pontos de metas estão dentro das Bacias A ou B</strong>. Quatro pontos — <code>3i</code>, <code>3f</code>, <code>6i</code> e <code>6f</code> — coincidem diretamente com as manchas originais de suscetibilidade alta e/ou média. Os pontos <code>5i</code> e <code>5f</code> estão na Bacia A, mas fora dessas manchas; os pontos <code>1i</code>, <code>1f</code>, <code>2f</code> e <code>2i - foto?</code> estão na Bacia B e precisam ser reavaliados após o lançamento da rede. Os pontos <code>4i</code> e <code>4f</code> estão fora do recorte A+B.</p>
+<p>Esse resultado sustenta a priorização, mas não converte automaticamente as marcações originais em metas de obra. A seleção deverá combinar suscetibilidade, erosão observada, fluxo superficial, criticidade hidráulica no SWMM, população/infraestrutura protegida, condição de jusante e viabilidade de implantação. O quadro detalhado está em <a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv"><code>evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv</code></a>.</p>
+</section>
 <section id="conferência-da-cobertura-da-rede" class="level3">
 <h3 class="anchored" data-anchor-id="conferência-da-cobertura-da-rede">Conferência da cobertura da rede</h3>
 <p>O modelo nodal preliminar possui 16 componentes conectados e 40 saídas provisórias. Os cinco trechos de dissipação se associam preliminarmente aos componentes 16, 15, 2, 9 e 3. Portanto, a afirmação de que toda a água coletada deverá sair por um desses trechos será adotada como <strong>regra de concepção</strong>, mas ainda não como resultado verificado: os outros 11 componentes precisam ser conectados a esses exutórios, receber uma saída própria justificada ou ser eliminados após a revisão da rede.</p>
@@ -390,6 +397,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>Essa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal.</p>
+</section>
+<section id="limite-territorial-do-plano-de-trabalho" class="level3">
+<h3 class="anchored" data-anchor-id="limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</h3>
+<p>O Plano de Trabalho desta análise contemplará somente metas localizadas nas <strong>Bacias A e B</strong> e que tenham relação comprovada com os sistemas de drenagem modelados ou em lançamento. Ocorrências, pontos e trechos fora desse recorte não serão somados aos quantitativos nem usados para concluir sobre a capacidade das Bacias A ou B. Eles deverão ser tratados em frentes próprias, com delimitação da bacia contribuinte, diagnóstico, levantamento e modelagem específicos quando necessários.</p>
 </section>
 </section>
 <section id="dissipadores-critério-para-a-etapa-seguinte" class="level2">

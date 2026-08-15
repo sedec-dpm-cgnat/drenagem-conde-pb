@@ -69,8 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3R9j9bJ8j1iT4s3d6W4p4U6G9J0fI=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const note = document.createElement('div');
@@ -164,7 +162,10 @@ document.addEventListener('DOMContentLoaded', function () {
    
   <ul>
   <li><a href="#finalidade-do-relatório" id="toc-finalidade-do-relatório" class="nav-link active" data-scroll-target="#finalidade-do-relatório">Finalidade do relatório</a></li>
-  <li><a href="#painel-espacial-das-bacias-a-e-b" id="toc-painel-espacial-das-bacias-a-e-b" class="nav-link" data-scroll-target="#painel-espacial-das-bacias-a-e-b">Painel espacial das Bacias A e B</a></li>
+  <li><a href="#painel-espacial-das-bacias-a-e-b" id="toc-painel-espacial-das-bacias-a-e-b" class="nav-link" data-scroll-target="#painel-espacial-das-bacias-a-e-b">Painel espacial das Bacias A e B</a>
+  <ul class="collapse">
+  <li><a href="#situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho" id="toc-situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho" class="nav-link" data-scroll-target="#situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho">Situação da rede proposta e dos trechos do Plano de Trabalho</a></li>
+  </ul></li>
   <li><a href="#números-da-versão-preliminar" id="toc-números-da-versão-preliminar" class="nav-link" data-scroll-target="#números-da-versão-preliminar">Números da versão preliminar</a></li>
   <li><a href="#como-ler-este-projeto" id="toc-como-ler-este-projeto" class="nav-link" data-scroll-target="#como-ler-este-projeto">Como ler este projeto</a></li>
   <li><a href="#relatório-completo-em-pdf" id="toc-relatório-completo-em-pdf" class="nav-link" data-scroll-target="#relatório-completo-em-pdf">Relatório completo em PDF</a></li>
@@ -280,50 +281,55 @@ Concepção preliminar · Bacias A e B · MDT híbrido · SWMM
 </div>
 </div>
 </div>
-<div id="map" aria-label="Mapa interativo das Bacias A e B, rede preliminar e áreas de contribuição">
-
-</div>
+<figure class="map-figure figure">
+<img src="assets/mapa_sintese_bacias_rede.svg" alt="Mapa-síntese das Bacias A e B, com a rede preliminar da Bacia A e os trechos de dissipação" class="figure-img">
+<figcaption>
+Mapa-síntese estático para leitura do relatório. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.
+</figcaption>
+</figure>
 <p class="map-note">
-Base de imagem: Esri World Imagery. As camadas de análise permanecem em SIRGAS 2000 / UTM 25S; o painel reprojeta as geometrias para WGS84 somente para visualização.
+O painel foi simplificado para evitar falhas de carregamento de mapas-base e bibliotecas externas. A representação é cartográfica, não substitui a conferência no ArcMap/QGIS; o CRS de trabalho permanece SIRGAS 2000 / UTM 25S.
 </p>
-<script>
-const mapEl = document.getElementById('map');
-if (typeof L === 'undefined') {
-  mapEl.innerHTML = '<div class="callout warning">O componente cartográfico não foi carregado. Abra a página com conexão à internet para carregar a biblioteca Leaflet e os mapas-base.</div>';
-} else {
-const map = L.map('map', {zoomControl:true, preferCanvas:true});
-const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 20, attribution: 'Tiles © Esri'}).addTo(map);
-const streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '© OpenStreetMap'});
-const layers = {};
-const styleA = {color:'#994b00', weight:4, fillColor:'#f5e9d3', fillOpacity:.30};
-const styleB = {color:'#187d78', weight:4, fillColor:'#d8f0ed', fillOpacity:.30, dashArray:'8 5'};
-const styleAreas = {color:'#187d78', weight:.45, fillColor:'#187d78', fillOpacity:.08};
-const styleLine = f => ({color: f.properties.classe === 'TRONCO' ? '#994b00' : '#16224e', weight: f.properties.classe === 'TRONCO' ? 4 : 2, opacity:.9});
-const pointStyle = {radius:3, color:'#16224e', fillColor:'#f4f0e7', fillOpacity:1, weight:1};
-const load = url => fetch(url).then(r => { if (!r.ok) throw new Error(`${url} (${r.status})`); return r.json(); });
-Promise.all([
-  load('data/bacia_A.geojson'),
-  load('data/bacia_B.geojson'),
-  load('data/areas_contribuicao_A_template.geojson'),
-  load('data/rede_linhas_A_nodal.geojson'),
-  load('data/rede_nos_A.geojson'),
-  load('data/trechos_dissipacao.geojson'),
-  load('data/linhas_fluxo_principais_AB.geojson')
-]).then(([basinA, basinB, areas, lines, nodes, dissipadores, fluxos]) => {
-  layers['Bacia A — revisão D8'] = L.geoJSON(basinA, {style:styleA, onEachFeature:(f,l)=>l.bindTooltip('Bacia A', {sticky:true})}).addTo(map);
-  layers['Bacia B — revisão D8'] = L.geoJSON(basinB, {style:styleB, onEachFeature:(f,l)=>l.bindTooltip('Bacia B', {sticky:true})}).addTo(map);
-  layers['Áreas preliminares'] = L.geoJSON(areas, {style:styleAreas});
-  layers['Rede — troncos/coletores'] = L.geoJSON(lines, {style:styleLine, onEachFeature:(f,l)=>l.bindPopup(`<b>${f.properties.id_link}</b><br>${f.properties.classe}<br>${Number(f.properties.comp_m).toFixed(1)} m`)}).addTo(map);
-  layers['Nós'] = L.geoJSON(nodes, {pointToLayer:(f,latlng)=>L.circleMarker(latlng,pointStyle), onEachFeature:(f,l)=>l.bindPopup(`<b>${f.properties.id_node}</b><br>${f.properties.tipo}<br>Cota: ${Number(f.properties.cota_m).toFixed(2)} m`)});
-  layers['Dissipadores/saídas'] = L.geoJSON(dissipadores, {style:f=>({color:f.properties.alerta ? '#d1495b' : '#00a6a6', weight:5, opacity:.95, dashArray:f.properties.alerta ? '6 5' : null}), onEachFeature:(f,l)=>l.bindPopup(`<b>${f.properties.id_diss}</b><br>Saída provisória: ${f.properties.no_provavel}<br>Componente: ${f.properties.componente}<br>Comprimento: ${Number(f.properties.comprimento_m).toFixed(1)} m${f.properties.alerta ? `<br><strong>Alerta:</strong> ${f.properties.alerta}` : ''}`)});
-  layers['Linhas de fluxo superficial A+B'] = L.geoJSON(fluxos, {style:{color:'#e3a21a', weight:2, opacity:.7}});
-  const all = L.featureGroup([layers['Bacia A — revisão D8'], layers['Bacia B — revisão D8']]);
-  if (all.getBounds().isValid()) map.fitBounds(all.getBounds().pad(.05));
-  L.control.scale({imperial:false, position:'bottomleft'}).addTo(map);
-  L.control.layers({'Imagem Esri':imagery,'Mapa de ruas':streets}, layers, {collapsed:false}).addTo(map);
-}).catch(err => mapEl.insertAdjacentHTML('afterend', `<div class="callout warning">Não foi possível carregar todas as camadas GeoJSON do painel: ${err.message}</div>`));
-}
-</script>
+<section id="situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho" class="level3">
+<h3 class="anchored" data-anchor-id="situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho">Situação da rede proposta e dos trechos do Plano de Trabalho</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Unidade</th>
+<th>Rede proposta nesta etapa</th>
+<th>Trechos contemplados no Plano de Trabalho</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bacia A</strong></td>
+<td>Troncos principais, coletores indispensáveis, áreas de contribuição e dissipadores/saídas associados aos setores críticos</td>
+<td>Trechos desenhados nas camadas <code>TroncoA*.shp</code>, <code>ColetorA*.shp</code> e <code>TrechosDissipacao.shp</code>, após validação de continuidade, vazão e jusante</td>
+<td>Lançamento preliminar em revisão no GIS e no SWMM</td>
+</tr>
+<tr class="even">
+<td><strong>Bacia B</strong></td>
+<td>Troncos principais, coletores, áreas de contribuição e saídas a serem lançados sobre o MDT híbrido</td>
+<td>Trechos prioritários a definir depois do lançamento e da validação das ocorrências, caminhos de fluxo e dissipadores</td>
+<td>Bacia delimitada; rede ainda não lançada</td>
+</tr>
+<tr class="odd">
+<td><strong>A + B</strong></td>
+<td>Concepção integrada para que cada intervenção tenha contribuição, transporte, descarga e proteção a jusante</td>
+<td>Metas M-02 a M-06, com quantitativos fechados somente após a rodada hidráulica de cada bacia</td>
+<td>Integração prevista, sem conexão presumida entre as bacias</td>
+</tr>
+</tbody>
+</table>
+<p>O relatório não apresentará a implantação de toda a rede municipal como meta imediata. A proposta é selecionar, em cada bacia, os <strong>troncos principais e dissipadores mais críticos</strong>, acrescentando apenas os coletores necessários para que esses trechos funcionem como sistema e possam ser verificados no SWMM. A Bacia A será a primeira frente de validação; a Bacia B será incorporada após o novo lançamento.</p>
+</section>
 </section>
 <section id="números-da-versão-preliminar" class="level2">
 <h2 class="anchored" data-anchor-id="números-da-versão-preliminar">Números da versão preliminar</h2>

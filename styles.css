@@ -45,7 +45,7 @@ h1, h2, h3 { color: var(--sedec-ink); }
 h2 { border-left: 5px solid var(--sedec-teal); padding-left: .65rem; margin-top: 2.2rem; }
 h3 { margin-top: 1.5rem; }
 main p, .quarto-article p { text-align: justify; text-justify: inter-word; }
-.institutional-hero p, .institutional-hero .hero-subtitle, .map-note, .site-credit, .construction-note, .author-block span { text-align: left; }
+.institutional-hero p, .institutional-hero .hero-subtitle, .map-note, .document-credit, .construction-note, .author-block span { text-align: left; }
 a { color: var(--sedec-orange); }
 a:hover { color: var(--sedec-teal); }
 .card, .metric-card, .callout { background: var(--sedec-panel); border: 1px solid var(--sedec-line); border-radius: 12px; box-shadow: var(--sedec-shadow); }
@@ -63,7 +63,7 @@ code { color: var(--sedec-navy); background: #eee9df; }
 #map { height: 600px; border: 1px solid var(--sedec-line); border-radius: 12px; box-shadow: var(--sedec-shadow); margin: 1rem 0; }
 .map-note { color: var(--sedec-muted); font-size: .9rem; }
 .dissipador-note { color: var(--sedec-muted); font-size: .9rem; border-left: 4px solid var(--sedec-teal); padding-left: .7rem; }
-.site-credit { color: var(--sedec-muted); font-size: .88rem; }
+.document-credit { color: var(--sedec-muted); font-size: .88rem; }
 .construction-note { background: #fff2d7; color: var(--sedec-orange); border-bottom: 1px solid #e8c98e; padding: .55rem 1rem; text-align: center; font-size: .9rem; }
 .author-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
 .author-block > div { background: var(--sedec-panel); border: 1px solid var(--sedec-line); border-top: 4px solid var(--sedec-orange); border-radius: 12px; box-shadow: var(--sedec-shadow); padding: 1rem 1.2rem; }

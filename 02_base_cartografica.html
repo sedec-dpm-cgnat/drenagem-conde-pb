@@ -169,8 +169,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#derivados-e-recorte-ab" id="toc-derivados-e-recorte-ab" class="nav-link" data-scroll-target="#derivados-e-recorte-ab">Derivados e recorte A+B</a></li>
   </ul></li>
   <li><a href="#produtos-derivados-para-a-drenagem" id="toc-produtos-derivados-para-a-drenagem" class="nav-link" data-scroll-target="#produtos-derivados-para-a-drenagem">2.4 Produtos derivados para a drenagem</a></li>
-  <li><a href="#limitações-e-requisitos-para-projeto-básico" id="toc-limitações-e-requisitos-para-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-requisitos-para-projeto-básico">2.5 Limitações e requisitos para projeto básico</a></li>
-  <li><a href="#referências-metodológicas" id="toc-referências-metodológicas" class="nav-link" data-scroll-target="#referências-metodológicas">2.6 Referências metodológicas</a></li>
+  <li><a href="#background-de-imagem-para-o-gis" id="toc-background-de-imagem-para-o-gis" class="nav-link" data-scroll-target="#background-de-imagem-para-o-gis">2.5 Background de imagem para o GIS</a></li>
+  <li><a href="#limitações-e-requisitos-para-projeto-básico" id="toc-limitações-e-requisitos-para-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-requisitos-para-projeto-básico">2.6 Limitações e requisitos para projeto básico</a></li>
+  <li><a href="#referências-metodológicas" id="toc-referências-metodológicas" class="nav-link" data-scroll-target="#referências-metodológicas">2.7 Referências metodológicas</a></li>
   </ul>
 </nav>
     </div>
@@ -295,8 +296,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </table>
 <p>As linhas de fluxo representam o terreno modelado. Não incorporam automaticamente sarjetas, muros, pavimentos, bueiros, galerias enterradas, soleiras ou outras estruturas urbanas que alteram o escoamento.</p>
 </section>
+<section id="background-de-imagem-para-o-gis" class="level2">
+<h2 class="anchored" data-anchor-id="background-de-imagem-para-o-gis">2.5 Background de imagem para o GIS</h2>
+<p>O background originalmente usado no ArcMap foi derivado da extensão do ortomosaico do drone. Por isso, ele não cobria toda a Bacia A, especialmente o setor norte. Foi preparada uma alternativa contínua para a extensão conjunta das Bacias A+B, com buffer cartográfico, em duas versões georreferenciadas: WGS84 para visualização ampla e SIRGAS 2000 / UTM zona 25S para o projeto GIS. Os arquivos estão em <code>05_MAPAS/background_satellite_AB/</code>.</p>
+<p>Essa imagem é uma base de orientação visual — ruas, quadras, ocupação e caminhos aparentes — e não substitui o ortomosaico nem um levantamento cadastral. A camada foi obtida do serviço <strong>Esri World Imagery</strong> e deve manter a atribuição da fonte nos mapas. No ArcMap, recomenda-se deixar o background contínuo abaixo do MDT híbrido, das Bacias A/B e das linhas da rede; onde houver cobertura, o ortomosaico do drone pode ser ligado acima dele para leitura de detalhe.</p>
+</section>
 <section id="limitações-e-requisitos-para-projeto-básico" class="level2">
-<h2 class="anchored" data-anchor-id="limitações-e-requisitos-para-projeto-básico">2.5 Limitações e requisitos para projeto básico</h2>
+<h2 class="anchored" data-anchor-id="limitações-e-requisitos-para-projeto-básico">2.6 Limitações e requisitos para projeto básico</h2>
 <p>Para evoluir a concepção para contratação, será necessário levantar:</p>
 <ul>
 <li>topografia cadastral de detalhe, com pontos, eixos, seções e cotas de soleira;</li>
@@ -310,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A integração atual melhora a base de concepção onde o drone cobre o terreno, mas deve ser apresentada como <strong>MDT híbrido preliminar com faixa de validade declarada</strong>. Não se deve ocultar a extrapolação para áreas fora da faixa dos controles nem tratar a correção estatística como prova de precisão cadastral.</p>
 </section>
 <section id="referências-metodológicas" class="level2">
-<h2 class="anchored" data-anchor-id="referências-metodológicas">2.6 Referências metodológicas</h2>
+<h2 class="anchored" data-anchor-id="referências-metodológicas">2.7 Referências metodológicas</h2>
 <ul>
 <li><a href="https://doi.org/10.5194/nhess-19-237-2019">Araújo et al.&nbsp;(2019) — NHESS 19:237–250</a>.</li>
 <li><a href="https://rpubs.com/cassiorampinelli/1436630">Referência de comunicação e organização do relatório</a>.</li>

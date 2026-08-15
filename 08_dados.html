@@ -159,15 +159,17 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#anexo-a-dados-para-download" id="toc-anexo-a-dados-para-download" class="nav-link active" data-scroll-target="#anexo-a-dados-para-download">Anexo A — Dados para download</a>
+  <li><a href="#anexo-a-dados-para-download" id="toc-anexo-a-dados-para-download" class="nav-link active" data-scroll-target="#anexo-a-dados-para-download">Anexo A — Dados para download</a></li>
+  <li><a href="#bacias-de-drenagem-de-trabalho" id="toc-bacias-de-drenagem-de-trabalho" class="nav-link" data-scroll-target="#bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</a>
   <ul class="collapse">
-  <li><a href="#bacias-de-drenagem-de-trabalho" id="toc-bacias-de-drenagem-de-trabalho" class="nav-link" data-scroll-target="#bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</a></li>
+  <li><a href="#background-contínuo-para-o-arcmapqgis" id="toc-background-contínuo-para-o-arcmapqgis" class="nav-link" data-scroll-target="#background-contínuo-para-o-arcmapqgis">Background contínuo para o ArcMap/QGIS</a></li>
+  </ul></li>
   <li><a href="#mdt-híbrido-e-produtos-derivados" id="toc-mdt-híbrido-e-produtos-derivados" class="nav-link" data-scroll-target="#mdt-híbrido-e-produtos-derivados">MDT híbrido e produtos derivados</a></li>
   <li><a href="#curvas-de-nível" id="toc-curvas-de-nível" class="nav-link" data-scroll-target="#curvas-de-nível">Curvas de nível</a></li>
   <li><a href="#fluxo-superficial-e-rede" id="toc-fluxo-superficial-e-rede" class="nav-link" data-scroll-target="#fluxo-superficial-e-rede">Fluxo superficial e rede</a></li>
+  <li><a href="#cn-2022-base-oficial-snirhana" id="toc-cn-2022-base-oficial-snirhana" class="nav-link" data-scroll-target="#cn-2022-base-oficial-snirhana">CN 2022 — base oficial SNIRH/ANA</a></li>
   <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a></li>
   <li><a href="#o-que-ainda-não-está-no-pacote-público" id="toc-o-que-ainda-não-está-no-pacote-público" class="nav-link" data-scroll-target="#o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -194,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="anexo-a-dados-para-download" class="level1">
-<h1>Anexo A — Dados para download</h1>
+<section id="anexo-a-dados-para-download" class="level2">
+<h2 class="anchored" data-anchor-id="anexo-a-dados-para-download">Anexo A — Dados para download</h2>
 <p>Esta página reúne os arquivos públicos de trabalho usados na concepção preliminar. Os produtos de análise estão em <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>, salvo os GeoJSON preparados para o painel web, que estão em WGS84 para visualização.</p>
 <div class="download-card">
 <div>
@@ -203,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <p><a class="download-button" href="relatorio_completo.pdf" download="">Baixar PDF completo</a></p>
 </div>
+</section>
 <section id="bacias-de-drenagem-de-trabalho" class="level2">
 <h2 class="anchored" data-anchor-id="bacias-de-drenagem-de-trabalho">Bacias de drenagem de trabalho</h2>
 <table class="caption-top table">
@@ -307,6 +310,12 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B será lançada na próxima etapa.</p>
+<section id="background-contínuo-para-o-arcmapqgis" class="level3">
+<h3 class="anchored" data-anchor-id="background-contínuo-para-o-arcmapqgis">Background contínuo para o ArcMap/QGIS</h3>
+<p>O background satélite contínuo que cobre a extensão completa A+B foi organizado localmente em:</p>
+<p><code>E:\SEDEC\Paraiba\GIS\11_INTEGRACAO_MDT_SWMM_CONDE\07_SWMM_BACIA_01\05_MAPAS\background_satellite_AB\</code></p>
+<p>Use preferencialmente <code>background_satellite_bacias_AB_UTM31985.tif</code> no projeto em SIRGAS 2000 / UTM 25S. A versão <code>background_satellite_bacias_AB_wgs84.tif</code> é destinada à visualização geográfica. A imagem veio do serviço Esri World Imagery e deve permanecer acompanhada da atribuição da fonte; ela é uma base de orientação e não substitui o ortomosaico do drone ou o levantamento cadastral.</p>
+</section>
 </section>
 <section id="mdt-híbrido-e-produtos-derivados" class="level2">
 <h2 class="anchored" data-anchor-id="mdt-híbrido-e-produtos-derivados">MDT híbrido e produtos derivados</h2>
@@ -419,6 +428,52 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 </section>
+<section id="cn-2022-base-oficial-snirhana" class="level2">
+<h2 class="anchored" data-anchor-id="cn-2022-base-oficial-snirhana">CN 2022 — base oficial SNIRH/ANA</h2>
+<p>O parâmetro CN utilizado como premissa hidrológica preliminar foi extraído do produto oficial <a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">Curva Número na Base Ottocodificada (1985, 2014 e 2022)</a>. Os arquivos abaixo são recortes do <code>BR_CN-2022.tif</code> para as Bacias A, B e A+B, reprojetados para EPSG:31985 em grade de 30 m.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_Bacia_A_UTM31985_30m.tif">CN 2022 — Bacia A</a></td>
+<td>GeoTIFF</td>
+<td>Premissa agregada e base para CN por subárea</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_Bacia_B_UTM31985_30m.tif">CN 2022 — Bacia B</a></td>
+<td>GeoTIFF</td>
+<td>Premissa agregada e base para CN por subárea</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_Bacias_AB_UTM31985_30m.tif">CN 2022 — Bacias A+B</a></td>
+<td>GeoTIFF</td>
+<td>Recorte conjunto das unidades de trabalho</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_Bacias_AB.png">Mapa temático CN 2022 — A+B</a></td>
+<td>PNG</td>
+<td>Visualização rápida</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_estatisticas.csv">Estatísticas CN 2022</a></td>
+<td>CSV</td>
+<td>Médias, faixa, desvio-padrão e área aproximada</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/hidrologia/CN_2022_SNIRH_estatisticas.json">Registro metodológico CN 2022</a></td>
+<td>JSON</td>
+<td>Fonte, CRS, recorte, método e estatísticas por bacia</td>
+</tr>
+</tbody>
+</table>
+<p>Os valores médios preliminares são CN 80,26 para a Bacia A, CN 76,77 para a Bacia B e CN 78,70 para o conjunto A+B. Eles não substituem a atribuição de CN por área de contribuição no SWMM nem a validação de uso do solo e impermeabilização.</p>
+</section>
 <section id="modelos-swmm-e-guia-de-validação" class="level2">
 <h2 class="anchored" data-anchor-id="modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</h2>
 <p>Os arquivos abaixo são os <strong>modelos de partida processáveis</strong> da Bacia A. Eles ainda não são modelos finais de contratação: a topologia, as áreas, os diâmetros, as cotas, os outfalls e os dissipadores dependem da validação paralela no SWMM e no GIS.</p>
@@ -470,7 +525,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

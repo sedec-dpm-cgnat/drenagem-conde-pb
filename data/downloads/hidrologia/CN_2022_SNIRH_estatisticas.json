@@ -1,0 +1,98 @@
+{
+  "produto": "Curva Número CN 2022 — recortes para as Bacias A e B de Conde/PB",
+  "fonte": {
+    "titulo": "Curva Número na Base Ottocodificada (1985, 2014 e 2022)",
+    "url": "https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67",
+    "raster_original": "E:\\SEDEC\\Paraiba\\.claude\\BR_CN-2022.tif",
+    "ano_do_produto": 2022,
+    "publicacao_do_registro": 2025,
+    "insumos_declarados": [
+      "MapBiomas 2023",
+      "IBGE 2023",
+      "BHAE Atlas"
+    ]
+  },
+  "processamento": {
+    "crs": "SIRGAS 2000 / UTM zona 25S",
+    "epsg": 31985,
+    "resolucao_saida_m": 30,
+    "reamostragem": "vizinho mais proximo",
+    "nodata": 0,
+    "recorte": "poligonos revisados D8 das Bacias A e B; A+B reunido por mosaico dos recortes individuais",
+    "calculo_media": "media dos pixels validos; apos reprojecao para grade UTM de 30 m, equivalente a ponderacao por area",
+    "observacao": "o valor medio e adequado como premissa agregada preliminar; o SWMM deve receber CN especifico por subarea quando as areas de contribuicao forem validadas"
+  },
+  "resumos": [
+    {
+      "unidade": "Bacia A",
+      "arquivo": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\06_HIDROLOGIA_DERIVADA\\CN_2022_SNIRH\\CN_2022_SNIRH_Bacia_A_UTM31985_30m.tif",
+      "dimensoes_pixels": {
+        "colunas": 57,
+        "linhas": 60
+      },
+      "pixels_totais_no_recorte": 3420,
+      "pixels_validos": 1991,
+      "area_aproximada_m2": 1791900,
+      "area_aproximada_ha": 179.19,
+      "cn_media_ponderada_por_area": 80.25916624811653,
+      "cn_minimo": 65,
+      "cn_maximo": 98,
+      "cn_desvio_padrao": 4.979933123103518,
+      "distribuicao_por_classe_cn": {
+        "65": 74,
+        "77": 987,
+        "81": 32,
+        "85": 893,
+        "98": 5
+      }
+    },
+    {
+      "unidade": "Bacia B",
+      "arquivo": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\06_HIDROLOGIA_DERIVADA\\CN_2022_SNIRH\\CN_2022_SNIRH_Bacia_B_UTM31985_30m.tif",
+      "dimensoes_pixels": {
+        "colunas": 50,
+        "linhas": 50
+      },
+      "pixels_totais_no_recorte": 2500,
+      "pixels_validos": 1615,
+      "area_aproximada_m2": 1453500,
+      "area_aproximada_ha": 145.35,
+      "cn_media_ponderada_por_area": 76.77089783281734,
+      "cn_minimo": 65,
+      "cn_maximo": 98,
+      "cn_desvio_padrao": 4.929297778921155,
+      "distribuicao_por_classe_cn": {
+        "65": 160,
+        "74": 108,
+        "77": 1109,
+        "81": 14,
+        "85": 222,
+        "98": 2
+      }
+    },
+    {
+      "unidade": "Bacias A+B",
+      "arquivo": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\06_HIDROLOGIA_DERIVADA\\CN_2022_SNIRH\\CN_2022_SNIRH_Bacias_AB_UTM31985_30m.tif",
+      "dimensoes_pixels": {
+        "colunas": 57,
+        "linhas": 100
+      },
+      "pixels_totais_no_recorte": 5700,
+      "pixels_validos": 3605,
+      "area_aproximada_m2": 3244500,
+      "area_aproximada_ha": 324.45,
+      "cn_media_ponderada_por_area": 78.69736477115119,
+      "cn_minimo": 65,
+      "cn_maximo": 98,
+      "cn_desvio_padrao": 5.252694308052686,
+      "distribuicao_por_classe_cn": {
+        "65": 234,
+        "74": 108,
+        "77": 2095,
+        "81": 46,
+        "85": 1115,
+        "98": 7
+      }
+    }
+  ]
+}

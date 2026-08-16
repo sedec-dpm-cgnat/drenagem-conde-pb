@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.7 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
   <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.8 Critérios de verificação hidráulica</a></li>
   <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.9 Próxima rodada</a></li>
-  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.10 Validação paralela que deve ser feita no SWMM</a>
+  <li><a href="#primeira-rodada-integrada-bacia-a" id="toc-primeira-rodada-integrada-bacia-a" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-a">4.10 Primeira rodada integrada — Bacia A</a></li>
+  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.11 Validação paralela que deve ser feita no SWMM</a>
   <ul class="collapse">
   <li><a href="#checklist-de-conferência" id="toc-checklist-de-conferência" class="nav-link" data-scroll-target="#checklist-de-conferência">Checklist de conferência</a></li>
   </ul></li>
@@ -383,8 +384,54 @@ document.addEventListener('DOMContentLoaded', function () {
 <h2 class="anchored" data-anchor-id="próxima-rodada">4.9 Próxima rodada</h2>
 <p>A sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
 </section>
+<section id="primeira-rodada-integrada-bacia-a" class="level2">
+<h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.10 Primeira rodada integrada — Bacia A</h2>
+<p>Foi executada uma primeira rodada exploratória com os modelos integrados <code>CONDE_BACIA_A_REDE_DISSIPADORES_TR25.inp</code> e <code>CONDE_BACIA_A_REDE_DISSIPADORES_TR50.inp</code>, usando o EPA SWMM 5.2.4. Os arquivos originais <code>CONDE_BACIA_A_REDE_PRELIM_TR25/50.inp</code> foram preservados. A integração adicionou conectores topológicos provisórios nos seis outfalls que tinham múltiplas entradas, condição que o SWMM não aceita diretamente.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cenário</th>
+<th style="text-align: right;">Erro de continuidade do escoamento</th>
+<th style="text-align: right;">Erro de continuidade do roteamento</th>
+<th style="text-align: right;">Nós com inundação</th>
+<th style="text-align: right;">Links acima da capacidade cheia atual</th>
+<th style="text-align: right;">Perda por inundação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TR25</td>
+<td style="text-align: right;">-0,018%</td>
+<td style="text-align: right;">-0,004%</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0,664 milhões de litros</td>
+</tr>
+<tr class="even">
+<td>TR50</td>
+<td style="text-align: right;">-0,018%</td>
+<td style="text-align: right;">-0,005%</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">1,396 milhões de litros</td>
+</tr>
+</tbody>
+</table>
+<p>As maiores vazões preliminares nos trechos de dissipação foram: <code>DISS_01</code> = 5,34/5,43 m³/s; <code>DISS_02</code> = 0,87/1,00 m³/s; <code>DISS_03</code> = 7,31/7,67 m³/s; <code>DISS_04</code> = 4,94/5,19 m³/s; e <code>DISS_05</code> = 5,06/5,58 m³/s, respectivamente para TR25/TR50. <code>DISS_03</code> concentra a maior vazão entre as saídas cadastradas. <code>DISS_04</code> continua com alerta de revisão do snap entre a linha do dissipador e a rede.</p>
+<p>Na configuração atual, destacam-se para auditoria os links <code>L_A_0064</code>, <code>L_A_0008</code>, <code>L_A_0080</code>, <code>L_A_0018</code>, <code>L_A_0108</code>, <code>L_A_0040</code>, <code>L_A_0027</code>, <code>L_A_0184</code> e <code>L_A_0105</code>. Em TR50, por exemplo, as razões de vazão máxima/capacidade cheia informadas pelo SWMM chegam a 18,93 em <code>L_A_0064</code> e 11,65 em <code>L_A_0008</code>. Esses valores não são automaticamente diâmetros de projeto: podem refletir cotas coincidentes, declividades muito baixas, áreas provisórias, sentido de fluxo ou seções arbitrárias. O arquivo de triagem registra a vazão, capacidade de Manning, diâmetro requerido preliminar e flags de auditoria.</p>
+<p>O resultado deve ser lido como diagnóstico da configuração atual. O balanço numérico é aceitável para a rodada exploratória, mas o modelo ainda não está pronto para contratação: áreas, CN por subcatchment, cotas de fundo, seções, condições de jusante e dissipadores precisam ser validados.</p>
+<p>Os relatórios <code>.rpt</code>, a tabela de trechos críticos e o registro completo desta rodada estão disponíveis na página de dados.</p>
+</section>
 <section id="validação-paralela-que-deve-ser-feita-no-swmm" class="level2">
-<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.10 Validação paralela que deve ser feita no SWMM</h2>
+<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.11 Validação paralela que deve ser feita no SWMM</h2>
 <p>Enquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.</p>
 <p>O modelo atual possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Os diâmetros de 0,60 m e 0,80 m, a rugosidade 0,013, o CN médio 79 e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
 <section id="checklist-de-conferência" class="level3">

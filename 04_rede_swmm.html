@@ -294,6 +294,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
+<figure class="map-figure figure">
+<img src="assets/diagrama_elementos_modelo_swmm.png" alt="Diagrama didático do modelo SWMM, desde a chuva e as áreas de contribuição até os nós, coletores, troncos, dissipadores e exutórios" class="figure-img">
+<figcaption>
+Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às áreas de contribuição; o escoamento chega aos nós, percorre coletores e troncos e termina em dissipadores ou exutórios com condição de jusante verificada. Os identificadores distinguem as Bacias A e B.
+</figcaption>
+</figure>
+<p>O diagrama deve ser lido junto com a tabela: a geometria desenhada no GIS define a autoridade espacial, enquanto o arquivo de entrada do SWMM registra os parâmetros hidráulicos e hidrológicos. Uma linha sem nó de entrada ou sem saída verificável não deve ser tratada como trecho dimensionado.</p>
 </section>
 <section id="arquivos-swmm-preliminares" class="level2">
 <h2 class="anchored" data-anchor-id="arquivos-swmm-preliminares">4.3 Arquivos SWMM preliminares</h2>

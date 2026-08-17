@@ -164,11 +164,17 @@ document.addEventListener('DOMContentLoaded', function () {
    
   <ul>
   <li><a href="#linha-de-base-tradicional" id="toc-linha-de-base-tradicional" class="nav-link active" data-scroll-target="#linha-de-base-tradicional">3.1 Linha de base tradicional</a></li>
-  <li><a href="#áreas-de-contribuição-e-perdas" id="toc-áreas-de-contribuição-e-perdas" class="nav-link" data-scroll-target="#áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</a></li>
-  <li><a href="#transformação-chuva-vazão" id="toc-transformação-chuva-vazão" class="nav-link" data-scroll-target="#transformação-chuva-vazão">3.3 Transformação chuva-vazão</a></li>
-  <li><a href="#atualização-climática-com-nex-gddp-cmip6" id="toc-atualização-climática-com-nex-gddp-cmip6" class="nav-link" data-scroll-target="#atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</a></li>
-  <li><a href="#cenários-hidrológicos-propostos" id="toc-cenários-hidrológicos-propostos" class="nav-link" data-scroll-target="#cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</a></li>
-  <li><a href="#entregas-hidrológicas" id="toc-entregas-hidrológicas" class="nav-link" data-scroll-target="#entregas-hidrológicas">3.6 Entregas hidrológicas</a></li>
+  <li><a href="#equação-idf-adotada" id="toc-equação-idf-adotada" class="nav-link" data-scroll-target="#equação-idf-adotada">3.2 Equação IDF adotada</a></li>
+  <li><a href="#análise-de-frequência-e-interpretação-dos-períodos-de-retorno" id="toc-análise-de-frequência-e-interpretação-dos-períodos-de-retorno" class="nav-link" data-scroll-target="#análise-de-frequência-e-interpretação-dos-períodos-de-retorno">3.3 Análise de frequência e interpretação dos períodos de retorno</a></li>
+  <li><a href="#hietogramas-de-projeto-utilizados-no-swmm" id="toc-hietogramas-de-projeto-utilizados-no-swmm" class="nav-link" data-scroll-target="#hietogramas-de-projeto-utilizados-no-swmm">3.4 Hietogramas de projeto utilizados no SWMM</a></li>
+  <li><a href="#áreas-de-contribuição-e-perdas" id="toc-áreas-de-contribuição-e-perdas" class="nav-link" data-scroll-target="#áreas-de-contribuição-e-perdas">3.5 Áreas de contribuição e perdas</a>
+  <ul class="collapse">
+  <li><a href="#regra-de-aplicação-por-componente" id="toc-regra-de-aplicação-por-componente" class="nav-link" data-scroll-target="#regra-de-aplicação-por-componente">Regra de aplicação por componente</a></li>
+  </ul></li>
+  <li><a href="#transformação-chuvavazão" id="toc-transformação-chuvavazão" class="nav-link" data-scroll-target="#transformação-chuvavazão">3.6 Transformação chuva–vazão</a></li>
+  <li><a href="#atualização-climática-com-nex-gddp-cmip6" id="toc-atualização-climática-com-nex-gddp-cmip6" class="nav-link" data-scroll-target="#atualização-climática-com-nex-gddp-cmip6">3.7 Atualização climática com NEX-GDDP-CMIP6</a></li>
+  <li><a href="#cenários-hidrológicos-propostos" id="toc-cenários-hidrológicos-propostos" class="nav-link" data-scroll-target="#cenários-hidrológicos-propostos">3.8 Cenários hidrológicos propostos</a></li>
+  <li><a href="#entregas-hidrológicas" id="toc-entregas-hidrológicas" class="nav-link" data-scroll-target="#entregas-hidrológicas">3.9 Entregas hidrológicas</a></li>
   </ul>
 </nav>
     </div>
@@ -215,10 +221,173 @@ document.addEventListener('DOMContentLoaded', function () {
 <li>CN médio preliminar igual a 79;</li>
 <li>30% de impermeabilização como premissa inicial.</li>
 </ul>
-<p>As chuvas foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos arquivos .inp preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo.</p>
+<p>As chuvas foram copiadas para <code>04_CHUVAS_PROJETO</code> e incorporadas aos arquivos <code>.inp</code> preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo.</p>
+</section>
+<section id="equação-idf-adotada" class="level2">
+<h2 class="anchored" data-anchor-id="equação-idf-adotada">3.2 Equação IDF adotada</h2>
+<p>A relação intensidade–duração–frequência usada na linha de base é:</p>
+<p><strong>i(Tr, t) = 1424,1 x Tr^0,1305 / (t + 23,6)^0,7468</strong></p>
+<p>em que <code>i</code> é a intensidade média da chuva, em mm/h; <code>Tr</code> é o período de retorno, em anos; e <code>t</code> é a duração, em minutos. Os parâmetros <code>1424,1</code>, <code>0,1305</code>, <code>23,6</code> e <code>0,7468</code> são os coeficientes da relação preservada no modelo anterior. A precipitação acumulada correspondente é:</p>
+<p><strong>P(Tr, t) = i(Tr, t) x t / 60</strong></p>
+<p>com <code>P</code> em milímetros. A conversão é necessária porque a IDF fornece intensidade média na duração, enquanto o SWMM recebe uma série temporal de chuva.</p>
+<figure class="map-figure figure">
+<img src="data/downloads/clima/idf_base_curvas.png" alt="Curvas IDF de linha de base para períodos de retorno de 2 a 100 anos" class="figure-img">
+<figcaption>
+Figura 3.1 — Curvas IDF da linha de base adotada. TR25 e TR50 aparecem destacados por serem as recorrências usadas na primeira concepção; as demais curvas contextualizam a relação entre frequência e intensidade.
+</figcaption>
+</figure>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Duração</th>
+<th style="text-align: right;">TR25: intensidade</th>
+<th style="text-align: right;">TR25: precipitação</th>
+<th style="text-align: right;">TR50: intensidade</th>
+<th style="text-align: right;">TR50: precipitação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td style="text-align: right;">177,16 mm/h</td>
+<td style="text-align: right;">14,76 mm</td>
+<td style="text-align: right;">193,93 mm/h</td>
+<td style="text-align: right;">16,16 mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15 min</td>
+<td style="text-align: right;">141,61 mm/h</td>
+<td style="text-align: right;">35,40 mm</td>
+<td style="text-align: right;">155,02 mm/h</td>
+<td style="text-align: right;">38,76 mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">30 min</td>
+<td style="text-align: right;">110,82 mm/h</td>
+<td style="text-align: right;">55,41 mm</td>
+<td style="text-align: right;">121,32 mm/h</td>
+<td style="text-align: right;">60,66 mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">60 min</td>
+<td style="text-align: right;">79,52 mm/h</td>
+<td style="text-align: right;">79,52 mm</td>
+<td style="text-align: right;">87,05 mm/h</td>
+<td style="text-align: right;">87,05 mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">120 min</td>
+<td style="text-align: right;">53,09 mm/h</td>
+<td style="text-align: right;">106,18 mm</td>
+<td style="text-align: right;">58,12 mm/h</td>
+<td style="text-align: right;">116,23 mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">360 min</td>
+<td style="text-align: right;">25,49 mm/h</td>
+<td style="text-align: right;">152,93 mm</td>
+<td style="text-align: right;">27,90 mm/h</td>
+<td style="text-align: right;">167,40 mm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">720 min</td>
+<td style="text-align: right;">15,55 mm/h</td>
+<td style="text-align: right;">186,57 mm</td>
+<td style="text-align: right;">17,02 mm/h</td>
+<td style="text-align: right;">204,23 mm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1440 min</td>
+<td style="text-align: right;">9,38 mm/h</td>
+<td style="text-align: right;">225,03 mm</td>
+<td style="text-align: right;">10,26 mm/h</td>
+<td style="text-align: right;">246,34 mm</td>
+</tr>
+</tbody>
+</table>
+<p>Os valores de 120 minutos são coerentes com o total das séries temporais tradicionais preservadas no modelo: aproximadamente <strong>106,18 mm no TR25</strong> e <strong>116,23 mm no TR50</strong>. A tabela completa, com TR2, TR5, TR10, TR25, TR50 e TR100, está disponível no <a href="data/downloads/clima/idf_base_conde.csv">CSV da IDF de linha de base</a>.</p>
+</section>
+<section id="análise-de-frequência-e-interpretação-dos-períodos-de-retorno" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-frequência-e-interpretação-dos-períodos-de-retorno">3.3 Análise de frequência e interpretação dos períodos de retorno</h2>
+<p>O período de retorno é interpretado pela relação:</p>
+<p><strong>Tr = 1 / p_e</strong></p>
+<p>em que <code>p_e</code> é a probabilidade anual de excedência do evento de referência. Assim, TR25 corresponde a uma probabilidade anual de excedência de 4% e TR50 a 2%, sem significar que o evento ocorrerá exatamente uma vez a cada 25 ou 50 anos. Eventos podem ocorrer em anos consecutivos; o período de retorno é uma medida estatística de frequência.</p>
+<figure class="map-figure figure">
+<img src="data/downloads/clima/curvas_frequencia_base.png" alt="Curvas de precipitação acumulada em função do período de retorno para quatro durações" class="figure-img">
+<figcaption>
+Figura 3.2 — Representação da análise de frequência embutida na equação IDF, com a precipitação acumulada variando com o período de retorno e a duração.
+</figcaption>
+</figure>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Camada</th>
+<th>O que foi determinado nesta concepção</th>
+<th>Limite de interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relação IDF adotada</td>
+<td>Intensidades e precipitações para diferentes <code>Tr</code> e <code>t</code></td>
+<td>É uma relação já ajustada e herdada do estudo anterior</td>
+</tr>
+<tr class="even">
+<td>Série observada anual</td>
+<td>Estação INMET 82798 como origem indicada da linha de base</td>
+<td>A série completa de máximas anuais não está no pacote desta minuta; um novo ajuste independente não foi determinado</td>
+</tr>
+<tr class="odd">
+<td>Cenários climáticos</td>
+<td>Quantis diários por modelo, cenário e horizonte, agregados em P10, mediana e P90</td>
+<td>O banco consultado não contém, nesta tabela, a série subdiária necessária para uma IDF futura completa</td>
+</tr>
+<tr class="even">
+<td>Validação hidrológica</td>
+<td>Comparação TR25/TR50 no SWMM e triagem de trechos</td>
+<td>Áreas de contribuição, CN por subárea, cotas e saídas ainda estão em revisão</td>
+</tr>
+</tbody>
+</table>
+<p>Para uma atualização formal em projeto básico, a série de máximas anuais deverá ser auditada quanto a falhas, homogeneidade, extensão e independência. Em seguida deverão ser comparadas distribuições de extremos, como Gumbel e GEV, por máxima verossimilhança ou L-moments, com intervalos de confiança e testes de aderência. A IDF deverá ser reestimada para as durações usadas no SWMM e não apenas escalada a partir de máximas diárias.</p>
+</section>
+<section id="hietogramas-de-projeto-utilizados-no-swmm" class="level2">
+<h2 class="anchored" data-anchor-id="hietogramas-de-projeto-utilizados-no-swmm">3.4 Hietogramas de projeto utilizados no SWMM</h2>
+<p>O SWMM não recebe diretamente uma curva IDF; ele recebe uma série temporal de precipitação. Os hietogramas tradicionais foram preservados no arquivo <code>chuvas_TR25_TR50_base_relatorio.txt</code> e reproduzidos nas entradas <code>TR25</code> e <code>TR50</code> dos modelos preliminares.</p>
+<p>Características documentadas:</p>
+<ul>
+<li>intervalo entre registros: <strong>5 minutos</strong>;</li>
+<li>duração representada: <strong>120 minutos</strong>;</li>
+<li>24 intervalos de chuva;</li>
+<li>pico de intensidade no intervalo centrado em 60 minutos;</li>
+<li>intensidade máxima: <strong>177,16 mm/h no TR25</strong> e <strong>193,93 mm/h no TR50</strong>;</li>
+<li>precipitação total: <strong>106,18 mm no TR25</strong> e <strong>116,23 mm no TR50</strong>.</li>
+</ul>
+<p>O total de cada série foi verificado pela soma:</p>
+<p><strong>P_total = soma(i_j x Delta t / 60)</strong></p>
+<p>em que <code>i_j</code> é a intensidade do intervalo <code>j</code> e <code>Delta t</code> é o passo de 5 minutos. A distribuição temporal é chamada aqui de <strong>hietograma tradicional preservado</strong>. Não é reclassificada automaticamente como método de Chicago, blocos alternados ou outra técnica, porque a memória original de construção da série não está disponível neste pacote.</p>
+<figure class="map-figure figure">
+<img src="data/downloads/clima/hietogramas_base_tr25_tr50.png" alt="Hietogramas e precipitações acumuladas TR25 e TR50 usados na primeira rodada do SWMM" class="figure-img">
+<figcaption>
+Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. As barras representam as intensidades de cada intervalo de 5 minutos; as curvas mostram a soma acumulada utilizada como controle de consistência.
+</figcaption>
+</figure>
+<p>Os dados intervalares estão disponíveis no <a href="data/downloads/clima/hietogramas_base_tr25_tr50.csv">CSV dos hietogramas TR25/TR50</a> e no <a href="data/downloads/clima/chuvas_TR25_TR50_base_relatorio.txt">arquivo de texto original das séries</a>. Para cada novo cenário climático, a série temporal deverá conservar um identificador explícito, por exemplo <code>BASE_TR25</code>, <code>BASE_TR50</code>, <code>SSP245_2040_TR25</code> ou <code>SSP585_2060_TR50</code>, sem sobrescrever a linha de base.</p>
 </section>
 <section id="áreas-de-contribuição-e-perdas" class="level2">
-<h2 class="anchored" data-anchor-id="áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</h2>
+<h2 class="anchored" data-anchor-id="áreas-de-contribuição-e-perdas">3.5 Áreas de contribuição e perdas</h2>
 <p>As 208 áreas disponíveis no modelo atual são um template Voronoi. Elas preservam a estrutura do SWMM, mas ainda não representam definitivamente quadras, lotes, sarjetas ou pontos de entrada.</p>
 <p>Na revisão, cada subárea deverá receber:</p>
 <table class="caption-top table">
@@ -252,9 +421,49 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>A estrutura deve permitir distinguir a contribuição natural do terreno, a contribuição urbana concentrada e a contribuição captada pela rede.</p>
+<section id="regra-de-aplicação-por-componente" class="level3">
+<h3 class="anchored" data-anchor-id="regra-de-aplicação-por-componente">Regra de aplicação por componente</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th style="text-align: right;">Linha de base principal</th>
+<th style="text-align: right;">Verificação complementar</th>
+<th>Indicadores observados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coletores e bueiros</td>
+<td style="text-align: right;">TR25</td>
+<td style="text-align: right;">TR50</td>
+<td>enchimento, velocidade, sobrecarga, nós de entrada e continuidade</td>
+</tr>
+<tr class="even">
+<td>Troncos principais</td>
+<td style="text-align: right;">TR50</td>
+<td style="text-align: right;">TR25</td>
+<td>vazão de pico, nível, capacidade, remanso e continuidade da macrodrenagem</td>
+</tr>
+<tr class="odd">
+<td>Dissipadores e saídas</td>
+<td style="text-align: right;">TR50</td>
+<td style="text-align: right;">TR25</td>
+<td>vazão de chegada, velocidade, energia específica e proteção a jusante</td>
+</tr>
+</tbody>
+</table>
+<p>Essa regra não autoriza dimensionar cada trecho isoladamente. Todos os componentes devem ser verificados na cadeia <strong>chuva → área de contribuição → nó de entrada → coletor → tronco → dissipador/exutório → proteção a jusante</strong>. Um trecho pode ser adequado para sua vazão local e ainda assim pertencer a uma rede sem saída válida ou com transferência de risco.</p>
 </section>
-<section id="transformação-chuva-vazão" class="level2">
-<h2 class="anchored" data-anchor-id="transformação-chuva-vazão">3.3 Transformação chuva-vazão</h2>
+</section>
+<section id="transformação-chuvavazão" class="level2">
+<h2 class="anchored" data-anchor-id="transformação-chuvavazão">3.6 Transformação chuva–vazão</h2>
 <p>O modelo deve ser avaliado por:</p>
 <ul>
 <li>balanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;</li>
@@ -267,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>Nenhum resultado de vazão final deve ser apresentado como definitivo enquanto as áreas de quadras e as conexões topológicas permanecerem preliminares.</p>
 </section>
 <section id="atualização-climática-com-nex-gddp-cmip6" class="level2">
-<h2 class="anchored" data-anchor-id="atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</h2>
+<h2 class="anchored" data-anchor-id="atualização-climática-com-nex-gddp-cmip6">3.7 Atualização climática com NEX-GDDP-CMIP6</h2>
 <p>O banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
 <ol type="1">
 <li>período histórico de referência;</li>
@@ -281,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A conexão ao banco é somente leitura. O relatório deverá registrar consulta, célula, modelos, período, cenário, quantil, método de correção e versão do script. Não será aplicado um fator climático único sem justificar sua origem e sua faixa de incerteza.</p>
 </section>
 <section id="cenários-hidrológicos-propostos" class="level2">
-<h2 class="anchored" data-anchor-id="cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</h2>
+<h2 class="anchored" data-anchor-id="cenários-hidrológicos-propostos">3.8 Cenários hidrológicos propostos</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -326,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A atualização climática não substitui a linha de base: ela deve permitir enxergar como a rede responde quando as premissas de precipitação são alteradas.</p>
 </section>
 <section id="entregas-hidrológicas" class="level2">
-<h2 class="anchored" data-anchor-id="entregas-hidrológicas">3.6 Entregas hidrológicas</h2>
+<h2 class="anchored" data-anchor-id="entregas-hidrológicas">3.9 Entregas hidrológicas</h2>
 <p>A etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada.</p>
 
 

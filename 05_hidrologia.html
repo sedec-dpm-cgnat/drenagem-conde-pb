@@ -166,7 +166,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#hidrologia-e-hidráulica-como-cadeia-única" id="toc-hidrologia-e-hidráulica-como-cadeia-única" class="nav-link" data-scroll-target="#hidrologia-e-hidráulica-como-cadeia-única">5.5 Hidrologia e hidráulica como cadeia única</a></li>
   <li><a href="#incertezas-que-afetam-a-decisão" id="toc-incertezas-que-afetam-a-decisão" class="nav-link" data-scroll-target="#incertezas-que-afetam-a-decisão">5.6 Incertezas que afetam a decisão</a></li>
   <li><a href="#prioridades-para-decisão" id="toc-prioridades-para-decisão" class="nav-link" data-scroll-target="#prioridades-para-decisão">5.7 Prioridades para decisão</a></li>
-  <li><a href="#discussão-sobre-mudança-climática" id="toc-discussão-sobre-mudança-climática" class="nav-link" data-scroll-target="#discussão-sobre-mudança-climática">5.8 Discussão sobre mudança climática</a></li>
+  <li><a href="#discussão-sobre-mudança-climática" id="toc-discussão-sobre-mudança-climática" class="nav-link" data-scroll-target="#discussão-sobre-mudança-climática">5.8 Discussão sobre mudança climática</a>
+  <ul class="collapse">
+  <li><a href="#primeira-avaliação-nex-gddp-cmip6" id="toc-primeira-avaliação-nex-gddp-cmip6" class="nav-link" data-scroll-target="#primeira-avaliação-nex-gddp-cmip6">Primeira avaliação NEX-GDDP-CMIP6</a></li>
+  </ul></li>
   <li><a href="#síntese-crítica" id="toc-síntese-crítica" class="nav-link" data-scroll-target="#síntese-crítica">5.9 Síntese crítica</a></li>
   </ul>
 </nav>
@@ -395,6 +398,77 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>Há, contudo, uma adaptação necessária para o banco NEX-GDDP-CMIP6 disponível neste projeto. A tabela utilizada contém máximas anuais diárias por modelo, cenário, ano e ponto de grade, e não a série diária completa ou a série subdiária. Assim, não será apresentada uma reprodução literal do componente Gamma-Gumbel do artigo. A correção será paramétrica para máximas anuais, ancorada na série/IDF observada que fundamentou o relatório tradicional; a escala subdiária será obtida a partir da IDF local e da relação de escala, com as limitações explicitadas no capítulo de Estudos Hidrológicos.</p>
 <p>Serão comparados os 34 GCMs, os cenários <code>ssp126</code>, <code>ssp245</code>, <code>ssp370</code> e <code>ssp585</code> e os horizontes histórico, 2040–2059 e 2060–2100, mantendo também uma janela operacional definida para o horizonte do plano. O resultado será reportado como curva central e faixa de incerteza, e não como um único fator de aumento. Cada curva futura será aplicada a um hietograma identificado no SWMM e comparada à linha de base, observando vazões de pico, volumes, alagamentos, velocidades e solicitações nos dissipadores.</p>
 <p>Essa abordagem amplia a faixa de teste sem substituir a observação local. A decisão de reconstrução deve considerar a robustez da solução sob mais de uma premissa, indicando quais trechos continuam adequados, quais ficam críticos e quais exigem adaptação. A especificação detalhada está em <code>04_CHUVAS_PROJETO/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md</code>.</p>
+<section id="primeira-avaliação-nex-gddp-cmip6" class="level3">
+<h3 class="anchored" data-anchor-id="primeira-avaliação-nex-gddp-cmip6">Primeira avaliação NEX-GDDP-CMIP6</h3>
+<p>Foi executada uma primeira avaliação dos fatores de mudança diária usando o centroide corrigido das Bacias A+B, os quatro pontos de grade mais próximos, os 34 GCMs e os cenários <code>ssp126</code>, <code>ssp245</code>, <code>ssp370</code> e <code>ssp585</code>. Para cada modelo, ponto, cenário e horizonte foi ajustada uma GEV às máximas diárias anuais; o fator foi calculado como a razão entre o quantil futuro e o quantil histórico do mesmo modelo. A curva central é a mediana do conjunto não ponderado e a faixa apresentada é P10–P90.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cenário</th>
+<th>Horizonte</th>
+<th style="text-align: right;">Fator TR25 — mediana (P10–P90)</th>
+<th style="text-align: right;">Fator TR50 — mediana (P10–P90)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SSP1-2.6</td>
+<td>2040–2059</td>
+<td style="text-align: right;">1,025 (0,842–1,300)</td>
+<td style="text-align: right;">1,040 (0,805–1,485)</td>
+</tr>
+<tr class="even">
+<td>SSP1-2.6</td>
+<td>2060–2100</td>
+<td style="text-align: right;">1,144 (0,899–1,466)</td>
+<td style="text-align: right;">1,201 (0,890–1,635)</td>
+</tr>
+<tr class="odd">
+<td>SSP2-4.5</td>
+<td>2040–2059</td>
+<td style="text-align: right;">1,033 (0,842–1,443)</td>
+<td style="text-align: right;">1,065 (0,812–1,637)</td>
+</tr>
+<tr class="even">
+<td>SSP2-4.5</td>
+<td>2060–2100</td>
+<td style="text-align: right;">1,055 (0,890–1,372)</td>
+<td style="text-align: right;">1,082 (0,894–1,564)</td>
+</tr>
+<tr class="odd">
+<td>SSP3-7.0</td>
+<td>2040–2059</td>
+<td style="text-align: right;">1,015 (0,842–1,457)</td>
+<td style="text-align: right;">1,037 (0,833–1,647)</td>
+</tr>
+<tr class="even">
+<td>SSP3-7.0</td>
+<td>2060–2100</td>
+<td style="text-align: right;">1,036 (0,864–1,455)</td>
+<td style="text-align: right;">1,054 (0,850–1,763)</td>
+</tr>
+<tr class="odd">
+<td>SSP5-8.5</td>
+<td>2040–2059</td>
+<td style="text-align: right;">1,125 (0,818–1,513)</td>
+<td style="text-align: right;">1,193 (0,794–1,774)</td>
+</tr>
+<tr class="even">
+<td>SSP5-8.5</td>
+<td>2060–2100</td>
+<td style="text-align: right;">1,066 (0,818–1,395)</td>
+<td style="text-align: right;">1,109 (0,817–1,636)</td>
+</tr>
+</tbody>
+</table>
+<p>Essa leitura é uma triagem de sensibilidade, não uma previsão determinística. A série anual observada da estação e os dados subdiários dos GCMs não estão disponíveis na tabela consultada; por isso, os pesos REA, o <em>quantile mapping</em> completo e a distribuição temporal futura permanecem <code>null</code>. Os fatores ainda não foram aplicados aos arquivos <code>.inp</code> do SWMM. Os arquivos auditáveis estão no <a href="08_dados.html#avaliação-inicial-da-mudança-climática">catálogo de dados climáticos</a>, incluindo o gráfico, os fatores por modelo, o conjunto P10–mediana–P90 e o registro metodológico.</p>
+</section>
 </section>
 <section id="síntese-crítica" class="level2">
 <h2 class="anchored" data-anchor-id="síntese-crítica">5.9 Síntese crítica</h2>

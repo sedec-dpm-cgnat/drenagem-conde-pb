@@ -1,0 +1,99 @@
+{
+  "status": "avaliacao_inicial_fatores_diarios_ancorados_na_idf",
+  "data_processamento": "2026-08-17",
+  "fonte": "NASA NEX-GDDP-CMIP6 via banco PostGIS dados_nexgddp",
+  "ponto_representativo": {
+    "lon": -34.916476841775406,
+    "lat": -7.268870881348787,
+    "metodo": "centroide_bacias_AB"
+  },
+  "pontos_grade": [
+    {
+      "grid_id": 6931,
+      "lon": -34.875,
+      "lat": -7.375,
+      "distancia_m": 12598.93119039,
+      "distancia_km": 12.59893119039
+    },
+    {
+      "grid_id": 18355,
+      "lon": -34.875,
+      "lat": -7.125,
+      "distancia_m": 16557.28026592,
+      "distancia_km": 16.55728026592
+    },
+    {
+      "grid_id": 19495,
+      "lon": -35.125,
+      "lat": -7.375,
+      "distancia_m": 25843.63611825,
+      "distancia_km": 25.84363611825
+    },
+    {
+      "grid_id": 18856,
+      "lon": -35.125,
+      "lat": -7.125,
+      "distancia_m": 27992.58966712,
+      "distancia_km": 27.992589667119997
+    }
+  ],
+  "n_modelos": 34,
+  "cenarios": [
+    "ssp126",
+    "ssp245",
+    "ssp370",
+    "ssp585"
+  ],
+  "horizontes": {
+    "2040_2059": [
+      2040,
+      2059
+    ],
+    "2060_2100": [
+      2060,
+      2100
+    ]
+  },
+  "anos_historico": [
+    1950,
+    2014
+  ],
+  "tipo_dado": "maxima_precipitacao_diaria_anual_mm_dia",
+  "idf_referencia": {
+    "fonte": "IDF SGB/CPRM 2023; INMET 82798, conforme relatorio anterior",
+    "equacao": "i = 1424.1*T^0.1305/(t+23.6)^0.7468 mm/h",
+    "valores_24h": {
+      "25": {
+        "duracao_min": 1440,
+        "intensidade_mm_h": 9.376358600071748,
+        "precipitacao_24h_mm": 225.03260640172198
+      },
+      "50": {
+        "duracao_min": 1440,
+        "intensidade_mm_h": 10.264046788013783,
+        "precipitacao_24h_mm": 246.33712291233078
+      }
+    }
+  },
+  "metodo": "GEV por modelo e ponto; fator futuro/historico; conjunto nao ponderado P10-mediana-P90; ancoragem na precipitacao IDF de 24 h",
+  "rea_aplicado": false,
+  "peso_rea": null,
+  "serie_observada_anual_maxima": null,
+  "quantile_mapping_completo": null,
+  "duracoes_subdiarias_futuras": null,
+  "limitacoes": [
+    "A tabela consultada nao contem a serie diaria completa nem a serie subdiaria dos GCMs.",
+    "A serie anual observada da estacao nao foi localizada no pacote; a IDF local foi usada apenas como ancora de escala.",
+    "Os fatores sao uma triagem climatica e nao substituem a IDF futura calibrada nem a validacao hidrologica.",
+    "O conjunto foi resumido sem REA porque os pesos requerem serie observada e metricas de desempenho documentadas."
+  ],
+  "arquivos": {
+    "pontos": "nex_pontos_referencia.csv",
+    "amostra": "nex_prec_max_anual_amostra.csv",
+    "por_modelo": "idf_futura_por_modelo.csv",
+    "ensemble": "idf_futura_ensemble.csv",
+    "fatores": "fatores_mudanca_climatica.csv",
+    "grafico": "fatores_mudanca_climatica.png",
+    "erro_grafico": null
+  }
+}

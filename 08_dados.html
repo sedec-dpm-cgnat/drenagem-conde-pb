@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#curvas-de-nível" id="toc-curvas-de-nível" class="nav-link" data-scroll-target="#curvas-de-nível">Curvas de nível</a></li>
   <li><a href="#fluxo-superficial-e-rede" id="toc-fluxo-superficial-e-rede" class="nav-link" data-scroll-target="#fluxo-superficial-e-rede">Fluxo superficial e rede</a></li>
   <li><a href="#cn-2022-base-oficial-snirhana" id="toc-cn-2022-base-oficial-snirhana" class="nav-link" data-scroll-target="#cn-2022-base-oficial-snirhana">CN 2022 — base oficial SNIRH/ANA</a></li>
+  <li><a href="#avaliação-inicial-da-mudança-climática" id="toc-avaliação-inicial-da-mudança-climática" class="nav-link" data-scroll-target="#avaliação-inicial-da-mudança-climática">Avaliação inicial da mudança climática</a></li>
   <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a>
   <ul class="collapse">
   <li><a href="#primeira-rodada-da-bacia-b" id="toc-primeira-rodada-da-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-da-bacia-b">Primeira rodada da Bacia B</a></li>
@@ -497,6 +498,61 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>Os valores médios preliminares são CN 80,26 para a Bacia A, CN 76,77 para a Bacia B e CN 78,70 para o conjunto A+B. Eles não substituem a atribuição de CN por área de contribuição no SWMM nem a validação de uso do solo e impermeabilização.</p>
+</section>
+<section id="avaliação-inicial-da-mudança-climática" class="level2">
+<h2 class="anchored" data-anchor-id="avaliação-inicial-da-mudança-climática">Avaliação inicial da mudança climática</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/clima/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md">Metodologia adaptada para IDF futura</a></td>
+<td>Markdown</td>
+<td>Procedimento, salvaguardas e limitações</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/clima/avaliacao_mudanca_climatica.json">Avaliação climática completa</a></td>
+<td>JSON</td>
+<td>Metadados, ponto de grade, método e campos não determinados</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/clima/nex_pontos_referencia.csv">Pontos de grade consultados</a></td>
+<td>CSV</td>
+<td>Quatro pontos mais próximos do centroide A+B</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/clima/nex_prec_max_anual_amostra.csv">Amostra NEX-GDDP-CMIP6</a></td>
+<td>CSV</td>
+<td>Máximas diárias anuais consultadas</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/clima/idf_futura_por_modelo.csv">Fatores por modelo</a></td>
+<td>CSV</td>
+<td>GEV histórica/futura e fator diário por GCM</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/clima/idf_futura_ensemble.csv">Conjunto futuro P10–mediana–P90</a></td>
+<td>CSV</td>
+<td>Síntese por cenário, horizonte e TR</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/clima/fatores_mudanca_climatica.csv">Fatores de mudança climática</a></td>
+<td>CSV</td>
+<td>Tabela resumida para análise de sensibilidade</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/clima/fatores_mudanca_climatica.png">Gráfico dos fatores</a></td>
+<td>PNG</td>
+<td>Visualização da faixa de incerteza</td>
+</tr>
+</tbody>
+</table>
+<p>Esta primeira rodada não substitui a IDF tradicional e ainda não altera o SWMM. Ela fornece uma faixa de teste para a próxima etapa, que deverá incorporar a série observada da estação, testar a sensibilidade espacial dos quatro pontos e só então gerar hietogramas futuros identificados por cenário e horizonte.</p>
 </section>
 <section id="modelos-swmm-e-guia-de-validação" class="level2">
 <h2 class="anchored" data-anchor-id="modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</h2>

@@ -37,6 +37,6 @@ A versão HTML do relatório digital será gerada em `_site`. O script prepara o
 
 ## Situação de publicação
 
-O relatório está publicado em `https://sedec-dpm-cgnat.github.io/drenagem-conde-pb/`, associado ao repositório `sedec-dpm-cgnat/drenagem-conde-pb`. O deploy continuará sendo feito progressivamente, após cada revisão relevante.
+O relatório está publicado em [https://sedec-dpm-cgnat.github.io/drenagem-conde-pb/](https://sedec-dpm-cgnat.github.io/drenagem-conde-pb/), associado ao repositório [sedec-dpm-cgnat/drenagem-conde-pb](https://github.com/sedec-dpm-cgnat/drenagem-conde-pb). O deploy continuará sendo feito progressivamente, após cada revisão relevante.
 
 O relatório está em construção e será atualizado progressivamente à medida que a rede, as áreas de contribuição, os dissipadores e os resultados do SWMM forem revisados.

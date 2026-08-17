@@ -1,0 +1,8 @@
+Resultados da seleção espacial das metas
+
+MetasSelecionadas.shp foi interpretada como camada de polígonos.
+Os trechos foram selecionados quando apresentaram interseção linear superior a 0,01 m com um polígono.
+Os campos COMPR_M, DPROP_M, DREQ25, DREQ50, Q25_CMS, Q50_CMS, V25_MPS, V50_MPS, STATUS_SW e CRITICO
+foram preservados da rede preliminar. OVERLAP_M indica o comprimento geométrico dentro do polígono.
+META_ID foi numerado como META_01, META_02... na ordem dos polígonos de entrada, pois o campo Id original
+estava zerado. A seleção é preliminar e deve ser revisada no ArcMap antes de compor a obra.

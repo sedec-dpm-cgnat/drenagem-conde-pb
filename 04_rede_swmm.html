@@ -364,7 +364,7 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 </section>
 <section id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="level2">
 <h2 class="anchored" data-anchor-id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</h2>
-<p>O desenho final do relatório deverá distinguir claramente <strong>rede de concepção</strong> de <strong>trechos que serão convertidos em metas</strong>. A rede de concepção cobre as duas unidades de drenagem; a seleção para o Plano de Trabalho será feita por criticidade, continuidade hidráulica, população/infraestrutura protegida, risco de erosão a jusante e viabilidade de execução.</p>
+<p>O relatório distingue claramente <strong>rede de concepção</strong> de <strong>trechos convertidos em metas espaciais preliminares</strong>. A rede de concepção cobre as duas unidades de drenagem; a seleção para o Plano de Trabalho combina agora os polígonos desenhados pelo usuário com a criticidade preliminar, a continuidade hidráulica, a população/infraestrutura protegida, o risco de erosão a jusante e a viabilidade de execução.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -384,24 +384,30 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 <tr class="odd">
 <td><strong>Bacia A</strong></td>
 <td>Rede preliminar já lançada, com troncos, coletores, nós, áreas template e dissipadores/saídas em revisão</td>
-<td><code>TroncoA*.shp</code>, <code>ColetorA*.shp</code>/<code>ColetarA6.shp</code> e <code>TrechosDissipacao.shp</code>, restringidos aos setores críticos confirmados</td>
-<td>Rede revisada, áreas vinculadas, dissipadores conectados e cenários TR25/TR50 rodados</td>
+<td><code>META_04</code>: 45 trechos, 5.193,12 m de extensão integral dos segmentos e 1 dissipador intersectado</td>
+<td>Revisar áreas, continuidade, dissipador, cotas, seções e cenários TR25/TR50</td>
 </tr>
 <tr class="even">
 <td><strong>Bacia B</strong></td>
-<td>Rede preliminar com 44 links nodais, 46 áreas template, 2 dissipadores e 2 componentes conectados</td>
-<td>Troncos e coletores que conectem os setores críticos a saídas verificadas; quantitativos ainda não determinados</td>
-<td>Rodada TR25/TR50 executada; validar áreas, seções, cotas e dissipadores</td>
+<td>Rede preliminar com troncos, coletores, nós, áreas template, 2 dissipadores e 2 componentes conectados</td>
+<td><code>META_01</code>–<code>META_03</code>: 29 trechos, 7.299,20 m de extensão integral dos segmentos e 2 dissipadores intersectados</td>
+<td>Revisar áreas, ligações, seções, cotas, dissipadores e condição de jusante</td>
 </tr>
 <tr class="odd">
 <td><strong>Bacias A + B</strong></td>
 <td>Concepção integrada, sem conectar automaticamente uma bacia à outra</td>
-<td>Metas M-02 a M-06 do Plano de Trabalho, com prioridade para troncos e dissipadores e coletores indispensáveis</td>
+<td>4 polígonos de meta, 74 trechos selecionados, 38 nós e 3 dissipadores</td>
 <td>Integração somente onde houver comprovação topográfica e hidráulica</td>
 </tr>
 </tbody>
 </table>
-<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias sem afirmar que a Bacia B já possui uma rede executável. Os nomes dos links e extensões estão organizados; diâmetros finais, vazões de projeto e quantitativos da Bacia B permanecerão <strong>não determinados</strong> até a conclusão da validação.</p>
+<figure class="map-figure figure">
+<img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas espaciais selecionadas sobre as redes A e B" class="figure-img">
+<figcaption>
+Figura 4.2 — Recorte espacial preliminar das metas. Os segmentos coloridos são os links que intersectam os polígonos META_01 a META_04; os trechos cinza permanecem na rede de concepção, mas fora do recorte de execução desta rodada.
+</figcaption>
+</figure>
+<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias e o recorte espacial indicado para o Plano de Trabalho, sem afirmar que os 74 trechos selecionados serão executados automaticamente. Os nomes dos links, pontos de início/fim, extensões e parâmetros de triagem estão organizados na <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela detalhada das metas</a>. Diâmetros finais, vazões de projeto, quantitativos executivos e soluções de dissipação continuam condicionados à validação.</p>
 </section>
 <section id="critérios-de-verificação-hidráulica" class="level2">
 <h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</h2>
@@ -420,7 +426,7 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 </section>
 <section id="próxima-rodada" class="level2">
 <h2 class="anchored" data-anchor-id="próxima-rodada">4.10 Próxima rodada</h2>
-<p>A sequência operacional agora é: revisar as linhas e os nós das duas bacias no ArcMap, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
+<p>A sequência operacional agora é: revisar no ArcMap os 4 polígonos de meta e os 74 trechos selecionados, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados por meta e fechar o recorte executivo do Plano de Trabalho.</p>
 </section>
 <section id="primeira-rodada-integrada-bacia-a" class="level2">
 <h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</h2>

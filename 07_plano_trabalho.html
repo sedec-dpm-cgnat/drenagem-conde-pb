@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </ul></li>
   <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a>
   <ul class="collapse">
+  <li><a href="#seleção-espacial-executada-para-as-metas" id="toc-seleção-espacial-executada-para-as-metas" class="nav-link" data-scroll-target="#seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</a></li>
   <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</a></li>
   <li><a href="#limite-territorial-do-plano-de-trabalho" id="toc-limite-territorial-do-plano-de-trabalho" class="nav-link" data-scroll-target="#limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</a></li>
   </ul></li>
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Documento em construção.</strong> As metas abaixo são uma estrutura técnica inicial para discussão intersetorial. Os limites, quantitativos, trechos, vazões, custos e soluções construtivas só devem ser fechados após a revisão de campo, da rede e do modelo SWMM.
+<strong>Documento em construção.</strong> A seleção espacial das metas foi executada nesta versão, mas os limites executivos, quantitativos, trechos, vazões, custos e soluções construtivas só devem ser fechados após a revisão de campo, da rede e do modelo SWMM.
 </div>
 </div>
 </div>
@@ -364,6 +365,124 @@ document.addEventListener('DOMContentLoaded', function () {
 </tbody>
 </table>
 <p>Os códigos são administrativos e preliminares. Eles não correspondem ainda a um quantitativo de obras nem autorizam a execução física.</p>
+<section id="seleção-espacial-executada-para-as-metas" class="level3">
+<h3 class="anchored" data-anchor-id="seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</h3>
+<p>Foi recebida a camada <code>MetasSelecionadas.shp</code>, em SIRGAS 2000 / UTM 25S (EPSG:31985), com quatro polígonos desenhados para delimitar os setores que deverão ser considerados na elaboração dos Planos de Trabalho. Como o campo original <code>Id</code> estava zerado em todas as feições, os polígonos foram identificados, para fins de rastreabilidade, como <code>META_01</code> a <code>META_04</code>, seguindo a ordem geométrica de entrada. Essa numeração poderá ser substituída por códigos administrativos definitivos após a validação institucional.</p>
+<p>A seleção dos trechos foi feita por interseção espacial com comprimento linear superior a 0,01 m. Assim, foram selecionados os segmentos que efetivamente atravessam cada polígono; um simples contato pontual com o limite não foi suficiente. Para cada segmento selecionado foram preservados o identificador do link, a classe (tronco/coletor), os nós de início e fim, as coordenadas métricas dos extremos, o comprimento total cadastrado, o comprimento dentro do polígono, cotas, declividade, diâmetros atual e preliminares, vazões TR25/TR50, velocidades, criticidade e status da rodada SWMM.</p>
+<figure class="map-figure figure">
+<img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas selecionadas espacialmente nas Bacias A e B" class="figure-img">
+<figcaption>
+Figura 7.1 — Polígonos de meta desenhados sobre a rede de concepção. A Bacia A está representada em laranja e a Bacia B em teal; as linhas cinza são trechos da rede que permanecem fora do recorte das metas nesta rodada. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
+</figcaption>
+</figure>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Meta</th>
+<th style="text-align: right;">Bacia</th>
+<th style="text-align: right;">Área do polígono (ha)</th>
+<th style="text-align: right;">Trechos</th>
+<th style="text-align: right;">Extensão total dos segmentos (m)</th>
+<th style="text-align: right;">Extensão dentro do polígono (m)</th>
+<th style="text-align: right;">Nós</th>
+<th style="text-align: right;">Dissipadores</th>
+<th style="text-align: right;">Dprop preliminar (m)</th>
+<th style="text-align: right;">Dreq TR25/TR50 máx. (m)</th>
+<th style="text-align: right;">Q25/Q50 máx. (m³/s)</th>
+<th style="text-align: right;">Trechos críticos*</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>META_01</td>
+<td style="text-align: right;">B</td>
+<td style="text-align: right;">2,12</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">5.074,34</td>
+<td style="text-align: right;">1.073,53</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,40–1,20</td>
+<td style="text-align: right;">0,960 / 0,960</td>
+<td style="text-align: right;">5,039 / 5,199</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td>META_02</td>
+<td style="text-align: right;">B</td>
+<td style="text-align: right;">1,53</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.402,93</td>
+<td style="text-align: right;">665,45</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,40–1,50</td>
+<td style="text-align: right;">1,203 / 1,206</td>
+<td style="text-align: right;">7,133 / 7,705</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>META_03</td>
+<td style="text-align: right;">B</td>
+<td style="text-align: right;">1,22</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">821,93</td>
+<td style="text-align: right;">675,09</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0,40–1,00</td>
+<td style="text-align: right;">0,859 / 0,859</td>
+<td style="text-align: right;">2,981 / 2,985</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>META_04</td>
+<td style="text-align: right;">A</td>
+<td style="text-align: right;">1,73</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">5.193,12</td>
+<td style="text-align: right;">1.108,53</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0,30–1,20</td>
+<td style="text-align: right;">0,962 / 1,025</td>
+<td style="text-align: right;">4,629 / 5,076</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>A+B</strong></td>
+<td style="text-align: right;"><strong>6,60</strong></td>
+<td style="text-align: right;"><strong>74</strong></td>
+<td style="text-align: right;"><strong>12.492,32</strong></td>
+<td style="text-align: right;"><strong>3.522,60</strong></td>
+<td style="text-align: right;"><strong>38</strong></td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;"><strong>43</strong></td>
+</tr>
+</tbody>
+</table>
+<p>* <code>Trechos críticos</code> é a contagem da flag preliminar <code>CRITICO</code> herdada da triagem SWMM; não equivale, isoladamente, à decisão de executar a obra. A extensão total corresponde ao segmento inteiro selecionado para garantir continuidade da rede; a extensão dentro do polígono é apresentada para auditoria espacial e não deve ser usada automaticamente como extensão de projeto.</p>
+<p>O <a href="data/metas_plano_trabalho/resumo_metas.csv">resumo por meta</a> e a <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela completa por trecho</a> registram os parâmetros que deverão orientar a próxima revisão. A tabela detalhada contém, entre outros campos, <code>ID_LINK</code>, <code>META_ID</code>, <code>BACIA</code>, <code>CLASSE</code>, <code>NO_IN</code>, <code>NO_OUT</code>, <code>X_IN_M</code>, <code>Y_IN_M</code>, <code>X_OUT_M</code>, <code>Y_OUT_M</code>, <code>COMPR_M</code>, <code>OVERLAP_M</code>, <code>COTA_IN</code>, <code>COTA_OUT</code>, <code>DECL_PCT</code>, <code>D_ATUAL_M</code>, <code>DPROP_M</code>, <code>DREQ25</code>, <code>DREQ50</code>, <code>DNOM25</code>, <code>DNOM50</code>, <code>Q25_CMS</code>, <code>Q50_CMS</code>, <code>V25_MPS</code>, <code>V50_MPS</code>, <code>STATUS_SW</code> e <code>CRITICO</code>. O <a href="data/metas_plano_trabalho/Metas_Selecionadas_Resultados.zip">pacote GIS completo das metas</a> contém os polígonos, trechos, nós e dissipadores em shapefile para ArcMap/QGIS.</p>
+<p>As quatro metas espaciais passam a ser o recorte técnico preliminar do Plano de Trabalho: <code>META_04</code> concentra o setor selecionado da Bacia A; <code>META_01</code>, <code>META_02</code> e <code>META_03</code> concentram os setores selecionados da Bacia B. Isso não significa que todos os 74 trechos serão executados. A seleção administrativa final deverá retirar trechos redundantes, conectores provisórios, segmentos sem continuidade ou elementos que não tenham solução de jusante confirmada, mantendo-os no cadastro como dependências ou alternativas.</p>
+</section>
 <section id="associação-preliminar-entre-bacias-rede-e-metas" class="level3">
 <h3 class="anchored" data-anchor-id="associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</h3>
 <table class="caption-top table">
@@ -387,23 +506,23 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="even">
 <td>Troncos principais</td>
-<td>Prioridade inicial nos trechos críticos confirmados e conectados a descarga segura</td>
-<td>Prioridade a definir após a triagem hidráulica e a confirmação dos setores críticos</td>
+<td><code>META_04</code>: 45 trechos selecionados; priorizar os críticos e os que fecham a descarga segura</td>
+<td><code>META_01</code> a <code>META_03</code>: 29 trechos selecionados; priorizar continuidade e ligação aos dois dissipadores</td>
 </tr>
 <tr class="odd">
 <td>Coletores indispensáveis</td>
-<td>Somente os necessários para alimentar e fechar os troncos priorizados</td>
-<td>Serão confirmados junto com as áreas de contribuição das quadras</td>
+<td>Selecionar dentro da <code>META_04</code> somente os que alimentam os troncos priorizados</td>
+<td>Selecionar dentro de <code>META_01</code>–<code>META_03</code> os que vinculam as quadras e os pontos de entrada</td>
 </tr>
 <tr class="even">
 <td>Dissipadores e saídas</td>
-<td>Usar <code>TrechosDissipacao.shp</code> como referência e revisar as vazões</td>
-<td>Usar <code>Trechos_Dissipacao_B.shp</code>, validar as vazões e detalhar a solução estrutural</td>
+<td>1 dissipador intersectado em <code>META_04</code>; revisar vazão, desnível e proteção</td>
+<td>2 dissipadores intersectados em <code>META_01</code> e <code>META_02</code>; detalhar a solução estrutural</td>
 </tr>
 <tr class="odd">
 <td>Metas do Plano</td>
-<td>M-03, M-04, M-05 e M-06 podem ser detalhadas primeiro nesta frente</td>
-<td>M-02 a M-06 serão detalhadas após a validação da primeira rodada</td>
+<td><code>META_04</code> é o recorte espacial preliminar da Bacia A</td>
+<td><code>META_01</code>, <code>META_02</code> e <code>META_03</code> são os recortes espaciais preliminares da Bacia B</td>
 </tr>
 </tbody>
 </table>
@@ -416,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="dissipadores-critério-para-a-etapa-seguinte" class="level2">
 <h2 class="anchored" data-anchor-id="dissipadores-critério-para-a-etapa-seguinte">6.1.5 Dissipadores: critério para a etapa seguinte</h2>
-<p>Os pontos de início e fim serão marcados pelo usuário em camada vetorial. Depois disso, a estimativa preliminar será feita a partir do MDT híbrido, das curvas de nível integradas e das vazões de chegada calculadas para a rede. Para cada dissipador serão estimados, quando os dados permitirem:</p>
+<p>Os pontos de início e fim dos dissipadores já foram marcados em camadas vetoriais das Bacias A e B. A estimativa preliminar é feita a partir do MDT híbrido, das curvas de nível integradas e das vazões de chegada calculadas para a rede. Para cada dissipador serão estimados, quando os dados permitirem:</p>
 <ul>
 <li>desnível e comprimento disponível;</li>
 <li>declividade média e mudanças de declividade;</li>
@@ -448,7 +567,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <li>Editar as áreas de contribuição das quadras das duas bacias e associá-las aos nós de entrada.</li>
 <li>Atualizar cotas de fundo, diâmetros, rugosidades, condições de jusante e parâmetros de infiltração.</li>
 <li>Rodar os cenários tradicionais de chuva e verificar os resultados antes de incorporar as projeções NEX-GDDP-CMIP6.</li>
-<li>Selecionar as metas que serão levadas ao Plano de Trabalho, com justificativa de risco, população/infraestrutura protegida, dependências e estimativa de custo.</li>
+<li>Validar os quatro polígonos e os trechos selecionados, com justificativa de risco, população/infraestrutura protegida, dependências, condição de jusante e estimativa de custo.</li>
 </ol>
 </section>
 <section id="referências-institucionais" class="level2">

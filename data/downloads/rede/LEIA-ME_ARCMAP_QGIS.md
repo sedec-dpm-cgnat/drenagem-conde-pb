@@ -10,7 +10,7 @@ CRS: SIRGAS 2000 / UTM 25S (EPSG:31985).
 - `shp_arcmap/poligonos_metas_AB_template.shp`: camada vazia para desenhar as areas das metas.
 
 ## Campos para selecionar metas
-`SELEC_MET` e `META_ID` estao vazios/nao selecionados na camada-base. Depois de desenhar os poligonos, use Select By Location no ArcMap para identificar os trechos e copie o resultado para uma camada de trabalho.
+`SELEC_META` e `META_ID` estao vazios/nao selecionados na camada-base. Depois de desenhar os poligonos, use Select By Location no ArcMap para identificar os trechos e copie o resultado para uma camada de trabalho.
 
 ## Dimensoes
 `D_ATUAL_M` e o placeholder que entrou no modelo; `DREQ25`/`DREQ50` sao diametros teoricos requeridos; `DNOM25`/`DNOM50` sao candidatos nominais; `DPROP_M` e o maior candidato nominal disponivel. Todos sao PRELIM_SWMM e nao substituem cotas de fundo, cadastro, projeto estrutural, verificacao de jusante ou campo.

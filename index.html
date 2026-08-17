@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.prepend(note);
 });
 </script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer=""></script>
+<script src="assets/mapa_interativo_bacias_rede.js" defer=""></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -306,7 +309,13 @@ Mapa-síntese estático para leitura do relatório, agora com as redes prelimina
 </figcaption>
 </figure>
 <p class="map-note">
-O painel foi simplificado para evitar falhas de carregamento de mapas-base e bibliotecas externas. A representação é cartográfica, não substitui a conferência no ArcMap/QGIS; o CRS de trabalho permanece SIRGAS 2000 / UTM 25S.
+A figura acima é a versão estática para impressão e PDF. A representação é cartográfica, não substitui a conferência no ArcMap/QGIS; o CRS de trabalho permanece SIRGAS 2000 / UTM 25S.
+</p>
+<div id="mapa-interativo-bacias-rede" class="leaflet-report-map" role="application" aria-label="Mapa interativo das Bacias A e B e das redes preliminares">
+
+</div>
+<p class="map-note">
+Versão interativa: alterne entre <strong>Satélite Esri</strong> e <strong>Ruas OpenStreetMap</strong> no controle do mapa; ligue ou desligue Bacias A/B, redes, nós e dissipadores. Clique nos trechos para consultar seus códigos e parâmetros preliminares. As imagens de satélite e ruas são referências de visualização e não substituem o ortomosaico, o cadastro ou o levantamento de campo.
 </p>
 <section id="problemas-e-metas-originalmente-marcados" class="level3">
 <h3 class="anchored" data-anchor-id="problemas-e-metas-originalmente-marcados">Problemas e metas originalmente marcados</h3>

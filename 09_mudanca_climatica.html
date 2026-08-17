@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3. Estudos hidrológicos – Drenagem Conde/PB</title>
+<title>6. IDFs futuras, incerteza e reconstrução adaptada – Drenagem Conde/PB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">2 · Modelo digital de elevação</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./03_mdt_hibrido.html" aria-current="page"> 
+    <a class="nav-link" href="./03_mdt_hibrido.html"> 
 <span class="menu-text">3 · Estudos hidrológicos</span></a>
   </li>  
   <li class="nav-item">
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">5 · Análise e discussões</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./09_mudanca_climatica.html"> 
+    <a class="nav-link active" href="./09_mudanca_climatica.html" aria-current="page"> 
 <span class="menu-text">6 · IDFs futuras e adaptação</span></a>
   </li>  
   <li class="nav-item">
@@ -163,12 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#linha-de-base-tradicional" id="toc-linha-de-base-tradicional" class="nav-link active" data-scroll-target="#linha-de-base-tradicional">3.1 Linha de base tradicional</a></li>
-  <li><a href="#áreas-de-contribuição-e-perdas" id="toc-áreas-de-contribuição-e-perdas" class="nav-link" data-scroll-target="#áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</a></li>
-  <li><a href="#transformação-chuva-vazão" id="toc-transformação-chuva-vazão" class="nav-link" data-scroll-target="#transformação-chuva-vazão">3.3 Transformação chuva-vazão</a></li>
-  <li><a href="#atualização-climática-com-nex-gddp-cmip6" id="toc-atualização-climática-com-nex-gddp-cmip6" class="nav-link" data-scroll-target="#atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</a></li>
-  <li><a href="#cenários-hidrológicos-propostos" id="toc-cenários-hidrológicos-propostos" class="nav-link" data-scroll-target="#cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</a></li>
-  <li><a href="#entregas-hidrológicas" id="toc-entregas-hidrológicas" class="nav-link" data-scroll-target="#entregas-hidrológicas">3.6 Entregas hidrológicas</a></li>
+  <li><a href="#por-que-um-capítulo-específico" id="toc-por-que-um-capítulo-específico" class="nav-link active" data-scroll-target="#por-que-um-capítulo-específico">6.1 Por que um capítulo específico</a></li>
+  <li><a href="#estrutura-de-apresentação-das-idfs" id="toc-estrutura-de-apresentação-das-idfs" class="nav-link" data-scroll-target="#estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</a></li>
+  <li><a href="#método-aplicado-nesta-primeira-rodada" id="toc-método-aplicado-nesta-primeira-rodada" class="nav-link" data-scroll-target="#método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</a></li>
+  <li><a href="#resultados-por-cenário-e-horizonte" id="toc-resultados-por-cenário-e-horizonte" class="nav-link" data-scroll-target="#resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</a></li>
+  <li><a href="#o-que-ainda-falta-para-uma-idf-futura-de-projeto" id="toc-o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="nav-link" data-scroll-target="#o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</a></li>
+  <li><a href="#reconstrução-resiliente-sustentável-e-adaptada" id="toc-reconstrução-resiliente-sustentável-e-adaptada" class="nav-link" data-scroll-target="#reconstrução-resiliente-sustentável-e-adaptada">6.6 Reconstrução resiliente, sustentável e adaptada</a></li>
+  <li><a href="#integração-com-o-swmm-e-com-o-plano-de-trabalho" id="toc-integração-com-o-swmm-e-com-o-plano-de-trabalho" class="nav-link" data-scroll-target="#integração-com-o-swmm-e-com-o-plano-de-trabalho">6.7 Integração com o SWMM e com o Plano de Trabalho</a></li>
+  <li><a href="#referências-e-dados-auditáveis" id="toc-referências-e-dados-auditáveis" class="nav-link" data-scroll-target="#referências-e-dados-auditáveis">6.8 Referências e dados auditáveis</a></li>
   </ul>
 </nav>
     </div>
@@ -177,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. Estudos hidrológicos</h1>
+<h1 class="title">6. IDFs futuras, incerteza e reconstrução adaptada</h1>
 </div>
 
 
@@ -194,140 +196,184 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
+<div class="warning callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<strong>Capítulo metodológico em construção.</strong> Esta seção apresenta uma primeira faixa de sensibilidade climática para apoiar decisões robustas. Ela não substitui a atualização formal da IDF com séries observadas, dados subdiários, calibração local e validação hidrológica.
+</div>
+</div>
+</div>
+<section id="por-que-um-capítulo-específico" class="level2">
+<h2 class="anchored" data-anchor-id="por-que-um-capítulo-específico">6.1 Por que um capítulo específico</h2>
+<p>Chuvas de projeto não são valores fixos fora do tempo. Uma rede que funciona apenas sob a linha histórica pode perder margem de segurança durante a vida útil, especialmente quando há aumento de impermeabilização, ocupação urbana e concentração do escoamento. Por isso, a reconstrução das Bacias A e B será avaliada em dois planos complementares: a linha de base hidrológica usada no relatório anterior e um conjunto de cenários que testa a sensibilidade do sistema a mudanças na precipitação extrema.</p>
+<p>O objetivo não é vender uma previsão única, mas mostrar com transparência <strong>o que permanece robusto, o que se torna crítico e o que precisa ser adaptável</strong>. Essa forma de comunicação aproxima o relatório de ferramentas públicas de projeção de IDF, como o projeto do NRCC/Cornell, que organiza a leitura por período de retorno, cenário, horizonte temporal e faixa de incerteza (<a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>).</p>
+</section>
+<section id="estrutura-de-apresentação-das-idfs" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</h2>
+<p>Para cada cenário e horizonte, a apresentação deverá permitir a leitura de:</p>
+<ul>
+<li>período de retorno: TR25 e TR50 como referência desta concepção preliminar;</li>
+<li>horizonte: 2040-2059 e 2060-2100, correspondendo às janelas disponíveis no banco local;</li>
+<li>cenário socioambiental: SSP1-2.6, SSP2-4.5, SSP3-7.0 e SSP5-8.5;</li>
+<li>curva central: mediana dos modelos válidos;</li>
+<li>margem de incerteza: faixa P10-P90, acompanhada dos valores mínimo e máximo para auditoria;</li>
+<li>duração: a curva local é mostrada de 15 minutos a 24 horas, sempre com a ressalva de que a projeção disponível é diária.</li>
+</ul>
+<p>O gráfico abaixo usa a mesma lógica de um painel de IDFs projetadas: cada quadro corresponde a um cenário e horizonte; as linhas mostram a mediana para TR25 e TR50; o sombreamento mostra P10-P90; as linhas tracejadas são a IDF local de referência. A figura deve ser lida como <strong>teste de sensibilidade</strong>, e não como autorização para substituir automaticamente as chuvas no SWMM.</p>
+<figure class="map-figure figure">
+<img src="data/downloads/clima/idf_cenarios_incerteza.png" alt="Painel com oito quadros de IDF de sensibilidade climática para quatro cenários e dois horizontes, com faixas P10-P90" class="figure-img">
+<figcaption>
+Figura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-P90 expressam a dispersão do conjunto de modelos; as linhas tracejadas representam a IDF local de referência.
+</figcaption>
+</figure>
+</section>
+<section id="método-aplicado-nesta-primeira-rodada" class="level2">
+<h2 class="anchored" data-anchor-id="método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</h2>
+<p>A análise segue uma adaptação da metodologia de extremos e mudança climática discutida por Maity e Maity (2022), mantendo a ideia de comparar a distribuição de extremos históricos e futuros, corrigir a escala em relação à referência local e comunicar a incerteza do conjunto de modelos. O banco NEX-GDDP-CMIP6 disponível para Conde contém máximas anuais diárias, por modelo, cenário, ano e ponto de grade. Por essa razão, a implementação atual:</p>
+<ol type="1">
+<li>seleciona os quatro pontos de grade mais próximos do centroide corrigido das Bacias A+B;</li>
+<li>ajusta uma distribuição GEV por modelo e ponto para o período histórico e para cada horizonte futuro;</li>
+<li>calcula, para TR25 e TR50, a razão entre o quantil futuro e o quantil histórico do mesmo modelo;</li>
+<li>resume os fatores válidos por P10, mediana e P90, sem aplicar pesos REA;</li>
+<li>ancora a resposta na IDF SGB/CPRM 2023 usada no relatório anterior;</li>
+<li>leva a faixa resultante para as durações da IDF local apenas como uma aproximação de sensibilidade.</li>
+</ol>
+<p>Essa etapa é deliberadamente conservadora na comunicação. Não foram inventados pesos, séries observadas ou ajustes subdiários que não estejam documentados. Onde a grandeza não pôde ser determinada, ela permanece como <code>null</code> no JSON de auditoria.</p>
+</section>
+<section id="resultados-por-cenário-e-horizonte" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</h2>
+<p>O quadro resume os fatores multiplicativos da linha de base local. Um fator 1,20, por exemplo, significa que a mediana do conjunto produziu uma intensidade 20% maior para aquela combinação de período de retorno e horizonte; não significa que toda chuva futura será 20% maior.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cenário</th>
+<th>Horizonte</th>
+<th style="text-align: right;">TR25: P10 / mediana / P90</th>
+<th style="text-align: right;">TR50: P10 / mediana / P90</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SSP1-2.6</td>
+<td>2040-2059</td>
+<td style="text-align: right;">0,842 / 1,025 / 1,300</td>
+<td style="text-align: right;">0,805 / 1,040 / 1,485</td>
+</tr>
+<tr class="even">
+<td>SSP1-2.6</td>
+<td>2060-2100</td>
+<td style="text-align: right;">0,899 / 1,144 / 1,466</td>
+<td style="text-align: right;">0,890 / 1,201 / 1,635</td>
+</tr>
+<tr class="odd">
+<td>SSP2-4.5</td>
+<td>2040-2059</td>
+<td style="text-align: right;">0,842 / 1,033 / 1,443</td>
+<td style="text-align: right;">0,812 / 1,065 / 1,637</td>
+</tr>
+<tr class="even">
+<td>SSP2-4.5</td>
+<td>2060-2100</td>
+<td style="text-align: right;">0,890 / 1,055 / 1,372</td>
+<td style="text-align: right;">0,894 / 1,082 / 1,564</td>
+</tr>
+<tr class="odd">
+<td>SSP3-7.0</td>
+<td>2040-2059</td>
+<td style="text-align: right;">0,842 / 1,015 / 1,457</td>
+<td style="text-align: right;">0,833 / 1,037 / 1,647</td>
+</tr>
+<tr class="even">
+<td>SSP3-7.0</td>
+<td>2060-2100</td>
+<td style="text-align: right;">0,864 / 1,036 / 1,455</td>
+<td style="text-align: right;">0,850 / 1,054 / 1,763</td>
+</tr>
+<tr class="odd">
+<td>SSP5-8.5</td>
+<td>2040-2059</td>
+<td style="text-align: right;">0,818 / 1,125 / 1,513</td>
+<td style="text-align: right;">0,794 / 1,193 / 1,774</td>
+</tr>
+<tr class="even">
+<td>SSP5-8.5</td>
+<td>2060-2100</td>
+<td style="text-align: right;">0,818 / 1,066 / 1,395</td>
+<td style="text-align: right;">0,817 / 1,109 / 1,636</td>
+</tr>
+</tbody>
+</table>
+<p>Há dois ensinamentos institucionais nesse quadro. Primeiro, a mediana não cresce de forma monotônica em todos os cenários e horizontes; portanto, uma decisão baseada em um único fator pode ocultar a dispersão. Segundo, as faixas são amplas em alguns casos, especialmente para TR50. Isso recomenda soluções sem arrependimento: continuidade hidráulica, controle de erosão, dissipação segura, acesso para manutenção, proteção a jusante e possibilidade de reforço futuro.</p>
+</section>
+<section id="o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</h2>
+<p>O resultado atual não deve ser aplicado diretamente aos arquivos <code>.inp</code> do SWMM. Para uma futura contratação ou projeto básico, a atualização deverá incluir:</p>
+<ul>
+<li>série observada de máximas anuais e, idealmente, séries subdiárias da estação de referência;</li>
+<li>verificação da homogeneidade, falhas e representatividade espacial da estação;</li>
+<li>downscaling e correção de viés documentados, incluindo quantile mapping quando aplicável;</li>
+<li>avaliação do desempenho dos modelos no clima histórico e definição justificada dos pesos do conjunto;</li>
+<li>ajuste de extremos para cada duração relevante, com intervalos de confiança e teste de sensibilidade;</li>
+<li>definição do horizonte de projeto compatível com a vida útil, manutenção e possibilidade de expansão;</li>
+<li>atualização dos hietogramas e execução comparativa no SWMM, registrando pico, volume, inundação, velocidade e solicitação dos dissipadores.</li>
+</ul>
+<p>Até lá, os fatores devem ser usados como cenários de triagem. A rede será considerada robusta quando continuar atendendo aos critérios essenciais em mais de uma premissa, ou quando houver medidas físicas e operacionais explícitas para os casos em que a capacidade seja excedida.</p>
+</section>
+<section id="reconstrução-resiliente-sustentável-e-adaptada" class="level2">
+<h2 class="anchored" data-anchor-id="reconstrução-resiliente-sustentável-e-adaptada">6.6 Reconstrução resiliente, sustentável e adaptada</h2>
+<p>O valor do projeto não está apenas em dimensionar uma tubulação. Está em transformar o diagnóstico de erosão e alagamento em uma decisão de reconstrução que reduza risco futuro. Para isso, a proposta adota cinco premissas:</p>
+<ol type="1">
+<li><strong>Conceber o sistema e executar o essencial.</strong> O plano reconhece a drenagem completa das Bacias A e B, mas prioriza troncos principais, coletores indispensáveis e dissipadores nos setores críticos.</li>
+<li><strong>Não transferir o risco.</strong> Toda meta deve ser ligada a uma área contribuinte, a um caminho de escoamento, a uma descarga e a uma proteção a jusante.</li>
+<li><strong>Projetar para manutenção e adaptação.</strong> Acesso, limpeza, inspeção, proteção contra erosão e possibilidade de reforço devem integrar a solução desde a concepção.</li>
+<li><strong>Combinar infraestrutura cinza e medidas sustentáveis.</strong> Sempre que tecnicamente compatível, devem ser avaliadas soluções de retenção temporária, infiltração, revegetação, proteção de solo, redução de velocidade e controle na origem.</li>
+<li><strong>Usar a mudança climática como teste de robustez.</strong> A decisão deve considerar a linha de base e as faixas futuras, priorizando medidas que funcionem sob diferentes cenários e evitando investimentos que dependam de uma única previsão.</li>
+</ol>
+<p>Essa abordagem dá conteúdo técnico ao princípio de reconstruir melhor (<em>Build Back Better</em>): a reconstrução deixa de ser mera reposição do que falhou e passa a ser uma oportunidade de reduzir vulnerabilidade, proteger a população e preparar a infraestrutura para condições futuras. No Plano de Trabalho, a adaptação climática será tratada como critério de priorização e de desempenho, não como justificativa para inflar quantitativos sem evidência.</p>
+</section>
+<section id="integração-com-o-swmm-e-com-o-plano-de-trabalho" class="level2">
+<h2 class="anchored" data-anchor-id="integração-com-o-swmm-e-com-o-plano-de-trabalho">6.7 Integração com o SWMM e com o Plano de Trabalho</h2>
+<p>Os cenários climáticos serão incorporados ao SWMM somente depois de concluída a rodada tradicional TR25/TR50 e de validados os trechos, áreas de contribuição e dissipadores das Bacias A e B. Para cada cenário aplicado, o relatório deverá registrar:</p>
+<ul>
+<li>chuva de entrada, fator ou curva utilizada e fonte;</li>
+<li>nós com inundação e links acima da capacidade;</li>
+<li>vazão de chegada nos dissipadores e condições de jusante;</li>
+<li>trechos que permanecem críticos em todos os cenários;</li>
+<li>medidas de adaptação, reforço ou monitoramento propostas.</li>
+</ul>
+<p>Os trechos que permanecerem críticos e cuja implantação reduzir risco nas áreas de metas serão candidatos ao Plano de Trabalho. As demais ocorrências fora das Bacias A e B continuam fora do escopo desta modelagem e deverão ser tratadas em frentes específicas.</p>
+</section>
+<section id="referências-e-dados-auditáveis" class="level2">
+<h2 class="anchored" data-anchor-id="referências-e-dados-auditáveis">6.8 Referências e dados auditáveis</h2>
+<ul>
+<li><a href="data/downloads/clima/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md">Metodologia adaptada para IDF e mudança climática</a>.</li>
+<li><a href="data/downloads/clima/avaliacao_mudanca_climatica.json">Avaliação climática em JSON</a>.</li>
+<li><a href="data/downloads/clima/fatores_mudanca_climatica.csv">Fatores por cenário e horizonte</a>.</li>
+<li><a href="data/downloads/clima/idf_futura_por_modelo.csv">Fatores por modelo</a>.</li>
+<li><a href="data/downloads/clima/idf_cenarios_incerteza.png">Painel de IDFs e incerteza</a>.</li>
+<li><a href="data/downloads/clima/nex_prec_max_anual_amostra.csv">Dados NEX-GDDP-CMIP6 amostrados</a>.</li>
+<li><a href="https://doi.org/10.1016/j.jhydrol.2022.127956">Maity e Maity (2022), Changing pattern of intensity-duration-frequency curves</a>.</li>
+<li><a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>.</li>
+</ul>
 <div class="info callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Estratégia hidrológica.</strong> A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas.
+<strong>Mensagem para a decisão.</strong> A proposta combina uma visão integrada da drenagem com execução focalizada nas metas críticas. Isso permite instruir a reconstrução sem prometer que uma obra isolada resolverá toda a bacia e sem deixar a infraestrutura futura exposta a uma única premissa climática.
 </div>
 </div>
 </div>
-<section id="linha-de-base-tradicional" class="level2">
-<h2 class="anchored" data-anchor-id="linha-de-base-tradicional">3.1 Linha de base tradicional</h2>
-<p>A linha de base preliminar utiliza:</p>
-<ul>
-<li>estação INMET 82798;</li>
-<li>relação IDF SGB/CPRM 2023;</li>
-<li>hietogramas de projeto TR25 e TR50;</li>
-<li>método de infiltração CN-SCS;</li>
-<li>CN médio preliminar igual a 79;</li>
-<li>30% de impermeabilização como premissa inicial.</li>
-</ul>
-<p>As chuvas foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos arquivos .inp preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo.</p>
-</section>
-<section id="áreas-de-contribuição-e-perdas" class="level2">
-<h2 class="anchored" data-anchor-id="áreas-de-contribuição-e-perdas">3.2 Áreas de contribuição e perdas</h2>
-<p>As 208 áreas disponíveis no modelo atual são um template Voronoi. Elas preservam a estrutura do SWMM, mas ainda não representam definitivamente quadras, lotes, sarjetas ou pontos de entrada.</p>
-<p>Na revisão, cada subárea deverá receber:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Grupo</th>
-<th>Dados a confirmar</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Geometria</td>
-<td>área, largura característica e declividade</td>
-</tr>
-<tr class="even">
-<td>Superfície</td>
-<td>frações impermeável e permeável</td>
-</tr>
-<tr class="odd">
-<td>Infiltração</td>
-<td>CN, perdas iniciais e parâmetros do método escolhido</td>
-</tr>
-<tr class="even">
-<td>Conexão</td>
-<td>nó de entrada, caminho superficial ou ligação à galeria</td>
-</tr>
-<tr class="odd">
-<td>Controle</td>
-<td>origem da cota, ponto de saída e hipótese de contribuição</td>
-</tr>
-</tbody>
-</table>
-<p>A estrutura deve permitir distinguir a contribuição natural do terreno, a contribuição urbana concentrada e a contribuição captada pela rede.</p>
-</section>
-<section id="transformação-chuva-vazão" class="level2">
-<h2 class="anchored" data-anchor-id="transformação-chuva-vazão">3.3 Transformação chuva-vazão</h2>
-<p>O modelo deve ser avaliado por:</p>
-<ul>
-<li>balanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;</li>
-<li>coerência entre tempo de concentração, duração da chuva e tempo de simulação;</li>
-<li>sensibilidade a CN, impermeabilização e largura característica;</li>
-<li>comparação entre TR25 e TR50;</li>
-<li>identificação de subáreas que concentram vazões nos troncos e dissipadores;</li>
-<li>verificação de eventuais transferências de pico entre componentes.</li>
-</ul>
-<p>Nenhum resultado de vazão final deve ser apresentado como definitivo enquanto as áreas de quadras e as conexões topológicas permanecerem preliminares.</p>
-</section>
-<section id="atualização-climática-com-nex-gddp-cmip6" class="level2">
-<h2 class="anchored" data-anchor-id="atualização-climática-com-nex-gddp-cmip6">3.4 Atualização climática com NEX-GDDP-CMIP6</h2>
-<p>O banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
-<ol type="1">
-<li>período histórico de referência;</li>
-<li>janelas futuras;</li>
-<li>modelos climáticos e medida de consenso;</li>
-<li>máximas anuais e quantis;</li>
-<li>viés entre o histórico modelado e a estação observada;</li>
-<li>transformação de máximas diárias em curvas de duração e frequência;</li>
-<li>efeito dos cenários sobre a chuva de projeto e o dimensionamento.</li>
-</ol>
-<p>A conexão ao banco é somente leitura. O relatório deverá registrar consulta, célula, modelos, período, cenário, quantil, método de correção e versão do script. Não será aplicado um fator climático único sem justificar sua origem e sua faixa de incerteza.</p>
-</section>
-<section id="cenários-hidrológicos-propostos" class="level2">
-<h2 class="anchored" data-anchor-id="cenários-hidrológicos-propostos">3.5 Cenários hidrológicos propostos</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Cenário</th>
-<th>Finalidade</th>
-<th>Situação</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TR25 tradicional</td>
-<td>linha de base operacional</td>
-<td>arquivo preliminar disponível</td>
-</tr>
-<tr class="even">
-<td>TR50 tradicional</td>
-<td>verificação de maior recorrência</td>
-<td>arquivo preliminar disponível</td>
-</tr>
-<tr class="odd">
-<td>Histórico ajustado</td>
-<td>comparação com observações e viés</td>
-<td>próxima etapa</td>
-</tr>
-<tr class="even">
-<td>SSP126/245</td>
-<td>faixa de menor/intermediária emissão</td>
-<td>segunda etapa</td>
-</tr>
-<tr class="odd">
-<td>SSP370/585</td>
-<td>faixa de maior severidade climática</td>
-<td>segunda etapa</td>
-</tr>
-</tbody>
-</table>
-<p>A atualização climática não substitui a linha de base: ela deve permitir enxergar como a rede responde quando as premissas de precipitação são alteradas.</p>
-</section>
-<section id="entregas-hidrológicas" class="level2">
-<h2 class="anchored" data-anchor-id="entregas-hidrológicas">3.6 Entregas hidrológicas</h2>
-<p>A etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada.</p>
 
 
 </section>

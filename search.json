@@ -53,7 +53,7 @@
     "href": "08_dados.html#avaliação-inicial-da-mudança-climática",
     "title": "Concepção preliminar de drenagem urbana — Conde/PB",
     "section": "Avaliação inicial da mudança climática",
-    "text": "Avaliação inicial da mudança climática\n\n\n\nProduto\nFormato\nSituação\n\n\n\n\nMetodologia adaptada para IDF futura\nMarkdown\nProcedimento, salvaguardas e limitações\n\n\nAvaliação climática completa\nJSON\nMetadados, ponto de grade, método e campos não determinados\n\n\nPontos de grade consultados\nCSV\nQuatro pontos mais próximos do centroide A+B\n\n\nAmostra NEX-GDDP-CMIP6\nCSV\nMáximas diárias anuais consultadas\n\n\nFatores por modelo\nCSV\nGEV histórica/futura e fator diário por GCM\n\n\nConjunto futuro P10–mediana–P90\nCSV\nSíntese por cenário, horizonte e TR\n\n\nFatores de mudança climática\nCSV\nTabela resumida para análise de sensibilidade\n\n\nGráfico dos fatores\nPNG\nVisualização da faixa de incerteza\n\n\n\nEsta primeira rodada não substitui a IDF tradicional e ainda não altera o SWMM. Ela fornece uma faixa de teste para a próxima etapa, que deverá incorporar a série observada da estação, testar a sensibilidade espacial dos quatro pontos e só então gerar hietogramas futuros identificados por cenário e horizonte."
+    "text": "Avaliação inicial da mudança climática\nO capítulo específico IDFs futuras, incerteza e reconstrução adaptada apresenta a primeira leitura por cenário e horizonte. O painel abaixo mantém a IDF local como linha de base e mostra a faixa P10-P90 dos fatores derivados do NEX-GDDP-CMIP6.\n\n\n\nPainel de IDFs de sensibilidade climática para as Bacias A+B\n\n\n\n\n\nProduto\nFormato\nSituação\n\n\n\n\nMetodologia adaptada para IDF futura\nMarkdown\nProcedimento, salvaguardas e limitações\n\n\nAvaliação climática completa\nJSON\nMetadados, ponto de grade, método e campos não determinados\n\n\nPontos de grade consultados\nCSV\nQuatro pontos mais próximos do centroide A+B\n\n\nAmostra NEX-GDDP-CMIP6\nCSV\nMáximas diárias anuais consultadas\n\n\nFatores por modelo\nCSV\nGEV histórica/futura e fator diário por GCM\n\n\nConjunto futuro P10–mediana–P90\nCSV\nSíntese por cenário, horizonte e TR\n\n\nFatores de mudança climática\nCSV\nTabela resumida para análise de sensibilidade\n\n\nPainel de IDFs por cenário, horizonte e incerteza\nPNG\nCurvas de sensibilidade com faixa P10-P90\n\n\nGráfico dos fatores\nPNG\nVisualização da faixa de incerteza\n\n\n\nEsta primeira rodada não substitui a IDF tradicional e ainda não altera o SWMM. Ela fornece uma faixa de teste para a próxima etapa, que deverá incorporar a série observada da estação, testar a sensibilidade espacial dos quatro pontos e só então gerar hietogramas futuros identificados por cenário e horizonte."
   },
   {
     "objectID": "08_dados.html#modelos-swmm-e-guia-de-validação",
@@ -80,36 +80,323 @@
     "objectID": "06_entregaveis.html#conclusões",
     "href": "06_entregaveis.html#conclusões",
     "title": "6. Conclusões e encaminhamentos",
-    "section": "6.1 Conclusões",
-    "text": "6.1 Conclusões\n\nAs Bacias A e B devem permanecer como unidades explícitas de planejamento, cartografia, hidrologia e modelagem. A Bacia A está mais avançada; a Bacia B já possui lançamento e primeira rodada, mas ainda requer validação equivalente.\nO MDT híbrido recortado A+B é a base comum de trabalho para a concepção preliminar. Ele combina cobertura da base legada derivada de ANADEM/curvas com maior detalhamento local do drone onde há cobertura, mas não substitui levantamento topográfico cadastral.\nA rede da Bacia A está estruturada para revisão, porém seus 16 componentes conectados demonstram que a continuidade hidráulica ainda precisa ser confirmada antes do dimensionamento.\nAs áreas de contribuição atuais são um template de modelagem. O resultado hidráulico depende da sua edição conforme ruas, quadras, sarjetas, pontos de entrada e caminhos de escoamento.\nOs trechos de TrechosDissipacao.shp e Trechos_Dissipacao_B.shp orientam a concepção das saídas, mas a solução precisa ser relacionada às vazões de chegada, ao desnível do terreno e à proteção a jusante.\nA primeira rodada da Bacia B apresentou erros de continuidade inferiores a 0,02%, mas também indicou 12 links acima da capacidade cheia atual e 18 nós com inundação. Esses valores são alertas de revisão, não quantitativos de obra.\nA linha hidrológica TR25/TR50 deve permanecer como referência tradicional. A mudança climática será incorporada em etapa própria, com cenários NEX-GDDP-CMIP6 e incertezas explicitadas.\nO Plano de Trabalho deve priorizar trechos críticos de troncos, coletores indispensáveis e dissipadores, sem tratar obras isoladas como substitutas da concepção integrada da bacia."
+    "section": "7.1 Conclusões",
+    "text": "7.1 Conclusões\n\nAs Bacias A e B devem permanecer como unidades explícitas de planejamento, cartografia, hidrologia e modelagem. A Bacia A está mais avançada; a Bacia B já possui lançamento e primeira rodada, mas ainda requer validação equivalente.\nO MDT híbrido recortado A+B é a base comum de trabalho para a concepção preliminar. Ele combina cobertura da base legada derivada de ANADEM/curvas com maior detalhamento local do drone onde há cobertura, mas não substitui levantamento topográfico cadastral.\nA rede da Bacia A está estruturada para revisão, porém seus 16 componentes conectados demonstram que a continuidade hidráulica ainda precisa ser confirmada antes do dimensionamento.\nAs áreas de contribuição atuais são um template de modelagem. O resultado hidráulico depende da sua edição conforme ruas, quadras, sarjetas, pontos de entrada e caminhos de escoamento.\nOs trechos de TrechosDissipacao.shp e Trechos_Dissipacao_B.shp orientam a concepção das saídas, mas a solução precisa ser relacionada às vazões de chegada, ao desnível do terreno e à proteção a jusante.\nA primeira rodada da Bacia B apresentou erros de continuidade inferiores a 0,02%, mas também indicou 12 links acima da capacidade cheia atual e 18 nós com inundação. Esses valores são alertas de revisão, não quantitativos de obra.\nA linha hidrológica TR25/TR50 permanece como referência tradicional, mas a robustez da solução também será testada com cenários NEX-GDDP-CMIP6, faixas de incerteza e premissas de adaptação.\nO Plano de Trabalho deve priorizar trechos críticos de troncos, coletores indispensáveis e dissipadores, sem tratar obras isoladas como substitutas da concepção integrada da bacia."
   },
   {
     "objectID": "06_entregaveis.html#encaminhamentos-imediatos",
     "href": "06_entregaveis.html#encaminhamentos-imediatos",
     "title": "6. Conclusões e encaminhamentos",
-    "section": "6.2 Encaminhamentos imediatos",
-    "text": "6.2 Encaminhamentos imediatos\n\n\n\n\n\n\n\n\nOrdem\nEncaminhamento\nProduto de controle\n\n\n\n\n1\nRevisar a continuidade e classificação dos trechos da Bacia A\nrede nodal validada\n\n\n2\nValidar os troncos, coletores, áreas e saídas da Bacia B já lançados\npacote GIS da Bacia B revisado\n\n\n3\nEditar as áreas de contribuição das duas bacias\nsubcatchments com vínculo aos nós\n\n\n4\nIntegrar e revisar TrechosDissipacao.shp e Trechos_Dissipacao_B.shp\ninventário de dissipadores e exutórios\n\n\n5\nAtualizar cotas, seções, rugosidades e condições de jusante\narquivos SWMM documentados\n\n\n6\nReexecutar TR25 e TR50\nresultados de balanço, sobrecarga e alagamento\n\n\n7\nTestar cenários climáticos\ncomparação de sensibilidade\n\n\n8\nSelecionar metas e preparar contratação\nminuta final do Plano de Trabalho"
+    "section": "7.2 Encaminhamentos imediatos",
+    "text": "7.2 Encaminhamentos imediatos\n\n\n\n\n\n\n\n\nOrdem\nEncaminhamento\nProduto de controle\n\n\n\n\n1\nRevisar a continuidade e classificação dos trechos da Bacia A\nrede nodal validada\n\n\n2\nValidar os troncos, coletores, áreas e saídas da Bacia B já lançados\npacote GIS da Bacia B revisado\n\n\n3\nEditar as áreas de contribuição das duas bacias\nsubcatchments com vínculo aos nós\n\n\n4\nIntegrar e revisar TrechosDissipacao.shp e Trechos_Dissipacao_B.shp\ninventário de dissipadores e exutórios\n\n\n5\nAtualizar cotas, seções, rugosidades e condições de jusante\narquivos SWMM documentados\n\n\n6\nReexecutar TR25 e TR50\nresultados de balanço, sobrecarga e alagamento\n\n\n7\nTestar cenários climáticos\ncomparação de sensibilidade\n\n\n8\nSelecionar metas e preparar contratação\nminuta final do Plano de Trabalho"
   },
   {
     "objectID": "06_entregaveis.html#encaminhamento-para-contratação",
     "href": "06_entregaveis.html#encaminhamento-para-contratação",
     "title": "6. Conclusões e encaminhamentos",
-    "section": "6.3 Encaminhamento para contratação",
-    "text": "6.3 Encaminhamento para contratação\nA concepção deverá ser convertida em termo de referência com escopo, levantamentos, produtos, critérios de aceite, responsabilidades e orçamento. O projeto básico deverá incluir, conforme aplicável, levantamento topográfico, cadastro de interferências, sondagens, estudos hidrológicos, dimensionamento hidráulico, dissipadores, proteção de taludes, licenciamento e manutenção.\nA solução de reconstrução deve demonstrar que cada meta se conecta à bacia contribuinte e não transfere o risco para jusante. A pavimentação, quando prevista, deve ser apresentada como componente de uma solução de drenagem e redução de risco, e não como intervenção isolada."
+    "section": "7.3 Encaminhamento para contratação",
+    "text": "7.3 Encaminhamento para contratação\nA concepção deverá ser convertida em termo de referência com escopo, levantamentos, produtos, critérios de aceite, responsabilidades e orçamento. O projeto básico deverá incluir, conforme aplicável, levantamento topográfico, cadastro de interferências, sondagens, estudos hidrológicos, dimensionamento hidráulico, dissipadores, proteção de taludes, licenciamento e manutenção.\nA solução de reconstrução deve demonstrar que cada meta se conecta à bacia contribuinte e não transfere o risco para jusante. A pavimentação, quando prevista, deve ser apresentada como componente de uma solução de drenagem e redução de risco, e não como intervenção isolada."
   },
   {
     "objectID": "06_entregaveis.html#modelo-de-plano-de-trabalho",
     "href": "06_entregaveis.html#modelo-de-plano-de-trabalho",
     "title": "6. Conclusões e encaminhamentos",
-    "section": "6.4 Modelo de Plano de Trabalho",
-    "text": "6.4 Modelo de Plano de Trabalho\nA seção 6.1 Modelo de Plano de Trabalho apresenta a minuta administrativa e técnica com metas M-01 a M-07, evidências, critérios de aceite, dissipadores, referências federais e próximos passos. Ela deve ser lida como anexo operativo destas conclusões e atualizada a cada rodada de validação."
+    "section": "7.4 Modelo de Plano de Trabalho",
+    "text": "7.4 Modelo de Plano de Trabalho\nA seção 6.1 Modelo de Plano de Trabalho apresenta a minuta administrativa e técnica com metas M-01 a M-07, evidências, critérios de aceite, dissipadores, referências federais e próximos passos. Ela deve ser lida como anexo operativo destas conclusões e atualizada a cada rodada de validação."
   },
   {
     "objectID": "06_entregaveis.html#referências-de-organização",
     "href": "06_entregaveis.html#referências-de-organização",
     "title": "6. Conclusões e encaminhamentos",
-    "section": "6.5 Referências de organização",
-    "text": "6.5 Referências de organização\n\nReferência de comunicação e organização do relatório.\nMarco de Sendai para Redução do Risco de Desastres.\nBuild Back Better — UNDRR.\n\nO relatório seguirá em construção e será versionado com o código, os mapas, os dados públicos e o PDF correspondente."
+    "section": "7.5 Referências de organização",
+    "text": "7.5 Referências de organização\n\nReferência de comunicação e organização do relatório.\nMarco de Sendai para Redução do Risco de Desastres.\nBuild Back Better — UNDRR.\n\nO relatório seguirá em construção e será versionado com o código, os mapas, os dados públicos e o PDF correspondente."
+  },
+  {
+    "objectID": "05_hidrologia.html",
+    "href": "05_hidrologia.html",
+    "title": "5. Análise e discussões",
+    "section": "",
+    "text": "Leitura desta seção. A análise separa o que já está organizado do que ainda é hipótese. As duas bacias já possuem uma primeira rodada preliminar, mas a comparação deve considerar a maturidade das áreas, das cotas e das condições de saída, e não apenas os números do SWMM."
+  },
+  {
+    "objectID": "05_hidrologia.html#situação-atual-das-duas-bacias",
+    "href": "05_hidrologia.html#situação-atual-das-duas-bacias",
+    "title": "5. Análise e discussões",
+    "section": "5.1 Situação atual das duas bacias",
+    "text": "5.1 Situação atual das duas bacias\n\n\n\n\n\n\n\n\nTema\nBacia A\nBacia B\n\n\n\n\nDelimitação\nrevisada e disponível\nrevisada e disponível\n\n\nMDT e curvas\ndisponíveis na base conjunta\ndisponíveis na base conjunta\n\n\nRede\nlançamento preliminar realizado\n3 troncos e 20 coletores lançados preliminarmente\n\n\nÁreas de contribuição\ntemplate preliminar\n46 áreas Voronoi template\n\n\nDissipadores/saídas\ncinco trechos integrados preliminarmente; DISS_04 exige revisão de snap\ndois trechos específicos B, representados como placeholders\n\n\nSWMM\nTR25/TR50 executados com continuidade numérica aceitável\nTR25/TR50 executados com continuidade numérica aceitável\n\n\nGrau de maturidade\nconcepção em revisão\nprimeira rodada em revisão\n\n\n\nA Bacia A não deve ser usada como referência final para a Bacia B sem repetir as etapas de lançamento, conexão e verificação. A primeira rodada B foi executada para permitir diagnóstico e priorização da revisão; não elimina a necessidade de validar quadras, cotas e condições de jusante. A assimetria entre as bacias é uma condição do projeto, não uma falha a ser escondida."
+  },
+  {
+    "objectID": "05_hidrologia.html#o-que-a-base-topográfica-permite-discutir",
+    "href": "05_hidrologia.html#o-que-a-base-topográfica-permite-discutir",
+    "title": "5. Análise e discussões",
+    "section": "5.2 O que a base topográfica permite discutir",
+    "text": "5.2 O que a base topográfica permite discutir\nO MDT híbrido permite reconhecer desníveis, declividades, caminhos naturais e possíveis zonas de concentração. As curvas de 1 m ajudam na leitura local dos dissipadores; as de 5 m funcionam como referência geral e curvas mestras.\nEntretanto, o terreno natural não descreve sozinho a drenagem urbana. O fluxo real pode ser alterado por pavimentação, meio-fio, muros, aterros, travessias e galerias enterradas. A interpretação correta exige sobrepor o MDT às ruas, quadras, pontos de entrada e rede lançada."
+  },
+  {
+    "objectID": "05_hidrologia.html#parâmetro-cn-de-2022-como-premissa-hidrológica",
+    "href": "05_hidrologia.html#parâmetro-cn-de-2022-como-premissa-hidrológica",
+    "title": "5. Análise e discussões",
+    "section": "5.3 Parâmetro CN de 2022 como premissa hidrológica",
+    "text": "5.3 Parâmetro CN de 2022 como premissa hidrológica\nComo referência espacial para a transformação chuva–escoamento, foi incorporado o produto oficial Curva Número na Base Ottocodificada (1985, 2014 e 2022), disponibilizado pelo SNIRH/ANA. Para este relatório foi utilizado o raster BR_CN-2022.tif, recortado para as Bacias A e B e reprojetado para SIRGAS 2000 / UTM zona 25S — EPSG:31985, em grade de 30 m e com reamostragem por vizinho mais próximo. O registro oficial informa que o produto de 2022 foi construído com uso e cobertura do solo do MapBiomas 2023 e dados de solos do IBGE 2023, na escala declarada de 1:250.000 para a base vetorial correspondente (SNIRH/ANA — Curva Número 1985, 2014 e 2022).\nO recorte foi calculado sobre os limites revisados D8 das duas unidades de trabalho. Como a grade de saída está em projeção métrica e possui pixels de 30 m, a média dos pixels válidos equivale, nesta escala, à média ponderada por área. Os resultados preliminares são:\n\n\n\n\n\n\n\n\n\n\nUnidade\nÁrea aproximada com pixels válidos (ha)\nCN médio\nFaixa observada\nDesvio-padrão\n\n\n\n\nBacia A\n179,19\n80,26\n65–98\n4,98\n\n\nBacia B\n145,35\n76,77\n65–98\n4,93\n\n\nBacias A+B\n324,45\n78,70\n65–98\n5,25\n\n\n\nEsses valores devem ser tratados como premissas agregadas de concepção, e não como calibração local do escoamento. Para o SWMM, a próxima etapa é cruzar o raster CN 2022 com as áreas de contribuição revisadas e atribuir CN por subárea, evitando aplicar automaticamente o valor médio de toda a bacia a todos os subcatchments. A impermeabilização observada, a pavimentação futura, a condição das ruas e a escala da base podem justificar análises de sensibilidade.\nOs recortes GeoTIFF, a imagem temática, a tabela de estatísticas e o registro metodológico estão disponíveis na página Dados para download. O raster original nacional não é duplicado no pacote público; o relatório preserva o caminho local de referência e o endereço oficial de origem para garantir rastreabilidade."
+  },
+  {
+    "objectID": "05_hidrologia.html#risco-de-solução-fragmentada",
+    "href": "05_hidrologia.html#risco-de-solução-fragmentada",
+    "title": "5. Análise e discussões",
+    "section": "5.4 Risco de solução fragmentada",
+    "text": "5.4 Risco de solução fragmentada\nA rede preliminar da Bacia A apresenta 16 componentes conectados e 40 saídas provisórias. Esse resultado não é uma vazão nem uma falha hidráulica: é um alerta de modelagem. Antes de dimensionar, é necessário responder para cada componente:\n\nqual é a área que contribui;\nqual é o tronco ou coletor responsável;\nqual é o nó de destino;\nqual é a saída;\nqual é a condição de jusante;\nse a água deve passar por um dissipador ou por outro controle.\n\nSem essa rastreabilidade, a reconstrução de trechos isolados pode deslocar erosão e alagamento para jusante."
+  },
+  {
+    "objectID": "05_hidrologia.html#hidrologia-e-hidráulica-como-cadeia-única",
+    "href": "05_hidrologia.html#hidrologia-e-hidráulica-como-cadeia-única",
+    "title": "5. Análise e discussões",
+    "section": "5.5 Hidrologia e hidráulica como cadeia única",
+    "text": "5.5 Hidrologia e hidráulica como cadeia única\nA sequência de decisão deve ser:\nchuva → área de contribuição → nó de entrada → coletor → tronco → dissipador/exutório → proteção a jusante\nUma mudança em qualquer elo altera a vazão e o nível de solicitação dos demais. Por isso, a estimativa de dissipadores será feita somente depois da revisão das áreas e da obtenção das vazões de chegada no SWMM."
+  },
+  {
+    "objectID": "05_hidrologia.html#incertezas-que-afetam-a-decisão",
+    "href": "05_hidrologia.html#incertezas-que-afetam-a-decisão",
+    "title": "5. Análise e discussões",
+    "section": "5.6 Incertezas que afetam a decisão",
+    "text": "5.6 Incertezas que afetam a decisão\n\n\n\n\n\n\n\n\nFonte de incerteza\nEfeito possível\nComo reduzir\n\n\n\n\nCobertura parcial do drone\ndiferenças locais de cota e declividade\nlevantamento complementar e controles\n\n\nMDT legado suavizado\nsubestimação de microdrenagem\ntopografia de detalhe e seções\n\n\nÁreas Voronoi\nvazões distribuídas em nós incorretos\ndelimitação por ruas/quadras\n\n\nRede desconectada\nsaídas e vazões sem continuidade física\nrevisão topológica e inspeção\n\n\nCN/impermeabilização\nalteração de pico e volume\ncadastro de uso do solo e calibração\n\n\nChuva futura\nfaixa de demanda hidráulica\ncenários NEX-GDDP e análise de sensibilidade\n\n\nDissipadores sem geotecnia\ninstabilidade e erosão a jusante\nsondagem, inspeção e projeto específico"
+  },
+  {
+    "objectID": "05_hidrologia.html#prioridades-para-decisão",
+    "href": "05_hidrologia.html#prioridades-para-decisão",
+    "title": "5. Análise e discussões",
+    "section": "5.7 Prioridades para decisão",
+    "text": "5.7 Prioridades para decisão\nA prioridade preliminar deve combinar: evidência de dano, concentração de escoamento, população/infraestrutura protegida, continuidade da solução, risco a jusante, facilidade de implantação e dependências de projeto.\nOs trechos mais críticos não são necessariamente os mais longos. Um pequeno dissipador mal localizado pode ser mais urgente que uma extensão de coletor, enquanto um tronco sem saída pode representar uma solução incompleta. As metas devem ser comparadas por critérios explícitos e atualizadas após a simulação."
+  },
+  {
+    "objectID": "05_hidrologia.html#discussão-sobre-mudança-climática",
+    "href": "05_hidrologia.html#discussão-sobre-mudança-climática",
+    "title": "5. Análise e discussões",
+    "section": "5.8 Discussão sobre mudança climática",
+    "text": "5.8 Discussão sobre mudança climática\nA linha TR25/TR50 mantém a comparabilidade com o relatório anterior. Para incorporar a mudança climática, será adotada metodologia equivalente à de Maity e Maity (2022), que combina correção de viés por quantile mapping, ponderação do conjunto de modelos pelo Reliability Ensemble Averaging (REA), ajuste de extremos por GEV e relação de escala entre durações.\nHá, contudo, uma adaptação necessária para o banco NEX-GDDP-CMIP6 disponível neste projeto. A tabela utilizada contém máximas anuais diárias por modelo, cenário, ano e ponto de grade, e não a série diária completa ou a série subdiária. Assim, não será apresentada uma reprodução literal do componente Gamma-Gumbel do artigo. A correção será paramétrica para máximas anuais, ancorada na série/IDF observada que fundamentou o relatório tradicional; a escala subdiária será obtida a partir da IDF local e da relação de escala, com as limitações explicitadas no capítulo de Estudos Hidrológicos.\nSerão comparados os 34 GCMs, os cenários ssp126, ssp245, ssp370 e ssp585 e os horizontes histórico, 2040–2059 e 2060–2100, mantendo também uma janela operacional definida para o horizonte do plano. O resultado será reportado como curva central e faixa de incerteza, e não como um único fator de aumento. Cada curva futura será aplicada a um hietograma identificado no SWMM e comparada à linha de base, observando vazões de pico, volumes, alagamentos, velocidades e solicitações nos dissipadores.\nEssa abordagem amplia a faixa de teste sem substituir a observação local. A decisão de reconstrução deve considerar a robustez da solução sob mais de uma premissa, indicando quais trechos continuam adequados, quais ficam críticos e quais exigem adaptação. A especificação detalhada está em 04_CHUVAS_PROJETO/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md.\n\nPrimeira avaliação NEX-GDDP-CMIP6\nFoi executada uma primeira avaliação dos fatores de mudança diária usando o centroide corrigido das Bacias A+B, os quatro pontos de grade mais próximos, os 34 GCMs e os cenários ssp126, ssp245, ssp370 e ssp585. Para cada modelo, ponto, cenário e horizonte foi ajustada uma GEV às máximas diárias anuais; o fator foi calculado como a razão entre o quantil futuro e o quantil histórico do mesmo modelo. A curva central é a mediana do conjunto não ponderado e a faixa apresentada é P10–P90.\n\n\n\n\n\n\n\n\n\nCenário\nHorizonte\nFator TR25 — mediana (P10–P90)\nFator TR50 — mediana (P10–P90)\n\n\n\n\nSSP1-2.6\n2040–2059\n1,025 (0,842–1,300)\n1,040 (0,805–1,485)\n\n\nSSP1-2.6\n2060–2100\n1,144 (0,899–1,466)\n1,201 (0,890–1,635)\n\n\nSSP2-4.5\n2040–2059\n1,033 (0,842–1,443)\n1,065 (0,812–1,637)\n\n\nSSP2-4.5\n2060–2100\n1,055 (0,890–1,372)\n1,082 (0,894–1,564)\n\n\nSSP3-7.0\n2040–2059\n1,015 (0,842–1,457)\n1,037 (0,833–1,647)\n\n\nSSP3-7.0\n2060–2100\n1,036 (0,864–1,455)\n1,054 (0,850–1,763)\n\n\nSSP5-8.5\n2040–2059\n1,125 (0,818–1,513)\n1,193 (0,794–1,774)\n\n\nSSP5-8.5\n2060–2100\n1,066 (0,818–1,395)\n1,109 (0,817–1,636)\n\n\n\nEssa leitura é uma triagem de sensibilidade, não uma previsão determinística. A série anual observada da estação e os dados subdiários dos GCMs não estão disponíveis na tabela consultada; por isso, os pesos REA, o quantile mapping completo e a distribuição temporal futura permanecem null. Os fatores ainda não foram aplicados aos arquivos .inp do SWMM. Os arquivos auditáveis estão no catálogo de dados climáticos, incluindo o gráfico, os fatores por modelo, o conjunto P10–mediana–P90 e o registro metodológico."
+  },
+  {
+    "objectID": "05_hidrologia.html#síntese-crítica",
+    "href": "05_hidrologia.html#síntese-crítica",
+    "title": "5. Análise e discussões",
+    "section": "5.9 Síntese crítica",
+    "text": "5.9 Síntese crítica\nO projeto já possui uma base espacial organizada e uma frente SWMM inicial, mas ainda não possui resultado hidráulico definitivo para contratação. O avanço mais importante agora é transformar geometrias desenhadas em uma cadeia verificável de bacia, área, nó, link, saída e dissipador, com parâmetros documentados e resultados reproduzíveis."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html",
+    "href": "03_mdt_hibrido.html",
+    "title": "3. Estudos hidrológicos",
+    "section": "",
+    "text": "Estratégia hidrológica. A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#linha-de-base-tradicional",
+    "href": "03_mdt_hibrido.html#linha-de-base-tradicional",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.1 Linha de base tradicional",
+    "text": "3.1 Linha de base tradicional\nA linha de base preliminar utiliza:\n\nestação INMET 82798;\nrelação IDF SGB/CPRM 2023;\nhietogramas de projeto TR25 e TR50;\nmétodo de infiltração CN-SCS;\nCN médio preliminar igual a 79;\n30% de impermeabilização como premissa inicial.\n\nAs chuvas foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos arquivos .inp preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#áreas-de-contribuição-e-perdas",
+    "href": "03_mdt_hibrido.html#áreas-de-contribuição-e-perdas",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.2 Áreas de contribuição e perdas",
+    "text": "3.2 Áreas de contribuição e perdas\nAs 208 áreas disponíveis no modelo atual são um template Voronoi. Elas preservam a estrutura do SWMM, mas ainda não representam definitivamente quadras, lotes, sarjetas ou pontos de entrada.\nNa revisão, cada subárea deverá receber:\n\n\n\nGrupo\nDados a confirmar\n\n\n\n\nGeometria\nárea, largura característica e declividade\n\n\nSuperfície\nfrações impermeável e permeável\n\n\nInfiltração\nCN, perdas iniciais e parâmetros do método escolhido\n\n\nConexão\nnó de entrada, caminho superficial ou ligação à galeria\n\n\nControle\norigem da cota, ponto de saída e hipótese de contribuição\n\n\n\nA estrutura deve permitir distinguir a contribuição natural do terreno, a contribuição urbana concentrada e a contribuição captada pela rede."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#transformação-chuva-vazão",
+    "href": "03_mdt_hibrido.html#transformação-chuva-vazão",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.3 Transformação chuva-vazão",
+    "text": "3.3 Transformação chuva-vazão\nO modelo deve ser avaliado por:\n\nbalanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;\ncoerência entre tempo de concentração, duração da chuva e tempo de simulação;\nsensibilidade a CN, impermeabilização e largura característica;\ncomparação entre TR25 e TR50;\nidentificação de subáreas que concentram vazões nos troncos e dissipadores;\nverificação de eventuais transferências de pico entre componentes.\n\nNenhum resultado de vazão final deve ser apresentado como definitivo enquanto as áreas de quadras e as conexões topológicas permanecerem preliminares."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#atualização-climática-com-nex-gddp-cmip6",
+    "href": "03_mdt_hibrido.html#atualização-climática-com-nex-gddp-cmip6",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.4 Atualização climática com NEX-GDDP-CMIP6",
+    "text": "3.4 Atualização climática com NEX-GDDP-CMIP6\nO banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:\n\nperíodo histórico de referência;\njanelas futuras;\nmodelos climáticos e medida de consenso;\nmáximas anuais e quantis;\nviés entre o histórico modelado e a estação observada;\ntransformação de máximas diárias em curvas de duração e frequência;\nefeito dos cenários sobre a chuva de projeto e o dimensionamento.\n\nA conexão ao banco é somente leitura. O relatório deverá registrar consulta, célula, modelos, período, cenário, quantil, método de correção e versão do script. Não será aplicado um fator climático único sem justificar sua origem e sua faixa de incerteza."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#cenários-hidrológicos-propostos",
+    "href": "03_mdt_hibrido.html#cenários-hidrológicos-propostos",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.5 Cenários hidrológicos propostos",
+    "text": "3.5 Cenários hidrológicos propostos\n\n\n\n\n\n\n\n\nCenário\nFinalidade\nSituação\n\n\n\n\nTR25 tradicional\nlinha de base operacional\narquivo preliminar disponível\n\n\nTR50 tradicional\nverificação de maior recorrência\narquivo preliminar disponível\n\n\nHistórico ajustado\ncomparação com observações e viés\npróxima etapa\n\n\nSSP126/245\nfaixa de menor/intermediária emissão\nsegunda etapa\n\n\nSSP370/585\nfaixa de maior severidade climática\nsegunda etapa\n\n\n\nA atualização climática não substitui a linha de base: ela deve permitir enxergar como a rede responde quando as premissas de precipitação são alteradas."
+  },
+  {
+    "objectID": "03_mdt_hibrido.html#entregas-hidrológicas",
+    "href": "03_mdt_hibrido.html#entregas-hidrológicas",
+    "title": "3. Estudos hidrológicos",
+    "section": "3.6 Entregas hidrológicas",
+    "text": "3.6 Entregas hidrológicas\nA etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada."
+  },
+  {
+    "objectID": "01_contexto.html",
+    "href": "01_contexto.html",
+    "title": "1. Introdução e contextualização",
+    "section": "",
+    "text": "Minuta técnica preliminar em construção. O relatório será atualizado à medida que forem revisados o lançamento da rede, as áreas de contribuição, os dissipadores e os cenários do SWMM. As conclusões desta versão orientam o Plano de Trabalho, mas não substituem projeto básico ou executivo."
+  },
+  {
+    "objectID": "01_contexto.html#finalidade",
+    "href": "01_contexto.html#finalidade",
+    "title": "1. Introdução e contextualização",
+    "section": "1.1 Finalidade",
+    "text": "1.1 Finalidade\nEste relatório organiza a concepção preliminar para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB, com foco na redução de processos erosivos, alagamentos e transferências de risco associados ao escoamento superficial concentrado.\nO estudo parte de duas unidades territoriais de trabalho:\n\nBacia A: frente já avançada, com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição template;\nBacia B: bacia delimitada e agora lançada preliminarmente no GIS, com troncos, coletores, dois trechos de dissipação e uma primeira rodada SWMM ainda dependente de validação.\n\nEssa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas."
+  },
+  {
+    "objectID": "01_contexto.html#contextualização-do-problema",
+    "href": "01_contexto.html#contextualização-do-problema",
+    "title": "1. Introdução e contextualização",
+    "section": "1.2 Contextualização do problema",
+    "text": "1.2 Contextualização do problema\nA hipótese de trabalho é que os processos erosivos observados resultam da combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura urbana de drenagem. A hipótese deverá ser confrontada com vistoria, cadastro de ocorrências, levantamento topográfico, inspeção das ruas e verificação hidráulica.\nA reconstrução não deve apenas repor uma condição vulnerável. O princípio orientador é reconstruir melhor, priorizando soluções que reduzam o risco futuro, mantenham continuidade hidráulica e protejam os trechos a jusante. Por isso, o escopo preliminar não propõe implantar toda a rede municipal nesta etapa: propõe selecionar troncos principais, coletores indispensáveis e dissipadores nos setores críticos, sempre verificando a bacia contribuinte."
+  },
+  {
+    "objectID": "01_contexto.html#diagnóstico-municipal-utilizado-na-contextualização",
+    "href": "01_contexto.html#diagnóstico-municipal-utilizado-na-contextualização",
+    "title": "1. Introdução e contextualização",
+    "section": "1.3 Diagnóstico municipal utilizado na contextualização",
+    "text": "1.3 Diagnóstico municipal utilizado na contextualização\nO documento municipal REC-PB-2504603-20260802-01 Conde, datado de agosto de 2026, registra a ocorrência de tempestade local/convectiva com chuvas intensas em 1º de maio de 2026. Segundo o diagnóstico, os danos atingiram principalmente vias não pavimentadas, com processos erosivos, alagamentos, enxurradas e isolamento de comunidades. O documento informa, como estimativas preliminares municipais, que 88,3% das vias urbanas não eram pavimentadas, que aproximadamente 495,17 km de vias teriam sido afetados direta ou indiretamente e que 297,11 km já haviam sido catalogados em levantamentos locais. Esses números são apresentados aqui como informação de diagnóstico a ser conferida, não como medição independente deste estudo.\nO diagnóstico detalha como ocorrências prioritárias a Rua São Francisco, com trecho de aproximadamente 890 m associado a erosão severa, e a Rua Projetada 03 / Rua Zilda Arns Neumann, com intervenção de drenagem profunda indicada em aproximadamente 510 m. Para as duas ocorrências, o documento relaciona a concentração do escoamento superficial, a diferença de declividade entre montante e jusante, a precariedade do leito viário e a perda de trafegabilidade. Também informa impactos diretos estimados de 1.320 pessoas na primeira ocorrência e 670 na segunda.\nEssas informações reforçam a hipótese de que a recuperação viária precisa estar associada à drenagem. Elas não substituem a delimitação das Bacias A e B, a revisão da rede ou a simulação no SWMM: servem para priorizar a investigação e cruzar os pontos do diagnóstico com o MDT híbrido, as áreas de contribuição, os troncos, os coletores e os dissipadores.\n\n\n\n\n\n\nConferência necessária antes do Plano de Trabalho final. O arquivo municipal usa nomenclaturas diferentes em partes do documento: as primeiras páginas apresentam duas metas, enquanto o orçamento e as memórias de cálculo também mencionam Meta 3, Meta 4, Meta 5, Meta 6 e Meta 7, com nomes de ruas que precisam ser reconciliados. As extensões, diâmetros, pontos de lançamento, quantitativos e valores devem ser confrontados com a camada GIS e com o modelo SWMM antes de serem adotados como metas definitivas.\n\n\n\nO diagnóstico também registra lançamento de rede ao final da Rua São Francisco, em área de canavial. Esse ponto deverá ser tratado como saída hidráulica a verificar: é necessário conferir propriedade e uso do solo, condição de jusante, risco de erosão, necessidade de dissipação e eventuais licenças. A solução proposta no diagnóstico não será considerada automaticamente como exutório adequado."
+  },
+  {
+    "objectID": "01_contexto.html#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais",
+    "href": "01_contexto.html#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais",
+    "title": "1. Introdução e contextualização",
+    "section": "1.4 Mapa de suscetibilidade e rastreabilidade das metas originais",
+    "text": "1.4 Mapa de suscetibilidade e rastreabilidade das metas originais\nO diagnóstico espacial anterior foi incorporado como evidência de referência para a priorização. O mapa foi construído com base no índice de poder de escoamento do modelo digital de elevação — combinação entre acumulação de fluxo e declividade — e posteriormente confrontado com os registros de erosão observada em campo. As manchas foram classificadas originalmente em suscetibilidade alta e suscetibilidade média. Essa classificação representa propensão do terreno à concentração do escoamento e à formação de processos erosivos; não equivale, isoladamente, a mapa de perigo, risco ou dano.\n\n\n\n\n\n\nFigura 1: Mapa de referência das áreas suscetíveis à erosão, com a rede proposta e pontos de erosão observados. Vermelho: suscetibilidade alta; amarelo: suscetibilidade média; pontos amarelos: registros fotográficos de erosão.\n\n\n\nNa base vetorial original foram identificadas 9 manchas de suscetibilidade alta e 22 manchas de suscetibilidade média, além de duas geometrias associadas a pontos de erosão observados. O cruzamento espacial reproduzível dos pontos originais com as manchas e com os limites revisados das Bacias A e B produziu o seguinte quadro:\n\n\n\n\n\n\n\n\n\n\nEvidência\nTotal\nDentro das Bacias A/B\nCoincidência direta com suscetibilidade\nLeitura para o Plano\n\n\n\n\nPontos de metas originais (Conde_Pontos_metas.kmz)\n12\n10\n4\nAs metas devem ser reavaliadas dentro do recorte; quatro já coincidem diretamente com manchas de suscetibilidade\n\n\nPontos de erosão com fotografias\n9\n2\n2\nP08 e P09 coincidem com área de suscetibilidade média na Bacia A; os demais estão fora do recorte A/B\n\n\n\nEntre as metas originais, as coincidências diretas identificadas são: 3i em suscetibilidade média; 3f em sobreposição de suscetibilidade alta e média; 6i e 6f em suscetibilidade alta. Os pontos 5i e 5f estão dentro da Bacia A, mas fora das manchas originais, devendo ser avaliados pela topografia, pela rede e pela vistoria. Os pontos 1i, 1f, 2f e 2i - foto? estão dentro da Bacia B, mas não coincidem diretamente com as manchas disponíveis; não devem ser descartados, pois a Bacia B agora possui lançamento preliminar e ainda passará pela revisão das áreas de contribuição. Os pontos 4i e 4f estão fora do recorte das Bacias A e B.\nEssa distinção é importante: o estudo não deve transformar automaticamente todo ponto originalmente marcado em meta de obra, nem afirmar coincidência quando ela não existe. A evidência será usada em três níveis: (i) coincidência direta com suscetibilidade; (ii) localização dentro das Bacias A/B, exigindo análise de fluxo, rede e campo; e (iii) ocorrência fora do recorte, registrada para tratamento separado.\nOs resultados detalhados e reproduzíveis estão disponíveis no arquivo CSV, na camada GeoJSON e no resumo JSON."
+  },
+  {
+    "objectID": "01_contexto.html#recorte-territorial-do-estudo-e-limites-das-metas",
+    "href": "01_contexto.html#recorte-territorial-do-estudo-e-limites-das-metas",
+    "title": "1. Introdução e contextualização",
+    "section": "1.5 Recorte territorial do estudo e limites das metas",
+    "text": "1.5 Recorte territorial do estudo e limites das metas\nO recorte desta análise compreende exclusivamente as Bacias A e B, que serão tratadas como unidades de drenagem distintas e complementares. Todas as conclusões sobre rede, áreas de contribuição, vazões, dissipadores, pontos críticos e metas do Plano de Trabalho deverão indicar a qual bacia pertencem.\nAs ocorrências e metas localizadas fora dessas duas bacias não serão incorporadas nesta modelagem. Elas permanecem registradas como evidências do diagnóstico municipal, mas deverão ser analisadas separadamente, com delimitação de sua própria área contribuinte, verificação de infraestrutura existente e, quando necessário, novo modelo hidrológico-hidráulico. Essa separação evita atribuir às Bacias A ou B problemas que não drenam para elas e evita incluir no Plano de Trabalho quantitativos sem relação comprovada com o sistema estudado."
+  },
+  {
+    "objectID": "01_contexto.html#objetivos",
+    "href": "01_contexto.html#objetivos",
+    "title": "1. Introdução e contextualização",
+    "section": "1.6 Objetivos",
+    "text": "1.6 Objetivos\n\nObjetivo geral\nConstruir uma base técnica, espacial e hidrológico-hidráulica reproduzível para priorizar intervenções de drenagem nas Bacias A e B e apoiar a elaboração do Plano de Trabalho de Reconstrução.\n\n\nObjetivos específicos\n\nConsolidar a base cartográfica em SIRGAS 2000 / UTM zona 25S.\nDocumentar a construção do MDT híbrido, suas fontes, limitações e condições de uso.\nRevisar a drenagem natural e o lançamento preliminar de troncos, coletores e saídas.\nMontar o modelo SWMM com áreas de contribuição, chuvas de projeto e dissipadores.\nIdentificar trechos prioritários, necessidades de levantamento e metas verificáveis.\nSeparar o que é evidência disponível, hipótese de concepção, resultado de simulação e decisão a confirmar."
+  },
+  {
+    "objectID": "01_contexto.html#escopo-e-fases",
+    "href": "01_contexto.html#escopo-e-fases",
+    "title": "1. Introdução e contextualização",
+    "section": "1.7 Escopo e fases",
+    "text": "1.7 Escopo e fases\n\n\n\n\n\n\n\n\nFase\nConteúdo\nSituação\n\n\n\n\n1\nBase cartográfica, MDT híbrido e revisão das Bacias A e B\nOrganizada\n\n\n2\nLançamento da rede da Bacia A e estrutura inicial do SWMM\nEm revisão\n\n\n3\nLançamento da rede da Bacia B\nPrimeira rodada executada; revisão em andamento\n\n\n4\nÁreas reais de contribuição, dissipadores e conexões\nEm desenvolvimento nas duas bacias\n\n\n5\nChuvas tradicionais e cenários climáticos\nLinha de base montada; atualização climática posterior\n\n\n6\nAnálise, metas do Plano de Trabalho e relatório final\nApós validação"
+  },
+  {
+    "objectID": "01_contexto.html#situação-territorial-das-bacias",
+    "href": "01_contexto.html#situação-territorial-das-bacias",
+    "title": "1. Introdução e contextualização",
+    "section": "1.8 Situação territorial das bacias",
+    "text": "1.8 Situação territorial das bacias\n\n\n\n\n\n\n\n\nUnidade\nSituação atual\nPróxima decisão\n\n\n\n\nBacia A\nRede preliminar, nós, saídas e áreas template disponíveis\nRevisar continuidade, trechos, áreas e parâmetros do SWMM\n\n\nBacia B\nLimite revisado; 3 arquivos de tronco, 2 arquivos de coletor, 2 dissipadores e modelo preliminar disponíveis\nValidar conectividade, áreas, diâmetros, cotas e pontos de saída\n\n\nA+B\nBase híbrida e produtos derivados organizados\nUsar como referência territorial conjunta, sem misturar redes não conectadas"
+  },
+  {
+    "objectID": "01_contexto.html#rastreabilidade-e-governança",
+    "href": "01_contexto.html#rastreabilidade-e-governança",
+    "title": "1. Introdução e contextualização",
+    "section": "1.9 Rastreabilidade e governança",
+    "text": "1.9 Rastreabilidade e governança\nCada etapa será mantida com fonte, CRS, data, premissa, limitação e histórico de alteração. O conteúdo publicado é uma minuta técnica pública em construção. Antes de qualquer contratação ou compartilhamento institucional ampliado, devem ser revisados os autores, os dados pessoais, as fotografias, a situação de publicação dos arquivos e a responsabilidade técnica pelos produtos.\nO padrão editorial segue a organização visual e documental usada pelo DPM/SEDEC, com identidade institucional, mapas verificáveis, arquivos para download e versionamento no GitHub Pages."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "",
+    "text": "Drenagem urbana — Conde/PB\n\n\nConcepção preliminar · Bacias A e B · MDT híbrido · SWMM\nEste relatório digital documentará, de forma versionada e reproduzível, a construção da base cartográfica, do MDT híbrido, do lançamento da rede e do modelo hidrológico-hidráulico preliminar de drenagem de Conde/PB."
+  },
+  {
+    "objectID": "index.html#finalidade-do-relatório",
+    "href": "index.html#finalidade-do-relatório",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Finalidade do relatório",
+    "text": "Finalidade do relatório\nO objetivo é organizar evidências, hipóteses de diagnóstico, alternativas de intervenção e metas verificáveis para apoiar a elaboração do Plano de Trabalho de Reconstrução de Conde/PB. O escopo inicial não propõe a implantação imediata de toda a rede de drenagem municipal. Propõe priorizar os troncos principais, coletores indispensáveis e dissipadores localizados nos setores críticos, sem perder de vista que a solução definitiva depende da concepção integrada da bacia.\nComo diagnóstico preliminar, os processos erosivos observados são compatíveis com a combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura de drenagem urbana. Essa relação deve ser confirmada por vistoria, cadastro de ocorrências, levantamento das seções e análise hidráulica; por isso, a minuta não apresenta a hipótese como causalidade já comprovada.\nO princípio orientador é reconstruir melhor: as intervenções de recuperação devem reduzir o risco futuro, proteger os trechos a jusante e evitar a simples reposição de uma condição que reproduza a vulnerabilidade existente. A abordagem é compatível com a prioridade do Marco de Sendai de investir na redução de riscos e com a orientação de integrar redução de riscos à recuperação, reabilitação e reconstrução.\n\n\n\n\n\n\nEscopo atual. Os modelos preliminares das Bacias A e B já foram montados com redes importadas, nós, áreas de contribuição template e saídas/dissipadores modelados de forma conceitual. A revisão de quadras, conexões, cotas de fundo, diâmetros e condições de jusante ainda é necessária antes de qualquer uso como projeto básico."
+  },
+  {
+    "objectID": "index.html#painel-espacial-das-bacias-a-e-b",
+    "href": "index.html#painel-espacial-das-bacias-a-e-b",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Painel espacial das Bacias A e B",
+    "text": "Painel espacial das Bacias A e B\n\n\n\n\n\n\nUnidades de trabalho. A Bacia A permanece em revisão hidráulica; a Bacia B recebeu nesta versão o lançamento preliminar de 3 troncos, 20 coletores e 2 trechos de dissipação, além de áreas template e uma primeira rodada SWMM. A terminologia de rede, áreas, metas e cenários hidrológicos deste relatório seguirá sempre essa divisão.\n\n\n\n\n\n\nMapa-síntese estático para leitura do relatório, agora com as redes preliminares das duas bacias e seus trechos de dissipação. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.\n\n\n\nO painel foi simplificado para evitar falhas de carregamento de mapas-base e bibliotecas externas. A representação é cartográfica, não substitui a conferência no ArcMap/QGIS; o CRS de trabalho permanece SIRGAS 2000 / UTM 25S.\n\n\nProblemas e metas originalmente marcados\n\n\n\nDiagnóstico espacial original separado da rede proposta. O quadro principal mostra as Bacias A e B; o quadro lateral reúne referências fora do recorte que ainda precisam ser vinculadas às bacias.\n\n\n\nSimbologia: polígonos vermelhos = suscetibilidade alta; polígonos amarelos = suscetibilidade média; pontos escuros = metas originais; pontos azuis = registros fotográficos. Essas marcações orientam a investigação e não constituem, isoladamente, metas executivas.\n\n\n\n\nMapa de referência da suscetibilidade à erosão: 9 manchas de suscetibilidade alta e 22 de suscetibilidade média. O cruzamento espacial identificou 10 dos 12 pontos de metas dentro das Bacias A/B e quatro coincidências diretas com as manchas originais.\n\n\n\nA coincidência espacial é uma evidência de priorização, não uma validação automática de obra. Os pontos fora das Bacias A e B permanecem no diagnóstico, mas serão tratados separadamente.\n\n\n\nSituação da rede proposta e dos trechos do Plano de Trabalho\n\n\n\n\n\n\n\n\n\nUnidade\nRede proposta nesta etapa\nTrechos contemplados no Plano de Trabalho\nSituação\n\n\n\n\nBacia A\nTroncos principais, coletores indispensáveis, áreas de contribuição e dissipadores/saídas associados aos setores críticos\nTrechos desenhados nas camadas TroncoA*.shp, ColetorA*.shp e TrechosDissipacao.shp, após validação de continuidade, vazão e jusante\nLançamento preliminar em revisão no GIS e no SWMM\n\n\nBacia B\n3 troncos, 20 coletores, 2 dissipadores, nós e áreas template lançados sobre o MDT híbrido\nTrechos prioritários a definir depois da validação das ocorrências, caminhos de fluxo, vazões e dissipadores\nPrimeira rodada SWMM executada; revisão em andamento\n\n\nA + B\nConcepção integrada para que cada intervenção tenha contribuição, transporte, descarga e proteção a jusante\nMetas M-02 a M-06, com quantitativos fechados somente após a rodada hidráulica de cada bacia\nIntegração prevista, sem conexão presumida entre as bacias\n\n\n\nO relatório não apresentará a implantação de toda a rede municipal como meta imediata. A proposta é selecionar, em cada bacia, os troncos principais e dissipadores mais críticos, acrescentando apenas os coletores necessários para que esses trechos funcionem como sistema e possam ser verificados no SWMM. A Bacia A será a primeira frente de validação; a Bacia B será incorporada após o novo lançamento."
+  },
+  {
+    "objectID": "index.html#números-da-versão-preliminar",
+    "href": "index.html#números-da-versão-preliminar",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Números da versão preliminar",
+    "text": "Números da versão preliminar\n\n\n233links nodais A+B\n\n\n247nós A+B\n\n\n254áreas preliminares A+B\n\n\n30,39 kmrede importada A+B\n\n\nEPSG:31985SIRGAS 2000 / UTM 25S"
+  },
+  {
+    "objectID": "index.html#como-ler-este-projeto",
+    "href": "index.html#como-ler-este-projeto",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Como ler este projeto",
+    "text": "Como ler este projeto\n\nIntrodução e contextualização\nModelo digital de elevação\nEstudos hidrológicos\nModelagem hidráulica\nAnálise e discussões\nIDFs futuras, incerteza e reconstrução adaptada\nConclusões e encaminhamentos 7.1. Modelo de Plano de Trabalho\nAnexo A — Dados para download"
+  },
+  {
+    "objectID": "index.html#relatório-completo-em-pdf",
+    "href": "index.html#relatório-completo-em-pdf",
+    "title": "Drenagem urbana — Conde/PB",
+    "section": "Relatório completo em PDF",
+    "text": "Relatório completo em PDF\nO PDF completo do relatório reúne a minuta técnica, a metodologia do MDT híbrido, a situação das Bacias A e B, a rede/SWMM, a hidrologia, o plano de trabalho e o catálogo de dados. O arquivo será atualizado junto com cada versão publicada do relatório digital.\n\nPadrão editorial inspirado nos projetos DPM/SEDEC de documentação versionada no GitHub Pages e na identidade visual SEDEC do ICPM."
+  },
+  {
+    "objectID": "02_base_cartografica.html",
+    "href": "02_base_cartografica.html",
+    "title": "2. Modelo digital de elevação",
+    "section": "",
+    "text": "Produto de referência. O MDT híbrido recortado para as Bacias A e B é a base de partida desta concepção. Ele deve ser usado para análise preliminar, lançamento da rede e comparação de alternativas; não equivale a levantamento topográfico cadastral nem autoriza o fechamento de cotas executivas."
+  },
+  {
+    "objectID": "02_base_cartografica.html#sistema-de-referência-e-organização",
+    "href": "02_base_cartografica.html#sistema-de-referência-e-organização",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.1 Sistema de referência e organização",
+    "text": "2.1 Sistema de referência e organização\nO padrão de trabalho é SIRGAS 2000 / UTM zona 25S — EPSG:31985. Os rasters e vetores de análise devem permanecer nesse CRS métrico. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.\nO arquivo de trabalho principal é:\nMDT_hibrido_Bacias_AB_5m_EPSG31985.tif\nO arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho."
+  },
+  {
+    "objectID": "02_base_cartografica.html#fontes-e-histórico-de-construção",
+    "href": "02_base_cartografica.html#fontes-e-histórico-de-construção",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.2 Fontes e histórico de construção",
+    "text": "2.2 Fontes e histórico de construção\nA base foi organizada pela integração de três famílias de informação:\n\nBase legada: modelo derivado de ANADEM e curvas de nível previamente produzidas. Sua função principal é garantir cobertura territorial e continuidade, reconhecendo que resolução, suavização e incerteza podem ser maiores.\nLevantamento fotogramétrico: imagens de drone processadas no WebODM para produzir ortomosaico e modelos de superfície/terreno na área efetivamente coberta.\nControles e referências altimétricas: pontos de controle e referências vinculadas ao sistema geodésico brasileiro, quando disponíveis e documentados, para verificar diferenças verticais e orientar a correção do modelo legado.\n\nO levantamento do drone não cobre integralmente as Bacias A e B. Assim, a integração não é uma simples substituição do raster antigo: é uma composição com prioridade local do produto de maior resolução, complementada pela base legada fora da cobertura."
+  },
+  {
+    "objectID": "02_base_cartografica.html#fluxo-metodológico",
+    "href": "02_base_cartografica.html#fluxo-metodológico",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.3 Fluxo metodológico",
+    "text": "2.3 Fluxo metodológico\n\nHarmonização espacial\nAs fontes são reprojetadas para EPSG:31985, conferidas quanto a extensão, resolução, nodata e alinhamento de grade e reamostradas para uma malha de 5 m. A sobreposição é preservada para comparação e diagnóstico.\n\n\nComparação e correção vertical\nNa área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:\nh_ortométrica = a × valor_MDE + b\nO relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al. (2019), NHESS 19:237–250.\nA rotina deve ainda:\n\ndescartar e contar amostras em nodata;\ninformar RMSE antes e depois;\nseparar RMSE dentro da amostra de RMSE validado;\nusar leave-one-out quando n &lt; 50 e 20% para teste quando n &gt;= 50;\nregistrar a faixa mínima/máxima dos controles;\ncontar pixels fora da faixa e a magnitude máxima de extrapolação;\nalertar para inclinação a &lt; 0,9 ou a &gt; 1,1;\navaliar amplitude, distribuição espacial e distância de Cook;\nregistrar null quando uma métrica não puder ser determinada.\n\nA média dos resíduos após OLS não é indicador suficiente de qualidade, porque a regressão força o equilíbrio dos resíduos. O indicador principal para acurácia é o RMSE validado, acompanhado do diagnóstico da amostra.\n\n\nComposição híbrida\nDepois da verificação vertical, o produto do drone recebe prioridade somente na máscara em que sua cobertura e qualidade são conhecidas. Fora dessa máscara, a base legada mantém a cobertura. As bordas devem ser examinadas para evitar degraus artificiais, vazios ou mudanças abruptas de declividade.\n\n\nDerivados e recorte A+B\nDo modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução e metadados."
+  },
+  {
+    "objectID": "02_base_cartografica.html#produtos-derivados-para-a-drenagem",
+    "href": "02_base_cartografica.html#produtos-derivados-para-a-drenagem",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.4 Produtos derivados para a drenagem",
+    "text": "2.4 Produtos derivados para a drenagem\n\n\n\n\n\n\n\nProduto\nUso preliminar\n\n\n\n\nMDT híbrido A+B — 5 m\ncotas superficiais, declividades e comparação de alternativas\n\n\nCurvas de 1 m\nleitura detalhada de desníveis e apoio ao lançamento\n\n\nCurvas de 5 m\nleitura geral e curvas mestras\n\n\nLinhas/setas de fluxo\norientação dos caminhos naturais; não substituem cadastro de ruas e galerias\n\n\nBacias revisadas D8\nreferência de delimitação hidrográfica de trabalho\n\n\n\nAs linhas de fluxo representam o terreno modelado. Não incorporam automaticamente sarjetas, muros, pavimentos, bueiros, galerias enterradas, soleiras ou outras estruturas urbanas que alteram o escoamento."
+  },
+  {
+    "objectID": "02_base_cartografica.html#background-de-imagem-para-o-gis",
+    "href": "02_base_cartografica.html#background-de-imagem-para-o-gis",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.5 Background de imagem para o GIS",
+    "text": "2.5 Background de imagem para o GIS\nO background originalmente usado no ArcMap foi derivado da extensão do ortomosaico do drone. Por isso, ele não cobria toda a Bacia A, especialmente o setor norte. Foi preparada uma alternativa contínua para a extensão conjunta das Bacias A+B, com buffer cartográfico, em duas versões georreferenciadas: WGS84 para visualização ampla e SIRGAS 2000 / UTM zona 25S para o projeto GIS. Os arquivos estão em 05_MAPAS/background_satellite_AB/.\nEssa imagem é uma base de orientação visual — ruas, quadras, ocupação e caminhos aparentes — e não substitui o ortomosaico nem um levantamento cadastral. A camada foi obtida do serviço Esri World Imagery e deve manter a atribuição da fonte nos mapas. No ArcMap, recomenda-se deixar o background contínuo abaixo do MDT híbrido, das Bacias A/B e das linhas da rede; onde houver cobertura, o ortomosaico do drone pode ser ligado acima dele para leitura de detalhe."
+  },
+  {
+    "objectID": "02_base_cartografica.html#limitações-e-requisitos-para-projeto-básico",
+    "href": "02_base_cartografica.html#limitações-e-requisitos-para-projeto-básico",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.6 Limitações e requisitos para projeto básico",
+    "text": "2.6 Limitações e requisitos para projeto básico\nPara evoluir a concepção para contratação, será necessário levantar:\n\ntopografia cadastral de detalhe, com pontos, eixos, seções e cotas de soleira;\nreferências altimétricas vinculadas ao SGB e documentação do MAPGEO;\npontos de controle suficientes e distribuídos espacialmente;\ninspeção de ruas, quadras, entradas, galerias, travessias e exutórios;\nsondagens e avaliação geotécnica nos dissipadores e taludes;\nverificação da cobertura, data e precisão do ortomosaico;\nvalidação independente das cotas e dos resultados hidráulicos.\n\nA integração atual melhora a base de concepção onde o drone cobre o terreno, mas deve ser apresentada como MDT híbrido preliminar com faixa de validade declarada. Não se deve ocultar a extrapolação para áreas fora da faixa dos controles nem tratar a correção estatística como prova de precisão cadastral."
+  },
+  {
+    "objectID": "02_base_cartografica.html#referências-metodológicas",
+    "href": "02_base_cartografica.html#referências-metodológicas",
+    "title": "2. Modelo digital de elevação",
+    "section": "2.7 Referências metodológicas",
+    "text": "2.7 Referências metodológicas\n\nAraújo et al. (2019) — NHESS 19:237–250.\nReferência de comunicação e organização do relatório.\nDocumentação local do processamento: 04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md.\nManifestos e registros locais: relatorio_hibrido_completo_curvas_KMZ.json e 01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json."
   },
   {
     "objectID": "04_rede_swmm.html",
@@ -210,352 +497,128 @@
     "text": "4.13 Validação paralela que deve ser feita no SWMM\nEnquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.\nNa Bacia A, o modelo possui 187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments. Na Bacia B, a primeira rodada possui 46 conduítes, 45 junctions, 3 outfalls (incluindo duas saídas de dissipação) e 46 subcatchments, além de um conector topológico provisório. Os diâmetros de 0,60 m/0,80 m na rede e 1,20 m nos dissipadores, a rugosidade 0,013, os CN médios agregados e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.\n\nChecklist de conferência\n\nConferir o sentido de cada link e se o nó de montante está compatível com o nó de jusante.\nIdentificar links invertidos, nós duplicados, nós órfãos e componentes sem caminho hidráulico.\nRevisar os 40 outfalls da Bacia A e os 3 outfalls da Bacia B: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.\nConferir os 187 links da Bacia A e os 44 links nodais da Bacia B contra as camadas GIS, classificando cada um como TRONCO, COLETOR ou DISSIPADOR.\nEditar as áreas de quadras no ArcMap/QGIS, e não diretamente no SWMM, mantendo o vínculo de cada subcatchment ao nó de entrada.\nRodar TR25 como teste de consistência e depois TR50, observando erro de continuidade, alagamentos, sobrecargas, velocidades e vazões de saída.\nRegistrar as vazões nos pontos que receberão dissipadores; elas serão a entrada para a estimativa de degraus, bacias e proteção a jusante.\n\nO guia operacional GUIA_VALIDACAO_SWMM_BACIA_A.md contém a tabela mínima de atributos e o critério para considerar uma versão final. A autoridade geométrica continua sendo a camada editada no GIS; o INP será regenerado a partir dela para evitar divergência entre mapa e simulação."
   },
   {
-    "objectID": "02_base_cartografica.html",
-    "href": "02_base_cartografica.html",
-    "title": "2. Modelo digital de elevação",
+    "objectID": "09_mudanca_climatica.html",
+    "href": "09_mudanca_climatica.html",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
     "section": "",
-    "text": "Produto de referência. O MDT híbrido recortado para as Bacias A e B é a base de partida desta concepção. Ele deve ser usado para análise preliminar, lançamento da rede e comparação de alternativas; não equivale a levantamento topográfico cadastral nem autoriza o fechamento de cotas executivas."
+    "text": "Capítulo metodológico em construção. Esta seção apresenta uma primeira faixa de sensibilidade climática para apoiar decisões robustas. Ela não substitui a atualização formal da IDF com séries observadas, dados subdiários, calibração local e validação hidrológica."
   },
   {
-    "objectID": "02_base_cartografica.html#sistema-de-referência-e-organização",
-    "href": "02_base_cartografica.html#sistema-de-referência-e-organização",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.1 Sistema de referência e organização",
-    "text": "2.1 Sistema de referência e organização\nO padrão de trabalho é SIRGAS 2000 / UTM zona 25S — EPSG:31985. Os rasters e vetores de análise devem permanecer nesse CRS métrico. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.\nO arquivo de trabalho principal é:\nMDT_hibrido_Bacias_AB_5m_EPSG31985.tif\nO arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho."
+    "objectID": "09_mudanca_climatica.html#por-que-um-capítulo-específico",
+    "href": "09_mudanca_climatica.html#por-que-um-capítulo-específico",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.1 Por que um capítulo específico",
+    "text": "6.1 Por que um capítulo específico\nChuvas de projeto não são valores fixos fora do tempo. Uma rede que funciona apenas sob a linha histórica pode perder margem de segurança durante a vida útil, especialmente quando há aumento de impermeabilização, ocupação urbana e concentração do escoamento. Por isso, a reconstrução das Bacias A e B será avaliada em dois planos complementares: a linha de base hidrológica usada no relatório anterior e um conjunto de cenários que testa a sensibilidade do sistema a mudanças na precipitação extrema.\nO objetivo não é vender uma previsão única, mas mostrar com transparência o que permanece robusto, o que se torna crítico e o que precisa ser adaptável. Essa forma de comunicação aproxima o relatório de ferramentas públicas de projeção de IDF, como o projeto do NRCC/Cornell, que organiza a leitura por período de retorno, cenário, horizonte temporal e faixa de incerteza (NY Projected IDF Curves - NRCC/Cornell)."
   },
   {
-    "objectID": "02_base_cartografica.html#fontes-e-histórico-de-construção",
-    "href": "02_base_cartografica.html#fontes-e-histórico-de-construção",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.2 Fontes e histórico de construção",
-    "text": "2.2 Fontes e histórico de construção\nA base foi organizada pela integração de três famílias de informação:\n\nBase legada: modelo derivado de ANADEM e curvas de nível previamente produzidas. Sua função principal é garantir cobertura territorial e continuidade, reconhecendo que resolução, suavização e incerteza podem ser maiores.\nLevantamento fotogramétrico: imagens de drone processadas no WebODM para produzir ortomosaico e modelos de superfície/terreno na área efetivamente coberta.\nControles e referências altimétricas: pontos de controle e referências vinculadas ao sistema geodésico brasileiro, quando disponíveis e documentados, para verificar diferenças verticais e orientar a correção do modelo legado.\n\nO levantamento do drone não cobre integralmente as Bacias A e B. Assim, a integração não é uma simples substituição do raster antigo: é uma composição com prioridade local do produto de maior resolução, complementada pela base legada fora da cobertura."
+    "objectID": "09_mudanca_climatica.html#estrutura-de-apresentação-das-idfs",
+    "href": "09_mudanca_climatica.html#estrutura-de-apresentação-das-idfs",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.2 Estrutura de apresentação das IDFs",
+    "text": "6.2 Estrutura de apresentação das IDFs\nPara cada cenário e horizonte, a apresentação deverá permitir a leitura de:\n\nperíodo de retorno: TR25 e TR50 como referência desta concepção preliminar;\nhorizonte: 2040-2059 e 2060-2100, correspondendo às janelas disponíveis no banco local;\ncenário socioambiental: SSP1-2.6, SSP2-4.5, SSP3-7.0 e SSP5-8.5;\ncurva central: mediana dos modelos válidos;\nmargem de incerteza: faixa P10-P90, acompanhada dos valores mínimo e máximo para auditoria;\nduração: a curva local é mostrada de 15 minutos a 24 horas, sempre com a ressalva de que a projeção disponível é diária.\n\nO gráfico abaixo usa a mesma lógica de um painel de IDFs projetadas: cada quadro corresponde a um cenário e horizonte; as linhas mostram a mediana para TR25 e TR50; o sombreamento mostra P10-P90; as linhas tracejadas são a IDF local de referência. A figura deve ser lida como teste de sensibilidade, e não como autorização para substituir automaticamente as chuvas no SWMM.\n\n\n\nFigura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-P90 expressam a dispersão do conjunto de modelos; as linhas tracejadas representam a IDF local de referência."
   },
   {
-    "objectID": "02_base_cartografica.html#fluxo-metodológico",
-    "href": "02_base_cartografica.html#fluxo-metodológico",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.3 Fluxo metodológico",
-    "text": "2.3 Fluxo metodológico\n\nHarmonização espacial\nAs fontes são reprojetadas para EPSG:31985, conferidas quanto a extensão, resolução, nodata e alinhamento de grade e reamostradas para uma malha de 5 m. A sobreposição é preservada para comparação e diagnóstico.\n\n\nComparação e correção vertical\nNa área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:\nh_ortométrica = a × valor_MDE + b\nO relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al. (2019), NHESS 19:237–250.\nA rotina deve ainda:\n\ndescartar e contar amostras em nodata;\ninformar RMSE antes e depois;\nseparar RMSE dentro da amostra de RMSE validado;\nusar leave-one-out quando n &lt; 50 e 20% para teste quando n &gt;= 50;\nregistrar a faixa mínima/máxima dos controles;\ncontar pixels fora da faixa e a magnitude máxima de extrapolação;\nalertar para inclinação a &lt; 0,9 ou a &gt; 1,1;\navaliar amplitude, distribuição espacial e distância de Cook;\nregistrar null quando uma métrica não puder ser determinada.\n\nA média dos resíduos após OLS não é indicador suficiente de qualidade, porque a regressão força o equilíbrio dos resíduos. O indicador principal para acurácia é o RMSE validado, acompanhado do diagnóstico da amostra.\n\n\nComposição híbrida\nDepois da verificação vertical, o produto do drone recebe prioridade somente na máscara em que sua cobertura e qualidade são conhecidas. Fora dessa máscara, a base legada mantém a cobertura. As bordas devem ser examinadas para evitar degraus artificiais, vazios ou mudanças abruptas de declividade.\n\n\nDerivados e recorte A+B\nDo modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução e metadados."
+    "objectID": "09_mudanca_climatica.html#método-aplicado-nesta-primeira-rodada",
+    "href": "09_mudanca_climatica.html#método-aplicado-nesta-primeira-rodada",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.3 Método aplicado nesta primeira rodada",
+    "text": "6.3 Método aplicado nesta primeira rodada\nA análise segue uma adaptação da metodologia de extremos e mudança climática discutida por Maity e Maity (2022), mantendo a ideia de comparar a distribuição de extremos históricos e futuros, corrigir a escala em relação à referência local e comunicar a incerteza do conjunto de modelos. O banco NEX-GDDP-CMIP6 disponível para Conde contém máximas anuais diárias, por modelo, cenário, ano e ponto de grade. Por essa razão, a implementação atual:\n\nseleciona os quatro pontos de grade mais próximos do centroide corrigido das Bacias A+B;\najusta uma distribuição GEV por modelo e ponto para o período histórico e para cada horizonte futuro;\ncalcula, para TR25 e TR50, a razão entre o quantil futuro e o quantil histórico do mesmo modelo;\nresume os fatores válidos por P10, mediana e P90, sem aplicar pesos REA;\nancora a resposta na IDF SGB/CPRM 2023 usada no relatório anterior;\nleva a faixa resultante para as durações da IDF local apenas como uma aproximação de sensibilidade.\n\nEssa etapa é deliberadamente conservadora na comunicação. Não foram inventados pesos, séries observadas ou ajustes subdiários que não estejam documentados. Onde a grandeza não pôde ser determinada, ela permanece como null no JSON de auditoria."
   },
   {
-    "objectID": "02_base_cartografica.html#produtos-derivados-para-a-drenagem",
-    "href": "02_base_cartografica.html#produtos-derivados-para-a-drenagem",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.4 Produtos derivados para a drenagem",
-    "text": "2.4 Produtos derivados para a drenagem\n\n\n\n\n\n\n\nProduto\nUso preliminar\n\n\n\n\nMDT híbrido A+B — 5 m\ncotas superficiais, declividades e comparação de alternativas\n\n\nCurvas de 1 m\nleitura detalhada de desníveis e apoio ao lançamento\n\n\nCurvas de 5 m\nleitura geral e curvas mestras\n\n\nLinhas/setas de fluxo\norientação dos caminhos naturais; não substituem cadastro de ruas e galerias\n\n\nBacias revisadas D8\nreferência de delimitação hidrográfica de trabalho\n\n\n\nAs linhas de fluxo representam o terreno modelado. Não incorporam automaticamente sarjetas, muros, pavimentos, bueiros, galerias enterradas, soleiras ou outras estruturas urbanas que alteram o escoamento."
+    "objectID": "09_mudanca_climatica.html#resultados-por-cenário-e-horizonte",
+    "href": "09_mudanca_climatica.html#resultados-por-cenário-e-horizonte",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.4 Resultados por cenário e horizonte",
+    "text": "6.4 Resultados por cenário e horizonte\nO quadro resume os fatores multiplicativos da linha de base local. Um fator 1,20, por exemplo, significa que a mediana do conjunto produziu uma intensidade 20% maior para aquela combinação de período de retorno e horizonte; não significa que toda chuva futura será 20% maior.\n\n\n\n\n\n\n\n\n\nCenário\nHorizonte\nTR25: P10 / mediana / P90\nTR50: P10 / mediana / P90\n\n\n\n\nSSP1-2.6\n2040-2059\n0,842 / 1,025 / 1,300\n0,805 / 1,040 / 1,485\n\n\nSSP1-2.6\n2060-2100\n0,899 / 1,144 / 1,466\n0,890 / 1,201 / 1,635\n\n\nSSP2-4.5\n2040-2059\n0,842 / 1,033 / 1,443\n0,812 / 1,065 / 1,637\n\n\nSSP2-4.5\n2060-2100\n0,890 / 1,055 / 1,372\n0,894 / 1,082 / 1,564\n\n\nSSP3-7.0\n2040-2059\n0,842 / 1,015 / 1,457\n0,833 / 1,037 / 1,647\n\n\nSSP3-7.0\n2060-2100\n0,864 / 1,036 / 1,455\n0,850 / 1,054 / 1,763\n\n\nSSP5-8.5\n2040-2059\n0,818 / 1,125 / 1,513\n0,794 / 1,193 / 1,774\n\n\nSSP5-8.5\n2060-2100\n0,818 / 1,066 / 1,395\n0,817 / 1,109 / 1,636\n\n\n\nHá dois ensinamentos institucionais nesse quadro. Primeiro, a mediana não cresce de forma monotônica em todos os cenários e horizontes; portanto, uma decisão baseada em um único fator pode ocultar a dispersão. Segundo, as faixas são amplas em alguns casos, especialmente para TR50. Isso recomenda soluções sem arrependimento: continuidade hidráulica, controle de erosão, dissipação segura, acesso para manutenção, proteção a jusante e possibilidade de reforço futuro."
   },
   {
-    "objectID": "02_base_cartografica.html#background-de-imagem-para-o-gis",
-    "href": "02_base_cartografica.html#background-de-imagem-para-o-gis",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.5 Background de imagem para o GIS",
-    "text": "2.5 Background de imagem para o GIS\nO background originalmente usado no ArcMap foi derivado da extensão do ortomosaico do drone. Por isso, ele não cobria toda a Bacia A, especialmente o setor norte. Foi preparada uma alternativa contínua para a extensão conjunta das Bacias A+B, com buffer cartográfico, em duas versões georreferenciadas: WGS84 para visualização ampla e SIRGAS 2000 / UTM zona 25S para o projeto GIS. Os arquivos estão em 05_MAPAS/background_satellite_AB/.\nEssa imagem é uma base de orientação visual — ruas, quadras, ocupação e caminhos aparentes — e não substitui o ortomosaico nem um levantamento cadastral. A camada foi obtida do serviço Esri World Imagery e deve manter a atribuição da fonte nos mapas. No ArcMap, recomenda-se deixar o background contínuo abaixo do MDT híbrido, das Bacias A/B e das linhas da rede; onde houver cobertura, o ortomosaico do drone pode ser ligado acima dele para leitura de detalhe."
+    "objectID": "09_mudanca_climatica.html#o-que-ainda-falta-para-uma-idf-futura-de-projeto",
+    "href": "09_mudanca_climatica.html#o-que-ainda-falta-para-uma-idf-futura-de-projeto",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.5 O que ainda falta para uma IDF futura de projeto",
+    "text": "6.5 O que ainda falta para uma IDF futura de projeto\nO resultado atual não deve ser aplicado diretamente aos arquivos .inp do SWMM. Para uma futura contratação ou projeto básico, a atualização deverá incluir:\n\nsérie observada de máximas anuais e, idealmente, séries subdiárias da estação de referência;\nverificação da homogeneidade, falhas e representatividade espacial da estação;\ndownscaling e correção de viés documentados, incluindo quantile mapping quando aplicável;\navaliação do desempenho dos modelos no clima histórico e definição justificada dos pesos do conjunto;\najuste de extremos para cada duração relevante, com intervalos de confiança e teste de sensibilidade;\ndefinição do horizonte de projeto compatível com a vida útil, manutenção e possibilidade de expansão;\natualização dos hietogramas e execução comparativa no SWMM, registrando pico, volume, inundação, velocidade e solicitação dos dissipadores.\n\nAté lá, os fatores devem ser usados como cenários de triagem. A rede será considerada robusta quando continuar atendendo aos critérios essenciais em mais de uma premissa, ou quando houver medidas físicas e operacionais explícitas para os casos em que a capacidade seja excedida."
   },
   {
-    "objectID": "02_base_cartografica.html#limitações-e-requisitos-para-projeto-básico",
-    "href": "02_base_cartografica.html#limitações-e-requisitos-para-projeto-básico",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.6 Limitações e requisitos para projeto básico",
-    "text": "2.6 Limitações e requisitos para projeto básico\nPara evoluir a concepção para contratação, será necessário levantar:\n\ntopografia cadastral de detalhe, com pontos, eixos, seções e cotas de soleira;\nreferências altimétricas vinculadas ao SGB e documentação do MAPGEO;\npontos de controle suficientes e distribuídos espacialmente;\ninspeção de ruas, quadras, entradas, galerias, travessias e exutórios;\nsondagens e avaliação geotécnica nos dissipadores e taludes;\nverificação da cobertura, data e precisão do ortomosaico;\nvalidação independente das cotas e dos resultados hidráulicos.\n\nA integração atual melhora a base de concepção onde o drone cobre o terreno, mas deve ser apresentada como MDT híbrido preliminar com faixa de validade declarada. Não se deve ocultar a extrapolação para áreas fora da faixa dos controles nem tratar a correção estatística como prova de precisão cadastral."
+    "objectID": "09_mudanca_climatica.html#reconstrução-resiliente-sustentável-e-adaptada",
+    "href": "09_mudanca_climatica.html#reconstrução-resiliente-sustentável-e-adaptada",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.6 Reconstrução resiliente, sustentável e adaptada",
+    "text": "6.6 Reconstrução resiliente, sustentável e adaptada\nO valor do projeto não está apenas em dimensionar uma tubulação. Está em transformar o diagnóstico de erosão e alagamento em uma decisão de reconstrução que reduza risco futuro. Para isso, a proposta adota cinco premissas:\n\nConceber o sistema e executar o essencial. O plano reconhece a drenagem completa das Bacias A e B, mas prioriza troncos principais, coletores indispensáveis e dissipadores nos setores críticos.\nNão transferir o risco. Toda meta deve ser ligada a uma área contribuinte, a um caminho de escoamento, a uma descarga e a uma proteção a jusante.\nProjetar para manutenção e adaptação. Acesso, limpeza, inspeção, proteção contra erosão e possibilidade de reforço devem integrar a solução desde a concepção.\nCombinar infraestrutura cinza e medidas sustentáveis. Sempre que tecnicamente compatível, devem ser avaliadas soluções de retenção temporária, infiltração, revegetação, proteção de solo, redução de velocidade e controle na origem.\nUsar a mudança climática como teste de robustez. A decisão deve considerar a linha de base e as faixas futuras, priorizando medidas que funcionem sob diferentes cenários e evitando investimentos que dependam de uma única previsão.\n\nEssa abordagem dá conteúdo técnico ao princípio de reconstruir melhor (Build Back Better): a reconstrução deixa de ser mera reposição do que falhou e passa a ser uma oportunidade de reduzir vulnerabilidade, proteger a população e preparar a infraestrutura para condições futuras. No Plano de Trabalho, a adaptação climática será tratada como critério de priorização e de desempenho, não como justificativa para inflar quantitativos sem evidência."
   },
   {
-    "objectID": "02_base_cartografica.html#referências-metodológicas",
-    "href": "02_base_cartografica.html#referências-metodológicas",
-    "title": "2. Modelo digital de elevação",
-    "section": "2.7 Referências metodológicas",
-    "text": "2.7 Referências metodológicas\n\nAraújo et al. (2019) — NHESS 19:237–250.\nReferência de comunicação e organização do relatório.\nDocumentação local do processamento: 04_MDT_HIBRIDO/00_DOCUMENTACAO/CAPITULO_MDT_HIBRIDO_PRE_CONCEPCAO.md.\nManifestos e registros locais: relatorio_hibrido_completo_curvas_KMZ.json e 01_CLIP_BACIAS_AB/manifesto_clip_bacias_AB.json."
+    "objectID": "09_mudanca_climatica.html#integração-com-o-swmm-e-com-o-plano-de-trabalho",
+    "href": "09_mudanca_climatica.html#integração-com-o-swmm-e-com-o-plano-de-trabalho",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.7 Integração com o SWMM e com o Plano de Trabalho",
+    "text": "6.7 Integração com o SWMM e com o Plano de Trabalho\nOs cenários climáticos serão incorporados ao SWMM somente depois de concluída a rodada tradicional TR25/TR50 e de validados os trechos, áreas de contribuição e dissipadores das Bacias A e B. Para cada cenário aplicado, o relatório deverá registrar:\n\nchuva de entrada, fator ou curva utilizada e fonte;\nnós com inundação e links acima da capacidade;\nvazão de chegada nos dissipadores e condições de jusante;\ntrechos que permanecem críticos em todos os cenários;\nmedidas de adaptação, reforço ou monitoramento propostas.\n\nOs trechos que permanecerem críticos e cuja implantação reduzir risco nas áreas de metas serão candidatos ao Plano de Trabalho. As demais ocorrências fora das Bacias A e B continuam fora do escopo desta modelagem e deverão ser tratadas em frentes específicas."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "",
-    "text": "Drenagem urbana — Conde/PB\n\n\nConcepção preliminar · Bacias A e B · MDT híbrido · SWMM\nEste relatório digital documentará, de forma versionada e reproduzível, a construção da base cartográfica, do MDT híbrido, do lançamento da rede e do modelo hidrológico-hidráulico preliminar de drenagem de Conde/PB."
-  },
-  {
-    "objectID": "index.html#finalidade-do-relatório",
-    "href": "index.html#finalidade-do-relatório",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Finalidade do relatório",
-    "text": "Finalidade do relatório\nO objetivo é organizar evidências, hipóteses de diagnóstico, alternativas de intervenção e metas verificáveis para apoiar a elaboração do Plano de Trabalho de Reconstrução de Conde/PB. O escopo inicial não propõe a implantação imediata de toda a rede de drenagem municipal. Propõe priorizar os troncos principais, coletores indispensáveis e dissipadores localizados nos setores críticos, sem perder de vista que a solução definitiva depende da concepção integrada da bacia.\nComo diagnóstico preliminar, os processos erosivos observados são compatíveis com a combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura de drenagem urbana. Essa relação deve ser confirmada por vistoria, cadastro de ocorrências, levantamento das seções e análise hidráulica; por isso, a minuta não apresenta a hipótese como causalidade já comprovada.\nO princípio orientador é reconstruir melhor: as intervenções de recuperação devem reduzir o risco futuro, proteger os trechos a jusante e evitar a simples reposição de uma condição que reproduza a vulnerabilidade existente. A abordagem é compatível com a prioridade do Marco de Sendai de investir na redução de riscos e com a orientação de integrar redução de riscos à recuperação, reabilitação e reconstrução.\n\n\n\n\n\n\nEscopo atual. Os modelos preliminares das Bacias A e B já foram montados com redes importadas, nós, áreas de contribuição template e saídas/dissipadores modelados de forma conceitual. A revisão de quadras, conexões, cotas de fundo, diâmetros e condições de jusante ainda é necessária antes de qualquer uso como projeto básico."
-  },
-  {
-    "objectID": "index.html#painel-espacial-das-bacias-a-e-b",
-    "href": "index.html#painel-espacial-das-bacias-a-e-b",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Painel espacial das Bacias A e B",
-    "text": "Painel espacial das Bacias A e B\n\n\n\n\n\n\nUnidades de trabalho. A Bacia A permanece em revisão hidráulica; a Bacia B recebeu nesta versão o lançamento preliminar de 3 troncos, 20 coletores e 2 trechos de dissipação, além de áreas template e uma primeira rodada SWMM. A terminologia de rede, áreas, metas e cenários hidrológicos deste relatório seguirá sempre essa divisão.\n\n\n\n\n\n\nMapa-síntese estático para leitura do relatório, agora com as redes preliminares das duas bacias e seus trechos de dissipação. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.\n\n\n\nO painel foi simplificado para evitar falhas de carregamento de mapas-base e bibliotecas externas. A representação é cartográfica, não substitui a conferência no ArcMap/QGIS; o CRS de trabalho permanece SIRGAS 2000 / UTM 25S.\n\n\nProblemas e metas originalmente marcados\n\n\n\nDiagnóstico espacial original separado da rede proposta. O quadro principal mostra as Bacias A e B; o quadro lateral reúne referências fora do recorte que ainda precisam ser vinculadas às bacias.\n\n\n\nSimbologia: polígonos vermelhos = suscetibilidade alta; polígonos amarelos = suscetibilidade média; pontos escuros = metas originais; pontos azuis = registros fotográficos. Essas marcações orientam a investigação e não constituem, isoladamente, metas executivas.\n\n\n\n\nMapa de referência da suscetibilidade à erosão: 9 manchas de suscetibilidade alta e 22 de suscetibilidade média. O cruzamento espacial identificou 10 dos 12 pontos de metas dentro das Bacias A/B e quatro coincidências diretas com as manchas originais.\n\n\n\nA coincidência espacial é uma evidência de priorização, não uma validação automática de obra. Os pontos fora das Bacias A e B permanecem no diagnóstico, mas serão tratados separadamente.\n\n\n\nSituação da rede proposta e dos trechos do Plano de Trabalho\n\n\n\n\n\n\n\n\n\nUnidade\nRede proposta nesta etapa\nTrechos contemplados no Plano de Trabalho\nSituação\n\n\n\n\nBacia A\nTroncos principais, coletores indispensáveis, áreas de contribuição e dissipadores/saídas associados aos setores críticos\nTrechos desenhados nas camadas TroncoA*.shp, ColetorA*.shp e TrechosDissipacao.shp, após validação de continuidade, vazão e jusante\nLançamento preliminar em revisão no GIS e no SWMM\n\n\nBacia B\n3 troncos, 20 coletores, 2 dissipadores, nós e áreas template lançados sobre o MDT híbrido\nTrechos prioritários a definir depois da validação das ocorrências, caminhos de fluxo, vazões e dissipadores\nPrimeira rodada SWMM executada; revisão em andamento\n\n\nA + B\nConcepção integrada para que cada intervenção tenha contribuição, transporte, descarga e proteção a jusante\nMetas M-02 a M-06, com quantitativos fechados somente após a rodada hidráulica de cada bacia\nIntegração prevista, sem conexão presumida entre as bacias\n\n\n\nO relatório não apresentará a implantação de toda a rede municipal como meta imediata. A proposta é selecionar, em cada bacia, os troncos principais e dissipadores mais críticos, acrescentando apenas os coletores necessários para que esses trechos funcionem como sistema e possam ser verificados no SWMM. A Bacia A será a primeira frente de validação; a Bacia B será incorporada após o novo lançamento."
-  },
-  {
-    "objectID": "index.html#números-da-versão-preliminar",
-    "href": "index.html#números-da-versão-preliminar",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Números da versão preliminar",
-    "text": "Números da versão preliminar\n\n\n233links nodais A+B\n\n\n247nós A+B\n\n\n254áreas preliminares A+B\n\n\n30,39 kmrede importada A+B\n\n\nEPSG:31985SIRGAS 2000 / UTM 25S"
-  },
-  {
-    "objectID": "index.html#como-ler-este-projeto",
-    "href": "index.html#como-ler-este-projeto",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Como ler este projeto",
-    "text": "Como ler este projeto\n\nIntrodução e contextualização\nModelo digital de elevação\nEstudos hidrológicos\nModelagem hidráulica\nAnálise e discussões\nConclusões e encaminhamentos\nModelo de Plano de Trabalho\nAnexo A — Dados para download"
-  },
-  {
-    "objectID": "index.html#relatório-completo-em-pdf",
-    "href": "index.html#relatório-completo-em-pdf",
-    "title": "Drenagem urbana — Conde/PB",
-    "section": "Relatório completo em PDF",
-    "text": "Relatório completo em PDF\nO PDF completo do relatório reúne a minuta técnica, a metodologia do MDT híbrido, a situação das Bacias A e B, a rede/SWMM, a hidrologia, o plano de trabalho e o catálogo de dados. O arquivo será atualizado junto com cada versão publicada do relatório digital.\n\nPadrão editorial inspirado nos projetos DPM/SEDEC de documentação versionada no GitHub Pages e na identidade visual SEDEC do ICPM."
-  },
-  {
-    "objectID": "01_contexto.html",
-    "href": "01_contexto.html",
-    "title": "1. Introdução e contextualização",
-    "section": "",
-    "text": "Minuta técnica preliminar em construção. O relatório será atualizado à medida que forem revisados o lançamento da rede, as áreas de contribuição, os dissipadores e os cenários do SWMM. As conclusões desta versão orientam o Plano de Trabalho, mas não substituem projeto básico ou executivo."
-  },
-  {
-    "objectID": "01_contexto.html#finalidade",
-    "href": "01_contexto.html#finalidade",
-    "title": "1. Introdução e contextualização",
-    "section": "1.1 Finalidade",
-    "text": "1.1 Finalidade\nEste relatório organiza a concepção preliminar para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB, com foco na redução de processos erosivos, alagamentos e transferências de risco associados ao escoamento superficial concentrado.\nO estudo parte de duas unidades territoriais de trabalho:\n\nBacia A: frente já avançada, com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição template;\nBacia B: bacia delimitada e agora lançada preliminarmente no GIS, com troncos, coletores, dois trechos de dissipação e uma primeira rodada SWMM ainda dependente de validação.\n\nEssa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas."
-  },
-  {
-    "objectID": "01_contexto.html#contextualização-do-problema",
-    "href": "01_contexto.html#contextualização-do-problema",
-    "title": "1. Introdução e contextualização",
-    "section": "1.2 Contextualização do problema",
-    "text": "1.2 Contextualização do problema\nA hipótese de trabalho é que os processos erosivos observados resultam da combinação entre escoamento superficial concentrado, ausência ou insuficiência de pavimentação e ausência ou insuficiência de infraestrutura urbana de drenagem. A hipótese deverá ser confrontada com vistoria, cadastro de ocorrências, levantamento topográfico, inspeção das ruas e verificação hidráulica.\nA reconstrução não deve apenas repor uma condição vulnerável. O princípio orientador é reconstruir melhor, priorizando soluções que reduzam o risco futuro, mantenham continuidade hidráulica e protejam os trechos a jusante. Por isso, o escopo preliminar não propõe implantar toda a rede municipal nesta etapa: propõe selecionar troncos principais, coletores indispensáveis e dissipadores nos setores críticos, sempre verificando a bacia contribuinte."
-  },
-  {
-    "objectID": "01_contexto.html#diagnóstico-municipal-utilizado-na-contextualização",
-    "href": "01_contexto.html#diagnóstico-municipal-utilizado-na-contextualização",
-    "title": "1. Introdução e contextualização",
-    "section": "1.3 Diagnóstico municipal utilizado na contextualização",
-    "text": "1.3 Diagnóstico municipal utilizado na contextualização\nO documento municipal REC-PB-2504603-20260802-01 Conde, datado de agosto de 2026, registra a ocorrência de tempestade local/convectiva com chuvas intensas em 1º de maio de 2026. Segundo o diagnóstico, os danos atingiram principalmente vias não pavimentadas, com processos erosivos, alagamentos, enxurradas e isolamento de comunidades. O documento informa, como estimativas preliminares municipais, que 88,3% das vias urbanas não eram pavimentadas, que aproximadamente 495,17 km de vias teriam sido afetados direta ou indiretamente e que 297,11 km já haviam sido catalogados em levantamentos locais. Esses números são apresentados aqui como informação de diagnóstico a ser conferida, não como medição independente deste estudo.\nO diagnóstico detalha como ocorrências prioritárias a Rua São Francisco, com trecho de aproximadamente 890 m associado a erosão severa, e a Rua Projetada 03 / Rua Zilda Arns Neumann, com intervenção de drenagem profunda indicada em aproximadamente 510 m. Para as duas ocorrências, o documento relaciona a concentração do escoamento superficial, a diferença de declividade entre montante e jusante, a precariedade do leito viário e a perda de trafegabilidade. Também informa impactos diretos estimados de 1.320 pessoas na primeira ocorrência e 670 na segunda.\nEssas informações reforçam a hipótese de que a recuperação viária precisa estar associada à drenagem. Elas não substituem a delimitação das Bacias A e B, a revisão da rede ou a simulação no SWMM: servem para priorizar a investigação e cruzar os pontos do diagnóstico com o MDT híbrido, as áreas de contribuição, os troncos, os coletores e os dissipadores.\n\n\n\n\n\n\nConferência necessária antes do Plano de Trabalho final. O arquivo municipal usa nomenclaturas diferentes em partes do documento: as primeiras páginas apresentam duas metas, enquanto o orçamento e as memórias de cálculo também mencionam Meta 3, Meta 4, Meta 5, Meta 6 e Meta 7, com nomes de ruas que precisam ser reconciliados. As extensões, diâmetros, pontos de lançamento, quantitativos e valores devem ser confrontados com a camada GIS e com o modelo SWMM antes de serem adotados como metas definitivas.\n\n\n\nO diagnóstico também registra lançamento de rede ao final da Rua São Francisco, em área de canavial. Esse ponto deverá ser tratado como saída hidráulica a verificar: é necessário conferir propriedade e uso do solo, condição de jusante, risco de erosão, necessidade de dissipação e eventuais licenças. A solução proposta no diagnóstico não será considerada automaticamente como exutório adequado."
-  },
-  {
-    "objectID": "01_contexto.html#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais",
-    "href": "01_contexto.html#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais",
-    "title": "1. Introdução e contextualização",
-    "section": "1.4 Mapa de suscetibilidade e rastreabilidade das metas originais",
-    "text": "1.4 Mapa de suscetibilidade e rastreabilidade das metas originais\nO diagnóstico espacial anterior foi incorporado como evidência de referência para a priorização. O mapa foi construído com base no índice de poder de escoamento do modelo digital de elevação — combinação entre acumulação de fluxo e declividade — e posteriormente confrontado com os registros de erosão observada em campo. As manchas foram classificadas originalmente em suscetibilidade alta e suscetibilidade média. Essa classificação representa propensão do terreno à concentração do escoamento e à formação de processos erosivos; não equivale, isoladamente, a mapa de perigo, risco ou dano.\n\n\n\n\n\n\nFigura 1: Mapa de referência das áreas suscetíveis à erosão, com a rede proposta e pontos de erosão observados. Vermelho: suscetibilidade alta; amarelo: suscetibilidade média; pontos amarelos: registros fotográficos de erosão.\n\n\n\nNa base vetorial original foram identificadas 9 manchas de suscetibilidade alta e 22 manchas de suscetibilidade média, além de duas geometrias associadas a pontos de erosão observados. O cruzamento espacial reproduzível dos pontos originais com as manchas e com os limites revisados das Bacias A e B produziu o seguinte quadro:\n\n\n\n\n\n\n\n\n\n\nEvidência\nTotal\nDentro das Bacias A/B\nCoincidência direta com suscetibilidade\nLeitura para o Plano\n\n\n\n\nPontos de metas originais (Conde_Pontos_metas.kmz)\n12\n10\n4\nAs metas devem ser reavaliadas dentro do recorte; quatro já coincidem diretamente com manchas de suscetibilidade\n\n\nPontos de erosão com fotografias\n9\n2\n2\nP08 e P09 coincidem com área de suscetibilidade média na Bacia A; os demais estão fora do recorte A/B\n\n\n\nEntre as metas originais, as coincidências diretas identificadas são: 3i em suscetibilidade média; 3f em sobreposição de suscetibilidade alta e média; 6i e 6f em suscetibilidade alta. Os pontos 5i e 5f estão dentro da Bacia A, mas fora das manchas originais, devendo ser avaliados pela topografia, pela rede e pela vistoria. Os pontos 1i, 1f, 2f e 2i - foto? estão dentro da Bacia B, mas não coincidem diretamente com as manchas disponíveis; não devem ser descartados, pois a Bacia B agora possui lançamento preliminar e ainda passará pela revisão das áreas de contribuição. Os pontos 4i e 4f estão fora do recorte das Bacias A e B.\nEssa distinção é importante: o estudo não deve transformar automaticamente todo ponto originalmente marcado em meta de obra, nem afirmar coincidência quando ela não existe. A evidência será usada em três níveis: (i) coincidência direta com suscetibilidade; (ii) localização dentro das Bacias A/B, exigindo análise de fluxo, rede e campo; e (iii) ocorrência fora do recorte, registrada para tratamento separado.\nOs resultados detalhados e reproduzíveis estão disponíveis no arquivo CSV, na camada GeoJSON e no resumo JSON."
-  },
-  {
-    "objectID": "01_contexto.html#recorte-territorial-do-estudo-e-limites-das-metas",
-    "href": "01_contexto.html#recorte-territorial-do-estudo-e-limites-das-metas",
-    "title": "1. Introdução e contextualização",
-    "section": "1.5 Recorte territorial do estudo e limites das metas",
-    "text": "1.5 Recorte territorial do estudo e limites das metas\nO recorte desta análise compreende exclusivamente as Bacias A e B, que serão tratadas como unidades de drenagem distintas e complementares. Todas as conclusões sobre rede, áreas de contribuição, vazões, dissipadores, pontos críticos e metas do Plano de Trabalho deverão indicar a qual bacia pertencem.\nAs ocorrências e metas localizadas fora dessas duas bacias não serão incorporadas nesta modelagem. Elas permanecem registradas como evidências do diagnóstico municipal, mas deverão ser analisadas separadamente, com delimitação de sua própria área contribuinte, verificação de infraestrutura existente e, quando necessário, novo modelo hidrológico-hidráulico. Essa separação evita atribuir às Bacias A ou B problemas que não drenam para elas e evita incluir no Plano de Trabalho quantitativos sem relação comprovada com o sistema estudado."
-  },
-  {
-    "objectID": "01_contexto.html#objetivos",
-    "href": "01_contexto.html#objetivos",
-    "title": "1. Introdução e contextualização",
-    "section": "1.6 Objetivos",
-    "text": "1.6 Objetivos\n\nObjetivo geral\nConstruir uma base técnica, espacial e hidrológico-hidráulica reproduzível para priorizar intervenções de drenagem nas Bacias A e B e apoiar a elaboração do Plano de Trabalho de Reconstrução.\n\n\nObjetivos específicos\n\nConsolidar a base cartográfica em SIRGAS 2000 / UTM zona 25S.\nDocumentar a construção do MDT híbrido, suas fontes, limitações e condições de uso.\nRevisar a drenagem natural e o lançamento preliminar de troncos, coletores e saídas.\nMontar o modelo SWMM com áreas de contribuição, chuvas de projeto e dissipadores.\nIdentificar trechos prioritários, necessidades de levantamento e metas verificáveis.\nSeparar o que é evidência disponível, hipótese de concepção, resultado de simulação e decisão a confirmar."
-  },
-  {
-    "objectID": "01_contexto.html#escopo-e-fases",
-    "href": "01_contexto.html#escopo-e-fases",
-    "title": "1. Introdução e contextualização",
-    "section": "1.7 Escopo e fases",
-    "text": "1.7 Escopo e fases\n\n\n\n\n\n\n\n\nFase\nConteúdo\nSituação\n\n\n\n\n1\nBase cartográfica, MDT híbrido e revisão das Bacias A e B\nOrganizada\n\n\n2\nLançamento da rede da Bacia A e estrutura inicial do SWMM\nEm revisão\n\n\n3\nLançamento da rede da Bacia B\nPrimeira rodada executada; revisão em andamento\n\n\n4\nÁreas reais de contribuição, dissipadores e conexões\nEm desenvolvimento nas duas bacias\n\n\n5\nChuvas tradicionais e cenários climáticos\nLinha de base montada; atualização climática posterior\n\n\n6\nAnálise, metas do Plano de Trabalho e relatório final\nApós validação"
-  },
-  {
-    "objectID": "01_contexto.html#situação-territorial-das-bacias",
-    "href": "01_contexto.html#situação-territorial-das-bacias",
-    "title": "1. Introdução e contextualização",
-    "section": "1.8 Situação territorial das bacias",
-    "text": "1.8 Situação territorial das bacias\n\n\n\n\n\n\n\n\nUnidade\nSituação atual\nPróxima decisão\n\n\n\n\nBacia A\nRede preliminar, nós, saídas e áreas template disponíveis\nRevisar continuidade, trechos, áreas e parâmetros do SWMM\n\n\nBacia B\nLimite revisado; 3 arquivos de tronco, 2 arquivos de coletor, 2 dissipadores e modelo preliminar disponíveis\nValidar conectividade, áreas, diâmetros, cotas e pontos de saída\n\n\nA+B\nBase híbrida e produtos derivados organizados\nUsar como referência territorial conjunta, sem misturar redes não conectadas"
-  },
-  {
-    "objectID": "01_contexto.html#rastreabilidade-e-governança",
-    "href": "01_contexto.html#rastreabilidade-e-governança",
-    "title": "1. Introdução e contextualização",
-    "section": "1.9 Rastreabilidade e governança",
-    "text": "1.9 Rastreabilidade e governança\nCada etapa será mantida com fonte, CRS, data, premissa, limitação e histórico de alteração. O conteúdo publicado é uma minuta técnica pública em construção. Antes de qualquer contratação ou compartilhamento institucional ampliado, devem ser revisados os autores, os dados pessoais, as fotografias, a situação de publicação dos arquivos e a responsabilidade técnica pelos produtos.\nO padrão editorial segue a organização visual e documental usada pelo DPM/SEDEC, com identidade institucional, mapas verificáveis, arquivos para download e versionamento no GitHub Pages."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html",
-    "href": "03_mdt_hibrido.html",
-    "title": "3. Estudos hidrológicos",
-    "section": "",
-    "text": "Estratégia hidrológica. A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#linha-de-base-tradicional",
-    "href": "03_mdt_hibrido.html#linha-de-base-tradicional",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.1 Linha de base tradicional",
-    "text": "3.1 Linha de base tradicional\nA linha de base preliminar utiliza:\n\nestação INMET 82798;\nrelação IDF SGB/CPRM 2023;\nhietogramas de projeto TR25 e TR50;\nmétodo de infiltração CN-SCS;\nCN médio preliminar igual a 79;\n30% de impermeabilização como premissa inicial.\n\nAs chuvas foram copiadas para 04_CHUVAS_PROJETO e incorporadas aos arquivos .inp preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#áreas-de-contribuição-e-perdas",
-    "href": "03_mdt_hibrido.html#áreas-de-contribuição-e-perdas",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.2 Áreas de contribuição e perdas",
-    "text": "3.2 Áreas de contribuição e perdas\nAs 208 áreas disponíveis no modelo atual são um template Voronoi. Elas preservam a estrutura do SWMM, mas ainda não representam definitivamente quadras, lotes, sarjetas ou pontos de entrada.\nNa revisão, cada subárea deverá receber:\n\n\n\nGrupo\nDados a confirmar\n\n\n\n\nGeometria\nárea, largura característica e declividade\n\n\nSuperfície\nfrações impermeável e permeável\n\n\nInfiltração\nCN, perdas iniciais e parâmetros do método escolhido\n\n\nConexão\nnó de entrada, caminho superficial ou ligação à galeria\n\n\nControle\norigem da cota, ponto de saída e hipótese de contribuição\n\n\n\nA estrutura deve permitir distinguir a contribuição natural do terreno, a contribuição urbana concentrada e a contribuição captada pela rede."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#transformação-chuva-vazão",
-    "href": "03_mdt_hibrido.html#transformação-chuva-vazão",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.3 Transformação chuva-vazão",
-    "text": "3.3 Transformação chuva-vazão\nO modelo deve ser avaliado por:\n\nbalanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;\ncoerência entre tempo de concentração, duração da chuva e tempo de simulação;\nsensibilidade a CN, impermeabilização e largura característica;\ncomparação entre TR25 e TR50;\nidentificação de subáreas que concentram vazões nos troncos e dissipadores;\nverificação de eventuais transferências de pico entre componentes.\n\nNenhum resultado de vazão final deve ser apresentado como definitivo enquanto as áreas de quadras e as conexões topológicas permanecerem preliminares."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#atualização-climática-com-nex-gddp-cmip6",
-    "href": "03_mdt_hibrido.html#atualização-climática-com-nex-gddp-cmip6",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.4 Atualização climática com NEX-GDDP-CMIP6",
-    "text": "3.4 Atualização climática com NEX-GDDP-CMIP6\nO banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:\n\nperíodo histórico de referência;\njanelas futuras;\nmodelos climáticos e medida de consenso;\nmáximas anuais e quantis;\nviés entre o histórico modelado e a estação observada;\ntransformação de máximas diárias em curvas de duração e frequência;\nefeito dos cenários sobre a chuva de projeto e o dimensionamento.\n\nA conexão ao banco é somente leitura. O relatório deverá registrar consulta, célula, modelos, período, cenário, quantil, método de correção e versão do script. Não será aplicado um fator climático único sem justificar sua origem e sua faixa de incerteza."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#cenários-hidrológicos-propostos",
-    "href": "03_mdt_hibrido.html#cenários-hidrológicos-propostos",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.5 Cenários hidrológicos propostos",
-    "text": "3.5 Cenários hidrológicos propostos\n\n\n\n\n\n\n\n\nCenário\nFinalidade\nSituação\n\n\n\n\nTR25 tradicional\nlinha de base operacional\narquivo preliminar disponível\n\n\nTR50 tradicional\nverificação de maior recorrência\narquivo preliminar disponível\n\n\nHistórico ajustado\ncomparação com observações e viés\npróxima etapa\n\n\nSSP126/245\nfaixa de menor/intermediária emissão\nsegunda etapa\n\n\nSSP370/585\nfaixa de maior severidade climática\nsegunda etapa\n\n\n\nA atualização climática não substitui a linha de base: ela deve permitir enxergar como a rede responde quando as premissas de precipitação são alteradas."
-  },
-  {
-    "objectID": "03_mdt_hibrido.html#entregas-hidrológicas",
-    "href": "03_mdt_hibrido.html#entregas-hidrológicas",
-    "title": "3. Estudos hidrológicos",
-    "section": "3.6 Entregas hidrológicas",
-    "text": "3.6 Entregas hidrológicas\nA etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada."
-  },
-  {
-    "objectID": "05_hidrologia.html",
-    "href": "05_hidrologia.html",
-    "title": "5. Análise e discussões",
-    "section": "",
-    "text": "Leitura desta seção. A análise separa o que já está organizado do que ainda é hipótese. As duas bacias já possuem uma primeira rodada preliminar, mas a comparação deve considerar a maturidade das áreas, das cotas e das condições de saída, e não apenas os números do SWMM."
-  },
-  {
-    "objectID": "05_hidrologia.html#situação-atual-das-duas-bacias",
-    "href": "05_hidrologia.html#situação-atual-das-duas-bacias",
-    "title": "5. Análise e discussões",
-    "section": "5.1 Situação atual das duas bacias",
-    "text": "5.1 Situação atual das duas bacias\n\n\n\n\n\n\n\n\nTema\nBacia A\nBacia B\n\n\n\n\nDelimitação\nrevisada e disponível\nrevisada e disponível\n\n\nMDT e curvas\ndisponíveis na base conjunta\ndisponíveis na base conjunta\n\n\nRede\nlançamento preliminar realizado\n3 troncos e 20 coletores lançados preliminarmente\n\n\nÁreas de contribuição\ntemplate preliminar\n46 áreas Voronoi template\n\n\nDissipadores/saídas\ncinco trechos integrados preliminarmente; DISS_04 exige revisão de snap\ndois trechos específicos B, representados como placeholders\n\n\nSWMM\nTR25/TR50 executados com continuidade numérica aceitável\nTR25/TR50 executados com continuidade numérica aceitável\n\n\nGrau de maturidade\nconcepção em revisão\nprimeira rodada em revisão\n\n\n\nA Bacia A não deve ser usada como referência final para a Bacia B sem repetir as etapas de lançamento, conexão e verificação. A primeira rodada B foi executada para permitir diagnóstico e priorização da revisão; não elimina a necessidade de validar quadras, cotas e condições de jusante. A assimetria entre as bacias é uma condição do projeto, não uma falha a ser escondida."
-  },
-  {
-    "objectID": "05_hidrologia.html#o-que-a-base-topográfica-permite-discutir",
-    "href": "05_hidrologia.html#o-que-a-base-topográfica-permite-discutir",
-    "title": "5. Análise e discussões",
-    "section": "5.2 O que a base topográfica permite discutir",
-    "text": "5.2 O que a base topográfica permite discutir\nO MDT híbrido permite reconhecer desníveis, declividades, caminhos naturais e possíveis zonas de concentração. As curvas de 1 m ajudam na leitura local dos dissipadores; as de 5 m funcionam como referência geral e curvas mestras.\nEntretanto, o terreno natural não descreve sozinho a drenagem urbana. O fluxo real pode ser alterado por pavimentação, meio-fio, muros, aterros, travessias e galerias enterradas. A interpretação correta exige sobrepor o MDT às ruas, quadras, pontos de entrada e rede lançada."
-  },
-  {
-    "objectID": "05_hidrologia.html#parâmetro-cn-de-2022-como-premissa-hidrológica",
-    "href": "05_hidrologia.html#parâmetro-cn-de-2022-como-premissa-hidrológica",
-    "title": "5. Análise e discussões",
-    "section": "5.3 Parâmetro CN de 2022 como premissa hidrológica",
-    "text": "5.3 Parâmetro CN de 2022 como premissa hidrológica\nComo referência espacial para a transformação chuva–escoamento, foi incorporado o produto oficial Curva Número na Base Ottocodificada (1985, 2014 e 2022), disponibilizado pelo SNIRH/ANA. Para este relatório foi utilizado o raster BR_CN-2022.tif, recortado para as Bacias A e B e reprojetado para SIRGAS 2000 / UTM zona 25S — EPSG:31985, em grade de 30 m e com reamostragem por vizinho mais próximo. O registro oficial informa que o produto de 2022 foi construído com uso e cobertura do solo do MapBiomas 2023 e dados de solos do IBGE 2023, na escala declarada de 1:250.000 para a base vetorial correspondente (SNIRH/ANA — Curva Número 1985, 2014 e 2022).\nO recorte foi calculado sobre os limites revisados D8 das duas unidades de trabalho. Como a grade de saída está em projeção métrica e possui pixels de 30 m, a média dos pixels válidos equivale, nesta escala, à média ponderada por área. Os resultados preliminares são:\n\n\n\n\n\n\n\n\n\n\nUnidade\nÁrea aproximada com pixels válidos (ha)\nCN médio\nFaixa observada\nDesvio-padrão\n\n\n\n\nBacia A\n179,19\n80,26\n65–98\n4,98\n\n\nBacia B\n145,35\n76,77\n65–98\n4,93\n\n\nBacias A+B\n324,45\n78,70\n65–98\n5,25\n\n\n\nEsses valores devem ser tratados como premissas agregadas de concepção, e não como calibração local do escoamento. Para o SWMM, a próxima etapa é cruzar o raster CN 2022 com as áreas de contribuição revisadas e atribuir CN por subárea, evitando aplicar automaticamente o valor médio de toda a bacia a todos os subcatchments. A impermeabilização observada, a pavimentação futura, a condição das ruas e a escala da base podem justificar análises de sensibilidade.\nOs recortes GeoTIFF, a imagem temática, a tabela de estatísticas e o registro metodológico estão disponíveis na página Dados para download. O raster original nacional não é duplicado no pacote público; o relatório preserva o caminho local de referência e o endereço oficial de origem para garantir rastreabilidade."
-  },
-  {
-    "objectID": "05_hidrologia.html#risco-de-solução-fragmentada",
-    "href": "05_hidrologia.html#risco-de-solução-fragmentada",
-    "title": "5. Análise e discussões",
-    "section": "5.4 Risco de solução fragmentada",
-    "text": "5.4 Risco de solução fragmentada\nA rede preliminar da Bacia A apresenta 16 componentes conectados e 40 saídas provisórias. Esse resultado não é uma vazão nem uma falha hidráulica: é um alerta de modelagem. Antes de dimensionar, é necessário responder para cada componente:\n\nqual é a área que contribui;\nqual é o tronco ou coletor responsável;\nqual é o nó de destino;\nqual é a saída;\nqual é a condição de jusante;\nse a água deve passar por um dissipador ou por outro controle.\n\nSem essa rastreabilidade, a reconstrução de trechos isolados pode deslocar erosão e alagamento para jusante."
-  },
-  {
-    "objectID": "05_hidrologia.html#hidrologia-e-hidráulica-como-cadeia-única",
-    "href": "05_hidrologia.html#hidrologia-e-hidráulica-como-cadeia-única",
-    "title": "5. Análise e discussões",
-    "section": "5.5 Hidrologia e hidráulica como cadeia única",
-    "text": "5.5 Hidrologia e hidráulica como cadeia única\nA sequência de decisão deve ser:\nchuva → área de contribuição → nó de entrada → coletor → tronco → dissipador/exutório → proteção a jusante\nUma mudança em qualquer elo altera a vazão e o nível de solicitação dos demais. Por isso, a estimativa de dissipadores será feita somente depois da revisão das áreas e da obtenção das vazões de chegada no SWMM."
-  },
-  {
-    "objectID": "05_hidrologia.html#incertezas-que-afetam-a-decisão",
-    "href": "05_hidrologia.html#incertezas-que-afetam-a-decisão",
-    "title": "5. Análise e discussões",
-    "section": "5.6 Incertezas que afetam a decisão",
-    "text": "5.6 Incertezas que afetam a decisão\n\n\n\n\n\n\n\n\nFonte de incerteza\nEfeito possível\nComo reduzir\n\n\n\n\nCobertura parcial do drone\ndiferenças locais de cota e declividade\nlevantamento complementar e controles\n\n\nMDT legado suavizado\nsubestimação de microdrenagem\ntopografia de detalhe e seções\n\n\nÁreas Voronoi\nvazões distribuídas em nós incorretos\ndelimitação por ruas/quadras\n\n\nRede desconectada\nsaídas e vazões sem continuidade física\nrevisão topológica e inspeção\n\n\nCN/impermeabilização\nalteração de pico e volume\ncadastro de uso do solo e calibração\n\n\nChuva futura\nfaixa de demanda hidráulica\ncenários NEX-GDDP e análise de sensibilidade\n\n\nDissipadores sem geotecnia\ninstabilidade e erosão a jusante\nsondagem, inspeção e projeto específico"
-  },
-  {
-    "objectID": "05_hidrologia.html#prioridades-para-decisão",
-    "href": "05_hidrologia.html#prioridades-para-decisão",
-    "title": "5. Análise e discussões",
-    "section": "5.7 Prioridades para decisão",
-    "text": "5.7 Prioridades para decisão\nA prioridade preliminar deve combinar: evidência de dano, concentração de escoamento, população/infraestrutura protegida, continuidade da solução, risco a jusante, facilidade de implantação e dependências de projeto.\nOs trechos mais críticos não são necessariamente os mais longos. Um pequeno dissipador mal localizado pode ser mais urgente que uma extensão de coletor, enquanto um tronco sem saída pode representar uma solução incompleta. As metas devem ser comparadas por critérios explícitos e atualizadas após a simulação."
-  },
-  {
-    "objectID": "05_hidrologia.html#discussão-sobre-mudança-climática",
-    "href": "05_hidrologia.html#discussão-sobre-mudança-climática",
-    "title": "5. Análise e discussões",
-    "section": "5.8 Discussão sobre mudança climática",
-    "text": "5.8 Discussão sobre mudança climática\nA linha TR25/TR50 mantém a comparabilidade com o relatório anterior. Para incorporar a mudança climática, será adotada metodologia equivalente à de Maity e Maity (2022), que combina correção de viés por quantile mapping, ponderação do conjunto de modelos pelo Reliability Ensemble Averaging (REA), ajuste de extremos por GEV e relação de escala entre durações.\nHá, contudo, uma adaptação necessária para o banco NEX-GDDP-CMIP6 disponível neste projeto. A tabela utilizada contém máximas anuais diárias por modelo, cenário, ano e ponto de grade, e não a série diária completa ou a série subdiária. Assim, não será apresentada uma reprodução literal do componente Gamma-Gumbel do artigo. A correção será paramétrica para máximas anuais, ancorada na série/IDF observada que fundamentou o relatório tradicional; a escala subdiária será obtida a partir da IDF local e da relação de escala, com as limitações explicitadas no capítulo de Estudos Hidrológicos.\nSerão comparados os 34 GCMs, os cenários ssp126, ssp245, ssp370 e ssp585 e os horizontes histórico, 2040–2059 e 2060–2100, mantendo também uma janela operacional definida para o horizonte do plano. O resultado será reportado como curva central e faixa de incerteza, e não como um único fator de aumento. Cada curva futura será aplicada a um hietograma identificado no SWMM e comparada à linha de base, observando vazões de pico, volumes, alagamentos, velocidades e solicitações nos dissipadores.\nEssa abordagem amplia a faixa de teste sem substituir a observação local. A decisão de reconstrução deve considerar a robustez da solução sob mais de uma premissa, indicando quais trechos continuam adequados, quais ficam críticos e quais exigem adaptação. A especificação detalhada está em 04_CHUVAS_PROJETO/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md.\n\nPrimeira avaliação NEX-GDDP-CMIP6\nFoi executada uma primeira avaliação dos fatores de mudança diária usando o centroide corrigido das Bacias A+B, os quatro pontos de grade mais próximos, os 34 GCMs e os cenários ssp126, ssp245, ssp370 e ssp585. Para cada modelo, ponto, cenário e horizonte foi ajustada uma GEV às máximas diárias anuais; o fator foi calculado como a razão entre o quantil futuro e o quantil histórico do mesmo modelo. A curva central é a mediana do conjunto não ponderado e a faixa apresentada é P10–P90.\n\n\n\n\n\n\n\n\n\nCenário\nHorizonte\nFator TR25 — mediana (P10–P90)\nFator TR50 — mediana (P10–P90)\n\n\n\n\nSSP1-2.6\n2040–2059\n1,025 (0,842–1,300)\n1,040 (0,805–1,485)\n\n\nSSP1-2.6\n2060–2100\n1,144 (0,899–1,466)\n1,201 (0,890–1,635)\n\n\nSSP2-4.5\n2040–2059\n1,033 (0,842–1,443)\n1,065 (0,812–1,637)\n\n\nSSP2-4.5\n2060–2100\n1,055 (0,890–1,372)\n1,082 (0,894–1,564)\n\n\nSSP3-7.0\n2040–2059\n1,015 (0,842–1,457)\n1,037 (0,833–1,647)\n\n\nSSP3-7.0\n2060–2100\n1,036 (0,864–1,455)\n1,054 (0,850–1,763)\n\n\nSSP5-8.5\n2040–2059\n1,125 (0,818–1,513)\n1,193 (0,794–1,774)\n\n\nSSP5-8.5\n2060–2100\n1,066 (0,818–1,395)\n1,109 (0,817–1,636)\n\n\n\nEssa leitura é uma triagem de sensibilidade, não uma previsão determinística. A série anual observada da estação e os dados subdiários dos GCMs não estão disponíveis na tabela consultada; por isso, os pesos REA, o quantile mapping completo e a distribuição temporal futura permanecem null. Os fatores ainda não foram aplicados aos arquivos .inp do SWMM. Os arquivos auditáveis estão no catálogo de dados climáticos, incluindo o gráfico, os fatores por modelo, o conjunto P10–mediana–P90 e o registro metodológico."
-  },
-  {
-    "objectID": "05_hidrologia.html#síntese-crítica",
-    "href": "05_hidrologia.html#síntese-crítica",
-    "title": "5. Análise e discussões",
-    "section": "5.9 Síntese crítica",
-    "text": "5.9 Síntese crítica\nO projeto já possui uma base espacial organizada e uma frente SWMM inicial, mas ainda não possui resultado hidráulico definitivo para contratação. O avanço mais importante agora é transformar geometrias desenhadas em uma cadeia verificável de bacia, área, nó, link, saída e dissipador, com parâmetros documentados e resultados reproduzíveis."
+    "objectID": "09_mudanca_climatica.html#referências-e-dados-auditáveis",
+    "href": "09_mudanca_climatica.html#referências-e-dados-auditáveis",
+    "title": "6. IDFs futuras, incerteza e reconstrução adaptada",
+    "section": "6.8 Referências e dados auditáveis",
+    "text": "6.8 Referências e dados auditáveis\n\nMetodologia adaptada para IDF e mudança climática.\nAvaliação climática em JSON.\nFatores por cenário e horizonte.\nFatores por modelo.\nPainel de IDFs e incerteza.\nDados NEX-GDDP-CMIP6 amostrados.\nMaity e Maity (2022), Changing pattern of intensity-duration-frequency curves.\nNY Projected IDF Curves - NRCC/Cornell.\n\n\n\n\n\n\n\nMensagem para a decisão. A proposta combina uma visão integrada da drenagem com execução focalizada nas metas críticas. Isso permite instruir a reconstrução sem prometer que uma obra isolada resolverá toda a bacia e sem deixar a infraestrutura futura exposta a uma única premissa climática."
   },
   {
     "objectID": "07_plano_trabalho.html",
     "href": "07_plano_trabalho.html",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "",
     "text": "Documento em construção. As metas abaixo são uma estrutura técnica inicial para discussão intersetorial. Os limites, quantitativos, trechos, vazões, custos e soluções construtivas só devem ser fechados após a revisão de campo, da rede e do modelo SWMM."
   },
   {
     "objectID": "07_plano_trabalho.html#finalidade",
     "href": "07_plano_trabalho.html#finalidade",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.1 Finalidade",
     "text": "6.1.1 Finalidade\nInstruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB, priorizando as áreas afetadas por processos erosivos e escoamentos concentrados e organizando intervenções capazes de reduzir o risco sem fragmentar a compreensão da bacia.\nO plano deverá distinguir:\n\na reconstrução ou implantação de trechos críticos, que pode ser objeto de metas específicas;\na concepção integrada da drenagem das bacias A e B, necessária para verificar se cada intervenção tem continuidade hidráulica;\na contratação posterior de levantamento, projeto básico e projeto executivo, quando a precisão exigida superar a base preliminar disponível."
   },
   {
     "objectID": "07_plano_trabalho.html#escopo-preliminar",
     "href": "07_plano_trabalho.html#escopo-preliminar",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.2 Escopo preliminar",
-    "text": "6.1.2 Escopo preliminar\nO Plano de Trabalho não incluirá, nesta etapa, a implantação de toda a rede municipal. A estratégia preliminar é concentrar recursos nos troncos principais e dissipadores associados aos setores mais afetados, complementando-os com os coletores indispensáveis para que a solução funcione e seja verificável hidraulicamente.\nEssa delimitação não significa tratar os trechos isoladamente. Cada meta deverá ser avaliada no contexto da bacia contribuinte, do caminho de escoamento superficial, da capacidade a jusante e da manutenção futura. Uma obra que apenas transfira a erosão ou o alagamento para o trecho seguinte será considerada solução incompleta."
+    "text": "6.1.2 Escopo preliminar\nO enquadramento recomendado para o Plano é o de reconstrução resiliente, sustentável e adaptada à mudança climática. Isso significa que os trechos selecionados devem reduzir o risco observado, manter coerência com a bacia inteira, admitir manutenção e ser testados contra mais de uma premissa de chuva. A execução será focalizada, mas a justificativa será sistêmica: cada meta deverá indicar a contribuição que recebe, o risco que reduz, a descarga que utiliza e as condições de adaptação ou reforço futuro.\nO Plano de Trabalho não incluirá, nesta etapa, a implantação de toda a rede municipal. A estratégia preliminar é concentrar recursos nos troncos principais e dissipadores associados aos setores mais afetados, complementando-os com os coletores indispensáveis para que a solução funcione e seja verificável hidraulicamente.\nEssa delimitação não significa tratar os trechos isoladamente. Cada meta deverá ser avaliada no contexto da bacia contribuinte, do caminho de escoamento superficial, da capacidade a jusante e da manutenção futura. Uma obra que apenas transfira a erosão ou o alagamento para o trecho seguinte será considerada solução incompleta."
   },
   {
     "objectID": "07_plano_trabalho.html#evidências-e-setores-a-confirmar",
     "href": "07_plano_trabalho.html#evidências-e-setores-a-confirmar",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.3 Evidências e setores a confirmar",
     "text": "6.1.3 Evidências e setores a confirmar\nO inventário de trabalho atualmente disponível contém:\n\n\n\n\n\n\n\n\nEvidência\nSituação no projeto\nUso previsto\n\n\n\n\nConde_Pontos_metas.kmz\nconvertido para 12 pontos em SIRGAS 2000 / UTM 25S\nreferência para metas a conferir em campo\n\n\npontos_erosao_fotos_conde.kmz\n9 pontos com registro fotográfico e coordenadas\nevidência de ocorrências; requer validação e vínculo com as bacias A/B\n\n\nTrechosDissipacao.shp\n5 linhas em EPSG:31985, com campo Id igual a 0 em todas as feições\nreferência da Bacia A; definir conexão, sentido e parâmetros hidráulicos\n\n\nTrechos_Dissipacao_B.shp\n2 linhas em EPSG:31985\nsaídas preliminares da Bacia B; validar conexão, sentido e estrutura\n\n\nBacias A e B\nlimites e revisões D8 disponíveis no pacote GIS\nrecorte territorial e controle da continuidade\n\n\nMDT híbrido e curvas integradas\ndisponíveis em EPSG:31985\nleitura preliminar de cotas, declividades e caminhos de escoamento\n\n\nDiagnóstico municipal REC-PB-2504603-20260802-01\nrelatório local com ocorrências, mapas, propostas e orçamento preliminar\ncruzar metas, coordenadas, extensões, saídas e população afetada com o GIS/SWMM\n\n\n\nO registro detalhado da conferência está em inventario_pontos_criticos.json. Quatro linhas coincidem exatamente com nós de saída provisórios da rede; uma delas se aproxima do nó N_A_0195, mas requer revisão de snap. A camada ainda não foi incorporada automaticamente ao SWMM.\n\nEvidência de suscetibilidade e recorte das metas\nO mapa de suscetibilidade à erosão e o cruzamento espacial das marcações originais mostram que 10 dos 12 pontos de metas estão dentro das Bacias A ou B. Quatro pontos — 3i, 3f, 6i e 6f — coincidem diretamente com as manchas originais de suscetibilidade alta e/ou média. Os pontos 5i e 5f estão na Bacia A, mas fora dessas manchas; os pontos 1i, 1f, 2f e 2i - foto? estão na Bacia B e precisam ser reavaliados após o lançamento da rede. Os pontos 4i e 4f estão fora do recorte A+B.\nEsse resultado sustenta a priorização, mas não converte automaticamente as marcações originais em metas de obra. A seleção deverá combinar suscetibilidade, erosão observada, fluxo superficial, criticidade hidráulica no SWMM, população/infraestrutura protegida, condição de jusante e viabilidade de implantação. O quadro detalhado está em evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv.\n\n\nConferência da cobertura da rede\nO modelo nodal preliminar possui 16 componentes conectados e 40 saídas provisórias. Os cinco trechos de dissipação se associam preliminarmente aos componentes 16, 15, 2, 9 e 3. Portanto, a afirmação de que toda a água coletada deverá sair por um desses trechos será adotada como regra de concepção, mas ainda não como resultado verificado: os outros 11 componentes precisam ser conectados a esses exutórios, receber uma saída própria justificada ou ser eliminados após a revisão da rede.\nNa Bacia B, a primeira rodada possui dois componentes conectados, 46 links totais incluindo os dois dissipadores e três saídas SWMM. Os trechos DISS_B_01 e DISS_B_02 foram associados a O_B_DISS_01 e O_B_DISS_02; a vazão de chegada foi calculada, mas a estrutura física de dissipação continua pendente de detalhamento.\nOs 12 pontos de metas têm identificações originais como 1i, 1f, 2i - foto?, 2f, 3i, 3f, 4i, 4f, 5i, 5f, 6i e 6f. A nomenclatura sugere pares início/fim, mas não será interpretada como definição hidráulica final sem conferência espacial, fotográfica e de campo."
   },
   {
     "objectID": "07_plano_trabalho.html#metas-preliminares-do-plano-de-trabalho",
     "href": "07_plano_trabalho.html#metas-preliminares-do-plano-de-trabalho",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.4 Metas preliminares do Plano de Trabalho",
     "text": "6.1.4 Metas preliminares do Plano de Trabalho\n\n\n\n\n\n\n\n\n\nCódigo\nMeta proposta\nProduto verificável\nCondição de aceite\n\n\n\n\nM-01\nValidar os pontos críticos, os pares de início/fim e a relação com as bacias A e B\nmapa de ocorrências e ficha de campo\ncoordenadas, fotos, causa provável, risco a jusante e prioridade registrados\n\n\nM-02\nConsolidar a concepção integrada da drenagem das bacias\nplanta de bacias, caminhos de escoamento e rede proposta\ncontinuidade entre contribuição, tronco, coletor, dissipador e exutório\n\n\nM-03\nRecuperar ou implantar troncos principais nos setores prioritários\nprojeto/anteprojeto dos trechos selecionados\nseção, material, cota, declividade, capacidade e interferências definidos\n\n\nM-04\nImplantar ou complementar coletores indispensáveis aos troncos\ncadastro de coletores e ligações\náreas de contribuição e nós de entrada vinculados ao modelo\n\n\nM-05\nImplantar dissipadores nos pontos de descarga que apresentem energia ou desnível incompatível\nsolução conceitual de dissipação por ponto\nvazão de projeto, desnível, comprimento, largura, número de degraus e proteção a jusante verificados\n\n\nM-06\nAvaliar a suficiência hidráulica das metas no SWMM\narquivos .inp, cenários e relatório de resultados\nbalanço de massa, sobrecargas, alagamentos e condições de jusante revisados\n\n\nM-07\nPreparar a contratação do projeto básico/executivo\ntermo de referência e pacote de dados\nescopo, levantamentos, sondagens, produtos, responsabilidades e critérios de medição definidos\n\n\n\nOs códigos são administrativos e preliminares. Eles não correspondem ainda a um quantitativo de obras nem autorizam a execução física.\n\nAssociação preliminar entre bacias, rede e metas\n\n\n\n\n\n\n\n\nFrente\nBacia A\nBacia B\n\n\n\n\nConcepção integrada\nRede preliminar em revisão; conferir todos os componentes, áreas, saídas e dissipadores\nRede preliminar lançada; conferir os dois componentes, áreas, saídas e dissipadores\n\n\nTroncos principais\nPrioridade inicial nos trechos críticos confirmados e conectados a descarga segura\nPrioridade a definir após a triagem hidráulica e a confirmação dos setores críticos\n\n\nColetores indispensáveis\nSomente os necessários para alimentar e fechar os troncos priorizados\nSerão confirmados junto com as áreas de contribuição das quadras\n\n\nDissipadores e saídas\nUsar TrechosDissipacao.shp como referência e revisar as vazões\nUsar Trechos_Dissipacao_B.shp, validar as vazões e detalhar a solução estrutural\n\n\nMetas do Plano\nM-03, M-04, M-05 e M-06 podem ser detalhadas primeiro nesta frente\nM-02 a M-06 serão detalhadas após a validação da primeira rodada\n\n\n\nEssa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal.\n\n\nLimite territorial do Plano de Trabalho\nO Plano de Trabalho desta análise contemplará somente metas localizadas nas Bacias A e B e que tenham relação comprovada com os sistemas de drenagem modelados ou em lançamento. Ocorrências, pontos e trechos fora desse recorte não serão somados aos quantitativos nem usados para concluir sobre a capacidade das Bacias A ou B. Eles deverão ser tratados em frentes próprias, com delimitação da bacia contribuinte, diagnóstico, levantamento e modelagem específicos quando necessários."
   },
   {
     "objectID": "07_plano_trabalho.html#dissipadores-critério-para-a-etapa-seguinte",
     "href": "07_plano_trabalho.html#dissipadores-critério-para-a-etapa-seguinte",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.5 Dissipadores: critério para a etapa seguinte",
     "text": "6.1.5 Dissipadores: critério para a etapa seguinte\nOs pontos de início e fim serão marcados pelo usuário em camada vetorial. Depois disso, a estimativa preliminar será feita a partir do MDT híbrido, das curvas de nível integradas e das vazões de chegada calculadas para a rede. Para cada dissipador serão estimados, quando os dados permitirem:\n\ndesnível e comprimento disponível;\ndeclividade média e mudanças de declividade;\nvazão de projeto e cenários de recorrência;\nnecessidade de degraus, soleiras, bacia de dissipação, proteção de talude e proteção contra erosão a jusante;\nconexão com o tronco/coletor e condição de descarga.\n\nSe uma grandeza não puder ser determinada com os dados disponíveis, ela será registrada como não determinada. A solução final dependerá de levantamento topográfico de detalhe, inspeção geotécnica, verificação de materiais e dimensionamento hidráulico estrutural."
   },
   {
     "objectID": "07_plano_trabalho.html#enquadramento-federal-a-verificar",
     "href": "07_plano_trabalho.html#enquadramento-federal-a-verificar",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.6 Enquadramento federal a verificar",
     "text": "6.1.6 Enquadramento federal a verificar\n\nCadastro Casa Civil\nNa consulta à relação oficial publicada pela Casa Civil, o Município de Conde/PB (código IBGE 2504603) não foi localizado na lista de 2.086 municípios suscetíveis a enxurradas e inundações, elaborada com base de dados até 2024. Isso significa que o Plano não deve afirmar, sem nova atualização oficial, que Conde está incluído no cadastro.\nO cadastro tem efeito específico sobre condicionantes legais para alocação de recursos e financiamentos em drenagem e manejo de águas pluviais; ele não equivale a uma garantia de seleção ou de repasse. A situação deve ser conferida novamente no momento da inscrição.\n\n\nMinistério das Cidades / Novo PAC\nA página oficial da seleção de Prevenção a Desastres Naturais: Drenagem Urbana informa que municípios fora da lista podem participar desde que demonstrem a existência de setores de risco que atendam aos critérios da seleção. Também informa a necessidade de carta-consulta no Transferegov.br, projeto de engenharia ou anteprojeto, composição básica do investimento, comprovação das áreas de risco, delimitação das áreas/pontos de intervenção e relatório fotográfico.\nPor isso, a estratégia recomendada para o município é preparar um dossiê técnico com: (i) evidências de campo; (ii) delimitação dos setores críticos; (iii) concepção integrada da drenagem; (iv) metas priorizadas de troncos, coletores e dissipadores; (v) resultados hidráulicos; e (vi) documentação municipal exigida pelo edital ou linha de financiamento vigente.\nA seleção vigente informa ainda que não serão enquadradas propostas caracterizadas majoritariamente como pavimentação e microdrenagem. O Plano deverá, portanto, apresentar a pavimentação como componente de uma solução de drenagem urbana e redução de risco, e não como objeto isolado."
   },
   {
     "objectID": "07_plano_trabalho.html#próximas-decisões-técnicas",
     "href": "07_plano_trabalho.html#próximas-decisões-técnicas",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.7 Próximas decisões técnicas",
     "text": "6.1.7 Próximas decisões técnicas\n\nValidar os pontos de início e fim dos dissipadores já marcados e confirmar sua conexão no CRS de trabalho.\nRevisar no ArcMap a continuidade dos troncos e coletores e indicar o que é tronco, coletor, descarga e dissipador.\nEditar as áreas de contribuição das quadras das duas bacias e associá-las aos nós de entrada.\nAtualizar cotas de fundo, diâmetros, rugosidades, condições de jusante e parâmetros de infiltração.\nRodar os cenários tradicionais de chuva e verificar os resultados antes de incorporar as projeções NEX-GDDP-CMIP6.\nSelecionar as metas que serão levadas ao Plano de Trabalho, com justificativa de risco, população/infraestrutura protegida, dependências e estimativa de custo."
   },
   {
     "objectID": "07_plano_trabalho.html#referências-institucionais",
     "href": "07_plano_trabalho.html#referências-institucionais",
-    "title": "6.1 Modelo de Plano de Trabalho",
+    "title": "7.1 Modelo de Plano de Trabalho",
     "section": "6.1.8 Referências institucionais",
     "text": "6.1.8 Referências institucionais\n\nCadastro de Municípios Suscetíveis a Eventos de Enxurradas e Inundações — Casa Civil.\nNota Técnica nº 2/2025 e lista do cadastro — Casa Civil.\nPrevenção a Desastres Naturais: Drenagem Urbana — Ministério das Cidades, Novo PAC Seleções 2026.\nConde/PB — código municipal 2504603 — IBGE.\nSendai Framework for Disaster Risk Reduction 2015–2030 — UNDRR.\nBuild Back Better — terminologia UNDRR.\n\n\n\n\n\n\n\nNota de governança. A publicação do relatório em repositório público deverá ocorrer somente depois da revisão institucional, da confirmação dos autores e da triagem de dados que possam conter informações pessoais, fotografias ou elementos que não devam ser disponibilizados publicamente."
   }

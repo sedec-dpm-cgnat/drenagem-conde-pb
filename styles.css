@@ -65,6 +65,7 @@ a:hover { color: var(--sedec-teal); }
 table { background: var(--sedec-panel); border-color: var(--sedec-line) !important; box-shadow: var(--sedec-shadow); }
 thead th { background: var(--sedec-navy); color: var(--sedec-cream); }
 code { color: var(--sedec-navy); background: #eee9df; }
+.formula-block { margin: 1rem 0 1.2rem; padding: .8rem 1rem; color: var(--sedec-navy); background: #f4f1e9; border-left: 4px solid var(--sedec-orange); border-radius: 8px; text-align: center; font-family: Georgia, 'Times New Roman', serif; font-size: 1.18rem; letter-spacing: .02em; }
 .map-figure { width: 100%; max-width: 100%; margin: 1rem 0; padding: 0; overflow: hidden; }
 .map-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--sedec-line); border-radius: 12px; box-shadow: var(--sedec-shadow); background: #fbfaf7; }
 .map-figure figcaption { margin-top: .55rem; color: var(--sedec-muted); font-size: .9rem; text-align: left; }

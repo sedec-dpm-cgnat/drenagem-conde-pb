@@ -1,0 +1,39 @@
+{
+  "crs": "EPSG:31985",
+  "crs_nome": "SIRGAS 2000 / UTM 25S",
+  "status_dimensoes": "PRELIMINAR_SWMM; nao e dimensionamento executivo",
+  "trechos": {
+    "A": 187,
+    "B": 46,
+    "AB": 233
+  },
+  "nos": {
+    "A": 200,
+    "B": 47,
+    "AB": 247
+  },
+  "dissipadores": {
+    "A": 5,
+    "B": 2,
+    "AB": 7
+  },
+  "arquivos": {
+    "geopackage": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\07_CAMADAS_CONSOLIDADAS_REDE_AB\\rede_consolidada_AB.gpkg",
+    "shapefiles": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\07_CAMADAS_CONSOLIDADAS_REDE_AB\\shp_arcmap",
+    "poligonos_metas": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\07_CAMADAS_CONSOLIDADAS_REDE_AB\\shp_arcmap\\poligonos_metas_AB_template.shp"
+  },
+  "campos_dimensionamento": [
+    "D_ATUAL_M",
+    "DPROP_M",
+    "DREQ25",
+    "DREQ50",
+    "DNOM25",
+    "DNOM50",
+    "Q25_CMS",
+    "Q50_CMS",
+    "V25_MPS",
+    "V50_MPS",
+    "STATUS_SW"
+  ],
+  "orientacao_uso": "Selecionar trechos por poligono de meta; preencher META_ID/SELEC_META em copia de trabalho, sem alterar esta camada-base."
+}

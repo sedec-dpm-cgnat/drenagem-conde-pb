@@ -76,6 +76,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -167,7 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#estrutura-de-apresentação-das-idfs" id="toc-estrutura-de-apresentação-das-idfs" class="nav-link" data-scroll-target="#estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</a></li>
   <li><a href="#método-aplicado-nesta-primeira-rodada" id="toc-método-aplicado-nesta-primeira-rodada" class="nav-link" data-scroll-target="#método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</a>
   <ul class="collapse">
-  <li><a href="#como-a-incerteza-será-levada-ao-swmm" id="toc-como-a-incerteza-será-levada-ao-swmm" class="nav-link" data-scroll-target="#como-a-incerteza-será-levada-ao-swmm">6.3.1 Como a incerteza será levada ao SWMM</a></li>
+  <li><a href="#estrutura-técnica-da-idf-e-análise-de-frequência" id="toc-estrutura-técnica-da-idf-e-análise-de-frequência" class="nav-link" data-scroll-target="#estrutura-técnica-da-idf-e-análise-de-frequência">6.3.1 Estrutura técnica da IDF e análise de frequência</a></li>
+  <li><a href="#como-a-incerteza-será-levada-ao-swmm" id="toc-como-a-incerteza-será-levada-ao-swmm" class="nav-link" data-scroll-target="#como-a-incerteza-será-levada-ao-swmm">6.3.2 Como a incerteza será levada ao SWMM</a></li>
   </ul></li>
   <li><a href="#resultados-por-cenário-e-horizonte" id="toc-resultados-por-cenário-e-horizonte" class="nav-link" data-scroll-target="#resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</a></li>
   <li><a href="#o-que-ainda-falta-para-uma-idf-futura-de-projeto" id="toc-o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="nav-link" data-scroll-target="#o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</a></li>
@@ -251,8 +281,70 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <li>leva a faixa resultante para as durações da IDF local apenas como uma aproximação de sensibilidade.</li>
 </ol>
 <p>Essa etapa é deliberadamente conservadora na comunicação. Não foram inventados pesos, séries observadas ou ajustes subdiários que não estejam documentados. Onde a grandeza não pôde ser determinada, ela permanece como <code>null</code> no JSON de auditoria.</p>
+<section id="estrutura-técnica-da-idf-e-análise-de-frequência" class="level3">
+<h3 class="anchored" data-anchor-id="estrutura-técnica-da-idf-e-análise-de-frequência">6.3.1 Estrutura técnica da IDF e análise de frequência</h3>
+<p>A organização desta subseção segue, como referência de apresentação técnica, a nota metodológica de IDFs desenvolvida para o Rio Grande do Sul. A inspiração é estrutural: explicitar a origem dos dados, a equação, a formação das séries de extremos, o ajuste estatístico, a comparação entre fontes e as incertezas. Os parâmetros, períodos, resultados e limitações do RS não são transferidos para Conde.</p>
+<section id="linha-de-base-local-e-forma-funcional" class="level4">
+<h4 class="anchored" data-anchor-id="linha-de-base-local-e-forma-funcional">Linha de base local e forma funcional</h4>
+<p>A linha de base desta concepção é a curva IDF local documentada no relatório anterior, associada à estação e à fonte SGB/CPRM 2023 adotadas para o município. A forma funcional tradicional, quando os parâmetros locais estiverem disponíveis, é:</p>
+<div class="formula-block" aria-label="Equação de intensidade-duração-frequência">
+<p><span>i(T<sub>r</sub>, t) = a × T<sub>r</sub><sup>b</sup> / (t + c)<sup>d</sup></span></p>
+</div>
+<p>em que <span class="math inline">\(i\)</span> é a intensidade de precipitação, em mm/h; <span class="math inline">\(T_r\)</span> é o período de retorno, em anos; <span class="math inline">\(t\)</span> é a duração, em minutos; e <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> e <span class="math inline">\(d\)</span> são parâmetros calibrados para a estação ou região de referência. A equação é mantida como descrição da linha de base; ela não deve ser recalibrada com os dados diários do NEX-GDDP-CMIP6 sem uma etapa adicional de desagregação temporal e validação.</p>
+</section>
+<section id="formação-das-séries-de-extremos" class="level4">
+<h4 class="anchored" data-anchor-id="formação-das-séries-de-extremos">Formação das séries de extremos</h4>
+<p>Para cada duração e ano hidrológico, a prática de referência é extrair a máxima anual da série disponível e preservar o registro de anos válidos, falhas e extensão temporal. Não se preenchem lacunas automaticamente: anos incompletos devem ser excluídos ou tratados conforme metadados e critérios estatísticos explicitamente registrados. No caso de Conde, o banco NEX-GDDP-CMIP6 utilizado nesta primeira rodada já fornece a precipitação máxima diária anual por ponto, modelo, cenário e ano. Portanto, ele sustenta uma análise de sensibilidade de extremos diários, mas não uma nova IDF subdiária completa.</p>
+</section>
+<section id="ajuste-de-extremos-quantis-e-comparação-entre-fontes" class="level4">
+<h4 class="anchored" data-anchor-id="ajuste-de-extremos-quantis-e-comparação-entre-fontes">Ajuste de extremos, quantis e comparação entre fontes</h4>
+<p>Foi ajustada uma GEV separadamente para cada combinação válida de ponto, modelo, cenário, horizonte e série histórica/futura. A partir dela, foram calculados os quantis associados a TR25 e TR50 e, em seguida, o fator futuro/histórico do mesmo modelo. Os fatores foram agregados pelo P10, mediana e P90 do conjunto; os valores mínimo e máximo são mantidos como auditoria e teste de estresse. A IDF local permanece como âncora porque a grade climática tem resolução espacial e natureza temporal diferentes das observações usadas na curva municipal.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Tratamento adotado em Conde</th>
+<th>Limite de interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observação local/IDF</td>
+<td>linha de base do relatório anterior</td>
+<td>referência principal para a concepção</td>
+</tr>
+<tr class="even">
+<td>NEX-GDDP-CMIP6</td>
+<td>máximas diárias anuais; GEV por modelo e ponto</td>
+<td>não substitui a série subdiária observada</td>
+</tr>
+<tr class="odd">
+<td>Conjunto de modelos</td>
+<td>P10, mediana e P90; contagem de modelos válidos</td>
+<td>não foi aplicado peso de desempenho não documentado</td>
+</tr>
+<tr class="even">
+<td>TR25 e TR50</td>
+<td>quantis e fatores para as duas recorrências</td>
+<td>TR25 orienta coletores/bueiros; TR50, troncos/dissipadores</td>
+</tr>
+<tr class="odd">
+<td>Validação</td>
+<td>comparação com a referência local e auditoria de amostra</td>
+<td>RMSE, viés ou outros indicadores ficam <code>null</code> quando não determinados</td>
+</tr>
+</tbody>
+</table>
+<p>Essa separação evita misturar uma curva IDF observada com uma projeção diária sem subdiárias. A futura atualização para projeto básico deverá ajustar as durações relevantes diretamente, testar distribuições alternativas, estimar intervalos de confiança e validar os hietogramas no SWMM. Até essa etapa, os resultados climáticos são envelopes de decisão para adaptação, e não uma nova equação IDF definitiva.</p>
+</section>
+</section>
 <section id="como-a-incerteza-será-levada-ao-swmm" class="level3">
-<h3 class="anchored" data-anchor-id="como-a-incerteza-será-levada-ao-swmm">6.3.1 Como a incerteza será levada ao SWMM</h3>
+<h3 class="anchored" data-anchor-id="como-a-incerteza-será-levada-ao-swmm">6.3.2 Como a incerteza será levada ao SWMM</h3>
 <p>Os arquivos tradicionais TR25 e TR50 permanecem como linha de base sem mudança climática. A futura rodada climática será construída como uma família de entradas identificadas, sem sobrescrever os modelos tradicionais:</p>
 <table class="caption-top table">
 <colgroup>

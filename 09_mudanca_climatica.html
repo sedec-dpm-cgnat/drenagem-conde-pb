@@ -76,35 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -287,10 +258,8 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <section id="linha-de-base-local-e-forma-funcional" class="level4">
 <h4 class="anchored" data-anchor-id="linha-de-base-local-e-forma-funcional">Linha de base local e forma funcional</h4>
 <p>A linha de base desta concepção é a curva IDF local documentada no relatório anterior, associada à estação e à fonte SGB/CPRM 2023 adotadas para o município. A forma funcional tradicional, quando os parâmetros locais estiverem disponíveis, é:</p>
-<div class="formula-block" aria-label="Equação de intensidade-duração-frequência">
-<p><span>i(T<sub>r</sub>, t) = a × T<sub>r</sub><sup>b</sup> / (t + c)<sup>d</sup></span></p>
-</div>
-<p>em que <span class="math inline">\(i\)</span> é a intensidade de precipitação, em mm/h; <span class="math inline">\(T_r\)</span> é o período de retorno, em anos; <span class="math inline">\(t\)</span> é a duração, em minutos; e <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> e <span class="math inline">\(d\)</span> são parâmetros calibrados para a estação ou região de referência. A equação é mantida como descrição da linha de base; ela não deve ser recalibrada com os dados diários do NEX-GDDP-CMIP6 sem uma etapa adicional de desagregação temporal e validação.</p>
+<p><strong>i(Tr, t) = a x Tr^b / (t + c)^d</strong></p>
+<p>em que <code>i</code> é a intensidade de precipitação, em mm/h; <code>Tr</code> é o período de retorno, em anos; <code>t</code> é a duração, em minutos; e <code>a</code>, <code>b</code>, <code>c</code> e <code>d</code> são parâmetros calibrados para a estação ou região de referência. A equação é mantida como descrição da linha de base; ela não deve ser recalibrada com os dados diários do NEX-GDDP-CMIP6 sem uma etapa adicional de desagregação temporal e validação.</p>
 </section>
 <section id="formação-das-séries-de-extremos" class="level4">
 <h4 class="anchored" data-anchor-id="formação-das-séries-de-extremos">Formação das séries de extremos</h4>

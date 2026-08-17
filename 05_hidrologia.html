@@ -167,7 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#o-que-a-base-topográfica-permite-discutir" id="toc-o-que-a-base-topográfica-permite-discutir" class="nav-link" data-scroll-target="#o-que-a-base-topográfica-permite-discutir">5.2 O que a base topográfica permite discutir</a></li>
   <li><a href="#parâmetro-cn-de-2022-como-premissa-hidrológica" id="toc-parâmetro-cn-de-2022-como-premissa-hidrológica" class="nav-link" data-scroll-target="#parâmetro-cn-de-2022-como-premissa-hidrológica">5.3 Parâmetro CN de 2022 como premissa hidrológica</a></li>
   <li><a href="#risco-de-solução-fragmentada" id="toc-risco-de-solução-fragmentada" class="nav-link" data-scroll-target="#risco-de-solução-fragmentada">5.4 Risco de solução fragmentada</a></li>
-  <li><a href="#hidrologia-e-hidráulica-como-cadeia-única" id="toc-hidrologia-e-hidráulica-como-cadeia-única" class="nav-link" data-scroll-target="#hidrologia-e-hidráulica-como-cadeia-única">5.5 Hidrologia e hidráulica como cadeia única</a></li>
+  <li><a href="#hidrologia-e-hidráulica-como-cadeia-única" id="toc-hidrologia-e-hidráulica-como-cadeia-única" class="nav-link" data-scroll-target="#hidrologia-e-hidráulica-como-cadeia-única">5.5 Hidrologia e hidráulica como cadeia única</a>
+  <ul class="collapse">
+  <li><a href="#regra-de-chuva-de-projeto-para-a-concepção" id="toc-regra-de-chuva-de-projeto-para-a-concepção" class="nav-link" data-scroll-target="#regra-de-chuva-de-projeto-para-a-concepção">5.5.1 Regra de chuva de projeto para a concepção</a></li>
+  </ul></li>
   <li><a href="#incertezas-que-afetam-a-decisão" id="toc-incertezas-que-afetam-a-decisão" class="nav-link" data-scroll-target="#incertezas-que-afetam-a-decisão">5.6 Incertezas que afetam a decisão</a></li>
   <li><a href="#prioridades-para-decisão" id="toc-prioridades-para-decisão" class="nav-link" data-scroll-target="#prioridades-para-decisão">5.7 Prioridades para decisão</a></li>
   <li><a href="#discussão-sobre-mudança-climática" id="toc-discussão-sobre-mudança-climática" class="nav-link" data-scroll-target="#discussão-sobre-mudança-climática">5.8 Discussão sobre mudança climática</a>
@@ -336,6 +339,47 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A sequência de decisão deve ser:</p>
 <p><strong>chuva → área de contribuição → nó de entrada → coletor → tronco → dissipador/exutório → proteção a jusante</strong></p>
 <p>Uma mudança em qualquer elo altera a vazão e o nível de solicitação dos demais. Por isso, a estimativa de dissipadores será feita somente depois da revisão das áreas e da obtenção das vazões de chegada no SWMM.</p>
+<section id="regra-de-chuva-de-projeto-para-a-concepção" class="level3">
+<h3 class="anchored" data-anchor-id="regra-de-chuva-de-projeto-para-a-concepção">5.5.1 Regra de chuva de projeto para a concepção</h3>
+<p>Para manter a comparabilidade com o relatório hidrológico anterior, a linha de base <strong>sem influência explícita da mudança climática</strong> utiliza as chuvas de projeto derivadas da estação e preservadas nos arquivos tradicionais do SWMM. A concepção adota uma regra de recorrência diferenciada por função hidráulica:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th style="text-align: right;">Chuva de projeto tradicional</th>
+<th>Justificativa de concepção</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coletores e bueiros</td>
+<td style="text-align: right;"><strong>TR25</strong></td>
+<td>microdrenagem, captação de quadras e travessias urbanas</td>
+</tr>
+<tr class="even">
+<td>Troncos principais</td>
+<td style="text-align: right;"><strong>TR50</strong></td>
+<td>continuidade da macrodrenagem e proteção das áreas conectadas</td>
+</tr>
+<tr class="odd">
+<td>Dissipadores e saídas</td>
+<td style="text-align: right;"><strong>TR50</strong></td>
+<td>controle de erosão, segurança a jusante e solicitação máxima de descarga</td>
+</tr>
+</tbody>
+</table>
+<p>Essa regra não significa que cada trecho será analisado em apenas um cenário. Os coletores e bueiros serão dimensionados inicialmente com TR25 e verificados na rodada TR50; troncos e dissipadores terão TR50 como referência de projeto e também serão comparados com TR25 para verificar comportamento, enchimento, velocidade e condições de operação. O critério final deverá ser registrado trecho a trecho no SWMM.</p>
+<p>Na etapa de <strong>adaptação climática</strong>, a mesma regra será mantida, mas a chuva tradicional será acompanhada por um envelope futuro para cada combinação de cenário, horizonte e período de retorno. O limite inferior operacional será o P10 do conjunto de modelos; o valor central será a mediana; e o limite superior operacional será o P90. Os valores mínimo e máximo absolutos entre todos os modelos serão mantidos como limites de auditoria, não como escolha automática de projeto, pois podem ser influenciados por outliers.</p>
+<p>Para uma primeira tradução da incerteza em dimensionamento, considera-se, para condutos circulares em escoamento cheio e mantendo declividade e rugosidade constantes:</p>
+<p><strong>Q ~ D^(8/3) -&gt; D/D0 ~ F^(3/8)</strong></p>
+<p>em que <code>F</code> é o fator de chuva futura, <code>D0</code> é o diâmetro da linha de base e <code>D</code> é o diâmetro equivalente de triagem. No envelope atualmente calculado, os fatores P10-P90 entre cenários e horizontes correspondem aproximadamente a multiplicadores de diâmetro de <strong>0,93-1,17 para TR25</strong> e <strong>0,92-1,24 para TR50</strong>. Assim, um coletor de 0,80 m, por exemplo, pode apresentar uma faixa hidráulica teórica de cerca de 0,74-0,93 m no TR25; um tronco de 1,00 m pode exigir aproximadamente 0,92-1,24 m no TR50. Esses números são <strong>sensibilidade hidráulica</strong>, não diâmetros finais: o menor diâmetro comercial deve ainda passar por lâmina, velocidade, remanso, manutenção, interferências, recobrimento e condição de jusante.</p>
+<p>Nos dissipadores, o fator de chuva não será convertido diretamente em largura, número de degraus ou comprimento de bacia. A vazão de chegada de cada cenário será usada para verificar energia específica, velocidade de saída, altura e espaçamento de degraus, largura hidráulica, bacia de dissipação, revestimento, ancoragem e proteção erosiva. A dimensão básica só será definida depois da topografia de detalhe, da solução estrutural escolhida e da avaliação geotécnica.</p>
+</section>
 </section>
 <section id="incertezas-que-afetam-a-decisão" class="level2">
 <h2 class="anchored" data-anchor-id="incertezas-que-afetam-a-decisão">5.6 Incertezas que afetam a decisão</h2>

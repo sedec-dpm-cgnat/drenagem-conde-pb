@@ -512,6 +512,12 @@ document.addEventListener('DOMContentLoaded', function () {
 <figcaption>Painel de IDFs de sensibilidade climática para as Bacias A+B</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="data/downloads/clima/chuva_projeto_tr25_tr50_adaptacao.png" class="img-fluid figure-img"></p>
+<figcaption>Painel de chuva de projeto TR25/TR50 e adaptação climática</figcaption>
+</figure>
+</div>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -562,13 +568,18 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>Curvas de sensibilidade com faixa P10-P90</td>
 </tr>
 <tr class="odd">
+<td><a href="data/downloads/clima/chuva_projeto_tr25_tr50_adaptacao.png">Painel de chuva de projeto e adaptação</a></td>
+<td>PNG</td>
+<td>Regra TR25/TR50, fatores futuros e efeito preliminar no diâmetro</td>
+</tr>
+<tr class="even">
 <td><a href="data/downloads/clima/fatores_mudanca_climatica.png">Gráfico dos fatores</a></td>
 <td>PNG</td>
 <td>Visualização da faixa de incerteza</td>
 </tr>
 </tbody>
 </table>
-<p>Esta primeira rodada não substitui a IDF tradicional e ainda não altera o SWMM. Ela fornece uma faixa de teste para a próxima etapa, que deverá incorporar a série observada da estação, testar a sensibilidade espacial dos quatro pontos e só então gerar hietogramas futuros identificados por cenário e horizonte.</p>
+<p>Esta primeira rodada não substitui a IDF tradicional e ainda não altera os arquivos tradicionais do SWMM. A regra de concepção é TR25 para coletores e bueiros e TR50 para troncos principais e dissipadores; o envelope climático será aplicado como verificação P10–mediana–P90, com os valores mínimo/máximo absolutos preservados para auditoria. A próxima etapa deverá incorporar a série observada da estação, testar a sensibilidade espacial dos quatro pontos e gerar hietogramas futuros identificados por cenário, horizonte e período de retorno.</p>
 </section>
 <section id="modelos-swmm-e-guia-de-validação" class="level2">
 <h2 class="anchored" data-anchor-id="modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</h2>

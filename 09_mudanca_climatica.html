@@ -165,7 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
   <li><a href="#por-que-um-capítulo-específico" id="toc-por-que-um-capítulo-específico" class="nav-link active" data-scroll-target="#por-que-um-capítulo-específico">6.1 Por que um capítulo específico</a></li>
   <li><a href="#estrutura-de-apresentação-das-idfs" id="toc-estrutura-de-apresentação-das-idfs" class="nav-link" data-scroll-target="#estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</a></li>
-  <li><a href="#método-aplicado-nesta-primeira-rodada" id="toc-método-aplicado-nesta-primeira-rodada" class="nav-link" data-scroll-target="#método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</a></li>
+  <li><a href="#método-aplicado-nesta-primeira-rodada" id="toc-método-aplicado-nesta-primeira-rodada" class="nav-link" data-scroll-target="#método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</a>
+  <ul class="collapse">
+  <li><a href="#como-a-incerteza-será-levada-ao-swmm" id="toc-como-a-incerteza-será-levada-ao-swmm" class="nav-link" data-scroll-target="#como-a-incerteza-será-levada-ao-swmm">6.3.1 Como a incerteza será levada ao SWMM</a></li>
+  </ul></li>
   <li><a href="#resultados-por-cenário-e-horizonte" id="toc-resultados-por-cenário-e-horizonte" class="nav-link" data-scroll-target="#resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</a></li>
   <li><a href="#o-que-ainda-falta-para-uma-idf-futura-de-projeto" id="toc-o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="nav-link" data-scroll-target="#o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</a></li>
   <li><a href="#reconstrução-resiliente-sustentável-e-adaptada" id="toc-reconstrução-resiliente-sustentável-e-adaptada" class="nav-link" data-scroll-target="#reconstrução-resiliente-sustentável-e-adaptada">6.6 Reconstrução resiliente, sustentável e adaptada</a></li>
@@ -229,6 +232,12 @@ document.addEventListener('DOMContentLoaded', function () {
 Figura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-P90 expressam a dispersão do conjunto de modelos; as linhas tracejadas representam a IDF local de referência.
 </figcaption>
 </figure>
+<figure class="map-figure figure">
+<img src="data/downloads/clima/chuva_projeto_tr25_tr50_adaptacao.png" alt="Painel com regra de chuva TR25 e TR50, fatores futuros, efeito preliminar no diâmetro e lâmina diária P10-P90" class="figure-img">
+<figcaption>
+Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza climática para o dimensionamento. TR25 orienta coletores e bueiros; TR50 orienta troncos e dissipadores. O multiplicador de diâmetro é uma aproximação hidráulica para triagem.
+</figcaption>
+</figure>
 </section>
 <section id="método-aplicado-nesta-primeira-rodada" class="level2">
 <h2 class="anchored" data-anchor-id="método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</h2>
@@ -242,6 +251,48 @@ Figura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-
 <li>leva a faixa resultante para as durações da IDF local apenas como uma aproximação de sensibilidade.</li>
 </ol>
 <p>Essa etapa é deliberadamente conservadora na comunicação. Não foram inventados pesos, séries observadas ou ajustes subdiários que não estejam documentados. Onde a grandeza não pôde ser determinada, ela permanece como <code>null</code> no JSON de auditoria.</p>
+<section id="como-a-incerteza-será-levada-ao-swmm" class="level3">
+<h3 class="anchored" data-anchor-id="como-a-incerteza-será-levada-ao-swmm">6.3.1 Como a incerteza será levada ao SWMM</h3>
+<p>Os arquivos tradicionais TR25 e TR50 permanecem como linha de base sem mudança climática. A futura rodada climática será construída como uma família de entradas identificadas, sem sobrescrever os modelos tradicionais:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Família de entrada</th>
+<th>Aplicação</th>
+<th>Saídas a comparar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>BASE_TR25</code></td>
+<td>coletores e bueiros</td>
+<td>vazão de pico, enchimento, velocidade e nós críticos</td>
+</tr>
+<tr class="even">
+<td><code>BASE_TR50</code></td>
+<td>troncos principais e dissipadores</td>
+<td>vazão de pico, capacidade, velocidade e saída</td>
+</tr>
+<tr class="odd">
+<td><code>CLIMA_[cenário]_[horizonte]_TR25</code></td>
+<td>sensibilidade de coletores e bueiros</td>
+<td>variação em relação à base TR25</td>
+</tr>
+<tr class="even">
+<td><code>CLIMA_[cenário]_[horizonte]_TR50</code></td>
+<td>sensibilidade de troncos e dissipadores</td>
+<td>variação em relação à base TR50</td>
+</tr>
+</tbody>
+</table>
+<p>Para cada cenário serão geradas, no mínimo, as três posições do envelope: P10, mediana e P90. Os fatores mínimo e máximo absolutos serão mantidos como teste de estresse e não como premissa única. A comparação deverá registrar o número de links acima da capacidade, nós inundados, volume extravasado, vazões nos dissipadores, velocidades, diâmetros candidatos e necessidade de reforço.</p>
+<p>Na triagem de condutos circulares, um aumento de vazão <code>F</code> não implica aumento linear de diâmetro: a relação aproximada é <code>D/D0 = F^(3/8)</code>. Para estruturas de dissipação, entretanto, o aumento de vazão altera também energia, velocidade, ressalto, arraste e risco de erosão; por isso, a adaptação será apresentada por vazão e desempenho da estrutura, e não por uma simples porcentagem de aumento dimensional.</p>
+</section>
 </section>
 <section id="resultados-por-cenário-e-horizonte" class="level2">
 <h2 class="anchored" data-anchor-id="resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</h2>
@@ -360,6 +411,7 @@ Figura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-
 <li><a href="data/downloads/clima/fatores_mudanca_climatica.csv">Fatores por cenário e horizonte</a>.</li>
 <li><a href="data/downloads/clima/idf_futura_por_modelo.csv">Fatores por modelo</a>.</li>
 <li><a href="data/downloads/clima/idf_cenarios_incerteza.png">Painel de IDFs e incerteza</a>.</li>
+<li><a href="data/downloads/clima/chuva_projeto_tr25_tr50_adaptacao.png">Painel de chuva de projeto e adaptação</a>.</li>
 <li><a href="data/downloads/clima/nex_prec_max_anual_amostra.csv">Dados NEX-GDDP-CMIP6 amostrados</a>.</li>
 <li><a href="https://doi.org/10.1016/j.jhydrol.2022.127956">Maity e Maity (2022), Changing pattern of intensity-duration-frequency curves</a>.</li>
 <li><a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>.</li>

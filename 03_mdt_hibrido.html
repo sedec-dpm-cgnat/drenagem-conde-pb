@@ -175,6 +175,16 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#atualização-climática-com-nex-gddp-cmip6" id="toc-atualização-climática-com-nex-gddp-cmip6" class="nav-link" data-scroll-target="#atualização-climática-com-nex-gddp-cmip6">3.7 Atualização climática com NEX-GDDP-CMIP6</a></li>
   <li><a href="#cenários-hidrológicos-propostos" id="toc-cenários-hidrológicos-propostos" class="nav-link" data-scroll-target="#cenários-hidrológicos-propostos">3.8 Cenários hidrológicos propostos</a></li>
   <li><a href="#entregas-hidrológicas" id="toc-entregas-hidrológicas" class="nav-link" data-scroll-target="#entregas-hidrológicas">3.9 Entregas hidrológicas</a></li>
+  <li><a href="#detalhamento-metodológico-e-rastreabilidade" id="toc-detalhamento-metodológico-e-rastreabilidade" class="nav-link" data-scroll-target="#detalhamento-metodológico-e-rastreabilidade">3.10 Detalhamento metodológico e rastreabilidade</a>
+  <ul class="collapse">
+  <li><a href="#hierarquia-das-fontes-e-função-de-cada-uma" id="toc-hierarquia-das-fontes-e-função-de-cada-uma" class="nav-link" data-scroll-target="#hierarquia-das-fontes-e-função-de-cada-uma">3.10.1 Hierarquia das fontes e função de cada uma</a></li>
+  <li><a href="#relação-idf-e-análise-de-frequência" id="toc-relação-idf-e-análise-de-frequência" class="nav-link" data-scroll-target="#relação-idf-e-análise-de-frequência">3.10.2 Relação IDF e análise de frequência</a></li>
+  <li><a href="#método-cn-scs-e-atribuição-às-subáreas" id="toc-método-cn-scs-e-atribuição-às-subáreas" class="nav-link" data-scroll-target="#método-cn-scs-e-atribuição-às-subáreas">3.10.3 Método CN-SCS e atribuição às subáreas</a></li>
+  <li><a href="#conversão-para-chuva-temporal-e-implementação-no-swmm" id="toc-conversão-para-chuva-temporal-e-implementação-no-swmm" class="nav-link" data-scroll-target="#conversão-para-chuva-temporal-e-implementação-no-swmm">3.10.4 Conversão para chuva temporal e implementação no SWMM</a></li>
+  <li><a href="#atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta" id="toc-atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta" class="nav-link" data-scroll-target="#atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta">3.10.5 Atualização climática: o que já foi feito e o que ainda falta</a></li>
+  <li><a href="#limitações-e-critérios-para-avançar-ao-projeto-básico" id="toc-limitações-e-critérios-para-avançar-ao-projeto-básico" class="nav-link" data-scroll-target="#limitações-e-critérios-para-avançar-ao-projeto-básico">3.10.6 Limitações e critérios para avançar ao projeto básico</a></li>
+  </ul></li>
+  <li><a href="#referências-metodológicas" id="toc-referências-metodológicas" class="nav-link" data-scroll-target="#referências-metodológicas">3.11 Referências metodológicas</a></li>
   </ul>
 </nav>
     </div>
@@ -537,6 +547,146 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 <section id="entregas-hidrológicas" class="level2">
 <h2 class="anchored" data-anchor-id="entregas-hidrológicas">3.9 Entregas hidrológicas</h2>
 <p>A etapa deverá produzir hietogramas, parâmetros de subáreas, arquivos .inp, tabela de vazões de pico e volumes, balanço de massa, comparação de cenários, premissas, scripts e relatório de incertezas. Quando uma grandeza não puder ser determinada, deverá ser registrada como null ou “não determinado”, sem preencher a lacuna por estimativa não documentada.</p>
+</section>
+<section id="detalhamento-metodológico-e-rastreabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="detalhamento-metodológico-e-rastreabilidade">3.10 Detalhamento metodológico e rastreabilidade</h2>
+<p>Esta seção explicita a cadeia de decisão usada para que a chuva de projeto não apareça no modelo como um número isolado. A sequência adotada é:</p>
+<p><strong>fonte pluviométrica → série de máximas → análise de frequência → relação IDF → hietograma → transformação chuva–vazão → propagação hidráulica → indicadores de capacidade e risco.</strong></p>
+<p>Cada etapa tem uma fonte, uma hipótese e uma limitação. Essa separação é especialmente importante porque o estudo atual é uma concepção preliminar para instruir o Plano de Trabalho de Reconstrução; ele não substitui a investigação hidrológica e cadastral de um projeto básico.</p>
+<section id="hierarquia-das-fontes-e-função-de-cada-uma" class="level3">
+<h3 class="anchored" data-anchor-id="hierarquia-das-fontes-e-função-de-cada-uma">3.10.1 Hierarquia das fontes e função de cada uma</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fonte ou documento</th>
+<th>Papel nesta concepção</th>
+<th>Situação de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Estação INMET 82798</td>
+<td>Referência observacional indicada para a chuva local</td>
+<td>A estação é identificada como origem da linha de base; a série bruta completa ainda não está anexada ao pacote</td>
+</tr>
+<tr class="even">
+<td>Relação IDF SGB/CPRM 2023 preservada no estudo anterior</td>
+<td>Gera as intensidades da linha de base</td>
+<td>Aplicada na primeira rodada; o documento primário e o ajuste original deverão ser anexados para auditoria completa</td>
+</tr>
+<tr class="odd">
+<td><a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">SNIRH/ANA — Curva Número na Base Ottocodificada</a></td>
+<td>Apoia a espacialização inicial do CN 2022</td>
+<td>Recortado para A, B e A+B; não substitui o CN por quadra/subárea</td>
+</tr>
+<tr class="even">
+<td><a href="https://directives.nrcs.usda.gov/sites/default/files2/1720613219/Chapter%2005%20-%20Stream%20Hydrology.pdf">USDA-NRCS — Stream Hydrology</a></td>
+<td>Referência do método CN-SCS e da transformação de chuva em escoamento direto</td>
+<td>Usado como referência conceitual; parâmetros locais ainda dependem de uso do solo e validação</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.epa.gov/water-research/storm-water-management-model-swmm">EPA SWMM — documentação oficial</a></td>
+<td>Define a implementação da chuva, subáreas, infiltração, nós, conduítes, saídas e roteamento</td>
+<td>Aplicado nos arquivos <code>.inp</code> preliminares; os modelos continuam em validação</td>
+</tr>
+<tr class="even">
+<td><a href="https://nccs.smce.nasa.gov/data-collections/nex-gddp-cmip6/">NASA NEX-GDDP-CMIP6</a></td>
+<td>Fornece a base em grade para testar a não estacionariedade climática</td>
+<td>Usado como análise de sensibilidade diária; não é observação local</td>
+</tr>
+<tr class="odd">
+<td><a href="https://doi.org/10.1007/s11269-022-03313-y">Maity e Maity (2022)</a></td>
+<td>Referência para organizar IDFs futuras, correção de viés, extremos e incerteza</td>
+<td>Inspira a segunda etapa; não são transferidos para Conde os coeficientes ou resultados do artigo</td>
+</tr>
+<tr class="even">
+<td>Nota técnica de IDF do RS, projeto local</td>
+<td>Referência de estrutura, equações, análise de frequência e apresentação</td>
+<td>Usada como inspiração de organização; os dados e parâmetros do RS não são usados em Conde</td>
+</tr>
+</tbody>
+</table>
+<p>As referências completas, com a classificação <strong>adotada</strong>, <strong>de apoio</strong> ou <strong>pendente de incorporação</strong>, estão no arquivo <a href="data/downloads/clima/REFERENCIAS_METODOLOGIA_HIDROLOGIA.md">Referências e rastreabilidade da hidrologia</a>. O arquivo também informa quais dados primários ainda precisam ser anexados para que a equação IDF possa ser reestimada de forma independente.</p>
+</section>
+<section id="relação-idf-e-análise-de-frequência" class="level3">
+<h3 class="anchored" data-anchor-id="relação-idf-e-análise-de-frequência">3.10.2 Relação IDF e análise de frequência</h3>
+<p>A forma funcional utilizada é a forma tradicional de quatro parâmetros:</p>
+<div class="equation">
+<strong>i(Tr,t) = a * Tr^b / (t + c)^d</strong>
+</div>
+<p>Para a linha de base de Conde, os parâmetros preservados são <code>a = 1424,1</code>, <code>b = 0,1305</code>, <code>c = 23,6</code> e <code>d = 0,7468</code>. A precipitação acumulada é obtida por <code>P = i x t / 60</code>. Portanto, a curva fornece uma intensidade média para uma duração e um período de retorno; ela não fornece, sozinha, a ordem temporal dos picos que o SWMM precisa receber.</p>
+<p>Em uma reestimativa independente, a amostra deve ser montada por duração a partir das máximas anuais. Para cada duração <code>t</code>, a observação anual é o maior acumulado daquele ano nessa duração. A probabilidade anual de excedência é convertida em nível de retorno por:</p>
+<div class="equation">
+<strong>zT = F^-1(1 - 1/T)</strong>
+</div>
+<p>onde <code>F</code> é a distribuição ajustada aos extremos. A linha de base desta minuta não executa novamente essa reestimativa porque a série observada completa e a memória do ajuste original não estão anexadas. Por isso, valores de <code>R²</code>, p-valor, intervalo de confiança e teste de aderência da equação herdada devem ser tratados como <strong>não determinados nesta versão</strong>, e não como evidências de validação local.</p>
+<p>Para o projeto básico, recomenda-se comparar pelo menos Gumbel e GEV, documentar o método de estimação — máxima verossimilhança, L-moments ou outro —, testar a sensibilidade ao período de dados e calcular intervalos de confiança por reamostragem. Também devem ser verificados falhas, anos incompletos, homogeneidade, mudanças de instrumento e independência dos máximos. A adoção de uma distribuição não deve ser decidida apenas pelo maior <code>R²</code> da regressão da IDF.</p>
+</section>
+<section id="método-cn-scs-e-atribuição-às-subáreas" class="level3">
+<h3 class="anchored" data-anchor-id="método-cn-scs-e-atribuição-às-subáreas">3.10.3 Método CN-SCS e atribuição às subáreas</h3>
+<p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>. A formulação de referência é:</p>
+<div class="equation">
+<strong>S = 25400 / CN - 254</strong>
+</div>
+<div class="equation">
+<strong>Ia = lambda * S</strong>, com <strong>lambda = 0.20</strong> na configuração tradicional; e
+</div>
+<div class="equation">
+<strong>Q = (P - Ia)^2 / (P - Ia + S)</strong>, quando <strong>P &gt; Ia</strong>; caso contrário, <strong>Q = 0</strong>.
+</div>
+<p>Em que <code>S</code> é a capacidade potencial de retenção, <code>Ia</code> é a abstração inicial, <code>P</code> é a precipitação acumulada e <code>Q</code> é o escoamento superficial direto, todos em milímetros. O CN aumenta quando cresce a impermeabilização ou diminui a capacidade de infiltração. A média espacial do CN 2022 fornece uma referência de ordem de grandeza, mas não deve ser aplicada sem revisão uniforme a todas as áreas: uma quadra, uma rua pavimentada, um lote permeável e uma área vegetada podem ter respostas muito diferentes.</p>
+<p>Na próxima revisão, cada área de contribuição será relacionada a uma quadra ou conjunto hidrologicamente homogêneo, com área, largura característica, declividade, percentual impermeável, CN, nó de saída e justificativa cartográfica. As áreas Voronoi atualmente disponíveis são, portanto, uma estrutura de partida e não um levantamento definitivo das contribuições.</p>
+</section>
+<section id="conversão-para-chuva-temporal-e-implementação-no-swmm" class="level3">
+<h3 class="anchored" data-anchor-id="conversão-para-chuva-temporal-e-implementação-no-swmm">3.10.4 Conversão para chuva temporal e implementação no SWMM</h3>
+<p>Os arquivos <code>.inp</code> usam unidades de vazão em <code>CMS</code>, infiltração <code>CURVE_NUMBER</code> e roteamento dinâmico <code>DYNWAVE</code>. A chuva entra por um <code>Rain Gage</code> ligado a uma <code>Time Series</code> com passo de 5 minutos. Cada subárea é conectada a um nó de saída, e os nós são encadeados por conduítes até os trechos de tronco, dissipadores e exutórios.</p>
+<p>Os principais controles de consistência são:</p>
+<ol type="1">
+<li>conferir se o total do hietograma coincide com a integral das intensidades;</li>
+<li>conferir se todas as subáreas possuem um único nó de saída válido;</li>
+<li>conferir se o sentido dos conduítes acompanha a topografia e a rede lançada;</li>
+<li>verificar continuidade de massa, vazão de pico, volume, nível, velocidade, enchimento e sobrecarga;</li>
+<li>identificar nós com inundação, conduítes limitantes e saídas sem proteção;</li>
+<li>repetir a simulação para TR25 e TR50, mantendo os mesmos identificadores de rede;</li>
+<li>registrar a vazão de chegada nos dissipadores e a condição hidráulica imediatamente a jusante.</li>
+</ol>
+<p>Assim, a chuva de TR25 será a linha de base dos coletores e bueiros, enquanto TR50 será a linha de base dos troncos principais e dissipadores. A verificação cruzada é obrigatória, pois a escolha do período de retorno é uma regra de projeto por componente, e não uma autorização para analisar trechos isoladamente.</p>
+</section>
+<section id="atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta" class="level3">
+<h3 class="anchored" data-anchor-id="atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta">3.10.5 Atualização climática: o que já foi feito e o que ainda falta</h3>
+<p>O NEX-GDDP-CMIP6 disponibiliza, no banco consultado, máximas diárias anuais por ponto, modelo, cenário e ano. A rotina atual ajusta uma GEV por máxima verossimilhança quando há amostra suficiente, calcula fatores futuro/histórico e resume os modelos por P10, mediana e P90. Esse produto é uma <strong>triagem de sensibilidade para extremos diários</strong>; ele ainda não é uma IDF futura subdiária pronta para dimensionamento.</p>
+<p>Não foram declarados nesta versão como já executados: quantile mapping da série diária completa, pesos REA, ajuste independente com a série observada, desagregação validada para 5 minutos e hietogramas futuros calibrados. Esses elementos permanecem na metodologia de segunda etapa porque a tabela disponibilizada contém <code>prec_max_anual</code>, e não as séries diárias e subdiárias necessárias para reproduzi-los diretamente.</p>
+<p>Para cada cenário futuro, o procedimento completo deverá:</p>
+<ul>
+<li>auditar a completude e a composição da amostra histórica e futura;</li>
+<li>comparar os quatro pontos de grade próximos ao centroide A+B;</li>
+<li>confrontar o histórico modelado com a estação observada;</li>
+<li>ajustar e validar os extremos, com intervalo de confiança;</li>
+<li>aplicar uma transformação subdiária ancorada na IDF local;</li>
+<li>gerar hietogramas identificados por cenário, horizonte e TR;</li>
+<li>executar o SWMM e converter a variação de chuva em indicadores de vazão, nível, enchimento e diâmetro preliminar.</li>
+</ul>
+<p>O resultado deve ser apresentado como envelope de decisão — mínimo, mediana e máximo ou P10–P90, conforme a métrica — e não como previsão determinística. A faixa de incerteza informa a robustez da alternativa e orienta a adoção de folga, modularidade e possibilidade de ampliação na reconstrução resiliente.</p>
+</section>
+<section id="limitações-e-critérios-para-avançar-ao-projeto-básico" class="level3">
+<h3 class="anchored" data-anchor-id="limitações-e-critérios-para-avançar-ao-projeto-básico">3.10.6 Limitações e critérios para avançar ao projeto básico</h3>
+<p>Os resultados atuais são adequados para comparar alternativas, priorizar trechos e estruturar metas do Plano de Trabalho, desde que sejam identificados como preliminares. Antes de usar dimensões como especificação executiva, devem ser incorporados: série pluviométrica auditada, memorial da IDF, levantamento topográfico/cadastral, cadastro de pavimentação, áreas de contribuição revisadas, cotas de fundo, seção e material dos condutos, condições de jusante, verificação dos dissipadores e vistoria de campo.</p>
+<p>O princípio adotado é de rastreabilidade: quando um dado não estiver disponível, ele permanece explicitamente como “não determinado”. Isso evita que uma hipótese preliminar — especialmente CN médio, largura de subárea, cota ou fator climático — seja confundida com medição ou parâmetro validado.</p>
+</section>
+</section>
+<section id="referências-metodológicas" class="level2">
+<h2 class="anchored" data-anchor-id="referências-metodológicas">3.11 Referências metodológicas</h2>
+<p>As referências desta seção estão vinculadas às fontes primárias e aos arquivos de trabalho. A lista não pretende substituir a documentação original da equação IDF; ela registra o fundamento das escolhas feitas nesta minuta e orienta a complementação para o projeto básico.</p>
+<ul>
+<li><a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">Agência Nacional de Águas e Saneamento Básico — SNIRH: Curva Número na Base Ottocodificada</a>. Fonte do recorte CN 2022 usado como referência espacial.</li>
+<li><a href="https://directives.nrcs.usda.gov/sites/default/files2/1720613219/Chapter%2005%20-%20Stream%20Hydrology.pdf">USDA-NRCS — National Engineering Handbook, Chapter 05: Stream Hydrology</a>. Referência institucional para a relação entre chuva, escoamento, bacia e parâmetros hidrológicos.</li>
+<li><a href="https://www.epa.gov/water-research/storm-water-management-model-swmm">U.S. EPA — Storm Water Management Model (SWMM)</a> e <a href="https://www.epa.gov/system/files/documents/2022-04/swmm-users-manual-version-5.2.pdf">SWMM User’s Manual, Version 5.2</a>. Referências para a estrutura do modelo, infiltração, subáreas, roteamento e relatórios.</li>
+<li><a href="https://nccs.smce.nasa.gov/data-collections/nex-gddp-cmip6/">NASA — NEX-GDDP-CMIP6</a> e <a href="https://www.nccs.nasa.gov/sites/default/files/NEX-GDDP-CMIP6-v2-Tech_Note.pdf">Technical Note do NEX-GDDP-CMIP6</a>. Fonte e documentação da base climática em grade.</li>
+<li>Maity, R.; Maity, A. (2022). <a href="https://doi.org/10.1007/s11269-022-03313-y">Changing Pattern of Intensity–Duration–Frequency Relationship of Precipitation due to Climate Change</a>. Water Resources Management, 36, 5371–5399. Referência de desenho metodológico para IDFs futuras e incerteza; não é fonte dos coeficientes de Conde.</li>
+<li>Pfafstetter, O. (1957). Chuvas intensas no Brasil. Referência histórica brasileira para relações de chuvas intensas, registrada na bibliografia da nota técnica de IDF usada como inspiração.</li>
+<li><a href="https://portal.inmet.gov.br/dadoshistoricos">INMET — dados históricos</a>. Portal institucional para aquisição e conferência das séries observadas, quando a série primária da estação 82798 for anexada.</li>
+<li>Nota técnica de IDF do RS, arquivo local <code>idf_RS_Technical_Note2.qmd</code>. Referência de organização, descrição de séries, análise de extremos e apresentação; resultados do Rio Grande do Sul não foram transplantados para Conde.</li>
+</ul>
 
 
 </section>

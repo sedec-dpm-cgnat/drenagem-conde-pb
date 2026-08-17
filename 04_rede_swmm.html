@@ -173,7 +173,11 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#dissipadores-e-saídas" id="toc-dissipadores-e-saídas" class="nav-link" data-scroll-target="#dissipadores-e-saídas">4.5 Dissipadores e saídas</a></li>
   <li><a href="#rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b" id="toc-rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b" class="nav-link" data-scroll-target="#rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b">4.6 Rodada reproduzida e pré-dimensionamento preliminar — Bacia B</a></li>
   <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.7 Bacia B e simulação conjunta</a></li>
-  <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
+  <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a>
+  <ul class="collapse">
+  <li><a href="#elementos-que-compõem-cada-meta" id="toc-elementos-que-compõem-cada-meta" class="nav-link" data-scroll-target="#elementos-que-compõem-cada-meta">Elementos que compõem cada meta</a></li>
+  <li><a href="#contratação-dos-projetos-básico-e-executivo" id="toc-contratação-dos-projetos-básico-e-executivo" class="nav-link" data-scroll-target="#contratação-dos-projetos-básico-e-executivo">Contratação dos projetos básico e executivo</a></li>
+  </ul></li>
   <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</a></li>
   <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.10 Próxima rodada</a></li>
   <li><a href="#primeira-rodada-integrada-bacia-a" id="toc-primeira-rodada-integrada-bacia-a" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</a></li>
@@ -401,13 +405,77 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 </tr>
 </tbody>
 </table>
+<section id="elementos-que-compõem-cada-meta" class="level3">
+<h3 class="anchored" data-anchor-id="elementos-que-compõem-cada-meta">Elementos que compõem cada meta</h3>
+<p>O recorte das metas não é apenas uma seleção de linhas. Cada polígono foi associado aos elementos hidráulicos que efetivamente o atravessam: troncos principais, coletores, nós e dissipadores/saídas. A leitura cartográfica usa linha contínua para troncos, linha tracejada para coletores, pontos para nós associados e magenta para dissipadores. Os códigos individuais dos 74 links permanecem na tabela detalhada, vinculados aos nós de montante e jusante.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Meta</th>
+<th>Bacia</th>
+<th style="text-align: right;">Troncos</th>
+<th style="text-align: right;">Coletores</th>
+<th>Dissipador/saída</th>
+<th>Camadas GIS de referência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>META_01</code></td>
+<td>B</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td><code>DISS_B_01</code></td>
+<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
+</tr>
+<tr class="even">
+<td><code>META_02</code></td>
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td><code>DISS_B_02</code></td>
+<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
+</tr>
+<tr class="odd">
+<td><code>META_03</code></td>
+<td>B</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td>Não identificado no polígono</td>
+<td><code>trechos_metas_B</code>, <code>nos_metas_B</code></td>
+</tr>
+<tr class="even">
+<td><code>META_04</code></td>
+<td>A</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">31</td>
+<td><code>DISS_05</code></td>
+<td><code>trechos_metas_A</code>, <code>nos_metas_A</code>, <code>dissipadores_metas_A</code></td>
+</tr>
+</tbody>
+</table>
 <figure class="map-figure figure">
 <img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas espaciais selecionadas sobre as redes A e B" class="figure-img">
 <figcaption>
-Figura 4.2 — Recorte espacial preliminar das metas. Os segmentos coloridos são os links que intersectam os polígonos META_01 a META_04; os trechos cinza permanecem na rede de concepção, mas fora do recorte de execução desta rodada.
+Figura 4.2 — Trechos e elementos associados às metas. Linhas contínuas representam troncos, linhas tracejadas representam coletores, pontos representam nós associados e linhas magenta representam dissipadores/saídas. Os polígonos delimitam META_01 a META_04; os trechos cinza permanecem na rede de concepção, mas fora do recorte preliminar do Plano.
 </figcaption>
 </figure>
-<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias e o recorte espacial indicado para o Plano de Trabalho, sem afirmar que os 74 trechos selecionados serão executados automaticamente. Os nomes dos links, pontos de início/fim, extensões e parâmetros de triagem estão organizados na <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela detalhada das metas</a>. Diâmetros finais, vazões de projeto, quantitativos executivos e soluções de dissipação continuam condicionados à validação.</p>
+<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias e o recorte espacial indicado para o Plano de Trabalho, sem afirmar que os 74 trechos selecionados serão executados automaticamente. Os nomes dos links, pontos de início/fim, extensões e parâmetros de triagem estão organizados na <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela detalhada das metas</a>. As camadas <code>trechos_metas_A/B/AB.shp</code> preservam a classe <code>TRONCO</code>, <code>COLETOR</code> ou <code>DISSIPADOR</code>, o <code>ID_LINK</code>, <code>NO_IN</code>, <code>NO_OUT</code>, comprimento, cotas, declividade, diâmetros preliminares, vazões, velocidades e criticidade. As camadas <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> completam a leitura espacial de cada sistema.</p>
+</section>
+<section id="contratação-dos-projetos-básico-e-executivo" class="level3">
+<h3 class="anchored" data-anchor-id="contratação-dos-projetos-básico-e-executivo">Contratação dos projetos básico e executivo</h3>
+<p>A concepção apresentada, o mapa de metas e a tabela de parâmetros devem ser utilizados como base técnica para instruir a contratação — não como substitutos dos projetos de engenharia. Antes da execução física, cada meta deverá ser convertida em um pacote de projeto básico e, posteriormente, em projeto executivo, com rastreabilidade entre o trecho selecionado, seus nós, a área de contribuição, o dissipador e a condição de jusante.</p>
+<p>O <strong>projeto básico</strong> deverá consolidar, no mínimo, levantamento topográfico cadastral, cadastro de interferências, investigação geotécnica compatível, estudos hidrológicos e hidráulicos, verificação das áreas de contribuição, perfis e seções, definição dos materiais, pré-quantitativos, orçamento, cronograma, licenciamento e diretrizes de manutenção. Para os dissipadores, deverá demonstrar vazão de projeto, desnível, velocidade, energia, geometria da escada/canal/bacia, proteção contra erosão e estabilidade da descarga.</p>
+<p>O <strong>projeto executivo</strong> deverá detalhar os elementos construtivos e permitir a contratação e fiscalização da obra: plantas, perfis, detalhes de nós e caixas, seções típicas, armaduras ou contenções quando aplicáveis, especificações, memoriais de cálculo, quantitativos finais, orçamento analítico, sequência executiva, sinalização, segurança, recomposição urbana e plano de inspeção/manutenção. Nenhum diâmetro, extensão ou solução de dissipação apresentado nesta concepção deverá ser tratado como definitivo sem essa etapa de contratação e validação.</p>
+</section>
 </section>
 <section id="critérios-de-verificação-hidráulica" class="level2">
 <h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</h2>
@@ -426,7 +494,7 @@ Figura 4.2 — Recorte espacial preliminar das metas. Os segmentos coloridos sã
 </section>
 <section id="próxima-rodada" class="level2">
 <h2 class="anchored" data-anchor-id="próxima-rodada">4.10 Próxima rodada</h2>
-<p>A sequência operacional agora é: revisar no ArcMap os 4 polígonos de meta e os 74 trechos selecionados, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados por meta e fechar o recorte executivo do Plano de Trabalho.</p>
+<p>A sequência operacional agora é: revisar no ArcMap os 4 polígonos de meta e os 74 trechos selecionados por classe, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados por meta, instruir a contratação do projeto básico e somente depois desenvolver os projetos executivos e fechar o recorte executivo do Plano de Trabalho.</p>
 </section>
 <section id="primeira-rodada-integrada-bacia-a" class="level2">
 <h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</h2>

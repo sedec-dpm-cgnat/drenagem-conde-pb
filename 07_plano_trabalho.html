@@ -173,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a>
   <ul class="collapse">
   <li><a href="#seleção-espacial-executada-para-as-metas" id="toc-seleção-espacial-executada-para-as-metas" class="nav-link" data-scroll-target="#seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</a></li>
+  <li><a href="#elementos-hidráulicos-por-meta" id="toc-elementos-hidráulicos-por-meta" class="nav-link" data-scroll-target="#elementos-hidráulicos-por-meta">Elementos hidráulicos por meta</a></li>
   <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</a></li>
+  <li><a href="#contratação-dos-projetos-de-engenharia" id="toc-contratação-dos-projetos-de-engenharia" class="nav-link" data-scroll-target="#contratação-dos-projetos-de-engenharia">Contratação dos projetos de engenharia</a></li>
   <li><a href="#limite-territorial-do-plano-de-trabalho" id="toc-limite-territorial-do-plano-de-trabalho" class="nav-link" data-scroll-target="#limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</a></li>
   </ul></li>
   <li><a href="#dissipadores-critério-para-a-etapa-seguinte" id="toc-dissipadores-critério-para-a-etapa-seguinte" class="nav-link" data-scroll-target="#dissipadores-critério-para-a-etapa-seguinte">6.1.5 Dissipadores: critério para a etapa seguinte</a></li>
@@ -369,10 +371,11 @@ document.addEventListener('DOMContentLoaded', function () {
 <h3 class="anchored" data-anchor-id="seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</h3>
 <p>Foi recebida a camada <code>MetasSelecionadas.shp</code>, em SIRGAS 2000 / UTM 25S (EPSG:31985), com quatro polígonos desenhados para delimitar os setores que deverão ser considerados na elaboração dos Planos de Trabalho. Como o campo original <code>Id</code> estava zerado em todas as feições, os polígonos foram identificados, para fins de rastreabilidade, como <code>META_01</code> a <code>META_04</code>, seguindo a ordem geométrica de entrada. Essa numeração poderá ser substituída por códigos administrativos definitivos após a validação institucional.</p>
 <p>A seleção dos trechos foi feita por interseção espacial com comprimento linear superior a 0,01 m. Assim, foram selecionados os segmentos que efetivamente atravessam cada polígono; um simples contato pontual com o limite não foi suficiente. Para cada segmento selecionado foram preservados o identificador do link, a classe (tronco/coletor), os nós de início e fim, as coordenadas métricas dos extremos, o comprimento total cadastrado, o comprimento dentro do polígono, cotas, declividade, diâmetros atual e preliminares, vazões TR25/TR50, velocidades, criticidade e status da rodada SWMM.</p>
+<p>Para a indicação do Plano, a classe hidráulica foi mantida explicitamente. Os <strong>troncos</strong> são os eixos principais de transporte; os <strong>coletores</strong> são os trechos que captam ou conduzem as contribuições locais até esses eixos; os <strong>nós</strong> representam entradas, encontros e mudanças de seção; e os <strong>dissipadores</strong> representam os trechos de descarga que precisam controlar energia e erosão a jusante. Assim, cada meta pode ser lida no mapa e auditada nas camadas e na tabela, sem perder a relação entre o trecho selecionado e os elementos que fazem a solução funcionar.</p>
 <figure class="map-figure figure">
 <img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas selecionadas espacialmente nas Bacias A e B" class="figure-img">
 <figcaption>
-Figura 7.1 — Polígonos de meta desenhados sobre a rede de concepção. A Bacia A está representada em laranja e a Bacia B em teal; as linhas cinza são trechos da rede que permanecem fora do recorte das metas nesta rodada. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
+Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: troncos; linhas tracejadas: coletores; pontos: nós associados; linhas magenta: dissipadores/saídas. A Bacia A está em laranja e a Bacia B em teal. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
 </figcaption>
 </figure>
 <table class="caption-top table">
@@ -481,6 +484,64 @@ Figura 7.1 — Polígonos de meta desenhados sobre a rede de concepção. A Baci
 </table>
 <p>* <code>Trechos críticos</code> é a contagem da flag preliminar <code>CRITICO</code> herdada da triagem SWMM; não equivale, isoladamente, à decisão de executar a obra. A extensão total corresponde ao segmento inteiro selecionado para garantir continuidade da rede; a extensão dentro do polígono é apresentada para auditoria espacial e não deve ser usada automaticamente como extensão de projeto.</p>
 <p>O <a href="data/metas_plano_trabalho/resumo_metas.csv">resumo por meta</a> e a <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela completa por trecho</a> registram os parâmetros que deverão orientar a próxima revisão. A tabela detalhada contém, entre outros campos, <code>ID_LINK</code>, <code>META_ID</code>, <code>BACIA</code>, <code>CLASSE</code>, <code>NO_IN</code>, <code>NO_OUT</code>, <code>X_IN_M</code>, <code>Y_IN_M</code>, <code>X_OUT_M</code>, <code>Y_OUT_M</code>, <code>COMPR_M</code>, <code>OVERLAP_M</code>, <code>COTA_IN</code>, <code>COTA_OUT</code>, <code>DECL_PCT</code>, <code>D_ATUAL_M</code>, <code>DPROP_M</code>, <code>DREQ25</code>, <code>DREQ50</code>, <code>DNOM25</code>, <code>DNOM50</code>, <code>Q25_CMS</code>, <code>Q50_CMS</code>, <code>V25_MPS</code>, <code>V50_MPS</code>, <code>STATUS_SW</code> e <code>CRITICO</code>. O <a href="data/metas_plano_trabalho/Metas_Selecionadas_Resultados.zip">pacote GIS completo das metas</a> contém os polígonos, trechos, nós e dissipadores em shapefile para ArcMap/QGIS.</p>
+</section>
+<section id="elementos-hidráulicos-por-meta" class="level3">
+<h3 class="anchored" data-anchor-id="elementos-hidráulicos-por-meta">Elementos hidráulicos por meta</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Meta</th>
+<th>Bacia</th>
+<th style="text-align: right;">Trechos classificados como tronco</th>
+<th style="text-align: right;">Trechos classificados como coletor</th>
+<th>Dissipador/saída associado</th>
+<th>Elementos que devem acompanhar o projeto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>META_01</code></td>
+<td>B</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td><code>DISS_B_01</code></td>
+<td>nós de entrada e saída, ligação aos coletores e proteção da descarga</td>
+</tr>
+<tr class="even">
+<td><code>META_02</code></td>
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td><code>DISS_B_02</code></td>
+<td>nós de entrada e saída, ligação aos coletores e proteção da descarga</td>
+</tr>
+<tr class="odd">
+<td><code>META_03</code></td>
+<td>B</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td>Não identificado no polígono</td>
+<td>verificar continuidade e solução de jusante</td>
+</tr>
+<tr class="even">
+<td><code>META_04</code></td>
+<td>A</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">31</td>
+<td><code>DISS_05</code></td>
+<td>nós de entrada e saída, tronco de descarga e proteção da descarga</td>
+</tr>
+</tbody>
+</table>
+<p>Os códigos dos links, os nós inicial e final, os pontos métricos de início e fim, os comprimentos e os parâmetros de diâmetro/vazão estão no arquivo <code>trechos_metas_parametros.csv</code>. Os shapefiles <code>trechos_metas_A/B/AB.shp</code>, <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> permitem carregar as mesmas informações no ArcMap ou no QGIS e desenhar as áreas de contribuição que serão efetivamente contratadas.</p>
 <p>As quatro metas espaciais passam a ser o recorte técnico preliminar do Plano de Trabalho: <code>META_04</code> concentra o setor selecionado da Bacia A; <code>META_01</code>, <code>META_02</code> e <code>META_03</code> concentram os setores selecionados da Bacia B. Isso não significa que todos os 74 trechos serão executados. A seleção administrativa final deverá retirar trechos redundantes, conectores provisórios, segmentos sem continuidade ou elementos que não tenham solução de jusante confirmada, mantendo-os no cadastro como dependências ou alternativas.</p>
 </section>
 <section id="associação-preliminar-entre-bacias-rede-e-metas" class="level3">
@@ -527,6 +588,12 @@ Figura 7.1 — Polígonos de meta desenhados sobre a rede de concepção. A Baci
 </tbody>
 </table>
 <p>Essa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal.</p>
+</section>
+<section id="contratação-dos-projetos-de-engenharia" class="level3">
+<h3 class="anchored" data-anchor-id="contratação-dos-projetos-de-engenharia">Contratação dos projetos de engenharia</h3>
+<p>Os trechos e elementos selecionados servem para definir o <strong>escopo preliminar de contratação</strong>. A execução não deverá ser contratada diretamente a partir do mapa ou do pré-dimensionamento desta concepção. Para cada meta, deverá ser contratado um projeto básico que consolide levantamento topográfico cadastral, cadastro de interferências, investigação geotécnica, estudos hidrológicos e hidráulicos, áreas de contribuição, perfis, seções, materiais, dissipadores, orçamento e cronograma.</p>
+<p>Na sequência, o projeto executivo deverá detalhar plantas, perfis, caixas e nós, seções e detalhes construtivos, armaduras ou contenções quando aplicáveis, memoriais de cálculo, quantitativos finais, orçamento analítico, especificações, sequência executiva, recomposição urbana, licenciamento e manutenção. Os dissipadores exigem ainda a verificação específica da vazão de chegada, desnível, velocidade, energia, número de degraus/soleiras, revestimento, ancoragem e proteção a jusante.</p>
+<p>O Plano de Trabalho deverá apresentar a concepção como justificativa técnica e reservar a contratação dos projetos básico e executivo como condição para transformar cada meta em obra pronta para licitação, reduzindo o risco de executar um trecho isolado, sem continuidade ou sem solução segura de descarga.</p>
 </section>
 <section id="limite-territorial-do-plano-de-trabalho" class="level3">
 <h3 class="anchored" data-anchor-id="limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</h3>

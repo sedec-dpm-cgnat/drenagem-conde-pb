@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#avaliação-inicial-da-mudança-climática" id="toc-avaliação-inicial-da-mudança-climática" class="nav-link" data-scroll-target="#avaliação-inicial-da-mudança-climática">Avaliação inicial da mudança climática</a></li>
   <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a>
   <ul class="collapse">
-  <li><a href="#primeira-rodada-da-bacia-b" id="toc-primeira-rodada-da-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-da-bacia-b">Primeira rodada da Bacia B</a></li>
+  <li><a href="#rodada-reproduzida-e-pré-dimensionamento-preliminar-da-bacia-b" id="toc-rodada-reproduzida-e-pré-dimensionamento-preliminar-da-bacia-b" class="nav-link" data-scroll-target="#rodada-reproduzida-e-pré-dimensionamento-preliminar-da-bacia-b">Rodada reproduzida e pré-dimensionamento preliminar da Bacia B</a></li>
   </ul></li>
   <li><a href="#o-que-ainda-não-está-no-pacote-público" id="toc-o-que-ainda-não-está-no-pacote-público" class="nav-link" data-scroll-target="#o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</a></li>
   </ul>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
-<p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B recebeu nesta versão sua primeira rodada preliminar e também seguirá em revisão.</p>
+<p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B recebeu nesta versão uma rodada reproduzida, pré-dimensionamento preliminar e uma pendência de fechamento topológico que seguirá em revisão.</p>
 <section id="background-contínuo-para-o-arcmapqgis" class="level3">
 <h3 class="anchored" data-anchor-id="background-contínuo-para-o-arcmapqgis">Background contínuo para o ArcMap/QGIS</h3>
 <p>O background satélite contínuo que cobre a extensão completa A+B foi organizado localmente em:</p>
@@ -659,8 +659,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
-<section id="primeira-rodada-da-bacia-b" class="level3">
-<h3 class="anchored" data-anchor-id="primeira-rodada-da-bacia-b">Primeira rodada da Bacia B</h3>
+<section id="rodada-reproduzida-e-pré-dimensionamento-preliminar-da-bacia-b" class="level3">
+<h3 class="anchored" data-anchor-id="rodada-reproduzida-e-pré-dimensionamento-preliminar-da-bacia-b">Rodada reproduzida e pré-dimensionamento preliminar da Bacia B</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="odd">
 <td><a href="data/downloads/swmm/swmm_resultados_resumo_B.json">Resumo completo B</a></td>
 <td>JSON</td>
-<td>Resultados por cenário e vazões nas saídas</td>
+<td>Resultados por cenário, vazões nas saídas e triagem</td>
 </tr>
 <tr class="even">
 <td><a href="data/downloads/swmm/swmm_trechos_criticos_triagem_B.csv">Trechos críticos B — triagem</a></td>
@@ -711,38 +711,53 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>Links com sobrecarga, velocidade ou auditoria</td>
 </tr>
 <tr class="odd">
+<td><a href="data/downloads/swmm/swmm_predimensionamento_trechos_B.csv">Pré-dimensionamento B</a></td>
+<td>CSV</td>
+<td>Candidatos nominais por Manning; não é quantitativo executivo</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/swmm_resultados_trechos_B.csv">Resultados dos trechos B</a></td>
+<td>CSV</td>
+<td>Vazões, velocidades e razões de capacidade por trecho</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/swmm_resultados_nos_inundacao_B.csv">Nós B com resultados de inundação</a></td>
+<td>CSV</td>
+<td>Nós com extravasamento na rodada</td>
+</tr>
+<tr class="even">
 <td><a href="data/downloads/swmm/swmm_resultados_outfalls_dissipadores_B.csv">Vazões nos dissipadores B</a></td>
 <td>CSV</td>
 <td>Vazões preliminares TR25/TR50</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/swmm/rede_swmm_resultados_B_arcmap.gpkg">Rede SWMM B com resultados</a></td>
 <td>GeoPackage</td>
 <td>Camada para ArcMap/QGIS</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/downloads/swmm/trechos_criticos_B_swmm.gpkg">Trechos críticos B espaciais</a></td>
 <td>GeoPackage</td>
 <td>Seleção espacial para revisão</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/swmm/nos_inundacao_B_swmm.gpkg">Nós B com inundação</a></td>
 <td>GeoPackage</td>
 <td>Nós com extravasamento na rodada</td>
 </tr>
-<tr class="odd">
-<td><a href="data/downloads/swmm/README_PRIMEIRA_RODADA_B_20260817.md">Memória da primeira rodada B</a></td>
-<td>Markdown</td>
-<td>Premissas, resultados, limitações e próximos passos</td>
-</tr>
 <tr class="even">
+<td><a href="data/downloads/swmm/README_PRIMEIRA_RODADA_B_20260817.md">Memória da rodada B</a></td>
+<td>Markdown</td>
+<td>Premissas, pré-dimensionamento, resultados, limitações e próximos passos</td>
+</tr>
+<tr class="odd">
 <td><a href="data/downloads/swmm/manifesto_projeto_swmm_bacia_B.json">Manifesto da rede B</a></td>
 <td>JSON</td>
 <td>Fontes, prefixos, premissas e limitações</td>
 </tr>
 </tbody>
 </table>
-<p>Na Bacia B, os nomes seguem a regra <code>N_B_</code>, <code>L_B_</code>, <code>SC_B_</code> e <code>D_B_</code>, mantendo a separação dos componentes da Bacia A. A primeira rodada apresentou balanço numérico aceitável, mas mostrou sobrecarga preliminar em 12 links e inundação em 18 nós nos dois cenários; esses números devem orientar a revisão, não ser usados como quantitativos de contratação.</p>
+<p>Na Bacia B, os nomes seguem a regra <code>N_B_</code>, <code>L_B_</code>, <code>SC_B_</code> e <code>D_B_</code>, mantendo a separação dos componentes da Bacia A. A rodada reproduzida apresentou balanço numérico aceitável, pré-dimensionamento preliminar para os 46 links físicos, sobrecarga em 12 links e inundação em 18 nós nos dois cenários. O nó <code>N_B_0030</code> ainda aparece como terceiro outfall, além dos dois dissipadores marcados; essa pendência deve ser resolvida no GIS antes de transformar os resultados em metas ou quantitativos de contratação.</p>
 <p>Depois que a camada GIS revisada for entregue, os INP, RPT e OUT serão regenerados e publicados em uma versão identificada como validada. O modelo final só será chamado de final após a execução e revisão de TR25 e TR50, com balanço de continuidade e saídas conferidos.</p>
 </section>
 </section>

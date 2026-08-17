@@ -168,13 +168,17 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#arquivos-swmm-preliminares" id="toc-arquivos-swmm-preliminares" class="nav-link" data-scroll-target="#arquivos-swmm-preliminares">4.3 Arquivos SWMM preliminares</a></li>
   <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">4.4 Áreas de contribuição</a></li>
   <li><a href="#dissipadores-e-saídas" id="toc-dissipadores-e-saídas" class="nav-link" data-scroll-target="#dissipadores-e-saídas">4.5 Dissipadores e saídas</a></li>
-  <li><a href="#primeira-rodada-da-bacia-b" id="toc-primeira-rodada-da-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-da-bacia-b">4.6 Primeira rodada da Bacia B</a></li>
+  <li><a href="#rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b" id="toc-rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b" class="nav-link" data-scroll-target="#rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b">4.6 Rodada reproduzida e pré-dimensionamento preliminar — Bacia B</a></li>
   <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.7 Bacia B e simulação conjunta</a></li>
   <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
   <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</a></li>
   <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.10 Próxima rodada</a></li>
   <li><a href="#primeira-rodada-integrada-bacia-a" id="toc-primeira-rodada-integrada-bacia-a" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</a></li>
-  <li><a href="#primeira-rodada-integrada-bacia-b" id="toc-primeira-rodada-integrada-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-b">4.12 Primeira rodada integrada — Bacia B</a></li>
+  <li><a href="#rodada-integrada-e-pré-dimensionamento-bacia-b" id="toc-rodada-integrada-e-pré-dimensionamento-bacia-b" class="nav-link" data-scroll-target="#rodada-integrada-e-pré-dimensionamento-bacia-b">4.12 Rodada integrada e pré-dimensionamento — Bacia B</a>
+  <ul class="collapse">
+  <li><a href="#pré-dimensionamento-por-manning" id="toc-pré-dimensionamento-por-manning" class="nav-link" data-scroll-target="#pré-dimensionamento-por-manning">Pré-dimensionamento por Manning</a></li>
+  <li><a href="#condição-de-fechamento-hidráulico" id="toc-condição-de-fechamento-hidráulico" class="nav-link" data-scroll-target="#condição-de-fechamento-hidráulico">Condição de fechamento hidráulico</a></li>
+  </ul></li>
   <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.13 Validação paralela que deve ser feita no SWMM</a>
   <ul class="collapse">
   <li><a href="#checklist-de-conferência" id="toc-checklist-de-conferência" class="nav-link" data-scroll-target="#checklist-de-conferência">Checklist de conferência</a></li>
@@ -328,10 +332,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </ol>
 <p>A solução de dissipação será descrita como concepção, não como dimensionamento estrutural definitivo, até que haja topografia e geotecnia de detalhe.</p>
 </section>
-<section id="primeira-rodada-da-bacia-b" class="level2">
-<h2 class="anchored" data-anchor-id="primeira-rodada-da-bacia-b">4.6 Primeira rodada da Bacia B</h2>
+<section id="rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b" class="level2">
+<h2 class="anchored" data-anchor-id="rodada-reproduzida-e-pré-dimensionamento-preliminar-bacia-b">4.6 Rodada reproduzida e pré-dimensionamento preliminar — Bacia B</h2>
 <p>O lançamento recebido para a Bacia B foi organizado com três arquivos de tronco (<code>TroncoB1.shp</code>, <code>TroncoB2.shp</code> e <code>TroncoB3.shp</code>), dois arquivos de coletor (<code>ColetorB1.shp</code> e <code>ColetorB2.shp</code>) e o arquivo específico <code>Trechos_Dissipacao_B.shp</code>. As 23 feições de origem foram recortadas no limite da Bacia B, divididas nas interseções, conectadas por snap de até 2 m e orientadas pelo declive do MDT híbrido.</p>
-<p>O resultado produziu 44 links nodais de rede, 47 nós, 46 áreas de contribuição Voronoi preliminares e dois links de dissipação com prefixo <code>D_B_</code>. A rede tem aproximadamente <strong>8,74 km</strong>, sendo cerca de 8,64 km de troncos/coletores e 0,10 km de linhas de dissipação. Foram identificados dois componentes conectados; portanto, a Bacia B ainda não deve ser tratada como um sistema único contínuo.</p>
+<p>O resultado produziu 44 links nodais de rede, 47 nós, 46 áreas de contribuição Voronoi preliminares e dois links de dissipação com prefixo <code>D_B_</code>. Após a integração necessária para o SWMM, o arquivo contém 47 conduítes, dos quais 46 são físicos e um (<code>L_B_C0030</code>) é conector topológico provisório. A rede física tem aproximadamente <strong>8,74 km</strong>, sendo cerca de 8,64 km de troncos/coletores e 0,10 km de linhas de dissipação. Foram identificados dois componentes conectados; portanto, a Bacia B ainda não deve ser tratada como um sistema único contínuo.</p>
 <p>Os arquivos seguem a convenção de identificação <code>N_B_</code>, <code>L_B_</code>, <code>SC_B_</code> e <code>D_B_</code>. O CN médio agregado utilizado como premissa foi <strong>76,77</strong>, correspondente ao recorte CN 2022 da Bacia B; a impermeabilização preliminar foi mantida em 30%, apenas para a primeira rodada. As áreas Voronoi não representam ainda as quadras hidrológicas finais.</p>
 <p>Os dois dissipadores foram orientados pelo MDT: o ponto de maior cota foi tratado como entrada e o de menor cota como saída. Cada trecho foi representado no SWMM por um conduto circular placeholder de 1,20 m até um outfall <code>O_B_DISS_*</code>. Essa representação permite obter vazões de chegada, mas <strong>não dimensiona</strong> escada hidráulica, degraus, bacia de dissipação, revestimento ou proteção geotécnica.</p>
 </section>
@@ -445,9 +449,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>O resultado deve ser lido como diagnóstico da configuração atual. O balanço numérico é aceitável para a rodada exploratória, mas o modelo ainda não está pronto para contratação: áreas, CN por subcatchment, cotas de fundo, seções, condições de jusante e dissipadores precisam ser validados.</p>
 <p>Os relatórios <code>.rpt</code>, a tabela de trechos críticos e o registro completo desta rodada estão disponíveis na página de dados.</p>
 </section>
-<section id="primeira-rodada-integrada-bacia-b" class="level2">
-<h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-b">4.12 Primeira rodada integrada — Bacia B</h2>
-<p>Os modelos integrados <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR25.inp</code> e <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR50.inp</code> foram executados no EPA SWMM 5.2.4. A Bacia B apresentou um alerta numérico para o trecho <code>D_B_01</code>, associado à aplicação do desnível mínimo automático em um conduto de dissipação com cotas muito próximas; o trecho deverá ser revisado com levantamento de detalhe. O nó <code>N_B_0030</code> recebeu um conector topológico <code>L_B_C0030</code> porque possuía três entradas diretas, condição que o SWMM não aceita diretamente em outfall.</p>
+<section id="rodada-integrada-e-pré-dimensionamento-bacia-b" class="level2">
+<h2 class="anchored" data-anchor-id="rodada-integrada-e-pré-dimensionamento-bacia-b">4.12 Rodada integrada e pré-dimensionamento — Bacia B</h2>
+<p>Os modelos integrados <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR25.inp</code> e <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR50.inp</code> foram reexecutados no EPA SWMM 5.2.4 em 17/08/2026, após a regeneração do modelo a partir dos shapefiles lançados no ArcMap. A Bacia B apresentou um alerta numérico para o trecho <code>D_B_01</code>, associado à aplicação do desnível mínimo automático em um conduto de dissipação com cotas muito próximas; o trecho deverá ser revisado com levantamento de detalhe. O nó <code>N_B_0030</code> recebeu um conector topológico <code>L_B_C0030</code> porque possuía três entradas diretas, condição que o SWMM não aceita diretamente em outfall.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
@@ -490,21 +494,86 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
-<p>As vazões máximas nos dois trechos de dissipação foram <code>DISS_B_01</code> = <strong>5,039/5,199 m³/s</strong> e <code>DISS_B_02</code> = <strong>7,133/7,705 m³/s</strong>, respectivamente para TR25/TR50. Esses valores são vazões de chegada da primeira rodada e servem para orientar a concepção dos dissipadores; não são ainda vazões de projeto executivo.</p>
+<p>As vazões máximas nos dois trechos de dissipação foram <code>DISS_B_01</code> = <strong>5,039/5,199 m³/s</strong> e <code>DISS_B_02</code> = <strong>7,133/7,705 m³/s</strong>, respectivamente para TR25/TR50. Esses valores são vazões de chegada da rodada reproduzida e servem para orientar a concepção dos dissipadores; não são ainda vazões de projeto executivo.</p>
+<section id="pré-dimensionamento-por-manning" class="level3">
+<h3 class="anchored" data-anchor-id="pré-dimensionamento-por-manning">Pré-dimensionamento por Manning</h3>
+<p>Foi gerada uma tabela de candidatos nominais por conduto, usando a vazão máxima simulada e a capacidade de escoamento uniforme de Manning na seção circular placeholder, com rugosidade 0,013. O quadro abaixo resume a contagem de trechos físicos por diâmetro candidato; ele é uma <strong>triagem de concepção</strong>, não uma especificação de compra ou de contratação.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Diâmetro nominal candidato</th>
+<th style="text-align: right;">TR25</th>
+<th style="text-align: right;">TR50</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0,30 m</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0,40 m</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0,50 m</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0,60 m</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0,80 m</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1,00 m</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1,20 m</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1,50 m</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Auditar</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Os candidatos variam entre os cenários porque a vazão de projeto muda. O trecho <code>D_B_01</code> permanece como <strong>AUDITAR</strong>: a cota de entrada e a cota de saída do placeholder ficaram coincidentes, não permitindo calcular capacidade uniforme de Manning de forma confiável. O trecho <code>D_B_02</code> resulta em candidato de 1,20 m, mas apresenta velocidade preliminar próxima de 9,4 m/s no TR50; será necessário projetar a estrutura de dissipação, verificar regime, revestimento, ancoragem e proteção contra erosão.</p>
 <p>Na triagem por capacidade e velocidade, destacaram-se <code>D_B_01</code>, <code>L_B_0037</code>, <code>L_B_0021</code>, <code>L_B_0039</code>, <code>L_B_0035</code>, <code>L_B_0038</code>, <code>L_B_0036</code>, <code>L_B_0034</code>, <code>L_B_0032</code> e <code>L_B_0033</code>. O maior indicador de capacidade foi observado em <code>D_B_01</code> — aproximadamente 50,98 em TR25 e 52,60 em TR50 —, mas esse valor é diretamente influenciado pelo conduto placeholder de 1,20 m e pela advertência de desnível mínimo. Entre os links da rede, <code>L_B_0037</code> alcançou razão aproximada de 2,97/2,99 e <code>L_B_0021</code> de 2,11/2,43, para TR25/TR50.</p>
-<p>O resultado da Bacia B é consistente como <strong>primeira rodada exploratória</strong>, com erros de continuidade baixos, mas evidencia a necessidade de revisar as áreas de contribuição, a separação entre os dois componentes, os diâmetros, as cotas de fundo, a saída de cada dissipador e a condição de jusante. A camada espacial com resultados e os arquivos <code>.inp</code>, <code>.rpt</code>, <code>.out</code>, CSV e JSON estão disponíveis na página de dados.</p>
+<p>O resultado da Bacia B é consistente como <strong>rodada exploratória reproduzida</strong>, com erros de continuidade baixos, e agora dispõe de pré-dimensionamento tabular e camada espacial de triagem. Ainda evidencia a necessidade de revisar as áreas de contribuição, a separação entre os dois componentes, os diâmetros, as cotas de fundo, a saída de cada dissipador e a condição de jusante. A camada espacial com resultados e os arquivos <code>.inp</code>, <code>.rpt</code>, <code>.out</code>, CSV e JSON estão disponíveis na página de dados.</p>
+</section>
+<section id="condição-de-fechamento-hidráulico" class="level3">
+<h3 class="anchored" data-anchor-id="condição-de-fechamento-hidráulico">Condição de fechamento hidráulico</h3>
+<p>Os dois dissipadores marcados em <code>Trechos_Dissipacao_B.shp</code> foram integrados como <code>O_B_DISS_01</code> e <code>O_B_DISS_02</code>. Entretanto, o resultado ainda apresenta o nó <code>N_B_0030</code> como terceiro outfall, com vazão máxima de <strong>3,403 m³/s no TR25</strong> e <strong>3,933 m³/s no TR50</strong>. Portanto, a Bacia B <strong>não está fechada, nesta versão, somente pelos dois dissipadores marcados</strong>. Esse resultado não será ocultado nem convertido automaticamente em uma nova obra: é uma pendência topológica para verificar no GIS se <code>N_B_0030</code> é uma saída real, uma conexão não desenhada, um componente que deve ser conectado a um dissipador ou um erro de lançamento.</p>
+</section>
 </section>
 <section id="validação-paralela-que-deve-ser-feita-no-swmm" class="level2">
 <h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.13 Validação paralela que deve ser feita no SWMM</h2>
 <p>Enquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.</p>
-<p>Na Bacia A, o modelo possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Na Bacia B, a primeira rodada possui <strong>46 conduítes, 45 junctions, 3 outfalls (incluindo duas saídas de dissipação) e 46 subcatchments</strong>, além de um conector topológico provisório. Os diâmetros de 0,60 m/0,80 m na rede e 1,20 m nos dissipadores, a rugosidade 0,013, os CN médios agregados e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
+<p>Na Bacia A, o modelo possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Na Bacia B, a rodada integrada possui <strong>47 conduítes no arquivo SWMM, sendo 46 físicos e um conector topológico, 45 junctions, 3 outfalls (incluindo duas saídas de dissipação) e 46 subcatchments</strong>. Os diâmetros de 0,60 m/0,80 m na rede e 1,20 m nos dissipadores, a rugosidade 0,013, os CN médios agregados e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
 <section id="checklist-de-conferência" class="level3">
 <h3 class="anchored" data-anchor-id="checklist-de-conferência">Checklist de conferência</h3>
 <ol type="1">
 <li>Conferir o sentido de cada link e se o nó de montante está compatível com o nó de jusante.</li>
 <li>Identificar links invertidos, nós duplicados, nós órfãos e componentes sem caminho hidráulico.</li>
 <li>Revisar os 40 outfalls da Bacia A e os 3 outfalls da Bacia B: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.</li>
-<li>Conferir os 187 links da Bacia A e os 44 links nodais da Bacia B contra as camadas GIS, classificando cada um como TRONCO, COLETOR ou DISSIPADOR.</li>
+<li>Conferir os 187 links da Bacia A e os 46 links físicos da Bacia B contra as camadas GIS, classificando cada um como TRONCO, COLETOR ou DISSIPADOR; manter <code>L_B_C0030</code> apenas como conector topológico até a decisão sobre <code>N_B_0030</code>.</li>
 <li>Editar as áreas de quadras no ArcMap/QGIS, e não diretamente no SWMM, mantendo o vínculo de cada subcatchment ao nó de entrada.</li>
 <li>Rodar TR25 como teste de consistência e depois TR50, observando erro de continuidade, alagamentos, sobrecargas, velocidades e vazões de saída.</li>
 <li>Registrar as vazões nos pontos que receberão dissipadores; elas serão a entrada para a estimativa de degraus, bacias e proteção a jusante.</li>

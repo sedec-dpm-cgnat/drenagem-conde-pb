@@ -1,0 +1,5 @@
+﻿scenario,id_diss,outfall_id,average_flow_cms,max_flow_cms,total_volume_million_l
+TR25,DISS_B_01,O_B_DISS_02,2.839,7.133,29.638
+TR25,DISS_B_02,O_B_DISS_01,2.79,5.039,29.888
+TR50,DISS_B_01,O_B_DISS_02,2.956,7.705,31.815
+TR50,DISS_B_02,O_B_DISS_01,2.843,5.199,31.18

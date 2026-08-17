@@ -195,18 +195,19 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Conclusão provisória.</strong> Esta seção será atualizada depois da revisão da rede, do lançamento da Bacia B, da edição das áreas de contribuição e das rodadas hidráulicas. A versão atual consolida decisões de método e encaminha o próximo ciclo de trabalho.
+<strong>Conclusão provisória.</strong> Esta seção será atualizada depois da revisão das redes A e B, da edição das áreas de contribuição e das rodadas hidráulicas validadas. A versão atual já incorpora o primeiro lançamento e a primeira rodada da Bacia B, consolida decisões de método e encaminha o próximo ciclo de trabalho.
 </div>
 </div>
 </div>
 <section id="conclusões" class="level2">
 <h2 class="anchored" data-anchor-id="conclusões">6.1 Conclusões</h2>
 <ol type="1">
-<li>As Bacias A e B devem permanecer como unidades explícitas de planejamento, cartografia, hidrologia e modelagem. A Bacia A está mais avançada; a Bacia B ainda precisa receber o lançamento da rede.</li>
+<li>As Bacias A e B devem permanecer como unidades explícitas de planejamento, cartografia, hidrologia e modelagem. A Bacia A está mais avançada; a Bacia B já possui lançamento e primeira rodada, mas ainda requer validação equivalente.</li>
 <li>O MDT híbrido recortado A+B é a base comum de trabalho para a concepção preliminar. Ele combina cobertura da base legada derivada de ANADEM/curvas com maior detalhamento local do drone onde há cobertura, mas não substitui levantamento topográfico cadastral.</li>
 <li>A rede da Bacia A está estruturada para revisão, porém seus 16 componentes conectados demonstram que a continuidade hidráulica ainda precisa ser confirmada antes do dimensionamento.</li>
 <li>As áreas de contribuição atuais são um template de modelagem. O resultado hidráulico depende da sua edição conforme ruas, quadras, sarjetas, pontos de entrada e caminhos de escoamento.</li>
-<li>Os trechos de TrechosDissipacao.shp podem orientar a concepção das saídas, mas a solução precisa ser relacionada às vazões de chegada, ao desnível do terreno e à proteção a jusante.</li>
+<li>Os trechos de <code>TrechosDissipacao.shp</code> e <code>Trechos_Dissipacao_B.shp</code> orientam a concepção das saídas, mas a solução precisa ser relacionada às vazões de chegada, ao desnível do terreno e à proteção a jusante.</li>
+<li>A primeira rodada da Bacia B apresentou erros de continuidade inferiores a 0,02%, mas também indicou 12 links acima da capacidade cheia atual e 18 nós com inundação. Esses valores são alertas de revisão, não quantitativos de obra.</li>
 <li>A linha hidrológica TR25/TR50 deve permanecer como referência tradicional. A mudança climática será incorporada em etapa própria, com cenários NEX-GDDP-CMIP6 e incertezas explicitadas.</li>
 <li>O Plano de Trabalho deve priorizar trechos críticos de troncos, coletores indispensáveis e dissipadores, sem tratar obras isoladas como substitutas da concepção integrada da bacia.</li>
 </ol>
@@ -234,8 +235,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Lançar troncos, coletores, áreas e saídas da Bacia B</td>
-<td>pacote GIS da Bacia B</td>
+<td>Validar os troncos, coletores, áreas e saídas da Bacia B já lançados</td>
+<td>pacote GIS da Bacia B revisado</td>
 </tr>
 <tr class="odd">
 <td>3</td>
@@ -244,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Integrar TrechosDissipacao.shp ao modelo</td>
+<td>Integrar e revisar <code>TrechosDissipacao.shp</code> e <code>Trechos_Dissipacao_B.shp</code></td>
 <td>inventário de dissipadores e exutórios</td>
 </tr>
 <tr class="odd">
@@ -254,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="even">
 <td>6</td>
-<td>Rodar TR25 e TR50</td>
+<td>Reexecutar TR25 e TR50</td>
 <td>resultados de balanço, sobrecarga e alagamento</td>
 </tr>
 <tr class="odd">

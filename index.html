@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">15 de agosto de 2026</p>
+      <p class="date">17 de agosto de 2026</p>
     </div>
   </div>
   
@@ -247,7 +247,7 @@ Concepção preliminar · Bacias A e B · MDT híbrido · SWMM
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Minuta técnica preliminar · versão 0.1 · 15/08/2026.</strong> Este documento está sendo estruturado para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. Não substitui projeto básico ou executivo, levantamento topográfico cadastral, sondagens, licenciamento, orçamento ou validação pelos responsáveis técnicos.
+<strong>Minuta técnica preliminar · versão 0.2 · 17/08/2026.</strong> Esta versão incorpora o lançamento preliminar da Bacia B e a primeira rodada TR25/TR50 no SWMM. O documento continua em construção para instruir a elaboração do Plano de Trabalho de Reconstrução do Município de Conde/PB. Não substitui projeto básico ou executivo, levantamento topográfico cadastral, sondagens, licenciamento, orçamento ou validação pelos responsáveis técnicos.
 </div>
 </div>
 </div>
@@ -268,7 +268,7 @@ Concepção preliminar · Bacias A e B · MDT híbrido · SWMM
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Escopo atual.</strong> A primeira versão do projeto SWMM da Bacia A já foi montada com a rede importada, nós topológicos e áreas de contribuição preliminares. A etapa de revisão de quadras, conexões, cotas de fundo e diâmetros ainda é necessária antes de qualquer uso como projeto básico.
+<strong>Escopo atual.</strong> Os modelos preliminares das Bacias A e B já foram montados com redes importadas, nós, áreas de contribuição template e saídas/dissipadores modelados de forma conceitual. A revisão de quadras, conexões, cotas de fundo, diâmetros e condições de jusante ainda é necessária antes de qualquer uso como projeto básico.
 </div>
 </div>
 </div>
@@ -281,14 +281,14 @@ Concepção preliminar · Bacias A e B · MDT híbrido · SWMM
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Unidades de trabalho.</strong> A <strong>Bacia A</strong> é a frente já avançada, com rede preliminar, nós e áreas de contribuição template. A <strong>Bacia B</strong> já está delimitada e será lançada na etapa seguinte. A terminologia de rede, áreas, metas e cenários hidrológicos deste relatório seguirá sempre essa divisão.
+<strong>Unidades de trabalho.</strong> A <strong>Bacia A</strong> permanece em revisão hidráulica; a <strong>Bacia B</strong> recebeu nesta versão o lançamento preliminar de 3 troncos, 20 coletores e 2 trechos de dissipação, além de áreas template e uma primeira rodada SWMM. A terminologia de rede, áreas, metas e cenários hidrológicos deste relatório seguirá sempre essa divisão.
 </div>
 </div>
 </div>
 <figure class="map-figure figure">
-<img src="assets/mapa_sintese_bacias_rede.svg" alt="Mapa-síntese das Bacias A e B, com a rede preliminar da Bacia A e os trechos de dissipação" class="figure-img">
+<img src="assets/mapa_sintese_bacias_rede.svg" alt="Mapa-síntese das Bacias A e B, com as redes preliminares, troncos, coletores e trechos de dissipação" class="figure-img">
 <figcaption>
-Mapa-síntese estático para leitura do relatório. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.
+Mapa-síntese estático para leitura do relatório, agora com as redes preliminares das duas bacias e seus trechos de dissipação. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.
 </figcaption>
 </figure>
 <p class="map-note">
@@ -341,9 +341,9 @@ A coincidência espacial é uma evidência de priorização, não uma validaçã
 </tr>
 <tr class="even">
 <td><strong>Bacia B</strong></td>
-<td>Troncos principais, coletores, áreas de contribuição e saídas a serem lançados sobre o MDT híbrido</td>
-<td>Trechos prioritários a definir depois do lançamento e da validação das ocorrências, caminhos de fluxo e dissipadores</td>
-<td>Bacia delimitada; rede ainda não lançada</td>
+<td>3 troncos, 20 coletores, 2 dissipadores, nós e áreas template lançados sobre o MDT híbrido</td>
+<td>Trechos prioritários a definir depois da validação das ocorrências, caminhos de fluxo, vazões e dissipadores</td>
+<td>Primeira rodada SWMM executada; revisão em andamento</td>
 </tr>
 <tr class="odd">
 <td><strong>A + B</strong></td>
@@ -360,16 +360,16 @@ A coincidência espacial é uma evidência de priorização, não uma validaçã
 <h2 class="anchored" data-anchor-id="números-da-versão-preliminar">Números da versão preliminar</h2>
 <div class="metric-grid">
 <div class="metric-card">
-<span class="metric">187</span><span class="label">links nodais</span>
+<span class="metric">233</span><span class="label">links nodais A+B</span>
 </div>
 <div class="metric-card">
-<span class="metric">200</span><span class="label">nós</span>
+<span class="metric">247</span><span class="label">nós A+B</span>
 </div>
 <div class="metric-card">
-<span class="metric">208</span><span class="label">áreas preliminares</span>
+<span class="metric">254</span><span class="label">áreas preliminares A+B</span>
 </div>
 <div class="metric-card">
-<span class="metric">21,65 km</span><span class="label">rede importada</span>
+<span class="metric">30,39 km</span><span class="label">rede importada A+B</span>
 </div>
 <div class="metric-card">
 <span class="metric">EPSG:31985</span><span class="label">SIRGAS 2000 / UTM 25S</span>

@@ -1,0 +1,40 @@
+{
+  "TR25": {
+    "inp": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\06_RESULTADOS_SWMM_B\\CONDE_BACIA_B_REDE_DISSIPADORES_TR25.inp",
+    "topology_connectors": [
+      {
+        "outfall": "N_B_0030",
+        "junction": "N_B_C0030",
+        "connector": "L_B_C0030",
+        "n_inlets_combined": 3,
+        "length_placeholder_m": 10.0,
+        "diameter_placeholder_m": 0.8,
+        "elevation_m": 45.245,
+        "inlet_links": [
+          "L_B_0020",
+          "L_B_0042",
+          "L_B_0043"
+        ]
+      }
+    ]
+  },
+  "TR50": {
+    "inp": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\06_RESULTADOS_SWMM_B\\CONDE_BACIA_B_REDE_DISSIPADORES_TR50.inp",
+    "topology_connectors": [
+      {
+        "outfall": "N_B_0030",
+        "junction": "N_B_C0030",
+        "connector": "L_B_C0030",
+        "n_inlets_combined": 3,
+        "length_placeholder_m": 10.0,
+        "diameter_placeholder_m": 0.8,
+        "elevation_m": 45.245,
+        "inlet_links": [
+          "L_B_0020",
+          "L_B_0042",
+          "L_B_0043"
+        ]
+      }
+    ]
+  }
+}

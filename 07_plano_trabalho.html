@@ -259,19 +259,24 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="odd">
 <td><code>TrechosDissipacao.shp</code></td>
 <td>5 linhas em EPSG:31985, com campo <code>Id</code> igual a 0 em todas as feições</td>
-<td>definir conexão, sentido e parâmetros hidráulicos de cada trecho</td>
+<td>referência da Bacia A; definir conexão, sentido e parâmetros hidráulicos</td>
 </tr>
 <tr class="even">
+<td><code>Trechos_Dissipacao_B.shp</code></td>
+<td>2 linhas em EPSG:31985</td>
+<td>saídas preliminares da Bacia B; validar conexão, sentido e estrutura</td>
+</tr>
+<tr class="odd">
 <td>Bacias A e B</td>
 <td>limites e revisões D8 disponíveis no pacote GIS</td>
 <td>recorte territorial e controle da continuidade</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>MDT híbrido e curvas integradas</td>
 <td>disponíveis em EPSG:31985</td>
 <td>leitura preliminar de cotas, declividades e caminhos de escoamento</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Diagnóstico municipal REC-PB-2504603-20260802-01</td>
 <td>relatório local com ocorrências, mapas, propostas e orçamento preliminar</td>
 <td>cruzar metas, coordenadas, extensões, saídas e população afetada com o GIS/SWMM</td>
@@ -287,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="conferência-da-cobertura-da-rede" class="level3">
 <h3 class="anchored" data-anchor-id="conferência-da-cobertura-da-rede">Conferência da cobertura da rede</h3>
 <p>O modelo nodal preliminar possui 16 componentes conectados e 40 saídas provisórias. Os cinco trechos de dissipação se associam preliminarmente aos componentes 16, 15, 2, 9 e 3. Portanto, a afirmação de que toda a água coletada deverá sair por um desses trechos será adotada como <strong>regra de concepção</strong>, mas ainda não como resultado verificado: os outros 11 componentes precisam ser conectados a esses exutórios, receber uma saída própria justificada ou ser eliminados após a revisão da rede.</p>
+<p>Na Bacia B, a primeira rodada possui dois componentes conectados, 46 links totais incluindo os dois dissipadores e três saídas SWMM. Os trechos <code>DISS_B_01</code> e <code>DISS_B_02</code> foram associados a <code>O_B_DISS_01</code> e <code>O_B_DISS_02</code>; a vazão de chegada foi calculada, mas a estrutura física de dissipação continua pendente de detalhamento.</p>
 <p>Os 12 pontos de metas têm identificações originais como <code>1i</code>, <code>1f</code>, <code>2i - foto?</code>, <code>2f</code>, <code>3i</code>, <code>3f</code>, <code>4i</code>, <code>4f</code>, <code>5i</code>, <code>5f</code>, <code>6i</code> e <code>6f</code>. A nomenclatura sugere pares início/fim, mas não será interpretada como definição hidráulica final sem conferência espacial, fotográfica e de campo.</p>
 </section>
 </section>
@@ -372,27 +378,27 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="odd">
 <td>Concepção integrada</td>
 <td>Rede preliminar em revisão; conferir todos os componentes, áreas, saídas e dissipadores</td>
-<td>Lançamento ainda pendente sobre o MDT híbrido e as linhas de fluxo</td>
+<td>Rede preliminar lançada; conferir os dois componentes, áreas, saídas e dissipadores</td>
 </tr>
 <tr class="even">
 <td>Troncos principais</td>
 <td>Prioridade inicial nos trechos críticos confirmados e conectados a descarga segura</td>
-<td>Prioridade a definir após o lançamento e a identificação dos setores críticos</td>
+<td>Prioridade a definir após a triagem hidráulica e a confirmação dos setores críticos</td>
 </tr>
 <tr class="odd">
 <td>Coletores indispensáveis</td>
 <td>Somente os necessários para alimentar e fechar os troncos priorizados</td>
-<td>Serão definidos junto com as áreas de contribuição das quadras</td>
+<td>Serão confirmados junto com as áreas de contribuição das quadras</td>
 </tr>
 <tr class="even">
 <td>Dissipadores e saídas</td>
-<td>Usar <code>TrechosDissipacao.shp</code> como referência de campo e integrar após a validação das vazões</td>
-<td>Identificar e marcar após a definição dos exutórios e da energia de descarga</td>
+<td>Usar <code>TrechosDissipacao.shp</code> como referência e revisar as vazões</td>
+<td>Usar <code>Trechos_Dissipacao_B.shp</code>, validar as vazões e detalhar a solução estrutural</td>
 </tr>
 <tr class="odd">
 <td>Metas do Plano</td>
 <td>M-03, M-04, M-05 e M-06 podem ser detalhadas primeiro nesta frente</td>
-<td>M-02 a M-06 serão detalhadas após o lançamento da rede</td>
+<td>M-02 a M-06 serão detalhadas após a validação da primeira rodada</td>
 </tr>
 </tbody>
 </table>
@@ -432,9 +438,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="próximas-decisões-técnicas" class="level2">
 <h2 class="anchored" data-anchor-id="próximas-decisões-técnicas">6.1.7 Próximas decisões técnicas</h2>
 <ol type="1">
-<li>Marcar os pontos de início e fim dos dissipadores e entregar a camada vetorial no CRS de trabalho.</li>
+<li>Validar os pontos de início e fim dos dissipadores já marcados e confirmar sua conexão no CRS de trabalho.</li>
 <li>Revisar no ArcMap a continuidade dos troncos e coletores e indicar o que é tronco, coletor, descarga e dissipador.</li>
-<li>Editar as áreas de contribuição das quadras e associá-las aos nós de entrada.</li>
+<li>Editar as áreas de contribuição das quadras das duas bacias e associá-las aos nós de entrada.</li>
 <li>Atualizar cotas de fundo, diâmetros, rugosidades, condições de jusante e parâmetros de infiltração.</li>
 <li>Rodar os cenários tradicionais de chuva e verificar os resultados antes de incorporar as projeções NEX-GDDP-CMIP6.</li>
 <li>Selecionar as metas que serão levadas ao Plano de Trabalho, com justificativa de risco, população/infraestrutura protegida, dependências e estimativa de custo.</li>

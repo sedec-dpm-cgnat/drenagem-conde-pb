@@ -1,0 +1,37 @@
+{
+  "projeto": "Conde - Bacia B - rede preliminar SWMM com dissipadores",
+  "crs": "EPSG:31985",
+  "crs_nome": "SIRGAS 2000 / UTM 25S",
+  "n_arquivos_fonte": 5,
+  "n_fontes_recortadas": 23,
+  "n_links_nodais_sem_dissipadores": 44,
+  "n_links_total_com_dissipadores": 46,
+  "n_nos_total": 47,
+  "n_areas_contribuicao_template": 46,
+  "n_componentes_grafo": 2,
+  "n_dissipadores": 2,
+  "comprimento_rede_m": 8740.796884656007,
+  "comprimento_troncos_m": 2028.5087985687337,
+  "comprimento_coletores_m": 6612.551058011732,
+  "comprimento_dissipadores_m": 99.7370280755413,
+  "cn_medio_preliminar": 76.77,
+  "percentual_impermeavel_preliminar": 30.0,
+  "metodo_topologia": "recorte na Bacia B + intersecoes + snap de extremidades em 2 m + orientacao pelo declive do MDT híbrido",
+  "metodo_areas": "Voronoi preliminar dos nos, recortado pela Bacia B; revisar com quadras, ruas, sarjetas e entradas",
+  "metodo_dissipadores": "cada linha Trechos_Dissipacao_B foi orientada pela cota do MDT e representada por conduto circular placeholder de 1,20 m até outfall FREE",
+  "limitacoes": [
+    "áreas de contribuição são template geométrico e ainda não são áreas de quadra validadas",
+    "diâmetros de troncos, coletores e dissipadores são placeholders preliminares",
+    "cotas são do MDT de superfície e não cotas de fundo de galerias",
+    "o trecho de dissipação não representa ainda escada, degraus, bacia de dissipação ou proteção geotécnica",
+    "a representação hidráulica é uma primeira rodada; validar no ArcMap/QGIS e em campo antes de decisão"
+  ],
+  "arquivos": {
+    "rede_linhas": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\01_REDE_IMPORTADA_B\\rede_linhas_B_nodal.gpkg",
+    "rede_nos": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\01_REDE_IMPORTADA_B\\rede_nos_B.gpkg",
+    "areas_template": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\02_AREAS_CONTRIBUICAO_B\\areas_contribuicao_B_template.gpkg",
+    "dissipadores_modelados": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\01_REDE_IMPORTADA_B\\trechos_dissipacao_B_modelados.gpkg",
+    "swmm_tr25": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\03_MODELO_SWMM_B\\CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR25.inp",
+    "swmm_tr50": "E:\\SEDEC\\Paraiba\\GIS\\11_INTEGRACAO_MDT_SWMM_CONDE\\07_SWMM_BACIA_01\\03_MODELO_SWMM_B\\CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR50.inp"
+  }
+}

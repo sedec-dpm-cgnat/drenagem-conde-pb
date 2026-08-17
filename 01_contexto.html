@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>O estudo parte de duas unidades territoriais de trabalho:</p>
 <ul>
 <li><strong>Bacia A:</strong> frente já avançada, com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição template;</li>
-<li><strong>Bacia B:</strong> bacia delimitada e preparada no GIS, cujo lançamento da rede ainda será realizado.</li>
+<li><strong>Bacia B:</strong> bacia delimitada e agora lançada preliminarmente no GIS, com troncos, coletores, dois trechos de dissipação e uma primeira rodada SWMM ainda dependente de validação.</li>
 </ul>
 <p>Essa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas.</p>
 </section>
@@ -287,7 +287,7 @@ Figura&nbsp;1: Mapa de referência das áreas suscetíveis à erosão, com a red
 </tr>
 </tbody>
 </table>
-<p>Entre as metas originais, as coincidências diretas identificadas são: <code>3i</code> em suscetibilidade média; <code>3f</code> em sobreposição de suscetibilidade alta e média; <code>6i</code> e <code>6f</code> em suscetibilidade alta. Os pontos <code>5i</code> e <code>5f</code> estão dentro da Bacia A, mas fora das manchas originais, devendo ser avaliados pela topografia, pela rede e pela vistoria. Os pontos <code>1i</code>, <code>1f</code>, <code>2f</code> e <code>2i - foto?</code> estão dentro da Bacia B, mas não coincidem diretamente com as manchas disponíveis; não devem ser descartados, pois a Bacia B ainda receberá o lançamento da rede e a revisão das áreas de contribuição. Os pontos <code>4i</code> e <code>4f</code> estão fora do recorte das Bacias A e B.</p>
+<p>Entre as metas originais, as coincidências diretas identificadas são: <code>3i</code> em suscetibilidade média; <code>3f</code> em sobreposição de suscetibilidade alta e média; <code>6i</code> e <code>6f</code> em suscetibilidade alta. Os pontos <code>5i</code> e <code>5f</code> estão dentro da Bacia A, mas fora das manchas originais, devendo ser avaliados pela topografia, pela rede e pela vistoria. Os pontos <code>1i</code>, <code>1f</code>, <code>2f</code> e <code>2i - foto?</code> estão dentro da Bacia B, mas não coincidem diretamente com as manchas disponíveis; não devem ser descartados, pois a Bacia B agora possui lançamento preliminar e ainda passará pela revisão das áreas de contribuição. Os pontos <code>4i</code> e <code>4f</code> estão fora do recorte das Bacias A e B.</p>
 <p>Essa distinção é importante: o estudo não deve transformar automaticamente todo ponto originalmente marcado em meta de obra, nem afirmar coincidência quando ela não existe. A evidência será usada em três níveis: (i) coincidência direta com suscetibilidade; (ii) localização dentro das Bacias A/B, exigindo análise de fluxo, rede e campo; e (iii) ocorrência fora do recorte, registrada para tratamento separado.</p>
 <p>Os resultados detalhados e reproduzíveis estão disponíveis no <a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv">arquivo CSV</a>, na <a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.geojson">camada GeoJSON</a> e no <a href="data/evidencia_suscetibilidade/resumo_suscetibilidade.json">resumo JSON</a>.</p>
 </section>
@@ -343,12 +343,12 @@ Figura&nbsp;1: Mapa de referência das áreas suscetíveis à erosão, com a red
 <tr class="odd">
 <td>3</td>
 <td>Lançamento da rede da Bacia B</td>
-<td>Próxima etapa</td>
+<td>Primeira rodada executada; revisão em andamento</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>Áreas reais de contribuição, dissipadores e conexões</td>
-<td>Em desenvolvimento</td>
+<td>Em desenvolvimento nas duas bacias</td>
 </tr>
 <tr class="odd">
 <td>5</td>
@@ -386,8 +386,8 @@ Figura&nbsp;1: Mapa de referência das áreas suscetíveis à erosão, com a red
 </tr>
 <tr class="even">
 <td>Bacia B</td>
-<td>Limite revisado, MDT, curvas e fluxos disponíveis</td>
-<td>Lançar troncos, coletores, áreas e pontos de saída</td>
+<td>Limite revisado; 3 arquivos de tronco, 2 arquivos de coletor, 2 dissipadores e modelo preliminar disponíveis</td>
+<td>Validar conectividade, áreas, diâmetros, cotas e pontos de saída</td>
 </tr>
 <tr class="odd">
 <td>A+B</td>

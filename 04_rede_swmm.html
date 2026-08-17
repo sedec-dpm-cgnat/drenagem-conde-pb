@@ -164,12 +164,14 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#arquivos-swmm-preliminares" id="toc-arquivos-swmm-preliminares" class="nav-link" data-scroll-target="#arquivos-swmm-preliminares">4.3 Arquivos SWMM preliminares</a></li>
   <li><a href="#áreas-de-contribuição" id="toc-áreas-de-contribuição" class="nav-link" data-scroll-target="#áreas-de-contribuição">4.4 Áreas de contribuição</a></li>
   <li><a href="#dissipadores-e-saídas" id="toc-dissipadores-e-saídas" class="nav-link" data-scroll-target="#dissipadores-e-saídas">4.5 Dissipadores e saídas</a></li>
-  <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</a></li>
-  <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.7 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
-  <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.8 Critérios de verificação hidráulica</a></li>
-  <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.9 Próxima rodada</a></li>
-  <li><a href="#primeira-rodada-integrada-bacia-a" id="toc-primeira-rodada-integrada-bacia-a" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-a">4.10 Primeira rodada integrada — Bacia A</a></li>
-  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.11 Validação paralela que deve ser feita no SWMM</a>
+  <li><a href="#primeira-rodada-da-bacia-b" id="toc-primeira-rodada-da-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-da-bacia-b">4.6 Primeira rodada da Bacia B</a></li>
+  <li><a href="#bacia-b-e-simulação-conjunta" id="toc-bacia-b-e-simulação-conjunta" class="nav-link" data-scroll-target="#bacia-b-e-simulação-conjunta">4.7 Bacia B e simulação conjunta</a></li>
+  <li><a href="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" id="toc-rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="nav-link" data-scroll-target="#rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</a></li>
+  <li><a href="#critérios-de-verificação-hidráulica" id="toc-critérios-de-verificação-hidráulica" class="nav-link" data-scroll-target="#critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</a></li>
+  <li><a href="#próxima-rodada" id="toc-próxima-rodada" class="nav-link" data-scroll-target="#próxima-rodada">4.10 Próxima rodada</a></li>
+  <li><a href="#primeira-rodada-integrada-bacia-a" id="toc-primeira-rodada-integrada-bacia-a" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</a></li>
+  <li><a href="#primeira-rodada-integrada-bacia-b" id="toc-primeira-rodada-integrada-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-integrada-bacia-b">4.12 Primeira rodada integrada — Bacia B</a></li>
+  <li><a href="#validação-paralela-que-deve-ser-feita-no-swmm" id="toc-validação-paralela-que-deve-ser-feita-no-swmm" class="nav-link" data-scroll-target="#validação-paralela-que-deve-ser-feita-no-swmm">4.13 Validação paralela que deve ser feita no SWMM</a>
   <ul class="collapse">
   <li><a href="#checklist-de-conferência" id="toc-checklist-de-conferência" class="nav-link" data-scroll-target="#checklist-de-conferência">Checklist de conferência</a></li>
   </ul></li>
@@ -290,8 +292,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <ul>
 <li>CONDE_BACIA_A_REDE_PRELIM_TR25.inp — chuva tradicional TR25;</li>
 <li>CONDE_BACIA_A_REDE_PRELIM_TR50.inp — chuva tradicional TR50.</li>
+<li>CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR25.inp — chuva tradicional TR25;</li>
+<li>CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR50.inp — chuva tradicional TR50.</li>
 </ul>
-<p>Os arquivos contêm a estrutura inicial para a Bacia A. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados.</p>
+<p>Os arquivos contêm as estruturas iniciais das duas bacias. Diâmetros, rugosidades, cotas de fundo, condições de jusante e áreas de quadras ainda precisam ser substituídos por dados revisados.</p>
 </section>
 <section id="áreas-de-contribuição" class="level2">
 <h2 class="anchored" data-anchor-id="áreas-de-contribuição">4.4 Áreas de contribuição</h2>
@@ -320,12 +324,19 @@ document.addEventListener('DOMContentLoaded', function () {
 </ol>
 <p>A solução de dissipação será descrita como concepção, não como dimensionamento estrutural definitivo, até que haja topografia e geotecnia de detalhe.</p>
 </section>
+<section id="primeira-rodada-da-bacia-b" class="level2">
+<h2 class="anchored" data-anchor-id="primeira-rodada-da-bacia-b">4.6 Primeira rodada da Bacia B</h2>
+<p>O lançamento recebido para a Bacia B foi organizado com três arquivos de tronco (<code>TroncoB1.shp</code>, <code>TroncoB2.shp</code> e <code>TroncoB3.shp</code>), dois arquivos de coletor (<code>ColetorB1.shp</code> e <code>ColetorB2.shp</code>) e o arquivo específico <code>Trechos_Dissipacao_B.shp</code>. As 23 feições de origem foram recortadas no limite da Bacia B, divididas nas interseções, conectadas por snap de até 2 m e orientadas pelo declive do MDT híbrido.</p>
+<p>O resultado produziu 44 links nodais de rede, 47 nós, 46 áreas de contribuição Voronoi preliminares e dois links de dissipação com prefixo <code>D_B_</code>. A rede tem aproximadamente <strong>8,74 km</strong>, sendo cerca de 8,64 km de troncos/coletores e 0,10 km de linhas de dissipação. Foram identificados dois componentes conectados; portanto, a Bacia B ainda não deve ser tratada como um sistema único contínuo.</p>
+<p>Os arquivos seguem a convenção de identificação <code>N_B_</code>, <code>L_B_</code>, <code>SC_B_</code> e <code>D_B_</code>. O CN médio agregado utilizado como premissa foi <strong>76,77</strong>, correspondente ao recorte CN 2022 da Bacia B; a impermeabilização preliminar foi mantida em 30%, apenas para a primeira rodada. As áreas Voronoi não representam ainda as quadras hidrológicas finais.</p>
+<p>Os dois dissipadores foram orientados pelo MDT: o ponto de maior cota foi tratado como entrada e o de menor cota como saída. Cada trecho foi representado no SWMM por um conduto circular placeholder de 1,20 m até um outfall <code>O_B_DISS_*</code>. Essa representação permite obter vazões de chegada, mas <strong>não dimensiona</strong> escada hidráulica, degraus, bacia de dissipação, revestimento ou proteção geotécnica.</p>
+</section>
 <section id="bacia-b-e-simulação-conjunta" class="level2">
-<h2 class="anchored" data-anchor-id="bacia-b-e-simulação-conjunta">4.6 Bacia B e simulação conjunta</h2>
-<p>A Bacia B possui limite, MDT, curvas e linhas de fluxo organizados, mas ainda falta lançar seus troncos, coletores, áreas e saídas. Os modelos serão mantidos separados durante a montagem para evitar conectar unidades sem comprovação hidráulica. Uma verificação conjunta só será feita onde a conexão entre bacias, exutórios ou sistemas for demonstrada.</p>
+<h2 class="anchored" data-anchor-id="bacia-b-e-simulação-conjunta">4.7 Bacia B e simulação conjunta</h2>
+<p>Os modelos das Bacias A e B são mantidos separados durante a montagem para evitar conectar unidades sem comprovação hidráulica. Uma verificação conjunta só será feita onde a conexão entre bacias, exutórios ou sistemas for demonstrada.</p>
 </section>
 <section id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho" class="level2">
-<h2 class="anchored" data-anchor-id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.7 Rede proposta para as duas bacias e recorte do Plano de Trabalho</h2>
+<h2 class="anchored" data-anchor-id="rede-proposta-para-as-duas-bacias-e-recorte-do-plano-de-trabalho">4.8 Rede proposta para as duas bacias e recorte do Plano de Trabalho</h2>
 <p>O desenho final do relatório deverá distinguir claramente <strong>rede de concepção</strong> de <strong>trechos que serão convertidos em metas</strong>. A rede de concepção cobre as duas unidades de drenagem; a seleção para o Plano de Trabalho será feita por criticidade, continuidade hidráulica, população/infraestrutura protegida, risco de erosão a jusante e viabilidade de execução.</p>
 <table class="caption-top table">
 <colgroup>
@@ -351,9 +362,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="even">
 <td><strong>Bacia B</strong></td>
-<td>Rede a lançar a partir do MDT híbrido, curvas, linhas de fluxo, ruas, quadras e ocorrências</td>
+<td>Rede preliminar com 44 links nodais, 46 áreas template, 2 dissipadores e 2 componentes conectados</td>
 <td>Troncos e coletores que conectem os setores críticos a saídas verificadas; quantitativos ainda não determinados</td>
-<td>Lançamento GIS, áreas, saídas, dissipadores e modelo SWMM próprios da Bacia B</td>
+<td>Rodada TR25/TR50 executada; validar áreas, seções, cotas e dissipadores</td>
 </tr>
 <tr class="odd">
 <td><strong>Bacias A + B</strong></td>
@@ -363,10 +374,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
-<p>Assim, o relatório poderá apresentar a rede proposta para as duas bacias sem afirmar que a Bacia B já possui uma rede executável. Os nomes dos links, extensões, diâmetros, vazões e quantitativos da Bacia B permanecerão <strong>não determinados</strong> até a conclusão do lançamento e da validação.</p>
+<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias sem afirmar que a Bacia B já possui uma rede executável. Os nomes dos links e extensões estão organizados; diâmetros finais, vazões de projeto e quantitativos da Bacia B permanecerão <strong>não determinados</strong> até a conclusão da validação.</p>
 </section>
 <section id="critérios-de-verificação-hidráulica" class="level2">
-<h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.8 Critérios de verificação hidráulica</h2>
+<h2 class="anchored" data-anchor-id="critérios-de-verificação-hidráulica">4.9 Critérios de verificação hidráulica</h2>
 <p>Cada rodada deverá reportar:</p>
 <ul>
 <li>continuidade da rede e componentes desconectados;</li>
@@ -381,11 +392,11 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 </section>
 <section id="próxima-rodada" class="level2">
-<h2 class="anchored" data-anchor-id="próxima-rodada">4.9 Próxima rodada</h2>
-<p>A sequência operacional é: revisar linhas no ArcMap, importar a versão editada, construir as áreas de contribuição, incorporar os dissipadores, atualizar cotas e seções, rodar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
+<h2 class="anchored" data-anchor-id="próxima-rodada">4.10 Próxima rodada</h2>
+<p>A sequência operacional agora é: revisar as linhas e os nós das duas bacias no ArcMap, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados e somente então estruturar as metas do Plano de Trabalho.</p>
 </section>
 <section id="primeira-rodada-integrada-bacia-a" class="level2">
-<h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.10 Primeira rodada integrada — Bacia A</h2>
+<h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</h2>
 <p>Foi executada uma primeira rodada exploratória com os modelos integrados <code>CONDE_BACIA_A_REDE_DISSIPADORES_TR25.inp</code> e <code>CONDE_BACIA_A_REDE_DISSIPADORES_TR50.inp</code>, usando o EPA SWMM 5.2.4. Os arquivos originais <code>CONDE_BACIA_A_REDE_PRELIM_TR25/50.inp</code> foram preservados. A integração adicionou conectores topológicos provisórios nos seis outfalls que tinham múltiplas entradas, condição que o SWMM não aceita diretamente.</p>
 <table class="caption-top table">
 <colgroup>
@@ -430,17 +441,66 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>O resultado deve ser lido como diagnóstico da configuração atual. O balanço numérico é aceitável para a rodada exploratória, mas o modelo ainda não está pronto para contratação: áreas, CN por subcatchment, cotas de fundo, seções, condições de jusante e dissipadores precisam ser validados.</p>
 <p>Os relatórios <code>.rpt</code>, a tabela de trechos críticos e o registro completo desta rodada estão disponíveis na página de dados.</p>
 </section>
+<section id="primeira-rodada-integrada-bacia-b" class="level2">
+<h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-b">4.12 Primeira rodada integrada — Bacia B</h2>
+<p>Os modelos integrados <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR25.inp</code> e <code>CONDE_BACIA_B_REDE_DISSIPADORES_TR50.inp</code> foram executados no EPA SWMM 5.2.4. A Bacia B apresentou um alerta numérico para o trecho <code>D_B_01</code>, associado à aplicação do desnível mínimo automático em um conduto de dissipação com cotas muito próximas; o trecho deverá ser revisado com levantamento de detalhe. O nó <code>N_B_0030</code> recebeu um conector topológico <code>L_B_C0030</code> porque possuía três entradas diretas, condição que o SWMM não aceita diretamente em outfall.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cenário</th>
+<th style="text-align: right;">Erro de continuidade do escoamento</th>
+<th style="text-align: right;">Erro de continuidade do roteamento</th>
+<th style="text-align: right;">Nós com inundação</th>
+<th style="text-align: right;">Links físicos acima da capacidade cheia atual</th>
+<th style="text-align: right;">Perda por inundação</th>
+<th style="text-align: right;">Saída externa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TR25</td>
+<td style="text-align: right;">-0,013%</td>
+<td style="text-align: right;">-0,019%</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">32,713 milhões de litros</td>
+<td style="text-align: right;">66,645 milhões de litros</td>
+</tr>
+<tr class="even">
+<td>TR50</td>
+<td style="text-align: right;">-0,013%</td>
+<td style="text-align: right;">-0,012%</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">41,270 milhões de litros</td>
+<td style="text-align: right;">71,175 milhões de litros</td>
+</tr>
+</tbody>
+</table>
+<p>As vazões máximas nos dois trechos de dissipação foram <code>DISS_B_01</code> = <strong>5,039/5,199 m³/s</strong> e <code>DISS_B_02</code> = <strong>7,133/7,705 m³/s</strong>, respectivamente para TR25/TR50. Esses valores são vazões de chegada da primeira rodada e servem para orientar a concepção dos dissipadores; não são ainda vazões de projeto executivo.</p>
+<p>Na triagem por capacidade e velocidade, destacaram-se <code>D_B_01</code>, <code>L_B_0037</code>, <code>L_B_0021</code>, <code>L_B_0039</code>, <code>L_B_0035</code>, <code>L_B_0038</code>, <code>L_B_0036</code>, <code>L_B_0034</code>, <code>L_B_0032</code> e <code>L_B_0033</code>. O maior indicador de capacidade foi observado em <code>D_B_01</code> — aproximadamente 50,98 em TR25 e 52,60 em TR50 —, mas esse valor é diretamente influenciado pelo conduto placeholder de 1,20 m e pela advertência de desnível mínimo. Entre os links da rede, <code>L_B_0037</code> alcançou razão aproximada de 2,97/2,99 e <code>L_B_0021</code> de 2,11/2,43, para TR25/TR50.</p>
+<p>O resultado da Bacia B é consistente como <strong>primeira rodada exploratória</strong>, com erros de continuidade baixos, mas evidencia a necessidade de revisar as áreas de contribuição, a separação entre os dois componentes, os diâmetros, as cotas de fundo, a saída de cada dissipador e a condição de jusante. A camada espacial com resultados e os arquivos <code>.inp</code>, <code>.rpt</code>, <code>.out</code>, CSV e JSON estão disponíveis na página de dados.</p>
+</section>
 <section id="validação-paralela-que-deve-ser-feita-no-swmm" class="level2">
-<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.11 Validação paralela que deve ser feita no SWMM</h2>
+<h2 class="anchored" data-anchor-id="validação-paralela-que-deve-ser-feita-no-swmm">4.13 Validação paralela que deve ser feita no SWMM</h2>
 <p>Enquanto o relatório e a base GIS avançam, a validação no SWMM deve começar pelo modelo de partida, sem alterar os arquivos originais. Abra uma cópia do TR25, confira a rede no mapa e registre cada link, nó, outfall, área e parâmetro em uma tabela de controle. Depois repita o teste no TR50.</p>
-<p>O modelo atual possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Os diâmetros de 0,60 m e 0,80 m, a rugosidade 0,013, o CN médio 79 e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
+<p>Na Bacia A, o modelo possui <strong>187 conduítes, 160 junctions, 40 outfalls provisórios e 208 subcatchments</strong>. Na Bacia B, a primeira rodada possui <strong>46 conduítes, 45 junctions, 3 outfalls (incluindo duas saídas de dissipação) e 46 subcatchments</strong>, além de um conector topológico provisório. Os diâmetros de 0,60 m/0,80 m na rede e 1,20 m nos dissipadores, a rugosidade 0,013, os CN médios agregados e a impermeabilização de 30% são premissas preliminares. Não devem ser tratados como dimensionamento final.</p>
 <section id="checklist-de-conferência" class="level3">
 <h3 class="anchored" data-anchor-id="checklist-de-conferência">Checklist de conferência</h3>
 <ol type="1">
 <li>Conferir o sentido de cada link e se o nó de montante está compatível com o nó de jusante.</li>
 <li>Identificar links invertidos, nós duplicados, nós órfãos e componentes sem caminho hidráulico.</li>
-<li>Revisar os 40 outfalls: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.</li>
-<li>Conferir os 187 links contra a camada GIS, classificando cada um como TRONCO ou COLETOR.</li>
+<li>Revisar os 40 outfalls da Bacia A e os 3 outfalls da Bacia B: saída real, dissipador, continuidade não desenhada, componente desconectado ou exclusão.</li>
+<li>Conferir os 187 links da Bacia A e os 44 links nodais da Bacia B contra as camadas GIS, classificando cada um como TRONCO, COLETOR ou DISSIPADOR.</li>
 <li>Editar as áreas de quadras no ArcMap/QGIS, e não diretamente no SWMM, mantendo o vínculo de cada subcatchment ao nó de entrada.</li>
 <li>Rodar TR25 como teste de consistência e depois TR50, observando erro de continuidade, alagamentos, sobrecargas, velocidades e vazões de saída.</li>
 <li>Registrar as vazões nos pontos que receberão dissipadores; elas serão a entrada para a estimativa de degraus, bacias e proteção a jusante.</li>

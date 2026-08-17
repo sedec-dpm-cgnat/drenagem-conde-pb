@@ -168,7 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#curvas-de-nível" id="toc-curvas-de-nível" class="nav-link" data-scroll-target="#curvas-de-nível">Curvas de nível</a></li>
   <li><a href="#fluxo-superficial-e-rede" id="toc-fluxo-superficial-e-rede" class="nav-link" data-scroll-target="#fluxo-superficial-e-rede">Fluxo superficial e rede</a></li>
   <li><a href="#cn-2022-base-oficial-snirhana" id="toc-cn-2022-base-oficial-snirhana" class="nav-link" data-scroll-target="#cn-2022-base-oficial-snirhana">CN 2022 — base oficial SNIRH/ANA</a></li>
-  <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a></li>
+  <li><a href="#modelos-swmm-e-guia-de-validação" id="toc-modelos-swmm-e-guia-de-validação" class="nav-link" data-scroll-target="#modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</a>
+  <ul class="collapse">
+  <li><a href="#primeira-rodada-da-bacia-b" id="toc-primeira-rodada-da-bacia-b" class="nav-link" data-scroll-target="#primeira-rodada-da-bacia-b">Primeira rodada da Bacia B</a></li>
+  </ul></li>
   <li><a href="#o-que-ainda-não-está-no-pacote-público" id="toc-o-que-ainda-não-está-no-pacote-público" class="nav-link" data-scroll-target="#o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</a></li>
   </ul>
 </nav>
@@ -225,91 +228,96 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="even">
 <td><a href="data/bacia_B.geojson">Bacia B — revisão D8</a></td>
 <td>GeoJSON</td>
-<td>Bacia delimitada; lançamento da rede ainda pendente</td>
+<td>Bacia delimitada para visualização geográfica</td>
 </tr>
 <tr class="odd">
+<td><a href="data/bacia_B_modelo.geojson">Bacia B — limite do modelo SWMM</a></td>
+<td>GeoJSON</td>
+<td>Limite de trabalho em WGS84</td>
+</tr>
+<tr class="even">
 <td><a href="data/bacias_AB_revisadas_D8.geojson">Bacias A+B — revisão D8</a></td>
 <td>GeoJSON</td>
 <td>Referência conjunta do painel web</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="assets/mapa_sintese_bacias_rede.svg">Mapa-síntese das Bacias A e B</a></td>
 <td>SVG</td>
-<td>Painel estático com limites, rede preliminar da Bacia A e dissipadores</td>
+<td>Painel estático com limites, redes preliminares A/B e dissipadores</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="assets/mapa_ocorrencias_originais.svg">Mapa das ocorrências originais</a></td>
 <td>SVG</td>
 <td>Áreas de erosão, metas e pontos fotográficos originalmente marcados</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="assets/mapa_suscetibilidade_erosao_metas_originais.png">Mapa de suscetibilidade e metas originais</a></td>
 <td>PNG</td>
 <td>Mapa de referência com manchas de suscetibilidade, rede e ocorrências fotográficas</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/evidencia_suscetibilidade/mapa_suscetibilidade_erosao_metas_originais_alta_resolucao.png">Mapa de suscetibilidade e metas — alta resolução</a></td>
 <td>PNG</td>
 <td>Arquivo original preservado para inspeção cartográfica detalhada</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/areas_erosao_originais.geojson">Áreas de erosão originais</a></td>
 <td>GeoJSON</td>
 <td>Conversão pública dos polígonos do KMZ original</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/pontos_metas_originais.geojson">Pontos de metas originais</a></td>
 <td>GeoJSON</td>
 <td>Conversão pública dos pontos do KMZ original</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/pontos_erosao_fotos_originais.geojson">Pontos de erosão com fotografias</a></td>
 <td>GeoJSON</td>
 <td>Conversão pública dos pontos fotográficos do KMZ original</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.csv">Evidência de suscetibilidade e metas</a></td>
 <td>CSV</td>
 <td>Cruzamento dos pontos com suscetibilidade e Bacias A/B</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/evidencia_suscetibilidade/pontos_suscetibilidade_e_metas.geojson">Evidência de suscetibilidade e metas</a></td>
 <td>GeoJSON</td>
 <td>Camada enriquecida em EPSG:31985</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/evidencia_suscetibilidade/resumo_suscetibilidade.json">Resumo do cruzamento</a></td>
 <td>JSON</td>
 <td>Contagens, critérios e interpretação</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/bacias/Bacias_AB_revisadas_D8.gpkg">Bacias A+B — GeoPackage</a></td>
 <td>GPKG</td>
 <td>Camada de análise em EPSG:31985</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/downloads/bacias/Bacia_A_revisada_D8.kmz">Bacia A — KMZ</a></td>
 <td>KMZ</td>
 <td>Abrir no Google Earth Pro</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/bacias/Bacia_B_revisada_D8.kmz">Bacia B — KMZ</a></td>
 <td>KMZ</td>
 <td>Abrir no Google Earth Pro</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="data/downloads/bacias/Bacia_A_revisada_D8.zip">Bacia A — shapefile</a></td>
 <td>ZIP/SHP</td>
 <td>Inclui SHP, SHX, DBF e PRJ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="data/downloads/bacias/Bacia_B_revisada_D8.zip">Bacia B — shapefile</a></td>
 <td>ZIP/SHP</td>
 <td>Inclui SHP, SHX, DBF e PRJ</td>
 </tr>
 </tbody>
 </table>
-<p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B será lançada na próxima etapa.</p>
+<p>Neste relatório, <strong>Bacia A</strong> e <strong>Bacia B</strong> são as duas unidades territoriais de drenagem que organizam a terminologia, o lançamento da rede, as áreas de contribuição e os cenários de simulação. A Bacia A está em fase de revisão e pré-dimensionamento; a Bacia B recebeu nesta versão sua primeira rodada preliminar e também seguirá em revisão.</p>
 <section id="background-contínuo-para-o-arcmapqgis" class="level3">
 <h3 class="anchored" data-anchor-id="background-contínuo-para-o-arcmapqgis">Background contínuo para o ArcMap/QGIS</h3>
 <p>O background satélite contínuo que cobre a extensão completa A+B foi organizado localmente em:</p>
@@ -425,6 +433,22 @@ document.addEventListener('DOMContentLoaded', function () {
 <td><a href="data/trechos_dissipacao.geojson">Trechos de dissipação</a></td>
 <td>GeoJSON</td>
 </tr>
+<tr class="even">
+<td><a href="data/rede_linhas_B_nodal.geojson">Rede nodal da Bacia B</a></td>
+<td>GeoJSON</td>
+</tr>
+<tr class="odd">
+<td><a href="data/rede_nos_B.geojson">Nós da rede da Bacia B</a></td>
+<td>GeoJSON</td>
+</tr>
+<tr class="even">
+<td><a href="data/areas_contribuicao_B_template.geojson">Áreas de contribuição B — template</a></td>
+<td>GeoJSON</td>
+</tr>
+<tr class="odd">
+<td><a href="data/trechos_dissipacao_B.geojson">Trechos de dissipação B</a></td>
+<td>GeoJSON</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -476,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="modelos-swmm-e-guia-de-validação" class="level2">
 <h2 class="anchored" data-anchor-id="modelos-swmm-e-guia-de-validação">Modelos SWMM e guia de validação</h2>
-<p>Os arquivos abaixo são os <strong>modelos de partida processáveis</strong> da Bacia A. Eles ainda não são modelos finais de contratação: a topologia, as áreas, os diâmetros, as cotas, os outfalls e os dissipadores dependem da validação paralela no SWMM e no GIS.</p>
+<p>Os arquivos abaixo são os <strong>modelos de partida processáveis</strong> das Bacias A e B. Eles ainda não são modelos finais de contratação: a topologia, as áreas, os diâmetros, as cotas, os outfalls e os dissipadores dependem da validação paralela no SWMM e no GIS.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -563,7 +587,92 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
+<section id="primeira-rodada-da-bacia-b" class="level3">
+<h3 class="anchored" data-anchor-id="primeira-rodada-da-bacia-b">Primeira rodada da Bacia B</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Produto</th>
+<th>Formato</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR25.inp">Modelo preliminar B — TR25</a></td>
+<td>INP</td>
+<td>Áreas template, CN 2022 agregado e dissipadores conceituais</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_PRELIM_TR50.inp">Modelo preliminar B — TR50</a></td>
+<td>INP</td>
+<td>Verificação de maior recorrência</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_TR25.inp">Modelo integrado B — TR25</a></td>
+<td>INP</td>
+<td>Rodada executada com um conector topológico provisório</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_TR50.inp">Modelo integrado B — TR50</a></td>
+<td>INP</td>
+<td>Rodada executada com um conector topológico provisório</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_TR25.rpt">Relatório SWMM B — TR25</a></td>
+<td>RPT</td>
+<td>Balanço, nós, links e saídas</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/CONDE_BACIA_B_REDE_DISSIPADORES_TR50.rpt">Relatório SWMM B — TR50</a></td>
+<td>RPT</td>
+<td>Balanço, nós, links e saídas</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/swmm_resultados_resumo_B.json">Resumo completo B</a></td>
+<td>JSON</td>
+<td>Resultados por cenário e vazões nas saídas</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/swmm_trechos_criticos_triagem_B.csv">Trechos críticos B — triagem</a></td>
+<td>CSV</td>
+<td>Links com sobrecarga, velocidade ou auditoria</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/swmm_resultados_outfalls_dissipadores_B.csv">Vazões nos dissipadores B</a></td>
+<td>CSV</td>
+<td>Vazões preliminares TR25/TR50</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/rede_swmm_resultados_B_arcmap.gpkg">Rede SWMM B com resultados</a></td>
+<td>GeoPackage</td>
+<td>Camada para ArcMap/QGIS</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/trechos_criticos_B_swmm.gpkg">Trechos críticos B espaciais</a></td>
+<td>GeoPackage</td>
+<td>Seleção espacial para revisão</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/nos_inundacao_B_swmm.gpkg">Nós B com inundação</a></td>
+<td>GeoPackage</td>
+<td>Nós com extravasamento na rodada</td>
+</tr>
+<tr class="odd">
+<td><a href="data/downloads/swmm/README_PRIMEIRA_RODADA_B_20260817.md">Memória da primeira rodada B</a></td>
+<td>Markdown</td>
+<td>Premissas, resultados, limitações e próximos passos</td>
+</tr>
+<tr class="even">
+<td><a href="data/downloads/swmm/manifesto_projeto_swmm_bacia_B.json">Manifesto da rede B</a></td>
+<td>JSON</td>
+<td>Fontes, prefixos, premissas e limitações</td>
+</tr>
+</tbody>
+</table>
+<p>Na Bacia B, os nomes seguem a regra <code>N_B_</code>, <code>L_B_</code>, <code>SC_B_</code> e <code>D_B_</code>, mantendo a separação dos componentes da Bacia A. A primeira rodada apresentou balanço numérico aceitável, mas mostrou sobrecarga preliminar em 12 links e inundação em 18 nós nos dois cenários; esses números devem orientar a revisão, não ser usados como quantitativos de contratação.</p>
 <p>Depois que a camada GIS revisada for entregue, os INP, RPT e OUT serão regenerados e publicados em uma versão identificada como validada. O modelo final só será chamado de final após a execução e revisão de TR25 e TR50, com balanço de continuidade e saídas conferidos.</p>
+</section>
 </section>
 <section id="o-que-ainda-não-está-no-pacote-público" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-ainda-não-está-no-pacote-público">O que ainda não está no pacote público</h2>

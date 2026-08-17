@@ -1,0 +1,17 @@
+{
+  "crs":"EPSG:31985",
+  "trechos_rede":46,
+  "trechos_criticos_triagem":22,
+  "nos_inundacao":18,
+  "arquivos":[
+    "rede_swmm_resultados_completa.gpkg",
+    "rede_swmm_resultados_arcmap.shp",
+    "trechos_criticos_swmm.gpkg\/.shp",
+    "nos_inundacao_swmm.gpkg\/.shp"
+  ],
+  "criterios":{
+    "capacidade_prelim":"max_full_flow_ratio > 1.0",
+    "velocidade_alta":"max_velocity_mps > 3.0",
+    "auditoria":"status de pré-dimensionamento contém AUDITAR"
+  }
+}

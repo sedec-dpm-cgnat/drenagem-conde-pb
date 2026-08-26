@@ -84,6 +84,14 @@ code { color: var(--sedec-navy); background: #eee9df; }
 .author-block > div { background: var(--sedec-panel); border: 1px solid var(--sedec-line); border-top: 4px solid var(--sedec-orange); border-radius: 12px; box-shadow: var(--sedec-shadow); padding: 1rem 1.2rem; }
 .author-block strong { color: var(--sedec-orange); text-transform: uppercase; letter-spacing: .04em; font-size: .82rem; }
 .author-block span { color: var(--sedec-muted); font-size: .92rem; }
+@media (max-width: 1400px) and (min-width: 701px) {
+  .navbar .navbar-brand { font-size: .95rem; }
+  .navbar .nav-link { font-size: .76rem; padding-left: .28rem; padding-right: .28rem; }
+  .quarto-navbar-tools { gap: .15rem; }
+  .language-switcher { gap: .15rem; }
+  .language-switcher-label { font-size: .6rem; }
+  .language-button { min-width: 1.75rem; height: 1.5rem; padding: 0 .25rem; font-size: .65rem; }
+}
 @media (max-width: 700px) {
   .institutional-hero { grid-template-columns: 1fr 1fr; }
   .institutional-hero h1, .institutional-hero p { grid-column: 1 / -1; grid-row: 1; padding-top: 4.5rem; }

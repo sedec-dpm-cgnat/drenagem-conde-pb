@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer=""></script>
 <script src="assets/mapa_interativo_bacias_rede.js" defer=""></script>
+<script src="assets/mapa_interativo_metas.js" defer=""></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -176,8 +177,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#metas-preliminares-do-plano-de-trabalho" id="toc-metas-preliminares-do-plano-de-trabalho" class="nav-link" data-scroll-target="#metas-preliminares-do-plano-de-trabalho">6.1.4 Metas preliminares do Plano de Trabalho</a>
   <ul class="collapse">
   <li><a href="#seleção-espacial-executada-para-as-metas" id="toc-seleção-espacial-executada-para-as-metas" class="nav-link" data-scroll-target="#seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</a></li>
-  <li><a href="#elementos-hidráulicos-por-meta" id="toc-elementos-hidráulicos-por-meta" class="nav-link" data-scroll-target="#elementos-hidráulicos-por-meta">Elementos hidráulicos por meta</a></li>
-  <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</a></li>
+  <li><a href="#metas-administrativas-e-etapas-de-implantação" id="toc-metas-administrativas-e-etapas-de-implantação" class="nav-link" data-scroll-target="#metas-administrativas-e-etapas-de-implantação">6.1.4.2 Metas administrativas e etapas de implantação</a></li>
+  <li><a href="#elementos-hidráulicos-por-meta" id="toc-elementos-hidráulicos-por-meta" class="nav-link" data-scroll-target="#elementos-hidráulicos-por-meta">6.1.4.3 Elementos hidráulicos por meta</a></li>
+  <li><a href="#associação-preliminar-entre-bacias-rede-e-metas" id="toc-associação-preliminar-entre-bacias-rede-e-metas" class="nav-link" data-scroll-target="#associação-preliminar-entre-bacias-rede-e-metas">6.1.4.4 Associação entre bacias, rede e metas</a></li>
   <li><a href="#contratação-dos-projetos-de-engenharia" id="toc-contratação-dos-projetos-de-engenharia" class="nav-link" data-scroll-target="#contratação-dos-projetos-de-engenharia">Contratação dos projetos de engenharia</a></li>
   <li><a href="#limite-territorial-do-plano-de-trabalho" id="toc-limite-territorial-do-plano-de-trabalho" class="nav-link" data-scroll-target="#limite-territorial-do-plano-de-trabalho">Limite territorial do Plano de Trabalho</a></li>
   </ul></li>
@@ -369,18 +371,20 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 </tbody>
 </table>
-<p>Os códigos são administrativos e preliminares. Eles não correspondem ainda a um quantitativo de obras nem autorizam a execução física.</p>
+<p>Os códigos <code>M-01</code> a <code>M-07</code> são objetivos transversais de preparação do Plano; não devem ser confundidos com as três metas administrativas de implantação detalhadas a seguir. Nenhum deles corresponde ainda a um quantitativo de obras nem autoriza a execução física.</p>
 <section id="seleção-espacial-executada-para-as-metas" class="level3">
 <h3 class="anchored" data-anchor-id="seleção-espacial-executada-para-as-metas">6.1.4.1 Seleção espacial executada para as metas</h3>
-<p>Foi recebida a camada <code>MetasSelecionadas.shp</code>, em SIRGAS 2000 / UTM 25S (EPSG:31985), com quatro polígonos desenhados para delimitar os setores que deverão ser considerados na elaboração dos Planos de Trabalho. Como o campo original <code>Id</code> estava zerado em todas as feições, os polígonos foram identificados, para fins de rastreabilidade, como <code>META_01</code> a <code>META_04</code>, seguindo a ordem geométrica de entrada. Essa numeração poderá ser substituída por códigos administrativos definitivos após a validação institucional.</p>
+<p>Foi recebida a camada <code>MetasSelecionadas.shp</code>, em SIRGAS 2000 / UTM 25S (EPSG:31985), com quatro polígonos desenhados para delimitar os setores de interesse. Como o campo original <code>Id</code> estava zerado em todas as feições, eles foram identificados como <code>META_01</code> a <code>META_04</code> apenas para rastreabilidade. Nesta revisão, a organização administrativa passa a ter três metas: a antiga <code>META_04</code> passa a ser a <strong>Meta 1</strong>; a antiga <code>META_02</code> passa a ser a <strong>Meta 2</strong>; e as antigas <code>META_01</code> e <code>META_03</code> são fundidas na <strong>Meta 3</strong>. Os códigos originais permanecem nos arquivos GIS e no quadro de auditoria.</p>
 <p>A seleção dos trechos foi feita por interseção espacial com comprimento linear superior a 0,01 m. Assim, foram selecionados os segmentos que efetivamente atravessam cada polígono; um simples contato pontual com o limite não foi suficiente. Para cada segmento selecionado foram preservados o identificador do link, a classe (tronco/coletor), os nós de início e fim, as coordenadas métricas dos extremos, o comprimento total cadastrado, o comprimento dentro do polígono, cotas, declividade, diâmetros atual e preliminares, vazões TR25/TR50, velocidades, criticidade e status da rodada SWMM.</p>
 <p>Para a indicação do Plano, a classe hidráulica foi mantida explicitamente. Os <strong>troncos</strong> são os eixos principais de transporte; os <strong>coletores</strong> são os trechos que captam ou conduzem as contribuições locais até esses eixos; os <strong>nós</strong> representam entradas, encontros e mudanças de seção; e os <strong>dissipadores</strong> representam os trechos de descarga que precisam controlar energia e erosão a jusante. Assim, cada meta pode ser lida no mapa e auditada nas camadas e na tabela, sem perder a relação entre o trecho selecionado e os elementos que fazem a solução funcionar.</p>
 <figure class="map-figure figure">
-<img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas selecionadas espacialmente nas Bacias A e B" class="figure-img">
+<img src="assets/mapa_metas_administrativas.svg" alt="Mapa das três metas administrativas e da rede de drenagem nas Bacias A e B" class="figure-img">
 <figcaption>
-Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: troncos; linhas tracejadas: coletores; pontos: nós associados; linhas magenta: dissipadores/saídas. A Bacia A está em laranja e a Bacia B em teal. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
+Figura 6.1.4.1-1 — Metas administrativas e rede de drenagem. As áreas coloridas regulares são envelopes esquemáticos de apresentação; os limites tracejados são os polígonos originais; linhas contínuas representam troncos, linhas tracejadas representam coletores e linhas magenta representam dissipadores/saídas. A Bacia A está em laranja e a Bacia B em teal. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
 </figcaption>
 </figure>
+<div id="mapa-interativo-metas" class="leaflet-report-map" role="img" aria-label="Mapa interativo das metas administrativas, polígonos originais, bacias, rede e dissipadores"></div>
+<p class="text-muted"><strong>Figura 6.1.4.1-2 — Mapa interativo das metas.</strong> Use o controle no canto superior direito para alternar satélite/ruas e ligar ou desligar cada camada. A camada “Metas administrativas (apresentação)” usa envelopes esquemáticos mais regulares para facilitar a leitura; a camada “Polígonos originais (auditoria)” é a referência para qualquer seleção espacial no ArcMap/QGIS. Os trechos podem ser identificados clicando na rede e consultando a tabela detalhada.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
@@ -396,6 +400,7 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 <col style="width: 8%">
 <col style="width: 8%">
 </colgroup>
+<caption class="text-start">Tabela 6.1.4.1-1 — Resumo dos trechos e elementos associados às três metas administrativas.</caption>
 <thead>
 <tr class="header">
 <th>Meta</th>
@@ -414,21 +419,21 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 </thead>
 <tbody>
 <tr class="odd">
-<td>META_01</td>
-<td style="text-align: right;">B</td>
-<td style="text-align: right;">2,12</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">5.074,34</td>
-<td style="text-align: right;">1.073,53</td>
-<td style="text-align: right;">11</td>
+<td>Meta 1 (<code>META_04</code>)</td>
+<td style="text-align: right;">A</td>
+<td style="text-align: right;">1,73</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">5.193,12</td>
+<td style="text-align: right;">1.108,53</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0,40–1,20</td>
-<td style="text-align: right;">0,960 / 0,960</td>
-<td style="text-align: right;">5,039 / 5,199</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">0,30–1,20</td>
+<td style="text-align: right;">0,962 / 1,025</td>
+<td style="text-align: right;">4,629 / 5,076</td>
+<td style="text-align: right;">26</td>
 </tr>
 <tr class="even">
-<td>META_02</td>
+<td>Meta 2 (<code>META_02</code>)</td>
 <td style="text-align: right;">B</td>
 <td style="text-align: right;">1,53</td>
 <td style="text-align: right;">8</td>
@@ -442,41 +447,27 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 <td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
-<td>META_03</td>
+<td>Meta 3 (<code>META_01 + META_03</code>)</td>
 <td style="text-align: right;">B</td>
-<td style="text-align: right;">1,22</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">821,93</td>
-<td style="text-align: right;">675,09</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0,40–1,00</td>
-<td style="text-align: right;">0,859 / 0,859</td>
-<td style="text-align: right;">2,981 / 2,985</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td>META_04</td>
-<td style="text-align: right;">A</td>
-<td style="text-align: right;">1,73</td>
-<td style="text-align: right;">45</td>
-<td style="text-align: right;">5.193,12</td>
-<td style="text-align: right;">1.108,53</td>
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">3,34*</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">5.074,34</td>
+<td style="text-align: right;">1.073,53</td>
+<td style="text-align: right;">21</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0,30–1,20</td>
-<td style="text-align: right;">0,962 / 1,025</td>
-<td style="text-align: right;">4,629 / 5,076</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: right;">0,40–1,20</td>
+<td style="text-align: right;">0,960 / 0,960</td>
+<td style="text-align: right;">5,039 / 5,199</td>
+<td style="text-align: right;">10</td>
 </tr>
 <tr class="odd">
 <td><strong>Total</strong></td>
 <td style="text-align: right;"><strong>A+B</strong></td>
-<td style="text-align: right;"><strong>6,60</strong></td>
-<td style="text-align: right;"><strong>74</strong></td>
-<td style="text-align: right;"><strong>12.492,32</strong></td>
-<td style="text-align: right;"><strong>3.522,60</strong></td>
-<td style="text-align: right;"><strong>38</strong></td>
+<td style="text-align: right;"><strong>6,60**</strong></td>
+<td style="text-align: right;"><strong>71</strong></td>
+<td style="text-align: right;"><strong>11.670,39</strong></td>
+<td style="text-align: right;"><strong>2.847,51</strong></td>
+<td style="text-align: right;"><strong>46</strong></td>
 <td style="text-align: right;"><strong>3</strong></td>
 <td style="text-align: right;">—</td>
 <td style="text-align: right;">—</td>
@@ -485,76 +476,182 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 </tr>
 </tbody>
 </table>
-<p>* <code>Trechos críticos</code> é a contagem da flag preliminar <code>CRITICO</code> herdada da triagem SWMM; não equivale, isoladamente, à decisão de executar a obra. A extensão total corresponde ao segmento inteiro selecionado para garantir continuidade da rede; a extensão dentro do polígono é apresentada para auditoria espacial e não deve ser usada automaticamente como extensão de projeto.</p>
-<p>O <a href="data/metas_plano_trabalho/resumo_metas.csv">resumo por meta</a> e a <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela completa por trecho</a> registram os parâmetros que deverão orientar a próxima revisão. A tabela detalhada contém, entre outros campos, <code>ID_LINK</code>, <code>META_ID</code>, <code>BACIA</code>, <code>CLASSE</code>, <code>NO_IN</code>, <code>NO_OUT</code>, <code>X_IN_M</code>, <code>Y_IN_M</code>, <code>X_OUT_M</code>, <code>Y_OUT_M</code>, <code>COMPR_M</code>, <code>OVERLAP_M</code>, <code>COTA_IN</code>, <code>COTA_OUT</code>, <code>DECL_PCT</code>, <code>D_ATUAL_M</code>, <code>DPROP_M</code>, <code>DREQ25</code>, <code>DREQ50</code>, <code>DNOM25</code>, <code>DNOM50</code>, <code>Q25_CMS</code>, <code>Q50_CMS</code>, <code>V25_MPS</code>, <code>V50_MPS</code>, <code>STATUS_SW</code> e <code>CRITICO</code>. O <a href="data/metas_plano_trabalho/Metas_Selecionadas_Resultados.zip">pacote GIS completo das metas</a> contém os polígonos, trechos, nós e dissipadores em shapefile para ArcMap/QGIS.</p>
+<p>* As extensões e os nós da Meta 3 foram calculados com links únicos: três linhas presentes simultaneamente nos polígonos originais não foram contadas duas vezes. **A área de 3,34 ha da Meta 3 é a soma das áreas-fonte; a área da união geométrica ainda não foi determinada. A extensão total corresponde ao segmento inteiro selecionado para garantir continuidade; a extensão dentro do polígono é apresentada para auditoria e não deve ser usada automaticamente como extensão de projeto.</p>
+<p>O <a href="data/metas_plano_trabalho/resumo_metas_administrativas.csv">resumo administrativo das três metas</a>, a <a href="data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv">tabela administrativa por trecho</a> e o <a href="data/metas_plano_trabalho/etapas_metas_administrativas.csv">quadro de etapas</a> registram a nova organização. A <a href="data/metas_plano_trabalho/resumo_metas.csv">tabela-fonte original</a> e a <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela original por trecho</a> continuam disponíveis para auditoria. O <a href="data/metas_plano_trabalho/Metas_Selecionadas_Resultados.zip">pacote GIS completo</a> contém os shapefiles originais; os GeoJSONs da nova classificação estão na página de dados.</p>
 </section>
-<section id="elementos-hidráulicos-por-meta" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-hidráulicos-por-meta">Elementos hidráulicos por meta</h3>
+<section id="metas-administrativas-e-etapas-de-implantação" class="level3">
+<h3 class="anchored" data-anchor-id="metas-administrativas-e-etapas-de-implantação">6.1.4.2 Metas administrativas e etapas de implantação</h3>
+<p>Para transformar a seleção espacial em uma estrutura de Plano de Trabalho, os quatro polígonos de origem foram reorganizados em três metas administrativas. Esta decisão não apaga a seleção original: ela apenas agrupa os trechos e os componentes em conjuntos de contratação mais coerentes. A sequência abaixo inclui, em todas as metas, a elaboração do projeto básico e a pavimentação articulada com a drenagem; a execução física deverá ser precedida por projeto básico e projeto executivo.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 17%">
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 16%">
 </colgroup>
+<caption class="text-start">Tabela 6.1.4.2-1 — Metas administrativas e etapas preliminares para o Plano de Trabalho.</caption>
 <thead>
 <tr class="header">
 <th>Meta</th>
-<th>Bacia</th>
-<th style="text-align: right;">Trechos classificados como tronco</th>
-<th style="text-align: right;">Trechos classificados como coletor</th>
-<th>Dissipador/saída associado</th>
-<th>Elementos que devem acompanhar o projeto</th>
+<th>Etapa</th>
+<th>Escopo preliminar</th>
+<th>Articulação técnica</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>META_01</code></td>
-<td>B</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">9</td>
-<td><code>DISS_B_01</code></td>
-<td>nós de entrada e saída, ligação aos coletores e proteção da descarga</td>
+<td rowspan="4"><strong>Meta 1</strong><br><code>META_04</code><br>Bacia A</td>
+<td>1.1 Projeto básico</td>
+<td>Projeto básico do conjunto da meta, com levantamentos, solução, orçamento e licenciamento aplicável.</td>
+<td>Deve fechar o conjunto tronco–dissipador–pavimentação.</td>
+<td>Preliminar</td>
 </tr>
 <tr class="even">
-<td><code>META_02</code></td>
-<td>B</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td><code>DISS_B_02</code></td>
-<td>nós de entrada e saída, ligação aos coletores e proteção da descarga</td>
+<td>1.2 Tronco</td>
+<td>Tronco correspondente à antiga Meta 04, com validação do traçado e das cotas.</td>
+<td>Conectar os coletores aos pontos de descarga segura.</td>
+<td>Preliminar</td>
 </tr>
 <tr class="odd">
-<td><code>META_03</code></td>
-<td>B</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td>Não identificado no polígono</td>
-<td>verificar continuidade e solução de jusante</td>
+<td>1.3 Dissipador 05</td>
+<td>Fusão do dissipador 05 com o tronco da antiga Meta 04, incluindo proteção a jusante.</td>
+<td>Verificar vazão, desnível, energia, degraus/soleiras e proteção contra erosão.</td>
+<td>Preliminar</td>
 </tr>
 <tr class="even">
-<td><code>META_04</code></td>
-<td>A</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">31</td>
-<td><code>DISS_05</code></td>
-<td>nós de entrada e saída, tronco de descarga e proteção da descarga</td>
+<td>1.4 Pavimentação da rua</td>
+<td>Pavimentação e acabamento da rua associados à implantação da drenagem.</td>
+<td>Compatibilizar sarjetas, greide, acessos, recomposição e manutenção.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="odd">
+<td rowspan="5"><strong>Meta 2</strong><br><code>META_02</code><br>Bacia B</td>
+<td>2.1 Projeto básico</td>
+<td>Projeto básico do conjunto da meta.</td>
+<td>Incluir o trecho hachurado, a saída e a rua beneficiada.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="even">
+<td>2.2 Tronco hachurado</td>
+<td>Tronco localizado no trecho hachurado da seleção de campo.</td>
+<td>Conferir continuidade, cotas e conexão ao dissipador B05.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="odd">
+<td>2.3 Coletor hachurado</td>
+<td>Coletor localizado no trecho hachurado da seleção de campo.</td>
+<td>Vincular às áreas de contribuição e aos nós de entrada.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="even">
+<td>2.4 Dissipador B05</td>
+<td>Implantação e detalhamento do dissipador indicado como B05.</td>
+<td>O modelo atual possui o código <code>DISS_B_02</code>; a equivalência deve ser conferida antes do SWMM final.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="odd">
+<td>2.5 Pavimentação da rua</td>
+<td>Pavimentação articulada com a drenagem e a saída protegida.</td>
+<td>Compatibilizar greide, sarjetas, acessos e proteção da descarga.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="even">
+<td rowspan="5"><strong>Meta 3</strong><br><code>META_01 + META_03</code><br>Bacia B</td>
+<td>3.1 Projeto básico</td>
+<td>Projeto básico do conjunto fundido das duas seleções originais.</td>
+<td>Tratar o conjunto como uma solução contínua, mesmo com dois setores de origem.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="odd">
+<td>3.2 Tronco</td>
+<td>Tronco da rede nas ruas indicadas.</td>
+<td>Revisar sentido, cotas, continuidade e ligação ao dissipador B01.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="even">
+<td>3.3 Coletores</td>
+<td>Coletores das ruas indicadas e áreas de contribuição vinculadas.</td>
+<td>Manter no cadastro os links duplicados nos polígonos de origem, sem dupla contagem.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="odd">
+<td>3.4 Dissipador B01</td>
+<td>Implantação e detalhamento do dissipador B01.</td>
+<td>Verificar vazão, desnível, energia e proteção a jusante.</td>
+<td>Preliminar</td>
+</tr>
+<tr class="even">
+<td>3.5 Pavimentação da rua</td>
+<td>Pavimentação articulada com a drenagem e a proteção da saída.</td>
+<td>Compatibilizar greide, sarjetas, acessos e recomposição urbana.</td>
+<td>Preliminar</td>
 </tr>
 </tbody>
 </table>
-<p>Os códigos dos links, os nós inicial e final, os pontos métricos de início e fim, os comprimentos e os parâmetros de diâmetro/vazão estão no arquivo <code>trechos_metas_parametros.csv</code>. Os shapefiles <code>trechos_metas_A/B/AB.shp</code>, <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> permitem carregar as mesmas informações no ArcMap ou no QGIS e desenhar as áreas de contribuição que serão efetivamente contratadas.</p>
-<p>As quatro metas espaciais passam a ser o recorte técnico preliminar do Plano de Trabalho: <code>META_04</code> concentra o setor selecionado da Bacia A; <code>META_01</code>, <code>META_02</code> e <code>META_03</code> concentram os setores selecionados da Bacia B. Isso não significa que todos os 74 trechos serão executados. A seleção administrativa final deverá retirar trechos redundantes, conectores provisórios, segmentos sem continuidade ou elementos que não tenham solução de jusante confirmada, mantendo-os no cadastro como dependências ou alternativas.</p>
+<p>O quadro de etapas também está disponível em <a href="data/metas_plano_trabalho/etapas_metas_administrativas.csv"><code>etapas_metas_administrativas.csv</code></a>. A pavimentação é apresentada como etapa integrada à drenagem e à redução de processos erosivos, não como objeto isolado.</p>
 </section>
-<section id="associação-preliminar-entre-bacias-rede-e-metas" class="level3">
-<h3 class="anchored" data-anchor-id="associação-preliminar-entre-bacias-rede-e-metas">Associação preliminar entre bacias, rede e metas</h3>
+<section id="elementos-hidráulicos-por-meta" class="level3">
+<h3 class="anchored" data-anchor-id="elementos-hidráulicos-por-meta">6.1.4.3 Elementos hidráulicos por meta</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 25%">
 </colgroup>
+<caption class="text-start">Tabela 6.1.4.3-1 — Elementos hidráulicos e parâmetros preliminares por meta administrativa.</caption>
+<thead>
+<tr class="header">
+<th>Meta</th>
+<th>Bacia</th>
+<th style="text-align: right;">Troncos</th>
+<th style="text-align: right;">Coletores</th>
+<th>Dissipador/saída</th>
+<th>Parâmetros e dependências</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meta 1</strong><br><code>META_04</code></td>
+<td>A</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">31</td>
+<td><code>DISS_05</code> / Dissipador 05</td>
+<td>45 links; Dprop 0,30–1,20 m; Dreq máx. TR25/TR50 0,962/1,025 m; Qmáx 4,629/5,076 m³/s; 26 críticos.</td>
+</tr>
+<tr class="even">
+<td><strong>Meta 2</strong><br><code>META_02</code></td>
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td>Dissipador B05<br><code>DISS_B_02</code> no modelo atual</td>
+<td>8 links; Dprop 0,40–1,50 m; Dreq máx. TR25/TR50 1,203/1,206 m; Qmáx 7,133/7,705 m³/s; 5 críticos.</td>
+</tr>
+<tr class="odd">
+<td><strong>Meta 3</strong><br><code>META_01 + META_03</code></td>
+<td>B</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td>Dissipador B01<br><code>DISS_B_01</code></td>
+<td>18 links únicos; Dprop 0,40–1,20 m; Dreq máx. TR25/TR50 0,960/0,960 m; Qmáx 5,039/5,199 m³/s; 10 críticos.</td>
+</tr>
+</tbody>
+</table>
+<p>Os códigos dos links, os nós inicial e final, os pontos métricos de início e fim, os comprimentos e os parâmetros de diâmetro/vazão estão no <a href="data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv"><code>trechos_metas_administrativas_parametros.csv</code></a>. Os shapefiles originais <code>trechos_metas_A/B/AB.shp</code>, <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> permitem carregar as informações no ArcMap/QGIS. A nova tabela administrativa mantém <code>META_ORIG</code> para a rastreabilidade e elimina a dupla contagem de links sobrepostos na Meta 3.</p>
+</section>
+<section id="associação-preliminar-entre-bacias-rede-e-metas" class="level3">
+<h3 class="anchored" data-anchor-id="associação-preliminar-entre-bacias-rede-e-metas">6.1.4.4 Associação entre bacias, rede e metas</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 38%">
+</colgroup>
+<caption class="text-start">Tabela 6.1.4.4-1 — Regra de associação entre as bacias, os componentes de rede e as metas administrativas.</caption>
 <thead>
 <tr class="header">
 <th>Frente</th>
@@ -564,33 +661,33 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 </thead>
 <tbody>
 <tr class="odd">
-<td>Concepção integrada</td>
-<td>Rede preliminar em revisão; conferir todos os componentes, áreas, saídas e dissipadores</td>
-<td>Rede preliminar lançada; conferir os dois componentes, áreas, saídas e dissipadores</td>
+<td>Meta administrativa</td>
+<td><strong>Meta 1</strong>, originada no polígono <code>META_04</code>.</td>
+<td><strong>Meta 2</strong>, originada em <code>META_02</code>; <strong>Meta 3</strong>, formada pela fusão de <code>META_01</code> e <code>META_03</code>.</td>
 </tr>
 <tr class="even">
 <td>Troncos principais</td>
-<td><code>META_04</code>: 45 trechos selecionados; priorizar os críticos e os que fecham a descarga segura</td>
-<td><code>META_01</code> a <code>META_03</code>: 29 trechos selecionados; priorizar continuidade e ligação aos dois dissipadores</td>
+<td>14 trechos no recorte da Meta 1; priorizar os críticos e os que fecham a descarga segura.</td>
+<td>4 trechos na Meta 2 e 8 trechos únicos na Meta 3; validar continuidade e ligação às saídas.</td>
 </tr>
 <tr class="odd">
 <td>Coletores indispensáveis</td>
-<td>Selecionar dentro da <code>META_04</code> somente os que alimentam os troncos priorizados</td>
-<td>Selecionar dentro de <code>META_01</code>–<code>META_03</code> os que vinculam as quadras e os pontos de entrada</td>
+<td>31 trechos no recorte de origem; confirmar quais alimentam os troncos priorizados.</td>
+<td>3 trechos na Meta 2 e 9 trechos únicos na Meta 3; vincular às ruas e áreas de contribuição.</td>
 </tr>
 <tr class="even">
 <td>Dissipadores e saídas</td>
-<td>1 dissipador intersectado em <code>META_04</code>; revisar vazão, desnível e proteção</td>
-<td>2 dissipadores intersectados em <code>META_01</code> e <code>META_02</code>; detalhar a solução estrutural</td>
+<td>Dissipador 05, código atual <code>DISS_05</code>, fundido à Meta 1.</td>
+<td>Dissipador B05 na Meta 2 (código atual a conferir) e Dissipador B01/<code>DISS_B_01</code> na Meta 3.</td>
 </tr>
 <tr class="odd">
-<td>Metas do Plano</td>
-<td><code>META_04</code> é o recorte espacial preliminar da Bacia A</td>
-<td><code>META_01</code>, <code>META_02</code> e <code>META_03</code> são os recortes espaciais preliminares da Bacia B</td>
+<td>Escopo do Plano</td>
+<td>Executar somente os componentes selecionados da Meta 1, após projeto básico/executivo.</td>
+<td>Executar somente os componentes selecionados das Metas 2 e 3, após projeto básico/executivo.</td>
 </tr>
 </tbody>
 </table>
-<p>Essa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal.</p>
+<p>Essa tabela é a regra de leitura do recorte: o Plano de Trabalho contemplará partes críticas dos sistemas das duas bacias, e não a implantação indiscriminada de toda a rede municipal. Os códigos “B05” e “B01” seguem a nomenclatura indicada na revisão do usuário; antes do fechamento do SWMM, a identificação de B05 deverá ser reconciliada com o código atualmente disponível na camada e no modelo.</p>
 </section>
 <section id="contratação-dos-projetos-de-engenharia" class="level3">
 <h3 class="anchored" data-anchor-id="contratação-dos-projetos-de-engenharia">Contratação dos projetos de engenharia</h3>
@@ -637,7 +734,7 @@ Figura 7.1 — Trechos e elementos que compõem as metas. Linhas contínuas: tro
 <li>Editar as áreas de contribuição das quadras das duas bacias e associá-las aos nós de entrada.</li>
 <li>Atualizar cotas de fundo, diâmetros, rugosidades, condições de jusante e parâmetros de infiltração.</li>
 <li>Rodar os cenários tradicionais de chuva e verificar os resultados antes de incorporar as projeções NEX-GDDP-CMIP6.</li>
-<li>Validar os quatro polígonos e os trechos selecionados, com justificativa de risco, população/infraestrutura protegida, dependências, condição de jusante e estimativa de custo.</li>
+<li>Validar as três metas administrativas, os quatro polígonos de origem e os trechos selecionados, com justificativa de risco, população/infraestrutura protegida, dependências, condição de jusante e estimativa de custo.</li>
 </ol>
 </section>
 <section id="referências-institucionais" class="level2">

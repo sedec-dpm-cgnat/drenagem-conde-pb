@@ -89,3 +89,11 @@ code { color: var(--sedec-navy); background: #eee9df; }
   .leaflet-report-map .leaflet-control-layers { max-width: 190px; }
   .download-card { align-items: flex-start; flex-direction: column; }
 }
+@media print {
+  .leaflet-report-map { display: none !important; }
+}
+
+.page-break-before {
+  break-before: page;
+  page-break-before: always;
+}

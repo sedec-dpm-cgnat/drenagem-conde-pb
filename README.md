@@ -11,7 +11,7 @@ O relatório está sendo preparado como minuta técnica preliminar para instruir
 - **Cássio Guilherme Rampinelli, PhD** — Coordenador Geral de Prevenção e Mitigação de Desastres Naturais, Departamento de Prevenção e Mitigação de Desastres, Secretaria Nacional de Proteção e Defesa Civil.
 - **Saulo Aires de Souza, PhD** — Diretor do Departamento de Prevenção e Mitigação de Desastres, Secretaria Nacional de Proteção e Defesa Civil.
 
-O escopo inicial prioriza troncos principais, coletores indispensáveis e dissipadores em setores críticos, sem propor a implantação imediata de toda a rede municipal. A página `07_plano_trabalho.qmd` registra as metas preliminares e a estratégia de enquadramento federal.
+O escopo inicial prioriza troncos principais, coletores indispensáveis e dissipadores em setores críticos, sem propor a implantação imediata de toda a rede municipal. A página `07_plano_trabalho.html` organiza três metas administrativas: Meta 1 (antiga META_04, Bacia A), Meta 2 (antiga META_02, Bacia B) e Meta 3 (fusão das antigas META_01 e META_03, Bacia B). Os polígonos originais são preservados para auditoria; os envelopes formatados são apenas de apresentação.
 
 O mapa de suscetibilidade à erosão foi reincorporado à minuta. O cruzamento dos pontos originais identificou 10 de 12 metas dentro das Bacias A/B e quatro coincidências diretas com as manchas de suscetibilidade. As ocorrências fora desse recorte permanecem documentadas, mas não integram os quantitativos desta análise.
 

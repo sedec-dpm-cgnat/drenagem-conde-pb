@@ -391,26 +391,27 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 <tr class="odd">
 <td><strong>Bacia A</strong></td>
 <td>Rede preliminar já lançada, com troncos, coletores, nós, áreas template e dissipadores/saídas em revisão</td>
-<td><code>META_04</code>: 45 trechos, 5.193,12 m de extensão integral dos segmentos e 1 dissipador intersectado</td>
+<td><strong>Meta 1</strong> (<code>META_04</code>): 45 trechos, 5.193,12 m de extensão integral dos segmentos e 1 dissipador intersectado</td>
 <td>Revisar áreas, continuidade, dissipador, cotas, seções e cenários TR25/TR50</td>
 </tr>
 <tr class="even">
 <td><strong>Bacia B</strong></td>
 <td>Rede preliminar com troncos, coletores, nós, áreas template, 2 dissipadores e 2 componentes conectados</td>
-<td><code>META_01</code>–<code>META_03</code>: 29 trechos, 7.299,20 m de extensão integral dos segmentos e 2 dissipadores intersectados</td>
+<td><strong>Meta 2</strong> (<code>META_02</code>) e <strong>Meta 3</strong> (<code>META_01</code> + <code>META_03</code>): 26 links únicos, 6.477,27 m de extensão integral dos segmentos e 2 dissipadores intersectados</td>
 <td>Revisar áreas, ligações, seções, cotas, dissipadores e condição de jusante</td>
 </tr>
 <tr class="odd">
 <td><strong>Bacias A + B</strong></td>
 <td>Concepção integrada, sem conectar automaticamente uma bacia à outra</td>
-<td>4 polígonos de meta, 74 trechos selecionados, 38 nós e 3 dissipadores</td>
+<td>3 metas administrativas, 4 polígonos de origem, 71 links únicos, 46 nós de referência e 3 dissipadores</td>
 <td>Integração somente onde houver comprovação topográfica e hidráulica</td>
 </tr>
 </tbody>
 </table>
+<div class="page-break-before"></div>
 <section id="elementos-que-compõem-cada-meta" class="level3">
 <h3 class="anchored" data-anchor-id="elementos-que-compõem-cada-meta">Elementos que compõem cada meta</h3>
-<p>O recorte das metas não é apenas uma seleção de linhas. Cada polígono foi associado aos elementos hidráulicos que efetivamente o atravessam: troncos principais, coletores, nós e dissipadores/saídas. A leitura cartográfica usa linha contínua para troncos, linha tracejada para coletores, pontos para nós associados e magenta para dissipadores. Os códigos individuais dos 74 links permanecem na tabela detalhada, vinculados aos nós de montante e jusante.</p>
+<p>O recorte das metas não é apenas uma seleção de linhas. Os quatro polígonos de origem foram reorganizados em três metas administrativas e associados aos elementos hidráulicos que efetivamente os atravessam: troncos principais, coletores, nós e dissipadores/saídas. A leitura cartográfica usa linha contínua para troncos, linha tracejada para coletores, pontos para nós associados e magenta para dissipadores. Os códigos individuais dos 71 links únicos permanecem na tabela detalhada, vinculados aos nós de montante e jusante.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 15%">
@@ -432,46 +433,38 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>META_01</code></td>
-<td>B</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">9</td>
-<td><code>DISS_B_01</code></td>
-<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
-</tr>
-<tr class="even">
-<td><code>META_02</code></td>
-<td>B</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td><code>DISS_B_02</code></td>
-<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
-</tr>
-<tr class="odd">
-<td><code>META_03</code></td>
-<td>B</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td>Não identificado no polígono</td>
-<td><code>trechos_metas_B</code>, <code>nos_metas_B</code></td>
-</tr>
-<tr class="even">
-<td><code>META_04</code></td>
+<td><strong>Meta 1</strong><br><code>META_04</code></td>
 <td>A</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">31</td>
 <td><code>DISS_05</code></td>
 <td><code>trechos_metas_A</code>, <code>nos_metas_A</code>, <code>dissipadores_metas_A</code></td>
 </tr>
+<tr class="even">
+<td><strong>Meta 2</strong><br><code>META_02</code></td>
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td><code>DISS_B_02</code> (B05)</td>
+<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Meta 3</strong><br><code>META_01 + META_03</code></td>
+<td>B</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td><code>DISS_B_01</code> (B01)</td>
+<td><code>trechos_metas_B</code>, <code>nos_metas_B</code>, <code>dissipadores_metas_B</code></td>
+</tr>
 </tbody>
 </table>
 <figure class="map-figure figure">
-<img src="assets/mapa_metas_plano_trabalho.png" alt="Mapa das metas espaciais selecionadas sobre as redes A e B" class="figure-img">
+<img src="assets/mapa_metas_administrativas.svg" alt="Mapa das metas administrativas selecionadas sobre as redes A e B" class="figure-img">
 <figcaption>
-Figura 4.2 — Trechos e elementos associados às metas. Linhas contínuas representam troncos, linhas tracejadas representam coletores, pontos representam nós associados e linhas magenta representam dissipadores/saídas. Os polígonos delimitam META_01 a META_04; os trechos cinza permanecem na rede de concepção, mas fora do recorte preliminar do Plano.
+Figura 4.8-1 — Metas administrativas e rede de drenagem. As áreas coloridas regulares são envelopes esquemáticos de apresentação; os limites tracejados são os quatro polígonos originais; linhas contínuas representam troncos, linhas tracejadas representam coletores e linhas magenta representam dissipadores/saídas. A Meta 1 corresponde à antiga META_04; a Meta 2, à META_02; e a Meta 3 funde META_01 e META_03.
 </figcaption>
 </figure>
-<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias e o recorte espacial indicado para o Plano de Trabalho, sem afirmar que os 74 trechos selecionados serão executados automaticamente. Os nomes dos links, pontos de início/fim, extensões e parâmetros de triagem estão organizados na <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela detalhada das metas</a>. As camadas <code>trechos_metas_A/B/AB.shp</code> preservam a classe <code>TRONCO</code>, <code>COLETOR</code> ou <code>DISSIPADOR</code>, o <code>ID_LINK</code>, <code>NO_IN</code>, <code>NO_OUT</code>, comprimento, cotas, declividade, diâmetros preliminares, vazões, velocidades e criticidade. As camadas <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> completam a leitura espacial de cada sistema.</p>
+<p>Assim, o relatório apresenta a rede preliminar proposta para as duas bacias e o recorte espacial indicado para o Plano de Trabalho, sem afirmar que os 71 links únicos selecionados serão executados automaticamente. Os nomes dos links, pontos de início/fim, extensões e parâmetros de triagem estão organizados na <a href="data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv">tabela administrativa detalhada das metas</a>. As camadas <code>trechos_metas_A/B/AB.shp</code> preservam a classe <code>TRONCO</code>, <code>COLETOR</code> ou <code>DISSIPADOR</code>, o <code>ID_LINK</code>, <code>NO_IN</code>, <code>NO_OUT</code>, comprimento, cotas, declividade, diâmetros preliminares, vazões, velocidades e criticidade. As camadas <code>nos_metas_A/B/AB.shp</code> e <code>dissipadores_metas_A/B/AB.shp</code> completam a leitura espacial de cada sistema. A tabela administrativa mantém <code>META_ORIG</code> e elimina a dupla contagem dos três links sobrepostos na Meta 3.</p>
 </section>
 <section id="contratação-dos-projetos-básico-e-executivo" class="level3">
 <h3 class="anchored" data-anchor-id="contratação-dos-projetos-básico-e-executivo">Contratação dos projetos básico e executivo</h3>
@@ -497,7 +490,7 @@ Figura 4.2 — Trechos e elementos associados às metas. Linhas contínuas repre
 </section>
 <section id="próxima-rodada" class="level2">
 <h2 class="anchored" data-anchor-id="próxima-rodada">4.10 Próxima rodada</h2>
-<p>A sequência operacional agora é: revisar no ArcMap os 4 polígonos de meta e os 74 trechos selecionados por classe, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados por meta, instruir a contratação do projeto básico e somente depois desenvolver os projetos executivos e fechar o recorte executivo do Plano de Trabalho.</p>
+<p>A sequência operacional agora é: revisar no ArcMap os quatro polígonos de origem e as três metas administrativas, validar os 71 links únicos por classe, substituir as áreas template por áreas de contribuição reais, atualizar cotas e seções, confirmar os dissipadores, reexecutar a linha de base, revisar os resultados por meta, instruir a contratação do projeto básico e somente depois desenvolver os projetos executivos e fechar o recorte executivo do Plano de Trabalho.</p>
 </section>
 <section id="primeira-rodada-integrada-bacia-a" class="level2">
 <h2 class="anchored" data-anchor-id="primeira-rodada-integrada-bacia-a">4.11 Primeira rodada integrada — Bacia A</h2>

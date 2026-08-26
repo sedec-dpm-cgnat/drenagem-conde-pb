@@ -1,0 +1,15 @@
+﻿META_ADMIN,ORDEM_ETAPA,ETAPA,DESCRICAO,STATUS
+META_01,1,Projeto básico,"Elaborar projeto básico do conjunto da meta, incluindo levantamentos, soluções, orçamento e licenciamento aplicável.",preliminar — validar no projeto básico
+META_01,2,Tronco,"Implantar o tronco correspondente à antiga META_04, após validação do traçado e das cotas.",preliminar — validar no projeto básico
+META_01,3,Dissipador 05,Implantar e detalhar o dissipador 05 associado à descarga do tronco.,preliminar — validar no projeto básico
+META_01,4,Pavimentação da rua,"Pavimentar a rua articuladamente com a drenagem, prevendo acabamento, sarjetas e recomposição.",preliminar — validar no projeto básico
+META_02,1,Projeto básico,Elaborar projeto básico do conjunto da meta.,preliminar — validar no projeto básico
+META_02,2,Tronco — trecho hachurado,Implantar o tronco localizado no trecho hachurado da seleção de campo.,preliminar — validar no projeto básico
+META_02,3,Coletor — trecho hachurado,Implantar o coletor localizado no trecho hachurado da seleção de campo.,preliminar — validar no projeto básico
+META_02,4,Dissipador B05,Implantar e detalhar o dissipador B05; reconciliar a nomenclatura com DISS_B_02 do modelo atual.,preliminar — validar no projeto básico
+META_02,5,Pavimentação da rua,Pavimentar a rua articuladamente com a drenagem e a saída protegida.,preliminar — validar no projeto básico
+META_03,1,Projeto básico,Elaborar projeto básico do conjunto da meta.,preliminar — validar no projeto básico
+META_03,2,Tronco,"Implantar o tronco da rede das ruas indicadas, após validação do traçado.",preliminar — validar no projeto básico
+META_03,3,Coletores das ruas indicadas,Implantar os coletores associados às ruas indicadas e às áreas de contribuição.,preliminar — validar no projeto básico
+META_03,4,Dissipador B01,Implantar e detalhar o dissipador B01 associado à descarga da rede.,preliminar — validar no projeto básico
+META_03,5,Pavimentação da rua,Pavimentar as ruas articuladamente com a drenagem e a proteção da saída.,preliminar — validar no projeto básico

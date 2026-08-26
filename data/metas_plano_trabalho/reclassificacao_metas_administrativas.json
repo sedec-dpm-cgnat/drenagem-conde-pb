@@ -1,0 +1,58 @@
+{
+  "titulo": "Reclassificação administrativa das metas do Plano de Trabalho",
+  "versao": "2026-08-25",
+  "crs_fonte": "EPSG:31985",
+  "crs_geojson": "EPSG:4326",
+  "regra": "Os polígonos originais foram preservados. Os polígonos display são envelopes retangulares esquemáticos, somente para apresentação e identificação no Leaflet.",
+  "metas": [
+    {
+      "meta_id": "META_01",
+      "nome": "Meta 1 — Bacia A: tronco e dissipador D05",
+      "bacia": "A",
+      "originais": [
+        "META_04"
+      ],
+      "diss_usuario": "Dissipador 05",
+      "diss_modelo": "DISS_05 (camada atual; confirmar identificação de saída no SWMM)",
+      "etapas": "Projeto básico; tronco da antiga Meta 04; dissipador 05; pavimentação da rua",
+      "n_trechos_unicos": 45,
+      "nos_inicio": "N_A_0044;N_A_0119;N_A_0120;N_A_0122;N_A_0124;N_A_0126;N_A_0128;N_A_0130;N_A_0132;N_A_0133;N_A_0134;N_A_0136;N_A_0137;N_A_0138;N_A_0141;N_A_0143;N_A_0150;N_A_0121;N_A_0123;N_A_0158;N_A_0159;N_A_0161;N_A_0129;N_A_0163;N_A_0164;N_A_0167;N_A_0170;N_A_0171;N_A_0028;N_A_0135;N_A_0131;N_A_0127;N_A_0151;N_A_0118",
+      "nos_fim": "N_A_0043;N_A_0120;N_A_0121;N_A_0123;N_A_0125;N_A_0127;N_A_0129;N_A_0131;N_A_0134;N_A_0135;N_A_0138;N_A_0139;N_A_0140;N_A_0142;N_A_0151;N_A_0154;N_A_0155;N_A_0159;N_A_0162;N_A_0132;N_A_0136;N_A_0141;N_A_0143;N_A_0174;N_A_0044;N_A_0193"
+    },
+    {
+      "meta_id": "META_02",
+      "nome": "Meta 2 — Bacia B: Dissipador B05 e trechos hachurados",
+      "bacia": "B",
+      "originais": [
+        "META_02"
+      ],
+      "diss_usuario": "Dissipador B05",
+      "diss_modelo": "DISS_B_02 (código atual a conferir)",
+      "etapas": "Projeto básico; tronco do trecho hachurado; coletor do trecho hachurado; dissipador B05; pavimentação da rua",
+      "n_trechos_unicos": 8,
+      "nos_inicio": "N_B_0033;N_B_0035;N_B_0039;N_B_0038;N_B_0036;N_B_0034;N_B_0040;N_B_0044",
+      "nos_fim": "N_B_0034;N_B_0036;N_B_0040;N_B_0044;O_B_DISS_02"
+    },
+    {
+      "meta_id": "META_03",
+      "nome": "Meta 3 — Bacia B: Dissipador B01 e rede das ruas indicadas",
+      "bacia": "B",
+      "originais": [
+        "META_01",
+        "META_03"
+      ],
+      "diss_usuario": "Dissipador B01",
+      "diss_modelo": "DISS_B_01",
+      "etapas": "Projeto básico; tronco; coletores das ruas indicadas; dissipador B01; pavimentação da rua",
+      "n_trechos_unicos": 18,
+      "nos_inicio": "N_B_0009;N_B_0010;N_B_0012;N_B_0013;N_B_0015;N_B_0017;N_B_0021;N_B_0033;N_B_0037;N_B_0008;N_B_0011;N_B_0014;N_B_0016;N_B_0018;N_B_0022;N_B_0042;N_B_0032;N_B_0043",
+      "nos_fim": "N_B_0010;N_B_0011;N_B_0014;N_B_0016;N_B_0018;N_B_0022;N_B_0034;N_B_0038;N_B_0042;N_B_0043;O_B_DISS_01"
+    }
+  ],
+  "dbf_id_observado": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="metas-espaciais-selecionadas-para-o-plano-de-trabalho" class="level2">
 <h2 class="anchored" data-anchor-id="metas-espaciais-selecionadas-para-o-plano-de-trabalho">Metas espaciais selecionadas para o Plano de Trabalho</h2>
-<p>A camada <code>MetasSelecionadas.shp</code> foi processada como polígonos de seleção. O pacote abaixo contém os quatro polígonos identificados como <code>META_01</code> a <code>META_04</code>, os trechos, nós e dissipadores associados e as tabelas completas de parâmetros preliminares.</p>
+<p>A camada <code>MetasSelecionadas.shp</code> foi processada como quatro polígonos de seleção de origem e reorganizada em três metas administrativas. O pacote original permanece preservado; os GeoJSONs abaixo permitem visualizar a fusão Meta 1/2/3 no Leaflet e manter a rastreabilidade dos trechos no ArcMap/QGIS.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -505,6 +505,36 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>ID, meta, bacia, classe, nó inicial/final, coordenadas, comprimento, diâmetros, vazões, velocidades e status</td>
 </tr>
 <tr class="even">
+<td><a href="data/metas_plano_trabalho/resumo_metas_administrativas.csv">Resumo das metas administrativas</a></td>
+<td>CSV</td>
+<td>Meta 1 (antiga META_04), Meta 2 (META_02) e Meta 3 (fusão META_01+META_03), com links únicos e dissipadores associados</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv">Trechos das metas administrativas</a></td>
+<td>CSV</td>
+<td>Parâmetros de diâmetro, vazão, declividade, nós e extensão, com META_ORIG e ETAPA_META para auditoria</td>
+</tr>
+<tr class="even">
+<td><a href="data/metas_plano_trabalho/etapas_metas_administrativas.csv">Etapas de implantação das metas</a></td>
+<td>CSV</td>
+<td>Projeto básico, troncos, coletores, dissipadores e pavimentação, por ordem de implantação preliminar</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/metas_selecionadas_original.geojson">Polígonos originais das metas</a></td>
+<td>GeoJSON</td>
+<td>Geometria original em WGS84 para auditoria e seleção espacial</td>
+</tr>
+<tr class="even">
+<td><a href="data/metas_plano_trabalho/metas_administrativas_display.geojson">Polígonos formatados das metas</a></td>
+<td>GeoJSON</td>
+<td>Envelopes esquemáticos mais regulares para apresentação; não substituem os polígonos originais</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/reclassificacao_metas_administrativas.json">Manifesto da reclassificação administrativa</a></td>
+<td>JSON</td>
+<td>Regra de fusão, nomenclatura, códigos de dissipadores e limitações da área da Meta 3</td>
+</tr>
+<tr class="even">
 <td><a href="data/metas_plano_trabalho/LEIA-ME_RESULTADOS.txt">Leia-me dos resultados</a></td>
 <td>TXT</td>
 <td>Método de seleção, limiar de interseção e limitações</td>
@@ -513,6 +543,16 @@ document.addEventListener('DOMContentLoaded', function () {
 <td><a href="assets/mapa_metas_plano_trabalho.png">Mapa-síntese das metas</a></td>
 <td>PNG</td>
 <td>Visualização dos polígonos e trechos selecionados</td>
+</tr>
+<tr class="even">
+<td><a href="assets/mapa_metas_administrativas.svg">Mapa estático das metas administrativas</a></td>
+<td>SVG</td>
+<td>Três metas, polígonos originais, envelopes de apresentação, redes e dissipadores</td>
+</tr>
+<tr class="odd">
+<td><a href="07_plano_trabalho.html#seleção-espacial-executada-para-as-metas">Mapa interativo das metas</a></td>
+<td>Leaflet</td>
+<td>Satélite/ruas, bacias, polígonos originais, envelopes de apresentação, rede, dissipadores e pontos clicáveis</td>
 </tr>
 </tbody>
 </table>

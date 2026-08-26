@@ -1,88 +1,122 @@
-# Metodologia de atualizacao das curvas IDF sob mudanca climatica
+# Metodologia de IDF sob mudança do clima — Conde/PB
 
-## Referencia metodologica
+## Fonte metodológica adotada
 
-A metodologia de referencia sera Maity e Maity (2022), *Changing Pattern of Intensity-Duration-Frequency Relationship of Precipitation due to Climate Change*, Water Resources Management, DOI 10.1007/s11269-022-03313-y.
+Nesta versão, a análise climática passa a seguir a cadeia metodológica publicada
+no **Portal IDF-MC da SEDEC/MIDR**: [idf-mc.dpm-sedec-sas.tech](https://idf-mc.dpm-sedec-sas.tech/).
+O portal é a fonte primária dos fatores e das curvas servidas; o relatório não
+recalcula esses fatores a partir de uma amostra independente do banco NEX-GDDP.
 
-O artigo combina: (i) correcao de vies dos modelos climaticos por quantile mapping; (ii) ponderacao do conjunto de modelos pelo Reliability Ensemble Averaging (REA); (iii) ajuste de extremos por GEV usando L-moments; (iv) relacao de escala entre duracao diaria e subdiaria; e (v) comparacao entre IDF historica e IDF futura por cenario, horizonte e periodo de retorno.
+Release consultado para Conde: `2026.08.002`, gerado em 13/08/2026. A ficha
+municipal oficial é [Conde/PB — código 2504603](https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603)
+e o ponto publicado é `2504603-3300580`.
 
-## Adaptacao necessaria para Conde/PB
+O artigo de Maity e Maity (2022) e o painel do NRCC/Cornell continuam como
+referências de apresentação e comparação conceitual. Eles não são tratados como
+fonte dos números do IDF-MC para este estudo.
 
-O banco local NEX-GDDP-CMIP6 disponibiliza `prec_max_anual`, isto e, a maxima precipitacao diaria de cada ano por modelo, cenario e ponto de grade. Ele nao disponibiliza, nesta tabela, a serie diaria completa nem a serie subdiaria.
+## Cadeia de cálculo do IDF-MC
 
-Por isso, a aplicacao para Conde nao sera uma copia literal do artigo. A Gamma-QM para toda a distribuicao diaria e a extracao direta de janelas moveis de 1, 2, 3, 6, 9, 12 e 24 horas nao podem ser reproduzidas somente com `prec_max_anual`. A versao adotada sera uma adaptacao paramétrica para extremos anuais, combinada com a IDF observada/tradicional usada no SWMM.
+1. As máximas anuais de precipitação diária observada são organizadas para o
+   município na janela **1981–2024**. Para Conde, são 44 anos, com fonte
+   `xavier_brdwgd`, uma célula representativa e critério `knn_mancha`.
+2. A distribuição de extremos adotada é **Gumbel**, ajustada pelo método dos
+   momentos. Para um período de retorno `T`, o quantil é obtido por:
 
-## Procedimento proposto
+   `Q(T) = beta + alpha * [-ln(-ln(1 - 1/T))]`
 
-### 1. Recorte espacial e series
+   na parametrização retornada pela API, `alpha` é o parâmetro de escala e
+   `beta` o parâmetro de posição. Para Conde, a ficha oficial informa
+   `alpha = 23,5415`, `beta = 70,665924`, média de 84,25444 mm e desvio-padrão
+   de 30,193146 mm. Esses valores reproduzem a média informada pela ficha
+   (`beta + gamma * alpha`, com `gamma` igual à constante de
+   Euler–Mascheroni).
+3. O total diário é convertido para uma janela de 24 horas pelo fator fixo
+   **1,13**.
+4. A chuva de 24 horas é desagregada para as durações de 5, 10, 15, 20, 25,
+   30, 60, 360, 480, 600, 720 e 1.440 minutos pela cascata
+   **DAEE/CETESB**. Os coeficientes publicados no release incluem, por exemplo,
+   5 min/30 min = 0,34; 15 min/30 min = 0,70; 1 h/24 h = 0,42; 12 h/24 h =
+   0,85. A configuração completa está disponível na resposta `/api/v1/version`.
+5. Para cada modelo climático, a mesma distribuição é ajustada na janela
+   histórica **1950–2014** e na janela futura selecionada. O fator de mudança é
+   a razão entre o quantil futuro e o quantil histórico do próprio modelo, no
+   mesmo tempo de retorno.
+6. Os fatores dos modelos válidos são resumidos pelos percentis **p10, p50 e
+   p90**, acompanhados da quantidade de modelos. Nesta convenção, p10 é a faixa
+   branda, p50 é a mediana e p90 é a faixa severa para chuva, fator e IDF.
+7. A chuva futura é obtida pela multiplicação da chuva observada de projeto pelo
+   fator de mudança. Como o fator é aplicado antes da desagregação, a IDF futura
+   resulta da IDF do presente multiplicada pelo mesmo fator.
+8. O portal também fornece o **tempo de retorno futuro equivalente**, que responde
+   a uma pergunta diferente: com que frequência futura ocorre o evento que hoje
+   tem determinado tempo de retorno. Para essa métrica, a severidade é espelhada:
+   o pior caso é o menor tempo de retorno.
 
-1. Identificar o ponto de grade mais proximo do centroide das Bacias A e B e, como verificacao de sensibilidade, os quatro pontos vizinhos mais proximos.
-2. Extrair, para os 34 GCMs, os cenarios `historical`, `ssp126`, `ssp245`, `ssp370` e `ssp585`.
-3. Construir as series de maxima anual para o periodo historico de 1950-2014 e para os horizontes futuros. Para comparabilidade com o artigo, manter 2015-2039, 2040-2059 e 2060-2100; para a tomada de decisao atual, destacar tambem uma janela operacional centrada no horizonte de projeto definido pelo municipio.
-4. Manter a separacao entre Bacia A e Bacia B no modelo hidrologico, mas usar a mesma chuva de projeto quando a escala espacial da grade nao permitir distinguir as duas bacias.
+## Cenários, períodos e aplicação em Conde
 
-### 2. Referencia observada e correcao de vies
+São considerados os cenários CMIP6 `ssp126`, `ssp245`, `ssp370` e `ssp585`, nos
+períodos:
 
-1. Usar a serie observada que fundamentou a IDF tradicional do relatorio, com a estacao e o procedimento documentados no projeto.
-2. Ajustar, para cada GCM, a distribuicao historica de maxima anual do modelo contra a distribuicao observada de maxima anual.
-3. Fazer a transferencia para o futuro por quantile mapping parametrico. O ajuste de extremos sera feito por GEV; se a amostra observada nao suportar estimativa estavel do parametro de forma, usar forma fixa e reportar a analise de sensibilidade.
-4. A correcao sera avaliada por quantis, viés, RMSE, erro relativo nos quantis de projeto e teste de aderencia. A serie historica sera dividida temporalmente para uma validacao fora da amostra, sempre que o tamanho permitir.
+- P1: 2015–2040;
+- P2: 2041–2070;
+- P3: 2071–2100.
 
-Esta etapa e equivalente ao principio do artigo, mas substitui o QM misto Gamma-Gumbel por uma correcao paramétrica focada nas maximas anuais, porque o banco entregue nao contem os valores diarios nao extremos nem os zeros necessarios para o componente Gamma.
+A linha de base operacional do SWMM permanece identificada como `BASE_TR25` e
+`BASE_TR50`, conforme a rodada hidrológica tradicional do relatório anterior.
+Os fatores IDF-MC são aplicados como famílias de sensibilidade:
 
-### 3. Extremos e REA
+- `IDFMC_[cenario]_P[periodo]_TR25`: coletores e bueiros;
+- `IDFMC_[cenario]_P[periodo]_TR50`: troncos principais e dissipadores.
 
-1. Ajustar a GEV as series de maxima anual por L-moments.
-2. Usar como configuracao principal a forma fixa κ = 0,114, conforme a referencia metodologica, e executar uma sensibilidade com forma estimada quando a amostra permitir.
-3. Calcular os niveis de retorno para TR 2, 5, 10, 25, 50 e 100 anos.
-4. Calcular pesos REA por desempenho historico e convergencia futura. O desempenho sera medido pelo RMSE entre as CDFs historicas do modelo e da referencia, avaliadas em 100 quantis igualmente espacados. Os pesos serao normalizados e iterados ate a convergencia.
-5. Publicar, alem da curva REA, a mediana do conjunto e a faixa de incerteza entre os percentis 10 e 90 dos GCMs. Nenhum cenario sera representado por um unico fator sem essa faixa.
+O arquivo [idf_mc_conde_tr25_tr50.csv](idf_mc_conde_tr25_tr50.csv) é uma cópia
+auditável dos fatores publicados para as duas recorrências. A fonte canônica é
+sempre a [ficha oficial de Conde](https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603).
 
-### 4. Conversao para duracoes usadas no SWMM
+## Integração com o SWMM
 
-Como o banco fornece maxima diaria, a escala subdiaria sera obtida a partir da IDF tradicional observada e da relacao de escala. A forma geral sera:
+Os fatores não devem substituir automaticamente os hietogramas tradicionais.
+Para cada cenário e período, a sequência de trabalho é:
 
-`I_T(lambda t) = lambda^theta I_T(t)`
+1. manter intacta a rodada-base TR25/TR50;
+2. obter a chuva de projeto futura pelo fator IDF-MC correspondente;
+3. preservar a distribuição temporal da IDF adotada, documentando que a fonte
+   climática parte de máximas diárias e não de uma série pluviográfica subdiária;
+4. executar o SWMM em arquivo separado;
+5. comparar pico, volume, lâmina/nós inundados, capacidade, velocidade, saída e
+   vazão nos dissipadores;
+6. registrar os trechos que permanecem críticos em p10, p50 e p90 e nos
+   cenários selecionados.
 
-O expoente `theta` sera estimado com as duracoes disponiveis na IDF observada e validado contra as duracoes mais curtas usadas no modelo. Assim, a informacao climatica do NEX-GDDP altera o nivel diario de extremos, enquanto a estrutura temporal subdiaria permanece ancorada na observacao local e na IDF tradicional.
+Para o Plano de Trabalho, o critério não será escolher o cenário mais severo de
+forma automática. Serão priorizados trechos que reduzam risco nas metas e que
+apresentem desempenho robusto, ou que possam receber reforço futuro, manutenção
+e adaptação sem refazer todo o sistema.
 
-As duracoes de trabalho serao compativeis com o SWMM, por exemplo 5, 10, 15, 30, 60, 120, 180, 360, 720 e 1440 minutos, com interpolacao documentada quando necessario.
+## Limitações e salvaguardas
 
-### 5. Aplicacao no SWMM
+- O IDF-MC trabalha com valores de grade; eles representam uma área e não um
+  pluviômetro pontual.
+- A baseline municipal é baseada em máximas diárias de 1981–2024. A chuva curta
+  é derivada pela cascata DAEE/CETESB e não substitui uma IDF construída com
+  pluviografia local.
+- A mediana não é uma previsão determinística. A dispersão p10–p90 e a
+  quantidade de modelos devem acompanhar cada número.
+- A ficha de Conde registra um aviso de não monotonicidade entre cenários no
+  período mais distante; isso deve ser lido como incerteza do conjunto, não como
+  erro a ser escondido.
+- Tempos de retorno muito acima do tamanho da série observada são extrapolações.
+  O release recomenda 2, 5, 10, 25, 50 e 100 anos; TR200 deve ser identificado
+  como fora da faixa recomendada.
+- O resultado é apropriado para análise de robustez e adaptação da concepção.
+  O projeto básico/executivo deverá confirmar topografia, cadastro, áreas
+  contribuintes, parâmetros de perdas, condições de jusante, hietogramas e
+  critérios hidráulicos.
 
-Para cada combinacao de cenario, horizonte e TR:
+## Referências
 
-1. gerar a curva IDF futura;
-2. construir o hietograma de projeto mantendo a distribuicao temporal tradicional;
-3. registrar a chuva em uma nova serie temporal do INP;
-4. executar separadamente Bacia A e Bacia B;
-5. comparar vazao de pico, volume, nivel, inundacao, velocidade e vazao nos dissipadores com a rodada historica TR25/TR50;
-6. registrar quais trechos mudam de classe de atendimento e quais passam a ser metas prioritarias do Plano de Trabalho.
-
-Os arquivos climaticos nao substituirão a rodada historica. O modelo devera manter uma linha de base e cenarios climaticos identificados, por exemplo `BASE_TR25`, `BASE_TR50`, `SSP245_2040_TR25` e `SSP585_2060_TR50`.
-
-## Salvaguardas e limitacoes
-
-- NEX-GDDP-CMIP6 e uma projecao de grade, nao uma medicao local.
-- A grade de 0,25 grau e muito mais grosseira que as Bacias A e B; a representatividade espacial sera reportada.
-- A tabela de maxima anual nao permite reconstruir diretamente a duracao subdiaria do evento futuro.
-- A correcao de vies nao elimina a incerteza estrutural dos GCMs.
-- Os resultados devem ser apresentados como faixas e cenarios, nao como previsao deterministica.
-- A primeira rodada no SWMM continuara preliminar ate a validacao das areas de contribuicao, cotas de fundo, diametros, sentidos e dissipadores.
-
-## Verificacao inicial do banco NEX-GDDP-CMIP6
-
-Foi realizada uma consulta de leitura em 15/08/2026. O centroide calculado para a Bacia A foi aproximadamente -34,91727 / -7,26402. O ponto de grade mais proximo foi o `grid_id 6931`, em -34,87500 / -7,37500, a aproximadamente 13,19 km do centroide. Os quatro pontos mais proximos devem ser mantidos na analise de sensibilidade, em vez de tratar o ponto mais proximo como observacao local.
-
-No ponto mais proximo, o banco retornou cobertura historica de 1950-2014 e cobertura futura de 2015-2100 para os quatro cenarios SSP. A quantidade de registros varia por cenario, modelo e ano; a auditoria de completude sera feita antes do ajuste estatistico.
-
-## Saidas previstas
-
-- `idf_historica_referencia.csv`;
-- `idf_futura_por_modelo.csv`;
-- `idf_futura_ensemble_rea.csv`;
-- `fatores_mudanca_climatica.csv`;
-- `pesos_rea_por_modelo.csv`;
-- graficos das curvas IDF historica, mediana, REA e faixa P10-P90;
-- INP, RPT e OUT separados por cenario e horizonte;
-- tabela de trechos criticos e metas candidatas do Plano de Trabalho.
+- SEDEC/MIDR. [Portal IDF-MC — Chuva de projeto sob mudança do clima](https://idf-mc.dpm-sedec-sas.tech/).
+- SEDEC/MIDR. [Metodologia do Portal IDF-MC](https://idf-mc.dpm-sedec-sas.tech/metodologia).
+- SEDEC/MIDR. [API — ficha de Conde/PB](https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603).
+- Maity, R.; Maity, S. (2022). *Changing Pattern of Intensity-Duration-Frequency Relationship of Precipitation due to Climate Change*. DOI: [10.1007/s11269-022-03313-y](https://doi.org/10.1007/s11269-022-03313-y).
+- NRCC/Cornell. [NY Projected IDF Curves](https://ny-idf-projections.nrcc.cornell.edu/).

@@ -40,3 +40,16 @@ A versão HTML do relatório digital será gerada em `_site`. O script prepara o
 O relatório está publicado em [https://sedec-dpm-cgnat.github.io/drenagem-conde-pb/](https://sedec-dpm-cgnat.github.io/drenagem-conde-pb/), associado ao repositório [sedec-dpm-cgnat/drenagem-conde-pb](https://github.com/sedec-dpm-cgnat/drenagem-conde-pb). O deploy continuará sendo feito progressivamente, após cada revisão relevante.
 
 O relatório está em construção e será atualizado progressivamente à medida que a rede, as áreas de contribuição, os dissipadores e os resultados do SWMM forem revisados.
+
+## Mudança climática e IDF-MC
+
+A partir da revisão de 25/08/2026, o capítulo climático adota como fonte primária
+o [Portal IDF-MC da SEDEC/MIDR](https://idf-mc.dpm-sedec-sas.tech/). A ficha de
+[Conde/PB](https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603) está
+publicada no release `2026.08.002`. Os fatores oficiais para TR25 e TR50, por
+cenário, período e p10/p50/p90, estão em
+[`idf_mc_conde_tr25_tr50.csv`](data/downloads/clima/idf_mc_conde_tr25_tr50.csv),
+com metadados em
+[`idf_mc_conde_metadados.json`](data/downloads/clima/idf_mc_conde_metadados.json).
+As tabelas NEX-GDDP/GEV anteriores permanecem no acervo como material
+exploratório e não devem ser confundidas com a fonte oficial desta revisão.

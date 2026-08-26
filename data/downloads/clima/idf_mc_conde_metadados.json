@@ -1,0 +1,46 @@
+{
+  "fonte": "Portal IDF-MC SEDEC/MIDR",
+  "url_ficha": "https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603",
+  "url_version": "https://idf-mc.dpm-sedec-sas.tech/api/v1/version",
+  "data_version": "2026.08.002",
+  "generated_at": "2026-08-13T23:41:41Z",
+  "cd_mun": 2504603,
+  "municipio": "Conde",
+  "uf": "PB",
+  "status": "com_dados",
+  "n_points_publicados": 1,
+  "point_id": "2504603-3300580",
+  "baseline": {
+    "fonte": "xavier_brdwgd",
+    "janela": [1981, 2024],
+    "n_anos": 44,
+    "alpha": 23.5415,
+    "beta": 70.665924,
+    "media_mm": 84.25444,
+    "desvio_mm": 30.193146,
+    "assimetria_g": 0.6630964,
+    "criterio": "knn_mancha",
+    "n_grids_xavier": 1,
+    "distancia_km": 6.5704503
+  },
+  "baseline_tr25_tr50": {
+    "TR25": {"p1dia_mm": 145.96422, "p24h_mm": 164.93956},
+    "TR50": {"p1dia_mm": 162.5234, "p24h_mm": 183.65146}
+  },
+  "periodos": {
+    "P1": [2015, 2040],
+    "P2": [2041, 2070],
+    "P3": [2071, 2100]
+  },
+  "cenarios": ["ssp126", "ssp245", "ssp370", "ssp585"],
+  "metodo": {
+    "distribuicao": "Gumbel",
+    "ajuste": "metodo dos momentos",
+    "fator_24h_1dia": 1.13,
+    "percentis": [10, 50, 90],
+    "tr_servicos": [2, 5, 10, 25, 50, 100, 200],
+    "duracoes_min": [5, 10, 15, 20, 25, 30, 60, 360, 480, 600, 720, 1440],
+    "ensemble": "fator futuro/historico do mesmo modelo; sem peso espacial na ficha municipal"
+  },
+  "nota": "Copia de metadados e recorte TR25/TR50 consultados na API em 2026-08-25. A API oficial permanece a fonte canonica; valores ausentes devem permanecer null."
+}

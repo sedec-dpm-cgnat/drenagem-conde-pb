@@ -168,12 +168,12 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
   <li><a href="#por-que-um-capítulo-específico" id="toc-por-que-um-capítulo-específico" class="nav-link active" data-scroll-target="#por-que-um-capítulo-específico">6.1 Por que um capítulo específico</a></li>
   <li><a href="#estrutura-de-apresentação-das-idfs" id="toc-estrutura-de-apresentação-das-idfs" class="nav-link" data-scroll-target="#estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</a></li>
-  <li><a href="#método-aplicado-nesta-primeira-rodada" id="toc-método-aplicado-nesta-primeira-rodada" class="nav-link" data-scroll-target="#método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</a>
+  <li><a href="#método-adotado-nesta-versão-idf-mc" id="toc-método-adotado-nesta-versão-idf-mc" class="nav-link" data-scroll-target="#método-adotado-nesta-versão-idf-mc">6.3 Método adotado nesta versão — IDF-MC</a>
   <ul class="collapse">
   <li><a href="#estrutura-técnica-da-idf-e-análise-de-frequência" id="toc-estrutura-técnica-da-idf-e-análise-de-frequência" class="nav-link" data-scroll-target="#estrutura-técnica-da-idf-e-análise-de-frequência">6.3.1 Estrutura técnica da IDF e análise de frequência</a></li>
   <li><a href="#como-a-incerteza-será-levada-ao-swmm" id="toc-como-a-incerteza-será-levada-ao-swmm" class="nav-link" data-scroll-target="#como-a-incerteza-será-levada-ao-swmm">6.3.2 Como a incerteza será levada ao SWMM</a></li>
   </ul></li>
-  <li><a href="#resultados-por-cenário-e-horizonte" id="toc-resultados-por-cenário-e-horizonte" class="nav-link" data-scroll-target="#resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</a></li>
+  <li><a href="#fatores-oficiais-por-cenário-e-período" id="toc-fatores-oficiais-por-cenário-e-período" class="nav-link" data-scroll-target="#fatores-oficiais-por-cenário-e-período">6.4 Fatores oficiais por cenário e período</a></li>
   <li><a href="#o-que-ainda-falta-para-uma-idf-futura-de-projeto" id="toc-o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="nav-link" data-scroll-target="#o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</a></li>
   <li><a href="#reconstrução-resiliente-sustentável-e-adaptada" id="toc-reconstrução-resiliente-sustentável-e-adaptada" class="nav-link" data-scroll-target="#reconstrução-resiliente-sustentável-e-adaptada">6.6 Reconstrução resiliente, sustentável e adaptada</a></li>
   <li><a href="#integração-com-o-swmm-e-com-o-plano-de-trabalho" id="toc-integração-com-o-swmm-e-com-o-plano-de-trabalho" class="nav-link" data-scroll-target="#integração-com-o-swmm-e-com-o-plano-de-trabalho">6.7 Integração com o SWMM e com o Plano de Trabalho</a></li>
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Capítulo metodológico em construção.</strong> Esta seção apresenta uma primeira faixa de sensibilidade climática para apoiar decisões robustas. Ela não substitui a atualização formal da IDF com séries observadas, dados subdiários, calibração local e validação hidrológica.
+<strong>Capítulo metodológico — IDF-MC.</strong> Esta seção documenta a aplicação da ferramenta oficial para Conde/PB, os fatores de mudança climática por cenário e período e as limitações que permanecem para um projeto básico. Os gráficos anteriores são mantidos apenas como material exploratório e não substituem a consulta ao release vigente.
 </div>
 </div>
 </div>
@@ -220,18 +220,18 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="estrutura-de-apresentação-das-idfs" class="level2">
 <h2 class="anchored" data-anchor-id="estrutura-de-apresentação-das-idfs">6.2 Estrutura de apresentação das IDFs</h2>
-<p>Para cada cenário e horizonte, a apresentação deverá permitir a leitura de:</p>
+<p>Para cada cenário e período, a apresentação deverá permitir a leitura de:</p>
 <ul>
 <li>período de retorno: TR25 e TR50 como referência desta concepção preliminar;</li>
-<li>horizonte: 2040-2059 e 2060-2100, correspondendo às janelas disponíveis no banco local;</li>
+<li>período do IDF-MC: P1 (2015–2040), P2 (2041–2070) e P3 (2071–2100); esses períodos substituem as janelas simplificadas usadas nos gráficos exploratórios anteriores;</li>
 <li>cenário socioambiental: SSP1-2.6, SSP2-4.5, SSP3-7.0 e SSP5-8.5;</li>
 <li>curva central: mediana dos modelos válidos;</li>
 <li>margem de incerteza: faixa P10-P90, acompanhada dos valores mínimo e máximo para auditoria;</li>
 <li>duração: a curva local é mostrada de 15 minutos a 24 horas, sempre com a ressalva de que a projeção disponível é diária.</li>
 </ul>
-<p>O gráfico abaixo usa a mesma lógica de um painel de IDFs projetadas: cada quadro corresponde a um cenário e horizonte; as linhas mostram a mediana para TR25 e TR50; o sombreamento mostra P10-P90; as linhas tracejadas são a IDF local de referência. A figura deve ser lida como <strong>teste de sensibilidade</strong>, e não como autorização para substituir automaticamente as chuvas no SWMM.</p>
+<p>O gráfico abaixo usa a mesma lógica de um painel de IDFs projetadas: cada quadro corresponde a um cenário e período; as linhas mostram a mediana para TR25 e TR50; o sombreamento mostra p10–p90; as linhas tracejadas são a IDF local de referência. Como os arquivos gráficos foram produzidos na etapa exploratória anterior, eles devem ser lidos como <strong>teste de sensibilidade</strong>, e não como autorização para substituir automaticamente as chuvas no SWMM.</p>
 <figure class="map-figure figure">
-<img src="data/downloads/clima/idf_cenarios_incerteza.png" alt="Painel com oito quadros de IDF de sensibilidade climática para quatro cenários e dois horizontes, com faixas P10-P90" class="figure-img">
+<img src="data/downloads/clima/idf_cenarios_incerteza.png" alt="Painel exploratório com quadros de IDF para quatro cenários e horizontes anteriores, com faixas P10-P90" class="figure-img">
 <figcaption>
 Figura 6.1 - Painel de sensibilidade das IDFs para as Bacias A+B. As faixas P10-P90 expressam a dispersão do conjunto de modelos; as linhas tracejadas representam a IDF local de referência.
 </figcaption>
@@ -243,34 +243,36 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 </figcaption>
 </figure>
 </section>
-<section id="método-aplicado-nesta-primeira-rodada" class="level2">
-<h2 class="anchored" data-anchor-id="método-aplicado-nesta-primeira-rodada">6.3 Método aplicado nesta primeira rodada</h2>
-<p>A análise segue uma adaptação da metodologia de extremos e mudança climática discutida por Maity e Maity (2022), mantendo a ideia de comparar a distribuição de extremos históricos e futuros, corrigir a escala em relação à referência local e comunicar a incerteza do conjunto de modelos. O banco NEX-GDDP-CMIP6 disponível para Conde contém máximas anuais diárias, por modelo, cenário, ano e ponto de grade. Por essa razão, a implementação atual:</p>
+<section id="método-adotado-nesta-versão-idf-mc" class="level2">
+<h2 class="anchored" data-anchor-id="método-adotado-nesta-versão-idf-mc">6.3 Método adotado nesta versão — IDF-MC</h2>
+<p>A análise climática desta versão passa a utilizar como fonte primária o <strong>Portal IDF-MC da SEDEC/MIDR</strong>. A ferramenta fornece uma cadeia de cálculo versionada para ir da chuva observada às curvas IDF sob cenários de mudança do clima, com fatores por modelo, quantis do conjunto, períodos de retorno equivalentes e salvaguardas de qualidade. O artigo de Maity e Maity (2022) e o painel do NRCC/Cornell permanecem como referências de apresentação e comparação conceitual; não são a fonte dos números publicados nesta seção.</p>
+<p>Para Conde/PB, código IBGE <code>2504603</code>, a ficha oficial está publicada no release <code>2026.08.002</code>, com um ponto climático publicado, baseline de 44 anos (1981–2024) e status <code>com_dados</code>. A consulta auditável está disponível na <a href="https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603">API do município de Conde</a>. A cópia dos fatores usados para a leitura TR25/TR50 está em <a href="data/downloads/clima/idf_mc_conde_tr25_tr50.csv">CSV</a> e os metadados em <a href="data/downloads/clima/idf_mc_conde_metadados.json">JSON</a>.</p>
+<p>A sequência adotada pelo IDF-MC é:</p>
 <ol type="1">
-<li>seleciona os quatro pontos de grade mais próximos do centroide corrigido das Bacias A+B;</li>
-<li>ajusta uma distribuição GEV por modelo e ponto para o período histórico e para cada horizonte futuro;</li>
-<li>calcula, para TR25 e TR50, a razão entre o quantil futuro e o quantil histórico do mesmo modelo;</li>
-<li>resume os fatores válidos por P10, mediana e P90, sem aplicar pesos REA;</li>
-<li>ancora a resposta na IDF SGB/CPRM 2023 usada no relatório anterior;</li>
-<li>leva a faixa resultante para as durações da IDF local apenas como uma aproximação de sensibilidade.</li>
+<li>reúne as máximas anuais de precipitação diária observada na janela 1981–2024 e ajusta a distribuição de Gumbel pelo método dos momentos;</li>
+<li>converte a chuva diária para 24 horas pelo fator 1,13 e desagrega as durações curtas pela cascata DAEE/CETESB;</li>
+<li>ajusta a mesma distribuição para cada modelo na janela histórica 1950–2014 e na janela futura selecionada;</li>
+<li>calcula, para cada tempo de retorno, a razão entre o quantil futuro e o quantil histórico do mesmo modelo;</li>
+<li>resume o conjunto por p10, p50 e p90, sempre informando o número de modelos válidos;</li>
+<li>aplica o fator à chuva observada de projeto. Assim, para a cadeia publicada, a IDF futura é a IDF presente multiplicada pelo fator correspondente.</li>
 </ol>
-<p>Essa etapa é deliberadamente conservadora na comunicação. Não foram inventados pesos, séries observadas ou ajustes subdiários que não estejam documentados. Onde a grandeza não pôde ser determinada, ela permanece como <code>null</code> no JSON de auditoria.</p>
+<p>Esta mudança corrige a descrição anterior, que apresentava uma adaptação independente com GEV e amostra NEX-GDDP como se fosse a metodologia principal. A amostra NEX-GDDP e os gráficos anteriores ficam preservados como material exploratório/histórico; os fatores IDF-MC são os adotados para a análise de adaptação desta versão. Onde uma grandeza não puder ser determinada pela ferramenta ou pelos dados de projeto, ela deve permanecer como <code>null</code>, sem estimativa artificial.</p>
 <section id="estrutura-técnica-da-idf-e-análise-de-frequência" class="level3">
 <h3 class="anchored" data-anchor-id="estrutura-técnica-da-idf-e-análise-de-frequência">6.3.1 Estrutura técnica da IDF e análise de frequência</h3>
-<p>A organização desta subseção segue, como referência de apresentação técnica, a nota metodológica de IDFs desenvolvida para o Rio Grande do Sul. A inspiração é estrutural: explicitar a origem dos dados, a equação, a formação das séries de extremos, o ajuste estatístico, a comparação entre fontes e as incertezas. Os parâmetros, períodos, resultados e limitações do RS não são transferidos para Conde.</p>
+<p>A organização desta subseção segue a documentação do IDF-MC e o padrão de apresentação técnica adotado nas notas de IDF consultadas. O objetivo é explicitar a origem dos dados, a equação, a formação das séries de extremos, a comparação entre a linha de base e o futuro e a incerteza do conjunto. Parâmetros, períodos e resultados de outros estados não são transferidos para Conde.</p>
 <section id="linha-de-base-local-e-forma-funcional" class="level4">
 <h4 class="anchored" data-anchor-id="linha-de-base-local-e-forma-funcional">Linha de base local e forma funcional</h4>
-<p>A linha de base desta concepção é a curva IDF local documentada no relatório anterior, associada à estação e à fonte SGB/CPRM 2023 adotadas para o município. A forma funcional tradicional, quando os parâmetros locais estiverem disponíveis, é:</p>
-<p><strong>i(Tr, t) = a x Tr^b / (t + c)^d</strong></p>
-<p>em que <code>i</code> é a intensidade de precipitação, em mm/h; <code>Tr</code> é o período de retorno, em anos; <code>t</code> é a duração, em minutos; e <code>a</code>, <code>b</code>, <code>c</code> e <code>d</code> são parâmetros calibrados para a estação ou região de referência. A equação é mantida como descrição da linha de base; ela não deve ser recalibrada com os dados diários do NEX-GDDP-CMIP6 sem uma etapa adicional de desagregação temporal e validação.</p>
+<p>A linha de base climática do IDF-MC para Conde usa máximas anuais diárias de 1981–2024, com 44 anos válidos. A distribuição Gumbel ajustada por momentos pode ser escrita como:</p>
+<p><strong>Q(T) = beta + alpha x [-ln(-ln(1 - 1/T))]</strong></p>
+<p>Na parametrização retornada pela API, <code>alpha</code> é o parâmetro de escala e <code>beta</code> o parâmetro de posição. A ficha oficial informa, para Conde, <code>alpha = 23,5415</code> e <code>beta = 70,665924</code>; esses valores reproduzem a média informada pela ficha (<code>beta + gamma x alpha</code>, com <code>gamma</code> igual à constante de Euler–Mascheroni). O valor de 24 horas é obtido pela conversão fixa de 1,13. A curva tradicional da estação, usada na rodada-base do SWMM, continua sendo mantida para comparação e para não misturar automaticamente fontes com naturezas distintas.</p>
 </section>
 <section id="formação-das-séries-de-extremos" class="level4">
 <h4 class="anchored" data-anchor-id="formação-das-séries-de-extremos">Formação das séries de extremos</h4>
-<p>Para cada duração e ano hidrológico, a prática de referência é extrair a máxima anual da série disponível e preservar o registro de anos válidos, falhas e extensão temporal. Não se preenchem lacunas automaticamente: anos incompletos devem ser excluídos ou tratados conforme metadados e critérios estatísticos explicitamente registrados. No caso de Conde, o banco NEX-GDDP-CMIP6 utilizado nesta primeira rodada já fornece a precipitação máxima diária anual por ponto, modelo, cenário e ano. Portanto, ele sustenta uma análise de sensibilidade de extremos diários, mas não uma nova IDF subdiária completa.</p>
+<p>O IDF-MC reúne as máximas anuais da chuva diária observada por município, preserva a janela e o número de anos e registra a fonte e o critério espacial. Para Conde, a célula observada associada à mancha urbana é identificada na ficha oficial, com uma baseline municipal compartilhada pelo ponto climático publicado. A cadeia climática não deve ser confundida com a série NEX-GDDP usada nos ensaios exploratórios anteriores: a NEX continua como referência de contexto, enquanto o número oficial desta seção vem do release do IDF-MC.</p>
 </section>
 <section id="ajuste-de-extremos-quantis-e-comparação-entre-fontes" class="level4">
 <h4 class="anchored" data-anchor-id="ajuste-de-extremos-quantis-e-comparação-entre-fontes">Ajuste de extremos, quantis e comparação entre fontes</h4>
-<p>Foi ajustada uma GEV separadamente para cada combinação válida de ponto, modelo, cenário, horizonte e série histórica/futura. A partir dela, foram calculados os quantis associados a TR25 e TR50 e, em seguida, o fator futuro/histórico do mesmo modelo. Os fatores foram agregados pelo P10, mediana e P90 do conjunto; os valores mínimo e máximo são mantidos como auditoria e teste de estresse. A IDF local permanece como âncora porque a grade climática tem resolução espacial e natureza temporal diferentes das observações usadas na curva municipal.</p>
+<p>Para cada modelo climático, a Gumbel é ajustada na janela histórica 1950–2014 e na janela futura do cenário/período. O fator de mudança é calculado como <strong>FC = Q<sub>futuro</sub>(T) / Q<sub>histórico</sub>(T)</strong>, no mesmo modelo e tempo de retorno. O conjunto é resumido por p10, p50 e p90 e acompanhado da quantidade de modelos válidos. Para Conde, o release informa 31 modelos em SSP126, 30 em SSP245, 25 em SSP370 e 33 em SSP585. A IDF tradicional da estação permanece como referência operacional do SWMM; o fator IDF-MC é o envelope de adaptação.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -291,14 +293,14 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <td>referência principal para a concepção</td>
 </tr>
 <tr class="even">
-<td>NEX-GDDP-CMIP6</td>
-<td>máximas diárias anuais; GEV por modelo e ponto</td>
-<td>não substitui a série subdiária observada</td>
+<td>Modelos climáticos do IDF-MC</td>
+<td>Gumbel por modelo, janela e ponto climático</td>
+<td>não substituem a série subdiária observada</td>
 </tr>
 <tr class="odd">
 <td>Conjunto de modelos</td>
-<td>P10, mediana e P90; contagem de modelos válidos</td>
-<td>não foi aplicado peso de desempenho não documentado</td>
+<td>p10, p50 e p90; contagem de modelos válidos</td>
+<td>cada valor conserva a dispersão e o número de modelos</td>
 </tr>
 <tr class="even">
 <td>TR25 e TR50</td>
@@ -317,7 +319,7 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 </section>
 <section id="como-a-incerteza-será-levada-ao-swmm" class="level3">
 <h3 class="anchored" data-anchor-id="como-a-incerteza-será-levada-ao-swmm">6.3.2 Como a incerteza será levada ao SWMM</h3>
-<p>Os arquivos tradicionais TR25 e TR50 permanecem como linha de base sem mudança climática. A futura rodada climática será construída como uma família de entradas identificadas, sem sobrescrever os modelos tradicionais:</p>
+<p>Os arquivos tradicionais TR25 e TR50 permanecem como linha de base sem mudança climática. A rodada climática será construída como uma família de entradas identificadas a partir dos fatores do IDF-MC, sem sobrescrever os modelos tradicionais:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -343,91 +345,129 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <td>vazão de pico, capacidade, velocidade e saída</td>
 </tr>
 <tr class="odd">
-<td><code>CLIMA_[cenário]_[horizonte]_TR25</code></td>
+<td><code>IDFMC_[cenário]_[período]_TR25</code></td>
 <td>sensibilidade de coletores e bueiros</td>
 <td>variação em relação à base TR25</td>
 </tr>
 <tr class="even">
-<td><code>CLIMA_[cenário]_[horizonte]_TR50</code></td>
+<td><code>IDFMC_[cenário]_[período]_TR50</code></td>
 <td>sensibilidade de troncos e dissipadores</td>
 <td>variação em relação à base TR50</td>
 </tr>
 </tbody>
 </table>
-<p>Para cada cenário serão geradas, no mínimo, as três posições do envelope: P10, mediana e P90. Os fatores mínimo e máximo absolutos serão mantidos como teste de estresse e não como premissa única. A comparação deverá registrar o número de links acima da capacidade, nós inundados, volume extravasado, vazões nos dissipadores, velocidades, diâmetros candidatos e necessidade de reforço.</p>
+<p>Para cada cenário e período serão consideradas, no mínimo, as três posições do envelope: p10, p50 e p90. A cópia de trabalho contém os fatores oficiais de Conde para TR25 e TR50, mas a decisão deverá continuar vinculada à consulta do release e à confirmação das durações. A comparação deverá registrar o número de links acima da capacidade, nós inundados, volume extravasado, vazões nos dissipadores, velocidades, diâmetros candidatos e necessidade de reforço.</p>
 <p>Na triagem de condutos circulares, um aumento de vazão <code>F</code> não implica aumento linear de diâmetro: a relação aproximada é <code>D/D0 = F^(3/8)</code>. Para estruturas de dissipação, entretanto, o aumento de vazão altera também energia, velocidade, ressalto, arraste e risco de erosão; por isso, a adaptação será apresentada por vazão e desempenho da estrutura, e não por uma simples porcentagem de aumento dimensional.</p>
 </section>
 </section>
-<section id="resultados-por-cenário-e-horizonte" class="level2">
-<h2 class="anchored" data-anchor-id="resultados-por-cenário-e-horizonte">6.4 Resultados por cenário e horizonte</h2>
-<p>O quadro resume os fatores multiplicativos da linha de base local. Um fator 1,20, por exemplo, significa que a mediana do conjunto produziu uma intensidade 20% maior para aquela combinação de período de retorno e horizonte; não significa que toda chuva futura será 20% maior.</p>
+<section id="fatores-oficiais-por-cenário-e-período" class="level2">
+<h2 class="anchored" data-anchor-id="fatores-oficiais-por-cenário-e-período">6.4 Fatores oficiais por cenário e período</h2>
+<p>O quadro resume os fatores multiplicativos publicados pelo IDF-MC para Conde. Um fator 1,20, por exemplo, significa que o quantil futuro mediano é 20% maior que o histórico do mesmo modelo para aquela combinação de período de retorno e janela; não significa que toda chuva futura será 20% maior. Os fatores p10/p50/p90 abaixo são fatores climáticos, não intensidades em mm/h.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 28%">
-<col style="width: 28%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Cenário</th>
-<th>Horizonte</th>
-<th style="text-align: right;">TR25: P10 / mediana / P90</th>
-<th style="text-align: right;">TR50: P10 / mediana / P90</th>
+<th>Período</th>
+<th style="text-align: right;">TR25: p10 / p50 / p90</th>
+<th style="text-align: right;">TR50: p10 / p50 / p90</th>
+<th style="text-align: right;">Modelos</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>SSP1-2.6</td>
-<td>2040-2059</td>
-<td style="text-align: right;">0,842 / 1,025 / 1,300</td>
-<td style="text-align: right;">0,805 / 1,040 / 1,485</td>
+<td>P1 (2015–2040)</td>
+<td style="text-align: right;">0,9288 / 1,0779 / 1,3123</td>
+<td style="text-align: right;">0,9285 / 1,0814 / 1,3577</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="even">
 <td>SSP1-2.6</td>
-<td>2060-2100</td>
-<td style="text-align: right;">0,899 / 1,144 / 1,466</td>
-<td style="text-align: right;">0,890 / 1,201 / 1,635</td>
+<td>P2 (2041–2070)</td>
+<td style="text-align: right;">0,8911 / 1,0838 / 1,3074</td>
+<td style="text-align: right;">0,8870 / 1,0873 / 1,3472</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="odd">
-<td>SSP2-4.5</td>
-<td>2040-2059</td>
-<td style="text-align: right;">0,842 / 1,033 / 1,443</td>
-<td style="text-align: right;">0,812 / 1,065 / 1,637</td>
+<td>SSP1-2.6</td>
+<td>P3 (2071–2100)</td>
+<td style="text-align: right;">0,9191 / 1,1118 / 1,5122</td>
+<td style="text-align: right;">0,9097 / 1,1456 / 1,5766</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="even">
 <td>SSP2-4.5</td>
-<td>2060-2100</td>
-<td style="text-align: right;">0,890 / 1,055 / 1,372</td>
-<td style="text-align: right;">0,894 / 1,082 / 1,564</td>
+<td>P1 (2015–2040)</td>
+<td style="text-align: right;">0,8780 / 1,0396 / 1,2936</td>
+<td style="text-align: right;">0,8692 / 1,0413 / 1,3401</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td>SSP2-4.5</td>
+<td>P2 (2041–2070)</td>
+<td style="text-align: right;">0,8944 / 1,0380 / 1,3356</td>
+<td style="text-align: right;">0,8816 / 1,0462 / 1,3629</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td>SSP2-4.5</td>
+<td>P3 (2071–2100)</td>
+<td style="text-align: right;">0,8755 / 1,1295 / 1,3232</td>
+<td style="text-align: right;">0,8743 / 1,1558 / 1,3714</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="odd">
 <td>SSP3-7.0</td>
-<td>2040-2059</td>
-<td style="text-align: right;">0,842 / 1,015 / 1,457</td>
-<td style="text-align: right;">0,833 / 1,037 / 1,647</td>
+<td>P1 (2015–2040)</td>
+<td style="text-align: right;">0,8810 / 1,0523 / 1,5105</td>
+<td style="text-align: right;">0,8788 / 1,0701 / 1,5821</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="even">
 <td>SSP3-7.0</td>
-<td>2060-2100</td>
-<td style="text-align: right;">0,864 / 1,036 / 1,455</td>
-<td style="text-align: right;">0,850 / 1,054 / 1,763</td>
+<td>P2 (2041–2070)</td>
+<td style="text-align: right;">0,8367 / 1,1115 / 1,2785</td>
+<td style="text-align: right;">0,8373 / 1,1154 / 1,3258</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
-<td>SSP5-8.5</td>
-<td>2040-2059</td>
-<td style="text-align: right;">0,818 / 1,125 / 1,513</td>
-<td style="text-align: right;">0,794 / 1,193 / 1,774</td>
+<td>SSP3-7.0</td>
+<td>P3 (2071–2100)</td>
+<td style="text-align: right;">0,8762 / 1,0070 / 1,4031</td>
+<td style="text-align: right;">0,8673 / 1,0080 / 1,4663</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="even">
 <td>SSP5-8.5</td>
-<td>2060-2100</td>
-<td style="text-align: right;">0,818 / 1,066 / 1,395</td>
-<td style="text-align: right;">0,817 / 1,109 / 1,636</td>
+<td>P1 (2015–2040)</td>
+<td style="text-align: right;">0,9351 / 1,1083 / 1,3454</td>
+<td style="text-align: right;">0,9359 / 1,1312 / 1,3819</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td>SSP5-8.5</td>
+<td>P2 (2041–2070)</td>
+<td style="text-align: right;">0,8270 / 1,0755 / 1,4049</td>
+<td style="text-align: right;">0,8322 / 1,0932 / 1,4700</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td>SSP5-8.5</td>
+<td>P3 (2071–2100)</td>
+<td style="text-align: right;">0,8754 / 1,0730 / 1,2598</td>
+<td style="text-align: right;">0,8735 / 1,0950 / 1,3059</td>
+<td style="text-align: right;">33</td>
 </tr>
 </tbody>
 </table>
-<p>Há dois ensinamentos institucionais nesse quadro. Primeiro, a mediana não cresce de forma monotônica em todos os cenários e horizontes; portanto, uma decisão baseada em um único fator pode ocultar a dispersão. Segundo, as faixas são amplas em alguns casos, especialmente para TR50. Isso recomenda soluções sem arrependimento: continuidade hidráulica, controle de erosão, dissipação segura, acesso para manutenção, proteção a jusante e possibilidade de reforço futuro.</p>
+<p>Há dois ensinamentos institucionais nesse quadro. Primeiro, a mediana não cresce de forma monotônica em todos os cenários e períodos; portanto, uma decisão baseada em um único fator pode ocultar a dispersão. Segundo, as faixas são amplas em alguns casos, especialmente para TR50. Isso recomenda soluções sem arrependimento: continuidade hidráulica, controle de erosão, dissipação segura, acesso para manutenção, proteção a jusante e possibilidade de reforço futuro.</p>
 </section>
 <section id="o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</h2>
@@ -435,9 +475,9 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <ul>
 <li>série observada de máximas anuais e, idealmente, séries subdiárias da estação de referência;</li>
 <li>verificação da homogeneidade, falhas e representatividade espacial da estação;</li>
-<li>downscaling e correção de viés documentados, incluindo quantile mapping quando aplicável;</li>
-<li>avaliação do desempenho dos modelos no clima histórico e definição justificada dos pesos do conjunto;</li>
-<li>ajuste de extremos para cada duração relevante, com intervalos de confiança e teste de sensibilidade;</li>
+<li>consulta ao release vigente do IDF-MC, com registro da versão, ponto, cenário, período e número de modelos;</li>
+<li>verificação da janela observada, da célula climática, da cobertura da mancha urbana e dos avisos da ficha de Conde;</li>
+<li>ajuste de extremos e desagregação conforme a cadeia Gumbel–1,13–DAEE/CETESB publicada pelo IDF-MC;</li>
 <li>definição do horizonte de projeto compatível com a vida útil, manutenção e possibilidade de expansão;</li>
 <li>atualização dos hietogramas e execução comparativa no SWMM, registrando pico, volume, inundação, velocidade e solicitação dos dissipadores.</li>
 </ul>
@@ -472,11 +512,16 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <ul>
 <li><a href="data/downloads/clima/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md">Metodologia adaptada para IDF e mudança climática</a>.</li>
 <li><a href="data/downloads/clima/avaliacao_mudanca_climatica.json">Avaliação climática em JSON</a>.</li>
-<li><a href="data/downloads/clima/fatores_mudanca_climatica.csv">Fatores por cenário e horizonte</a>.</li>
+<li><a href="data/downloads/clima/fatores_mudanca_climatica.csv">Fatores por cenário e período (arquivo exploratório)</a>.</li>
 <li><a href="data/downloads/clima/idf_futura_por_modelo.csv">Fatores por modelo</a>.</li>
 <li><a href="data/downloads/clima/idf_cenarios_incerteza.png">Painel de IDFs e incerteza</a>.</li>
 <li><a href="data/downloads/clima/chuva_projeto_tr25_tr50_adaptacao.png">Painel de chuva de projeto e adaptação</a>.</li>
 <li><a href="data/downloads/clima/nex_prec_max_anual_amostra.csv">Dados NEX-GDDP-CMIP6 amostrados</a>.</li>
+<li><a href="https://idf-mc.dpm-sedec-sas.tech/">Portal IDF-MC da SEDEC/MIDR</a>.</li>
+<li><a href="https://idf-mc.dpm-sedec-sas.tech/metodologia">Metodologia oficial do IDF-MC</a>.</li>
+<li><a href="https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603">Ficha da API para Conde/PB (2504603)</a>.</li>
+<li><a href="data/downloads/clima/idf_mc_conde_tr25_tr50.csv">Fatores oficiais IDF-MC de Conde para TR25/TR50</a>.</li>
+<li><a href="data/downloads/clima/idf_mc_conde_metadados.json">Metadados do recorte oficial de Conde</a>.</li>
 <li><a href="https://doi.org/10.1016/j.jhydrol.2022.127956">Maity e Maity (2022), Changing pattern of intensity-duration-frequency curves</a>.</li>
 <li><a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>.</li>
 </ul>

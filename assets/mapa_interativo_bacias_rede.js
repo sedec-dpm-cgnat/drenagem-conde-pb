@@ -9,7 +9,7 @@
   };
 
   if (typeof L === "undefined") {
-    mensagem("O mapa interativo depende da biblioteca Leaflet. A figura estática continua disponível abaixo.");
+    mensagem("O mapa interativo depende da biblioteca Leaflet. A figura estática e os dados editáveis continuam disponíveis na página.");
     return;
   }
 
@@ -22,7 +22,10 @@
   }[char]));
 
   const map = L.map(container, {
-    scrollWheelZoom: false,
+    zoomControl: true,
+    scrollWheelZoom: true,
+    doubleClickZoom: true,
+    touchZoom: true,
     preferCanvas: true,
   });
 

@@ -6,3 +6,13 @@ Os campos COMPR_M, DPROP_M, DREQ25, DREQ50, Q25_CMS, Q50_CMS, V25_MPS, V50_MPS, 
 foram preservados da rede preliminar. OVERLAP_M indica o comprimento geométrico dentro do polígono.
 META_ID foi numerado como META_01, META_02... na ordem dos polígonos de entrada, pois o campo Id original
 estava zerado. A seleção é preliminar e deve ser revisada no ArcMap antes de compor a obra.
+
+Reclassificação administrativa desta versão:
+Meta 1 = antiga META_04 (Bacia A), incluindo o Dissipador 05;
+Meta 2 = antiga META_02 (Bacia B), incluindo o Dissipador B05;
+Meta 3 = fusão das antigas META_01 e META_03 (Bacia B), incluindo o Dissipador B01.
+O arquivo administrativo contém 71 associações de meta e 70 links físicos únicos.
+O link L_B_0022 é compartilhado entre as Metas 2 e 3 e deve ser tratado como
+dependência comum na revisão do Plano de Trabalho.
+Os envelopes formatados são apenas para apresentação; os polígonos originais
+devem ser usados para seleção analítica no ArcMap/QGIS.

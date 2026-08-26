@@ -385,6 +385,13 @@ Figura 6.1.4.1-1 — Metas administrativas e rede de drenagem. As áreas colorid
 </figure>
 <div id="mapa-interativo-metas" class="leaflet-report-map" role="img" aria-label="Mapa interativo das metas administrativas, polígonos originais, bacias, rede e dissipadores"></div>
 <p class="text-muted"><strong>Figura 6.1.4.1-2 — Mapa interativo das metas.</strong> Use o controle no canto superior direito para alternar satélite/ruas e ligar ou desligar cada camada. A camada “Metas administrativas (apresentação)” usa envelopes esquemáticos mais regulares para facilitar a leitura; a camada “Polígonos originais (auditoria)” é a referência para qualquer seleção espacial no ArcMap/QGIS. Os trechos podem ser identificados clicando na rede e consultando a tabela detalhada.</p>
+<figure class="map-figure figure">
+<img src="assets/mapa_indicativo_trechos_metas.svg" alt="Mapa indicativo dos trechos das metas em relação à rede total das Bacias A e B" class="figure-img">
+<figcaption>
+Figura 6.1.4.1-3 — Trechos das metas em relação à rede total. A rede completa aparece em cinza; os trechos associados à Meta 1, Meta 2 e Meta 3 aparecem destacados por cor; o trecho compartilhado entre as Metas 2 e 3 aparece em azul-escuro. O mapa é indicativo e não substitui a seleção analítica pelos polígonos originais.
+</figcaption>
+</figure>
+<p>Para uso no Google Earth Pro, estão disponíveis o <a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kml">KML consolidado</a> e o <a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kmz">KMZ consolidado</a>, com a rede completa em contexto, trechos destacados por meta, bacias, dissipadores, envelopes de apresentação e polígonos originais para auditoria. Também foram preparados arquivos individuais da <a href="data/metas_plano_trabalho/meta_01_trechos_selecionados.kmz">Meta 1</a>, <a href="data/metas_plano_trabalho/meta_02_trechos_selecionados.kmz">Meta 2</a> e <a href="data/metas_plano_trabalho/meta_03_trechos_selecionados.kmz">Meta 3</a>. O link compartilhado <code>L_B_0022</code> permanece nas duas metas individuais correspondentes.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
@@ -406,7 +413,7 @@ Figura 6.1.4.1-1 — Metas administrativas e rede de drenagem. As áreas colorid
 <th>Meta</th>
 <th style="text-align: right;">Bacia</th>
 <th style="text-align: right;">Área do polígono (ha)</th>
-<th style="text-align: right;">Trechos</th>
+<th style="text-align: right;">Trechos associados</th>
 <th style="text-align: right;">Extensão total dos segmentos (m)</th>
 <th style="text-align: right;">Extensão dentro do polígono (m)</th>
 <th style="text-align: right;">Nós</th>
@@ -476,7 +483,7 @@ Figura 6.1.4.1-1 — Metas administrativas e rede de drenagem. As áreas colorid
 </tr>
 </tbody>
 </table>
-<p>* As extensões e os nós da Meta 3 foram calculados com links únicos: três linhas presentes simultaneamente nos polígonos originais não foram contadas duas vezes. **A área de 3,34 ha da Meta 3 é a soma das áreas-fonte; a área da união geométrica ainda não foi determinada. A extensão total corresponde ao segmento inteiro selecionado para garantir continuidade; a extensão dentro do polígono é apresentada para auditoria e não deve ser usada automaticamente como extensão de projeto.</p>
+<p>* O total de 71 corresponde às associações de trechos nas metas; há 70 <code>ID_LINK</code> físicos únicos porque <code>L_B_0022</code> é compartilhado entre as Metas 2 e 3. As extensões do quadro são somas por associação; a extensão física única correspondente é aproximadamente 11.356,21 m. As extensões e os nós da Meta 3 foram calculados sem dupla contagem interna dos três links presentes simultaneamente nos polígonos originais. **A área de 3,34 ha da Meta 3 é a soma das áreas-fonte; a área da união geométrica ainda não foi determinada. A extensão dentro do polígono é apresentada para auditoria e não deve ser usada automaticamente como extensão de projeto.</p>
 <p>O <a href="data/metas_plano_trabalho/resumo_metas_administrativas.csv">resumo administrativo das três metas</a>, a <a href="data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv">tabela administrativa por trecho</a> e o <a href="data/metas_plano_trabalho/etapas_metas_administrativas.csv">quadro de etapas</a> registram a nova organização. A <a href="data/metas_plano_trabalho/resumo_metas.csv">tabela-fonte original</a> e a <a href="data/metas_plano_trabalho/trechos_metas_parametros.csv">tabela original por trecho</a> continuam disponíveis para auditoria. O <a href="data/metas_plano_trabalho/Metas_Selecionadas_Resultados.zip">pacote GIS completo</a> contém os shapefiles originais; os GeoJSONs da nova classificação estão na página de dados.</p>
 </section>
 <section id="metas-administrativas-e-etapas-de-implantação" class="level3">

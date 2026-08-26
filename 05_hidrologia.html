@@ -69,10 +69,6 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const note = document.createElement('div');
-  note.className = 'construction-note';
-  note.innerHTML = '<strong>Minuta em construção.</strong> Este relatório será atualizado progressivamente com a revisão da rede, das áreas de contribuição, dos dissipadores e dos resultados do SWMM.';
-  document.body.prepend(note);
 });
 </script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -212,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Leitura desta seção.</strong> A análise separa o que já está organizado do que ainda é hipótese. As duas bacias já possuem rodada SWMM executada; a Bacia B também dispõe agora de pré-dimensionamento preliminar. A comparação deve considerar a maturidade das áreas, das cotas e das condições de saída, e não apenas os números do SWMM.
+<strong>Leitura desta seção.</strong> As duas bacias já possuem delimitação, rede preliminar, rodada SWMM e organização dos elementos de análise. Os resultados continuam sendo hipóteses de concepção até que áreas, cotas, condições de saída e parâmetros de campo sejam validados; a comparação deve considerar esse conjunto de evidências, e não apenas os números do SWMM.
 </div>
 </div>
 </div>
@@ -264,12 +260,12 @@ document.addEventListener('DOMContentLoaded', function () {
 </tr>
 <tr class="odd">
 <td>Grau de maturidade</td>
-<td>concepção em revisão</td>
-<td>rodada reproduzida e pré-dimensionamento preliminar; fechamento topológico em revisão</td>
+<td>concepção preliminar organizada; validação de continuidade e saídas</td>
+<td>concepção preliminar organizada; validação de continuidade e saídas</td>
 </tr>
 </tbody>
 </table>
-<p>A Bacia A não deve ser usada como referência final para a Bacia B sem repetir as etapas de lançamento, conexão e verificação. A rodada B foi reproduzida a partir dos arquivos lançados e já permite diagnóstico, triagem espacial e pré-dimensionamento por Manning; não elimina a necessidade de validar quadras, cotas, condições de jusante e o terceiro outfall <code>N_B_0030</code>. A assimetria entre as bacias é uma condição do projeto, não uma falha a ser escondida.</p>
+<p>As Bacias A e B foram estruturadas com a mesma lógica de organização e devem ser analisadas como unidades distintas, sem transferir automaticamente parâmetros ou conclusões de uma para a outra. As rodadas já permitem diagnóstico, triagem espacial e pré-dimensionamento por Manning, mas não eliminam a necessidade de validar quadras, cotas, condições de jusante e o terceiro outfall <code>N_B_0030</code>.</p>
 </section>
 <section id="o-que-a-base-topográfica-permite-discutir" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-a-base-topográfica-permite-discutir">5.2 O que a base topográfica permite discutir</h2>

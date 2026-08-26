@@ -69,10 +69,6 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const note = document.createElement('div');
-  note.className = 'construction-note';
-  note.innerHTML = '<strong>Minuta em construção.</strong> Este relatório será atualizado progressivamente com a revisão da rede, das áreas de contribuição, dos dissipadores e dos resultados do SWMM.';
-  document.body.prepend(note);
 });
 </script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -166,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
+  <li><a href="#preambulo-e-enquadramento" id="toc-preambulo-e-enquadramento" class="nav-link" data-scroll-target="#preambulo-e-enquadramento">1.0 Preâmbulo e enquadramento</a></li>
   <li><a href="#finalidade" id="toc-finalidade" class="nav-link active" data-scroll-target="#finalidade">1.1 Finalidade</a></li>
   <li><a href="#contextualização-do-problema" id="toc-contextualização-do-problema" class="nav-link" data-scroll-target="#contextualização-do-problema">1.2 Contextualização do problema</a></li>
   <li><a href="#diagnóstico-municipal-utilizado-na-contextualização" id="toc-diagnóstico-municipal-utilizado-na-contextualização" class="nav-link" data-scroll-target="#diagnóstico-municipal-utilizado-na-contextualização">1.3 Diagnóstico municipal utilizado na contextualização</a></li>
@@ -204,25 +201,25 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<div class="warning callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<strong>Minuta técnica preliminar em construção.</strong> O relatório será atualizado à medida que forem revisados o lançamento da rede, as áreas de contribuição, os dissipadores e os cenários do SWMM. As conclusões desta versão orientam o Plano de Trabalho, mas não substituem projeto básico ou executivo.
-</div>
-</div>
-</div>
+<section id="preambulo-e-enquadramento" class="level2">
+<h2 class="anchored" data-anchor-id="preambulo-e-enquadramento">1.0 Preâmbulo e enquadramento</h2>
+<p>Este relatório apresenta um estudo de caso sobre a concepção preliminar de drenagem urbana em Conde/PB, estruturado a partir de uma abordagem voltada à realidade de diversos municípios brasileiros que ainda carecem de infraestrutura urbana básica, especialmente ruas pavimentadas e sistemas de drenagem. A proposta articula diagnóstico territorial, base topográfica, hidrologia, modelagem hidráulica e priorização de intervenções para apoiar a elaboração de um Plano de Trabalho de Reconstrução.</p>
+<p>Em municípios cuja expansão urbana ocorreu sem planejamento suficiente e sem a implantação prévia da infraestrutura essencial, a ocorrência repetida de chuvas — inclusive eventos que não se enquadram como extremos — pode concentrar o escoamento superficial nas vias, intensificar processos erosivos e ampliar progressivamente a exposição de edificações, equipamentos públicos e demais infraestruturas. O dano não decorre apenas da magnitude isolada de uma chuva, mas também da recorrência dos eventos, da ausência de caminhos hidráulicos seguros e da transferência do escoamento para setores situados a jusante.</p>
+<p>Quando uma chuva severa produz danos e o município obtém o reconhecimento federal de situação de emergência, podem ser acessados instrumentos de transferência obrigatória, observados os requisitos legais e administrativos aplicáveis. Entretanto, o reconhecimento do desastre não resolve, por si só, a causa estrutural do problema quando essa causa está relacionada à inexistência ou à insuficiência de pavimentação e de drenagem urbana. Nesses casos, a resposta efetiva exige compatibilizar as atribuições da Defesa Civil com políticas públicas e programas específicos destinados à implantação ou à ampliação da infraestrutura urbana.</p>
+<p>Esse contexto produz um dilema para a reconstrução. O princípio de <strong>reconstruir melhor</strong> (<em>build back better</em>) e os conceitos de infraestrutura resiliente e adaptação climática foram desenvolvidos, em grande parte, para orientar a recuperação de sistemas existentes que foram danificados. Em muitos municípios brasileiros, contudo, não há um sistema de drenagem previamente implantado e destruído que possa simplesmente ser reconstruído: há, antes, uma infraestrutura ausente ou incompleta em áreas que já foram ocupadas. A solução tecnicamente adequada passa, portanto, pela implantação planejada da infraestrutura necessária, sem perder de vista os limites de competência, elegibilidade e disponibilidade orçamentária de cada política pública.</p>
+<p>A limitação de recursos da Defesa Civil também precisa ser considerada. Não seria sustentável utilizar, em um único caso de implantação de rede, montante capaz de comprometer ações de resposta e reconstrução mais diretamente aderentes à finalidade do órgão, tampouco seria adequado executar intervenções isoladas que precisassem ser demolidas ou refeitas quando o município obtivesse recursos para implantar o sistema completo. Por outro lado, diante do reconhecimento federal e da demonstração de risco e de infraestrutura afetada, é necessário estruturar uma atuação que reduza o risco imediato e, simultaneamente, evite consolidar soluções incompatíveis com a drenagem futura. Medidas paliativas, como o recascalhamento de vias ou a readequação pontual de bueiros, podem ser necessárias, mas não devem ser confundidas com a solução permanente do sistema.</p>
+<p>O estudo-piloto propõe um caminho intermediário e integrado: antes de financiar diretamente a implantação de bueiros, galerias ou partes de sistemas de drenagem, realizar a pré-concepção da rede nas sub-bacias onde ocorreram os danos, seu pré-dimensionamento, a identificação dos pontos críticos e a seleção dos trechos prioritários que possam ser executados no âmbito da reconstrução. Esses trechos devem ser concebidos para funcionar como partes de uma rede futura, com continuidade hidráulica, dissipação adequada e possibilidade de ampliação por meio de outras fontes de financiamento. A concepção também deve orientar o município na busca de programas federais e, quando pertinente, de fundos climáticos e instrumentos de cooperação voltados à implantação dos componentes restantes.</p>
+<p>Nessa perspectiva, os trechos apoiados com recursos da Defesa Civil deixam de ser intervenções isoladas e passam a constituir investimentos estratégicos, compatíveis com uma visão de futuro resiliente, sustentável e adaptada à mudança climática. No âmbito desta agenda, o caso de Conde/PB é apresentado como uma primeira iniciativa brasileira estruturada com esse propósito: utilizar a reconstrução como ponto de partida para uma concepção integrada, orientar a contratação dos projetos de engenharia e criar condições para a continuidade da implantação da rede urbana.</p>
+</section>
 <section id="finalidade" class="level2">
 <h2 class="anchored" data-anchor-id="finalidade">1.1 Finalidade</h2>
 <p>Este relatório organiza a concepção preliminar para instruir a elaboração do <strong>Plano de Trabalho de Reconstrução do Município de Conde/PB</strong>, com foco na redução de processos erosivos, alagamentos e transferências de risco associados ao escoamento superficial concentrado.</p>
-<p>O estudo parte de duas unidades territoriais de trabalho:</p>
+<p>O estudo está organizado em duas unidades territoriais de trabalho, cujas frentes de delimitação, lançamento e organização preliminar foram concluídas:</p>
 <ul>
-<li><strong>Bacia A:</strong> frente já avançada, com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição template;</li>
-<li><strong>Bacia B:</strong> bacia delimitada e lançada no GIS, com troncos, coletores, dois trechos de dissipação, rodada SWMM reproduzida e pré-dimensionamento preliminar ainda dependente de validação.</li>
+<li><strong>Bacia A:</strong> unidade de drenagem com rede preliminar de troncos e coletores, nós, dissipadores e áreas de contribuição organizadas para a concepção e a simulação;</li>
+<li><strong>Bacia B:</strong> unidade de drenagem com rede preliminar de troncos e coletores, dois trechos de dissipação, áreas de contribuição, rodada SWMM e pré-dimensionamento organizados para a mesma finalidade.</li>
 </ul>
-<p>Essa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas.</p>
+<p>A conclusão dessas frentes de trabalho significa que as duas bacias estão estruturadas como unidades explícitas de análise; não equivale ao encerramento da validação de campo nem à elaboração dos projetos básico e executivo. Essa distinção será mantida em todos os mapas, arquivos, áreas de contribuição, cenários hidrológicos, resultados hidráulicos e metas administrativas.</p>
 </section>
 <section id="contextualização-do-problema" class="level2">
 <h2 class="anchored" data-anchor-id="contextualização-do-problema">1.2 Contextualização do problema</h2>

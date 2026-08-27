@@ -42,6 +42,8 @@ body {
 }
 .institutional-hero { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; }
 .institutional-hero .hero-title { color: var(--sedec-cream); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.15; }
+.institutional-hero .hero-title-main { display: block; font-size: 1em; }
+.institutional-hero .hero-title-secondary { display: block; margin-top: .35rem; font-size: .62em; font-weight: 500; line-height: 1.25; }
 .institutional-hero .hero-subtitle { color: #dce2f4; margin-top: .3rem; }
 .institutional-hero img { width: 118px; height: 118px; max-height: none; max-width: none; object-fit: contain; border-radius: 50%; background: #ffffff; }
 .institutional-hero h1 { color: var(--sedec-cream); margin: 0; font-weight: 700; }

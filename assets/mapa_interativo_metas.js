@@ -43,7 +43,8 @@
     { maxZoom: 19, attribution: "&copy; OpenStreetMap contributors" },
   );
 
-  const limites = L.layerGroup().addTo(map);
+  const limitesA = L.layerGroup().addTo(map);
+  const limitesB = L.layerGroup().addTo(map);
   const originais = L.layerGroup();
   const formatados = L.layerGroup();
   const redeRestante = L.layerGroup().addTo(map);
@@ -158,8 +159,8 @@
   });
 
   const tarefas = [
-    carregar("data/bacia_A.geojson", limites, { style: estiloBacia("#c35416"), onEachFeature: (_, l) => l.bindPopup("<strong>Bacia A</strong><br>Unidade de drenagem de trabalho") }),
-    carregar("data/bacia_B.geojson", limites, { style: estiloBacia("#087f7b"), onEachFeature: (_, l) => l.bindPopup("<strong>Bacia B</strong><br>Unidade de drenagem de trabalho") }),
+    carregar("data/bacia_A.geojson", limitesA, { style: estiloBacia("#c35416"), onEachFeature: (_, l) => l.bindPopup("<strong>Bacia A</strong><br>Unidade de drenagem de trabalho") }),
+    carregar("data/bacia_B.geojson", limitesB, { style: estiloBacia("#087f7b"), onEachFeature: (_, l) => l.bindPopup("<strong>Bacia B</strong><br>Unidade de drenagem de trabalho") }),
     carregar("data/metas_plano_trabalho/metas_selecionadas_original.geojson", originais, {
       style: (f) => ({ color: cores[f.properties?.META_FINAL] || "#4b5563", weight: 2, fillColor: cores[f.properties?.META_FINAL] || "#4b5563", fillOpacity: 0.08, dashArray: "5 5" }),
       onEachFeature: (f, l) => l.bindPopup(popupOriginal(f.properties || {})),
@@ -246,7 +247,8 @@
       L.control.layers(
         { "Satélite Esri": satelite, "Ruas OpenStreetMap": ruas },
         {
-          "Bacias A e B": limites,
+          "Bacia A": limitesA,
+          "Bacia B": limitesB,
           "Rede fora das metas (tracejada)": redeRestante,
           "Meta 1 — Bacia A": metaCamadas.META_01,
           "Meta 2 — Bacia B": metaCamadas.META_02,

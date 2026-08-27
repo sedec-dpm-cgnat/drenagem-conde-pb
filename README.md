@@ -1,6 +1,6 @@
-# Relatório digital — Drenagem Conde/PB
+# Da Reconstrução à Prevenção Resiliente — Drenagem Conde/PB
 
-Este diretório é o esqueleto local do relatório técnico em Quarto/GitHub Pages.
+Este diretório reúne o relatório técnico digital sobre drenagem urbana resiliente e adaptação climática em Conde/PB.
 
 ## Minuta e autoria
 

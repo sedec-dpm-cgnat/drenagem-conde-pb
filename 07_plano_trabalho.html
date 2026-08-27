@@ -213,16 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<div class="warning callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<strong>Documento em construção.</strong> A seleção espacial das metas foi executada nesta versão, mas os limites executivos, quantitativos, trechos, vazões, custos e soluções construtivas só devem ser fechados após a revisão de campo, da rede e do modelo SWMM.
-</div>
-</div>
-</div>
 <section id="finalidade" class="level2">
 <h2 class="anchored" data-anchor-id="finalidade">6.1.1 Finalidade</h2>
 <p>Instruir a elaboração do <strong>Plano de Trabalho de Reconstrução do Município de Conde/PB</strong>, priorizando as áreas afetadas por processos erosivos e escoamentos concentrados e organizando intervenções capazes de reduzir o risco sem fragmentar a compreensão da bacia.</p>
@@ -375,19 +365,13 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>A seleção dos trechos foi feita por interseção espacial com comprimento linear superior a 0,01 m. Assim, foram selecionados os segmentos que efetivamente atravessam cada polígono; um simples contato pontual com o limite não foi suficiente. Para cada segmento selecionado foram preservados o identificador do link, a classe (tronco/coletor), os nós de início e fim, as coordenadas métricas dos extremos, o comprimento total cadastrado, o comprimento dentro do polígono, cotas, declividade, diâmetros atual e preliminares, vazões TR25/TR50, velocidades, criticidade e status da rodada SWMM.</p>
 <p>Para a indicação do Plano, a classe hidráulica foi mantida explicitamente. Os <strong>troncos</strong> são os eixos principais de transporte; os <strong>coletores</strong> são os trechos que captam ou conduzem as contribuições locais até esses eixos; os <strong>nós</strong> representam entradas, encontros e mudanças de seção; e os <strong>dissipadores</strong> representam os trechos de descarga que precisam controlar energia e erosão a jusante. Assim, cada meta pode ser lida no mapa e auditada nas camadas e na tabela, sem perder a relação entre o trecho selecionado e os elementos que fazem a solução funcionar.</p>
 <figure class="map-figure figure">
-<img src="assets/mapa_metas_administrativas.svg" alt="Mapa das três metas administrativas e da rede de drenagem nas Bacias A e B" class="figure-img">
+<img src="assets/mapa_indicativo_trechos_metas.svg" alt="Mapa dos trechos das três metas administrativas em relação à rede de drenagem nas Bacias A e B" class="figure-img">
 <figcaption>
-Figura 6.1.4.1-1 — Metas administrativas e rede de drenagem. As áreas coloridas regulares são envelopes esquemáticos de apresentação; os limites tracejados são os polígonos originais; linhas contínuas representam troncos, linhas tracejadas representam coletores e linhas magenta representam dissipadores/saídas. A Bacia A está em laranja e a Bacia B em teal. A seleção espacial não substitui a validação de campo, topográfica, hidráulica e fundiária.
+Figura 6.1.4.1-1 — Rede proposta e metas administrativas. A rede fora das metas aparece em cinza tracejado; os trechos das Metas 1, 2 e 3 aparecem em cores próprias. Em cada meta, linhas contínuas representam troncos e linhas tracejadas representam coletores; os dissipadores/saídas aparecem em magenta. A figura é indicativa; a seleção analítica deve usar os polígonos originais e as camadas do GIS.
 </figcaption>
 </figure>
-<div id="mapa-interativo-metas" class="leaflet-report-map" role="img" aria-label="Mapa interativo das metas administrativas, polígonos originais, bacias, rede e dissipadores"></div>
-<p class="text-muted"><strong>Figura 6.1.4.1-2 — Mapa interativo das metas.</strong> Use o controle no canto superior direito para alternar satélite/ruas e ligar ou desligar cada camada. A camada “Metas administrativas (apresentação)” usa envelopes esquemáticos mais regulares para facilitar a leitura; a camada “Polígonos originais (auditoria)” é a referência para qualquer seleção espacial no ArcMap/QGIS. Os trechos podem ser identificados clicando na rede e consultando a tabela detalhada.</p>
-<figure class="map-figure figure">
-<img src="assets/mapa_indicativo_trechos_metas.svg" alt="Mapa indicativo dos trechos das metas em relação à rede total das Bacias A e B" class="figure-img">
-<figcaption>
-Figura 6.1.4.1-3 — Trechos das metas em relação à rede total. A rede completa aparece em cinza; os trechos associados à Meta 1, Meta 2 e Meta 3 aparecem destacados por cor; o trecho compartilhado entre as Metas 2 e 3 aparece em azul-escuro. O mapa é indicativo e não substitui a seleção analítica pelos polígonos originais.
-</figcaption>
-</figure>
+<div id="mapa-interativo-metas" class="leaflet-report-map" role="application" aria-label="Mapa interativo das metas administrativas, polígonos originais, bacias, rede e dissipadores"></div>
+<p class="text-muted"><strong>Figura 6.1.4.1-2 — Mapa interativo das metas.</strong> Use o controle de camadas no canto superior direito para alternar entre satélite e ruas e para ligar ou desligar a rede fora das metas, a Meta 1, a Meta 2, a Meta 3, os dissipadores e os polígonos de auditoria. Use os botões <strong>+</strong> e <strong>−</strong>, a roda do mouse ou o gesto de pinça para aproximar e afastar. A rede fora das metas aparece em cinza tracejado; cada meta usa uma cor própria; dentro de cada cor, linhas contínuas representam troncos e linhas tracejadas representam coletores. Os dissipadores/saídas permanecem em magenta. A seleção analítica continua baseada nos polígonos originais preservados para ArcMap/QGIS.</p>
 <p>Para uso no Google Earth Pro, estão disponíveis o <a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kml">KML consolidado</a> e o <a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kmz">KMZ consolidado</a>, com a rede completa em contexto, trechos destacados por meta, bacias, dissipadores, envelopes de apresentação e polígonos originais para auditoria. Também foram preparados arquivos individuais da <a href="data/metas_plano_trabalho/meta_01_trechos_selecionados.kmz">Meta 1</a>, <a href="data/metas_plano_trabalho/meta_02_trechos_selecionados.kmz">Meta 2</a> e <a href="data/metas_plano_trabalho/meta_03_trechos_selecionados.kmz">Meta 3</a>. O link compartilhado <code>L_B_0022</code> permanece nas duas metas individuais correspondentes.</p>
 <table class="caption-top table">
 <colgroup>

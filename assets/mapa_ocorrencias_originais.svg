@@ -41,6 +41,25 @@
 <path d="M 494.3 386.1 L 496.6 388.4 L 498.9 390.7 L 501.2 393.0 L 498.9 395.3 L 496.6 397.6 L 498.9 399.8 L 501.2 402.1 L 498.9 404.4 L 496.6 406.7 L 494.3 409.0 L 489.7 409.0 L 487.4 411.3 L 485.1 413.6 L 482.8 415.9 L 480.5 418.2 L 475.9 418.2 L 471.4 418.2 L 466.8 418.2 L 462.2 418.2 L 459.9 420.4 L 457.6 422.7 L 455.3 420.4 L 453.0 418.2 L 450.7 415.9 L 453.0 413.6 L 455.3 411.3 L 457.6 409.0 L 462.2 409.0 L 464.5 406.7 L 466.8 404.4 L 471.4 404.4 L 473.7 402.1 L 475.9 399.8 L 480.5 399.8 L 482.8 397.6 L 485.1 395.3 L 487.4 393.0 L 489.7 390.7 L 492.0 388.4 L 494.3 386.1 Z" fill="#e3a21a" fill-opacity="0.22" stroke="#e3a21a" stroke-width="2"/>
 <path d="M 391.8 358.2" fill="#00a6a6" fill-opacity="0.22" stroke="#00a6a6" stroke-width="2"/>
 <path d="M 360.6 357.5" fill="#00a6a6" fill-opacity="0.22" stroke="#00a6a6" stroke-width="2"/>
+
+<g id="via-rua-são-francisco">
+  <path d="M 431.0,476.6 435.1,471.9 447.2,456.1 451.8,449.9 453.9,447.2 468.0,430.0 471.2,425.5 472.8,423.3 475.5,417.7 476.6,415.1 478.0,411.5 480.4,405.6 482.1,401.6 483.4,397.7 484.3,394.7 487.4,386.7 494.2,371.7 506.7,344.4 512.0,332.7 517.4,321.4 521.4,313.4 524.1,308.4" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+  <path d="M 431.0,476.6 435.1,471.9 447.2,456.1 451.8,449.9 453.9,447.2 468.0,430.0 471.2,425.5 472.8,423.3 475.5,417.7 476.6,415.1 478.0,411.5 480.4,405.6 482.1,401.6 483.4,397.7 484.3,394.7 487.4,386.7 494.2,371.7 506.7,344.4 512.0,332.7 517.4,321.4 521.4,313.4 524.1,308.4" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="443.0" y="404.0" width="144.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="515.0" y="421.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#16224e">Rua São Francisco</text>
+</g>
+<g id="via-rua-projetada-03">
+  <path d="M 631.6,133.4 631.5,124.4 631.6,110.2 630.4,98.3 630.4,96.2 630.9,93.7 631.7,90.6 633.3,85.8" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+  <path d="M 631.6,133.4 631.5,124.4 631.6,110.2 630.4,98.3 630.4,96.2 630.9,93.7 631.7,90.6 633.3,85.8" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="593.0" y="205.0" width="144.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="665.0" y="222.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#16224e">Rua Projetada 03</text>
+</g>
+<g id="via-rua-zilda-arns-neumann">
+  <path d="M 338.8,356.0 340.7,356.0 343.3,355.9 345.5,356.0 347.8,356.3 349.4,356.5 351.5,356.8 364.9,357.5 377.5,357.8 390.6,358.3" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+  <path d="M 338.8,356.0 340.7,356.0 343.3,355.9 345.5,356.0 347.8,356.3 349.4,356.5 351.5,356.8 364.9,357.5 377.5,357.8 390.6,358.3" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="279.5" y="312.0" width="161.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="360.0" y="329.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">Rua Zilda Arns Neumann</text>
+</g>
 <circle cx="391.8" cy="358.2" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="399.8" y="350.2" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P08 - WA0054</text>
 <circle cx="360.6" cy="357.5" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="368.6" y="349.5" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P09 - WA0055</text>
 <circle cx="488.6" cy="385.2" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="496.6" y="389.2" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">1i</text>
@@ -55,6 +74,24 @@
 <circle cx="412.9" cy="244.1" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="420.9" y="248.1" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">6i</text>
 <text x="110" y="610" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#994b00">Bacia A</text>
 <text x="110" y="632" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#187d78">Bacia B</text>
+<circle cx="488.6" cy="385.2" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="393.9" cy="514.0" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="452.8" cy="493.7" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="498.6" cy="434.3" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="391.3" cy="356.2" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="314.8" cy="353.1" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="409.8" cy="250.5" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+<circle cx="412.9" cy="244.1" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+
+<g id="referencias-diagnostico">
+  <rect x="610" y="92" width="210" height="102" rx="8" fill="#ffffff" fill-opacity="0.94" stroke="#d8d2c5"/>
+  <text x="625" y="112" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#16224e">Referências do diagnóstico</text>
+  <line x1="625" y1="130" x2="655" y2="130" stroke="#c2410c" stroke-width="4"/><text x="665" y="134" font-family="Arial, sans-serif" font-size="10.5" fill="#16224e">Rua São Francisco</text>
+  <line x1="625" y1="150" x2="655" y2="150" stroke="#2563eb" stroke-width="4"/><text x="665" y="154" font-family="Arial, sans-serif" font-size="10.5" fill="#16224e">Rua Projetada 03</text>
+  <line x1="625" y1="170" x2="655" y2="170" stroke="#7c3aed" stroke-width="4"/><text x="665" y="174" font-family="Arial, sans-serif" font-size="10.5" fill="#16224e">Rua Zilda Arns Neumann</text>
+  <circle cx="630" cy="186" r="7" fill="none" stroke="#0f766e" stroke-width="2.5"/><text x="645" y="190" font-family="Arial, sans-serif" font-size="10.5" fill="#16224e">Pares 1i–1f, 2i–2f, 3i–3f e 6i–6f</text>
+</g>
+
 <rect x="850" y="66" width="300" height="590" rx="10" fill="#ffffff" stroke="#d8d2c5"/>
 <text x="870" y="91" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#16224e">Referências fora do recorte principal</text>
 <text x="870" y="113" font-family="Arial, sans-serif" font-size="12" fill="#5f6875">Pontos originais que precisam de vínculo</text>
@@ -75,4 +112,5 @@
 <circle cx="885" cy="626" r="5" fill="#00a6a6"/><text x="900" y="631" font-family="Arial, sans-serif" font-size="12" fill="#16224e">Ponto com fotografia</text>
 <text x="60" y="688" font-family="Arial, sans-serif" font-size="12.5" fill="#5f6875">Fonte: áreas_suscetiveis_erosao_conde.kmz, Conde_Pontos_metas.kmz e pontos_erosao_fotos_conde.kmz. A simbologia registra o diagnóstico original.</text>
 <text x="60" y="708" font-family="Arial, sans-serif" font-size="12.5" fill="#5f6875">As ocorrências não foram convertidas automaticamente em metas executivas; a confirmação depende do GIS, campo e SWMM.</text>
+<text x="60" y="728" font-family="Arial, sans-serif" font-size="12.5" fill="#5f6875">Vias: OpenStreetMap contributors (consulta Nominatim); identificação orientativa, sujeita a validação de campo.</text>
 </svg>

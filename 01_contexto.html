@@ -79,6 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <link rel="stylesheet" href="styles.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams' },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="assets/traducao.js" defer></script>
 </head>
 
@@ -173,7 +180,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <li><a href="#finalidade" id="toc-finalidade" class="nav-link active" data-scroll-target="#finalidade">1.1 Finalidade</a></li>
   <li><a href="#contextualização-do-problema" id="toc-contextualização-do-problema" class="nav-link" data-scroll-target="#contextualização-do-problema">1.2 Contextualização do problema</a></li>
   <li><a href="#registros-municipais-de-ocorrência" id="toc-registros-municipais-de-ocorrência" class="nav-link" data-scroll-target="#registros-municipais-de-ocorrência">1.3 Registros municipais de ocorrência</a></li>
-  <li><a href="#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais" id="toc-mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais" class="nav-link" data-scroll-target="#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais">1.4 Mapa de suscetibilidade e rastreabilidade das metas originais</a></li>
+  <li><a href="#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais" id="toc-mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais" class="nav-link" data-scroll-target="#mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais">1.4 Mapa de suscetibilidade e rastreabilidade das metas originais</a>
+  <ul class="collapse">
+  <li><a href="#formulacao-do-indice-de-suscetibilidade" id="toc-formulacao-do-indice-de-suscetibilidade" class="nav-link" data-scroll-target="#formulacao-do-indice-de-suscetibilidade">1.4.1 Formulação do índice de suscetibilidade</a></li>
+  </ul></li>
   <li><a href="#recorte-territorial-do-estudo-e-limites-das-metas" id="toc-recorte-territorial-do-estudo-e-limites-das-metas" class="nav-link" data-scroll-target="#recorte-territorial-do-estudo-e-limites-das-metas">1.5 Recorte territorial do estudo e limites das metas</a></li>
   <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">1.6 Objetivos</a>
   <ul class="collapse">
@@ -253,6 +263,57 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais" class="level2">
 <h2 class="anchored" data-anchor-id="mapa-de-suscetibilidade-e-rastreabilidade-das-metas-originais">1.4 Mapa de suscetibilidade e rastreabilidade das metas originais</h2>
 <p>O diagnóstico espacial anterior foi incorporado como evidência de referência para a priorização. O mapa foi construído com base no índice de poder de escoamento do modelo digital de elevação — combinação entre acumulação de fluxo e declividade — e posteriormente confrontado com os registros de erosão observada em campo. As manchas foram classificadas originalmente em <strong>suscetibilidade alta</strong> e <strong>suscetibilidade média</strong>. Essa classificação representa propensão do terreno à concentração do escoamento e à formação de processos erosivos; não equivale, isoladamente, a mapa de perigo, risco ou dano.</p>
+<section id="formulacao-do-indice-de-suscetibilidade" class="level3">
+<h3 class="anchored" data-anchor-id="formulacao-do-indice-de-suscetibilidade">1.4.1 Formulação do índice de suscetibilidade</h3>
+<p>O índice utilizado no diagnóstico é um indicador espacial relativo de <strong>poder de escoamento</strong>. Ele foi concebido para localizar setores em que a água tende a se concentrar e a adquirir maior capacidade de gerar ou intensificar processos erosivos. Não é uma probabilidade de ocorrência, não representa diretamente tensão cisalhante, vazão ou taxa de perda de solo e não substitui um mapa de perigo ou de risco. Sua função, nesta concepção, é apoiar a triagem territorial e a comparação com ocorrências, bacias e rede de drenagem.</p>
+<p>Para cada célula <code>x</code> do MDE, foram consideradas duas dimensões físicas complementares: (i) a área de contribuição a montante, que representa o volume potencialmente reunido no caminho de fluxo; e (ii) a declividade local, que representa a componente do relevo associada à aceleração e à energia potencial do escoamento. A área acumulada pode ser expressa por:</p>
+<div class="math display">\[
+A_u(x)=n_u(x)\,r^2
+\tag{1.1}
+\]</div>
+<p>em que <code>n<sub>u</sub>(x)</code> é o número de células que drenam para <code>x</code> e <code>r</code> é o tamanho do pixel. No MDT de trabalho, a grade nominal é de 5 m; essa resolução define o suporte espacial do cálculo, mas não transforma o índice em medição de vazão ou em acurácia vertical equivalente.</p>
+<p>A direção de fluxo e a área acumulada são derivadas a partir da vizinhança da grade e do gradiente do MDE, seguindo a lógica de determinação de direções e áreas de contribuição em modelos digitais de elevação descrita por Tarboton (<a href="./10_referencias.html#ref-25">[25]</a>). A declividade local é obtida do gradiente do modelo:</p>
+<div class="math display">\[
+S(x)=\sqrt{\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2}
+\tag{1.2}
+\]</div>
+<p>Como a acumulação tem distribuição muito assimétrica, sua transformação logarítmica reduz a dominância de poucos canais ou células com valores extremos. Para colocar as duas variáveis em uma escala comum, a formulação contínua é representada por:</p>
+<div class="math display">\[
+A_n(x)=\frac{\log\left[1+A_u(x)\right]-\min\left\{\log\left[1+A_u\right]\right\}}{\max\left\{\log\left[1+A_u\right]\right\}-\min\left\{\log\left[1+A_u\right]\right\}},\qquad 0\leq A_n\leq 1
+\tag{1.3}
+\]</div>
+<div class="math display">\[
+S_n(x)=\frac{S(x)-S_{\min}}{S_{\max}-S_{\min}},\qquad 0\leq S_n\leq 1
+\tag{1.4}
+\]</div>
+<p>O indicador composto é então:</p>
+<div class="math display">\[
+I_{\mathrm{PE}}(x)=A_n(x)\,S_n(x)
+\tag{1.5}
+\]</div>
+<p>O produto dá maior destaque aos locais que reúnem, simultaneamente, contribuição de montante e declividade. Assim, uma área extensa e quase plana pode ter baixa expressão no índice, assim como uma encosta íngreme sem contribuição relevante; os valores mais altos tendem a ocorrer onde a concentração do escoamento e a condição de relevo atuam em conjunto. Essa leitura é coerente com o uso de derivados de MDE para reconhecer caminhos de fluxo, mas continua sendo uma aproximação geomorfológica, e não uma simulação hidrológica ou geotécnica (<a href="./10_referencias.html#ref-1">[1]</a>, <a href="./10_referencias.html#ref-25">[25]</a>).</p>
+<p>A classificação em classes é aplicada sobre o indicador contínuo por dois limiares:</p>
+<div class="math display">\[
+C(x)=\begin{cases}
+\text{suscetibilidade alta},& I_{\mathrm{PE}}(x)\geq\tau_a\\
+\text{suscetibilidade média},&\tau_m\leq I_{\mathrm{PE}}(x)<\tau_a\\
+\text{outras áreas},&I_{\mathrm{PE}}(x)<\tau_m
+\end{cases}
+\tag{1.6}
+\]</div>
+<p>Na camada vetorial legada disponibilizada para este estudo foram preservados os polígonos já classificados — 9 manchas altas e 22 médias —, mas não foram preservados, como metadados independentes, o raster contínuo do índice, o algoritmo exato de tratamento de depressões, a normalização, os limiares <code>τ<sub>m</sub></code> e <code>τ<sub>a</sub></code> ou os parâmetros de eventuais filtros. Portanto, os valores numéricos desses limiares são <strong>não determinados nesta versão</strong>. A formulação acima explicita a lógica para reprodução e auditoria, sem atribuir ao mapa uma precisão que o acervo não permite comprovar.</p>
+<table class="caption-top table">
+<caption>Tabela 1.1 — Componentes e interpretação do índice de suscetibilidade</caption>
+<thead><tr><th>Componente</th><th>Significado</th><th>Uso e limitação</th></tr></thead>
+<tbody>
+<tr><td><code>A<sub>u</sub></code></td><td>área de contribuição a montante</td><td>indica potencial de concentração; não é vazão observada</td></tr>
+<tr><td><code>S</code></td><td>declividade local do MDE</td><td>representa condição geométrica; depende da resolução e do tratamento do relevo</td></tr>
+<tr><td><code>I<sub>PE</sub></code></td><td>produto das variáveis normalizadas</td><td>índice relativo de triagem; não é taxa de erosão nem mapa de risco</td></tr>
+<tr><td><code>τ<sub>m</sub></code> e <code>τ<sub>a</sub></code></td><td>limiares de classificação</td><td>valores numéricos não determinados no acervo vetorial desta versão</td></tr>
+</tbody>
+</table>
+<p>O cruzamento final foi feito por relação espacial entre os polígonos classificados, os pontos originais e os limites das Bacias A e B. A coincidência direta significa que o ponto está contido em uma mancha; a ausência de coincidência não significa ausência de processo erosivo, porque a ocorrência pode estar fora do limiar cartográfico, em uma feição urbana não representada no MDE ou em uma área cuja contribuição seja alterada por ruas, sarjetas, muros, aterros e galerias. Por isso, a leitura do índice deve ser combinada com o MDT híbrido, as linhas de fluxo, a rede concebida, o SWMM, o diagnóstico de campo e a verificação de jusante.</p>
+</section>
 <div id="fig-suscetibilidade" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-suscetibilidade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

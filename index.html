@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer=""></script>
+<script src="assets/fluxo_setas_leaflet.js" defer=""></script>
 <script src="assets/mapa_interativo_bacias_rede.js" defer=""></script>
 
 
@@ -302,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <figure class="map-figure figure">
 <img src="assets/mapa_sintese_bacias_rede.svg" alt="Mapa-síntese das Bacias A e B, com as redes preliminares, troncos, coletores e trechos de dissipação" class="figure-img">
 <figcaption>
-Mapa-síntese estático para leitura do relatório, agora com as redes preliminares das duas bacias e seus trechos de dissipação. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.
+Mapa-síntese estático para leitura do relatório, agora com as redes preliminares das duas bacias e seus trechos de dissipação. As pequenas setas sobre as linhas indicam o sentido geométrico montante → jusante, conforme a ordem dos vértices da feição; esse sentido deve ser confirmado pelas cotas e em campo. A geometria detalhada e os arquivos editáveis estão disponíveis na página de dados.
 </figcaption>
 </figure>
 <p class="map-note">
@@ -311,13 +312,13 @@ A figura acima é a versão estática para impressão e PDF. A representação �
 <div class="screen-only">
 <h3 id="mapa-interativo-bacias-a-e-b">Mapa interativo das Bacias A e B</h3>
 <p class="map-note">
-Use os botões <strong>+</strong> e <strong>−</strong>, a roda do mouse ou o gesto de pinça para aproximar e afastar. Arraste o mapa para percorrer a área e use o controle de camadas para alternar entre o mapa de <strong>satélite</strong> e o mapa de <strong>ruas</strong>, mantendo as poligonais das Bacias A e B e os elementos da rede sobrepostos.
+Use os botões <strong>+</strong> e <strong>−</strong>, a roda do mouse ou o gesto de pinça para aproximar e afastar. Arraste o mapa para percorrer a área e use o controle de camadas para alternar entre o mapa de <strong>satélite</strong> e o mapa de <strong>ruas</strong>, mantendo as poligonais das Bacias A e B e os elementos da rede sobrepostos. As pequenas setas indicam o sentido geométrico montante → jusante da linha e são uma indicação preliminar, não uma validação hidráulica.
 </p>
 <div id="mapa-interativo-bacias-rede" class="leaflet-report-map" role="application" aria-label="Mapa interativo das Bacias A e B e das redes preliminares">
 
 </div>
 <p class="map-note">
-Versão interativa: alterne entre <strong>Satélite Esri</strong> e <strong>Ruas OpenStreetMap</strong>; ligue ou desligue Bacias A/B, redes, nós e dissipadores. Clique nos trechos para consultar seus códigos e parâmetros preliminares. As imagens de satélite e ruas são referências de visualização e não substituem o ortomosaico, o cadastro ou o levantamento de campo.
+Versão interativa: alterne entre <strong>Satélite Esri</strong> e <strong>Ruas OpenStreetMap</strong>; ligue ou desligue Bacias A/B, redes, nós e dissipadores. Clique nos trechos para consultar seus códigos e parâmetros preliminares. As pequenas setas acompanham as linhas quando a camada correspondente está ligada e mostram o sentido geométrico montante → jusante. As imagens de satélite e ruas são referências de visualização e não substituem o ortomosaico, o cadastro ou o levantamento de campo.
 </p>
 </div>
 <section id="situação-da-rede-proposta-e-dos-trechos-do-plano-de-trabalho" class="level3">

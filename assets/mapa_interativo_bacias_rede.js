@@ -93,8 +93,12 @@
       return resposta.json();
     })
     .then((dados) => {
-      const camada = L.geoJSON(dados, opcoes);
+      const { flowArrows, flowColor, ...geoJsonOpcoes } = opcoes || {};
+      const camada = L.geoJSON(dados, geoJsonOpcoes);
       camada.addTo(destino);
+      if (flowArrows && typeof window.criarSetasFluxoLeaflet === "function") {
+        window.criarSetasFluxoLeaflet(dados, destino, map, flowColor || (() => "#16224e"));
+      }
       return camada;
     });
 
@@ -104,10 +108,14 @@
     carregarGeoJson("data/rede_linhas_A_nodal.geojson", redeA, {
       style: (f) => styleRede("A", f.properties?.classe),
       onEachFeature: (f, l) => l.bindPopup(popupRede(f.properties || {})),
+      flowArrows: true,
+      flowColor: (f) => styleRede("A", f.properties?.classe).color,
     }),
     carregarGeoJson("data/rede_linhas_B_nodal.geojson", redeB, {
       style: (f) => styleRede("B", f.properties?.classe),
       onEachFeature: (f, l) => l.bindPopup(popupRede(f.properties || {})),
+      flowArrows: true,
+      flowColor: (f) => styleRede("B", f.properties?.classe).color,
     }),
     carregarGeoJson("data/rede_nos_A.geojson", nos, {
       pointToLayer: (f, latlng) => L.circleMarker(latlng, { radius: 3, color: "#16224e", weight: 1, fillColor: "#ffffff", fillOpacity: 0.9 }),
@@ -120,10 +128,14 @@
     carregarGeoJson("data/trechos_dissipacao.geojson", dissipadores, {
       style: { color: "#a21caf", weight: 5, opacity: 0.96 },
       onEachFeature: (f, l) => l.bindPopup("<strong>" + escapeHtml(f.properties?.id_diss || "Dissipador A") + "</strong><br>Trecho de dissipação/saída da Bacia A"),
+      flowArrows: true,
+      flowColor: () => "#a21caf",
     }),
     carregarGeoJson("data/trechos_dissipacao_B.geojson", dissipadores, {
       style: { color: "#a21caf", weight: 5, opacity: 0.96 },
       onEachFeature: (f, l) => l.bindPopup("<strong>Dissipador B</strong><br>Trecho de dissipação/saída da Bacia B"),
+      flowArrows: true,
+      flowColor: () => "#a21caf",
     }),
   ];
 

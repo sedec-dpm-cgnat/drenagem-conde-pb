@@ -57,7 +57,11 @@
     return resposta.json();
   });
   const carregar = (arquivo, destino, opcoes) => carregarJson(arquivo).then((dados) => {
-    const camada = L.geoJSON(dados, opcoes).addTo(destino);
+    const { flowArrows, flowColor, ...geoJsonOpcoes } = opcoes || {};
+    const camada = L.geoJSON(dados, geoJsonOpcoes).addTo(destino);
+    if (flowArrows && typeof window.criarSetasFluxoLeaflet === "function") {
+      window.criarSetasFluxoLeaflet(dados, destino, map, flowColor || (() => "#16224e"));
+    }
     camadasParaExtensao.push(camada);
     return camada;
   });
@@ -145,12 +149,18 @@
     carregar("data/trechos_dissipacao.geojson", dissipadores, {
       style: { color: "#a21caf", weight: 5, opacity: 0.96 },
       onEachFeature: (f, l) => l.bindPopup("<strong>" + escapeHtml(f.properties?.id_diss || "Dissipador A") + "</strong><br>Trecho de dissipação/saída da Bacia A"),
+      flowArrows: true,
+      flowColor: () => "#a21caf",
     }),
     carregarJson("data/trechos_dissipacao_B.geojson").then((dados) => {
-      const camada = L.geoJSON(normalizarDissipadoresB(dados), {
+      const dadosNormalizados = normalizarDissipadoresB(dados);
+      const camada = L.geoJSON(dadosNormalizados, {
         style: { color: "#a21caf", weight: 5, opacity: 0.96 },
         onEachFeature: (f, l) => l.bindPopup("<strong>" + escapeHtml(f.properties?.id_diss || "Dissipador B") + "</strong><br>Trecho de dissipação/saída da Bacia B"),
       }).addTo(dissipadores);
+      if (typeof window.criarSetasFluxoLeaflet === "function") {
+        window.criarSetasFluxoLeaflet(dadosNormalizados, dissipadores, map, () => "#a21caf");
+      }
       camadasParaExtensao.push(camada);
       return camada;
     }),
@@ -187,6 +197,17 @@
           style: estilo,
           onEachFeature: (feature, layer) => layer.bindPopup(popupRede(feature.properties || {}, metaCodigo ? [metaCodigo] : [])),
         }).addTo(destino);
+        if (typeof window.criarSetasFluxoLeaflet === "function") {
+          window.criarSetasFluxoLeaflet(
+            { type: "FeatureCollection", features: featuresComBacia },
+            destino,
+            map,
+            (feature) => {
+              const estiloFeature = typeof estilo === "function" ? estilo(feature) : estilo;
+              return estiloFeature?.color || "#16224e";
+            },
+          );
+        }
         camadasParaExtensao.push(camada);
         return camada;
       };

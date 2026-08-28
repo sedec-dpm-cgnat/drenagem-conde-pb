@@ -183,6 +183,7 @@ window.MathJax = {
   <li><a href="#agregação-dos-fatores-e-tradução-para-a-chuva-de-projeto" id="toc-agregação-dos-fatores-e-tradução-para-a-chuva-de-projeto" class="nav-link" data-scroll-target="#agregação-dos-fatores-e-tradução-para-a-chuva-de-projeto">Agregação dos fatores e tradução para a chuva de projeto</a></li>
   </ul></li>
   <li><a href="#como-a-incerteza-será-levada-ao-swmm" id="toc-como-a-incerteza-será-levada-ao-swmm" class="nav-link" data-scroll-target="#como-a-incerteza-será-levada-ao-swmm">6.3.2 Como a incerteza será levada ao SWMM</a></li>
+  <li><a href="#o-que-e-o-nex-gddp-cmip6" id="toc-o-que-e-o-nex-gddp-cmip6" class="nav-link" data-scroll-target="#o-que-e-o-nex-gddp-cmip6">6.3.3 O que é o NEX-GDDP-CMIP6</a></li>
   </ul></li>
   <li><a href="#fatores-oficiais-por-cenário-e-período" id="toc-fatores-oficiais-por-cenário-e-período" class="nav-link" data-scroll-target="#fatores-oficiais-por-cenário-e-período">6.4 Fatores oficiais por cenário e período</a></li>
   <li><a href="#o-que-ainda-falta-para-uma-idf-futura-de-projeto" id="toc-o-que-ainda-falta-para-uma-idf-futura-de-projeto" class="nav-link" data-scroll-target="#o-que-ainda-falta-para-uma-idf-futura-de-projeto">6.5 O que ainda falta para uma IDF futura de projeto</a></li>
@@ -463,6 +464,21 @@ FC_{m,c,p}(T)=
 \]</div>
 <p>Para estruturas de dissipação, entretanto, o aumento de vazão altera também energia, velocidade, ressalto, arraste e risco de erosão; por isso, a adaptação será apresentada por vazão e desempenho da estrutura, e não por uma simples porcentagem de aumento dimensional.</p>
 </section>
+<section id="o-que-e-o-nex-gddp-cmip6" class="level3">
+<h3 class="anchored" data-anchor-id="o-que-e-o-nex-gddp-cmip6">6.3.3 O que é o NEX-GDDP-CMIP6 e qual é seu papel</h3>
+<p>O <strong>NEX-GDDP-CMIP6</strong> é a coleção <em>NASA Earth Exchange Global Daily Downscaled Projections</em>, baseada no <em>Coupled Model Intercomparison Project Phase 6</em>. Em termos práticos, é um conjunto de projeções climáticas diárias de modelos globais do CMIP6, processadas para uma grade de aproximadamente 0,25 grau e disponibilizadas para o período histórico e para cenários futuros SSP1-2.6, SSP2-4.5, SSP3-7.0 e SSP5-8.5 (<a href="./10_referencias.html#ref-6">[6]</a>, <a href="./10_referencias.html#ref-17">[17]</a>).</p>
+<p>A coleção aplica BCSD (<em>Bias-Correction Spatial Disaggregation</em>), que combina correção estatística de viés, incluindo mapeamento de quantis, e desagregação espacial com base em uma referência histórica. A correção melhora a comparabilidade estatística, mas não transforma a grade em observação local: a resolução aproximada de 25 km não descreve diretamente a chuva em uma rua, quadra ou galeria. A documentação da NASA também alerta que o uso em engenharia deve ser acompanhado de avaliação especializada e validação local (<a href="./10_referencias.html#ref-6">[6]</a>, <a href="./10_referencias.html#ref-18">[18]</a>).</p>
+<p>É importante separar a coleção oficial da tabela de trabalho usada neste projeto. O recorte local contém a máxima diária anual <code>prec_max_anual</code> por ponto, modelo, cenário e ano, com 34 modelos disponíveis. A documentação técnica da versão oficial consultada descreve 35 modelos; essa diferença decorre do recorte local e deve permanecer registrada. Como a tabela não contém a série diária completa nem observações subdiárias, ela não gera automaticamente uma IDF futura de 5 minutos.</p>
+<p>A operação realizada no recorte pode ser representada por:</p>
+<div class="math display">\[
+P^{max}_{g,m,c,y}=\max_{d\in y}\left(P_{g,m,c,d}\right)
+\]</div>
+<p>em que <code>g</code> é a célula de grade, <code>m</code> é o modelo, <code>c</code> é o cenário, <code>y</code> é o ano e <code>d</code> representa os dias do ano. Para comparar uma janela futura <code>p</code> com o histórico do mesmo modelo, calcula-se:</p>
+<div class="math display">\[
+FC_{m,c,p}(T_R)=\frac{Q^{futuro}_{m,c,p}(T_R)}{Q^{histórico}_{m,c}(T_R)}
+\]</div>
+<p>Os fatores são resumidos por p10, p50 e p90 e mantidos junto da contagem de modelos válidos. Nesta concepção, o NEX-GDDP-CMIP6 é uma fonte complementar de sensibilidade e contexto. A fonte operacional dos fatores climáticos aplicados à apresentação das IDFs é o Portal IDF-MC da SEDEC/MIDR, que possui sua própria cadeia de observação, ajuste, desagregação e agregação de incerteza. Assim, não se misturam silenciosamente uma projeção diária de grade, uma IDF observada e um hietograma subdiário.</p>
+</section>
 </section>
 <section id="fatores-oficiais-por-cenário-e-período" class="level2">
 <h2 class="anchored" data-anchor-id="fatores-oficiais-por-cenário-e-período">6.4 Fatores oficiais por cenário e período</h2>
@@ -627,6 +643,8 @@ FC_{m,c,p}(T)=
 <li><a href="data/downloads/clima/idf_mc_conde_tr25_tr50.csv">Fatores oficiais IDF-MC de Conde para TR25/TR50</a>.</li>
 <li><a href="data/downloads/clima/idf_mc_conde_metadados.json">Metadados do recorte oficial de Conde</a>.</li>
 <li><a href="https://doi.org/10.1007/s11269-022-03313-y">Maity e Maity (2022), Changing Pattern of Intensity–Duration–Frequency Relationship of Precipitation due to Climate Change</a>.</li>
+<li><a href="https://doi.org/10.1038/s41597-022-01393-4">Thrasher et al. (2022), NASA Global Daily Downscaled Projections, CMIP6, <em>Scientific Data</em></a>.</li>
+<li><a href="https://doi.org/10.5194/hess-16-3309-2012">Thrasher et al. (2012), correção por mapeamento de quantis, <em>Hydrology and Earth System Sciences</em></a>.</li>
 <li><a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>.</li>
 </ul>
 <p>As referências completas e numeradas desta seção estão no <a href="./10_referencias.html">Capítulo 8 — Referências e rastreabilidade metodológica</a>.</p>

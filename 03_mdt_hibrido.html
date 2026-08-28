@@ -243,6 +243,15 @@ window.MathJax = {
 <li>30% de impermeabilização como premissa inicial.</li>
 </ul>
 <p>As chuvas foram copiadas para <code>04_CHUVAS_PROJETO</code> e incorporadas aos arquivos <code>.inp</code> preliminares. Esses parâmetros são hipóteses de concepção e deverão ser conferidos com uso do solo, cadastro de pavimentação, quadras, áreas permeáveis e observações de campo.</p>
+<p>A transformação de chuva em vazão é tratada como uma cadeia de decisões, e não como a aplicação isolada de um coeficiente. A sequência adotada é: (i) selecionar a fonte e a chuva de projeto; (ii) converter a relação IDF em uma série temporal; (iii) separar perdas e armazenamento nas áreas de contribuição; (iv) transformar a chuva efetiva em escoamento superficial; e (v) propagar o escoamento pela rede de nós, condutos, dissipadores e exutórios. Essa estrutura é compatível com a organização hidrológica do USDA-NRCS e com a arquitetura do SWMM (<a href="./10_referencias.html#ref-5">[5]</a>, <a href="./10_referencias.html#ref-19">[19]</a>, <a href="./10_referencias.html#ref-20">[20]</a>).</p>
+<ol>
+<li><strong>Chuva de projeto:</strong> a IDF fornece a intensidade média associada a uma duração e a um período de retorno.</li>
+<li><strong>Temporalização:</strong> o acumulado é distribuído em intervalos de 5 minutos, preservando o hietograma documentado.</li>
+<li><strong>Perdas:</strong> o CN-SCS, a impermeabilização e os parâmetros de armazenamento representam a parcela que não se converte imediatamente em escoamento.</li>
+<li><strong>Transformação:</strong> cada subárea é representada como um reservatório superficial não linear, com entrada de chuva, infiltração, evaporação, armazenamento e saída.</li>
+<li><strong>Propagação:</strong> o escoamento é roteado pelos links do SWMM até os dissipadores e exutórios, permitindo verificar capacidade, remanso, sobrecarga e continuidade.</li>
+</ol>
+<p>Essa separação permite identificar qual resultado decorre da chuva, do uso do solo, da geometria da subárea ou da rede. Também evita interpretar uma vazão preliminar como se fosse uma medição de campo ou um dimensionamento executivo.</p>
 </section>
 <section id="equação-idf-adotada" class="level2">
 <h2 class="anchored" data-anchor-id="equação-idf-adotada">3.2 Equação IDF adotada</h2>
@@ -256,6 +265,7 @@ i(T_R,t)=\frac{1424{,}1\,T_R^{0{,}1305}}{(t+23{,}6)^{0{,}7468}}
 P(T_R,t)=i(T_R,t)\,\frac{t}{60}
 \]</div>
 <p>com <code>P</code> em milímetros. A conversão é necessária porque a IDF fornece intensidade média na duração, enquanto o SWMM recebe uma série temporal de chuva.</p>
+<p>Na forma funcional, <code>a</code> é o coeficiente de escala, <code>b</code> controla a dependência do período de retorno, <code>c</code> desloca a duração para representar o comportamento nas chuvas curtas e <code>d</code> controla o decaimento da intensidade com a duração. Esses parâmetros não são parâmetros do SWMM: são coeficientes estatísticos da relação de chuva intensa. Nesta concepção, foram preservados por rastreabilidade do estudo anterior; a série original e a memória de ajuste ainda precisam ser anexadas para que se determinem, de forma independente, intervalo de confiança, p-valor e qualidade do ajuste.</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/idf_base_curvas.png" alt="Curvas IDF de linha de base para períodos de retorno de 2 a 100 anos" class="figure-img">
 <figcaption>
@@ -343,8 +353,11 @@ Figura 3.1 — Curvas IDF da linha de base adotada. TR25 e TR50 aparecem destaca
 <section id="análise-de-frequência-e-interpretação-dos-períodos-de-retorno" class="level2">
 <h2 class="anchored" data-anchor-id="análise-de-frequência-e-interpretação-dos-períodos-de-retorno">3.3 Análise de frequência e interpretação dos períodos de retorno</h2>
 <p>O período de retorno é interpretado pela relação:</p>
-<p><strong>Tr = 1 / p_e</strong></p>
+<div class="math display">\[
+p_e=\frac{1}{T_R},\qquad F(z_T)=1-\frac{1}{T_R}
+\]</div>
 <p>em que <code>p_e</code> é a probabilidade anual de excedência do evento de referência. Assim, TR25 corresponde a uma probabilidade anual de excedência de 4% e TR50 a 2%, sem significar que o evento ocorrerá exatamente uma vez a cada 25 ou 50 anos. Eventos podem ocorrer em anos consecutivos; o período de retorno é uma medida estatística de frequência.</p>
+<p>Em uma análise de máximas anuais, cada ano contribui com o maior acumulado para a duração considerada. Se <code>F</code> é a distribuição de extremos ajustada, o quantil de projeto é o valor <code>z_T</code> cuja probabilidade de não excedência é <code>1 - 1/T_R</code>. Essa interpretação pressupõe que a amostra seja suficientemente homogênea e que a distribuição adotada represente o regime de extremos; quando há não estacionariedade climática, a hipótese de uma única distribuição fixa precisa ser explicitamente revista.</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/curvas_frequencia_base.png" alt="Curvas de precipitação acumulada em função do período de retorno para quatro durações" class="figure-img">
 <figcaption>
@@ -404,6 +417,14 @@ Figura 3.2 — Representação da análise de frequência embutida na equação 
 <p>O total de cada série foi verificado pela soma:</p>
 <p><strong>P_total = soma(i_j x Delta t / 60)</strong></p>
 <p>em que <code>i_j</code> é a intensidade do intervalo <code>j</code> e <code>Delta t</code> é o passo de 5 minutos. A distribuição temporal é chamada aqui de <strong>hietograma tradicional preservado</strong>. Não é reclassificada automaticamente como método de Chicago, blocos alternados ou outra técnica, porque a memória original de construção da série não está disponível neste pacote.</p>
+<p>O procedimento de conversão pode ser descrito por:</p>
+<div class="math display">\[
+P_j=i(T_R,t_j)\frac{t_j}{60},\qquad
+\Delta P_j=P_j-P_{j-1},\qquad
+w_j=\frac{\Delta P_j}{P_{total}},\qquad
+\sum_j w_j=1
+\]</div>
+<p>Quando a curva IDF é usada para obter os acumulados <code>P_j</code>, as diferenças sucessivas <code>Delta P_j</code> são as lâminas incrementais. Quando se parte de uma série já temporalizada, como a série tradicional preservada, o total é conferido diretamente por <code>P_total = soma(i_j x Delta t / 60)</code> e os pesos <code>w_j</code> registram a fração de chuva de cada intervalo. O <code>Rain Gage</code> do SWMM recebe, então, o horário, o valor de chuva e a unidade explicitamente identificados; a curva IDF, sozinha, não define a posição do pico no tempo.</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/hietogramas_base_tr25_tr50.png" alt="Hietogramas e precipitações acumuladas TR25 e TR50 usados na primeira rodada do SWMM" class="figure-img">
 <figcaption>
@@ -490,6 +511,23 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </section>
 <section id="transformação-chuvavazão" class="level2">
 <h2 class="anchored" data-anchor-id="transformação-chuvavazão">3.6 Transformação chuva–vazão</h2>
+<p>No SWMM, a transformação não é reduzida ao método racional <code>Q = C i A</code>. O modelo representa cada subcatchment como uma unidade hidrológica com chuva, infiltração, evaporação, armazenamento superficial e escoamento para um nó. O balanço de água superficial pode ser resumido por:</p>
+<div class="math display">\[
+\frac{\partial d}{\partial t}=i-e-f-q
+\]</div>
+<p>em que <code>d</code> é a lâmina armazenada na superfície, <code>i</code> é a chuva incidente, <code>e</code> é a evaporação, <code>f</code> é a infiltração e <code>q</code> é a descarga superficial por unidade de área. A relação de descarga depende da largura hidráulica, da declividade, da rugosidade e da lâmina excedente; em forma proporcional, pode ser escrita como:</p>
+<div class="math display">\[
+q=\frac{K}{n}\frac{W}{A}S^{1/2}(d-d_s)^{5/3}
+\]</div>
+<p>O coeficiente <code>K</code> representa a conversão de unidades, <code>n</code> é a rugosidade de Manning, <code>W/A</code> é a largura característica normalizada, <code>S</code> é a declividade e <code>d_s</code> é a profundidade de armazenamento. A formulação acima é uma forma resumida da rotina de reservatório não linear do SWMM e não deve ser usada para substituir a implementação do programa (<a href="./10_referencias.html#ref-19">[19]</a>).</p>
+<p>Depois da geração do escoamento, o roteamento na rede resolve a continuidade e a quantidade de movimento. Para o roteamento dinâmico, selecionado nos arquivos pela opção <code>DYNWAVE</code>, a forma unidimensional resumida das equações de Saint-Venant é:</p>
+<div class="math display">\[
+\frac{\partial A}{\partial t}+\frac{\partial Q}{\partial x}=q_l
+\]</div>
+<div class="math display">\[
+\frac{\partial Q}{\partial t}+\frac{\partial}{\partial x}\left(\frac{Q^2}{A}\right)+gA\frac{\partial H}{\partial x}+gA(S_f-S_0)=0
+\]</div>
+<p>Nessas equações, <code>A</code> é a área molhada, <code>Q</code> é a vazão, <code>q_l</code> é a contribuição lateral, <code>H</code> é a carga hidráulica, <code>S_f</code> é a perda por atrito e <code>S_0</code> é a declividade do leito. O método considera, conforme a configuração e os dados fornecidos, efeitos de inércia, pressão, atrito, remanso, refluxo, sobrecarga e alagamento (<a href="./10_referencias.html#ref-20">[20]</a>). Por isso, a vazão de pico e o diâmetro preliminar dependem da rede inteira, das condições de jusante e da sequência temporal da chuva.</p>
 <p>O modelo deve ser avaliado por:</p>
 <ul>
 <li>balanço de massa entre precipitação, infiltração, armazenamento, escoamento e descarga;</li>
@@ -503,7 +541,19 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </section>
 <section id="atualização-climática-com-nex-gddp-cmip6" class="level2">
 <h2 class="anchored" data-anchor-id="atualização-climática-com-nex-gddp-cmip6">3.7 Atualização climática com NEX-GDDP-CMIP6</h2>
-<p>O banco disponível contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários historical, ssp126, ssp245, ssp370 e ssp585. A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
+<p><strong>NEX-GDDP-CMIP6</strong> significa <em>NASA Earth Exchange Global Daily Downscaled Projections - Coupled Model Intercomparison Project Phase 6</em>. Trata-se de um conjunto de projeções climáticas diárias produzidas pela NASA a partir de modelos globais do CMIP6, espacialmente reduzidas para uma grade de aproximadamente 0,25 grau, cerca de 25 km na ordem de grandeza local. A coleção oficial cobre o período histórico e projeções futuras nos cenários SSP1-2.6, SSP2-4.5, SSP3-7.0 e SSP5-8.5, associados a diferentes trajetórias de emissões e desenvolvimento socioeconômico (<a href="./10_referencias.html#ref-6">[6]</a>, <a href="./10_referencias.html#ref-17">[17]</a>).</p>
+<p>O downscaling da coleção NEX-GDDP-CMIP6 utiliza a abordagem BCSD (<em>Bias-Correction Spatial Disaggregation</em>), que combina correção de viés por mapeamento de quantis com desagregação espacial usando uma referência histórica. Essa etapa melhora a compatibilidade estatística e a escala de representação, mas não cria observações locais nem elimina a incerteza dos modelos. A NASA recomenda que os dados sejam utilizados com avaliação especializada e validação para aplicações de engenharia; uma célula de 0,25 grau não equivale a um pluviômetro ou à variabilidade de uma rua urbana (<a href="./10_referencias.html#ref-6">[6]</a>, <a href="./10_referencias.html#ref-18">[18]</a>).</p>
+<p>O banco disponibilizado para este projeto é uma extração temática da coleção: contém máximas diárias anuais por ponto de grade, modelo e cenário, com os cenários <code>historical</code>, <code>ssp126</code>, <code>ssp245</code>, <code>ssp370</code> e <code>ssp585</code>. A documentação técnica atual da NASA descreve 35 modelos na versão oficial; o recorte local utilizado nesta concepção possui 34 modelos disponíveis. Essa diferença deve ser registrada e não pode ser ocultada por uma contagem genérica de modelos.</p>
+<p>Para a célula <code>g</code>, o modelo <code>m</code>, o cenário <code>c</code> e o ano <code>y</code>, a tabela local representa a redução da série diária pela operação:</p>
+<div class="math display">\[
+P^{max}_{g,m,c,y}=\max_{d\in y}\left(P_{g,m,c,d}\right)
+\]</div>
+<p>Essa máxima anual pode ser ajustada por uma distribuição de extremos e comparada entre a janela histórica e uma janela futura. Um fator de mudança exploratório é:</p>
+<div class="math display">\[
+FC_{m,c,p}(T_R)=\frac{Q^{futuro}_{m,c,p}(T_R)}{Q^{histórico}_{m,c}(T_R)}
+\]</div>
+<p>O fator deve ser agregado por p10, mediana e p90, sempre acompanhado da quantidade de modelos válidos e da janela temporal. Como a tabela local possui apenas máximas diárias anuais, ela não fornece, por si só, uma IDF subdiária nem um hietograma de 5 minutos. Nesta versão, a fonte operacional dos fatores de adaptação é o Portal IDF-MC da SEDEC/MIDR; o NEX-GDDP-CMIP6 funciona como fonte complementar de sensibilidade, comparação e rastreabilidade climática.</p>
+<p>A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
 <ol type="1">
 <li>período histórico de referência;</li>
 <li>janelas futuras;</li>
@@ -659,7 +709,7 @@ Q=
 </section>
 <section id="conversão-para-chuva-temporal-e-implementação-no-swmm" class="level3">
 <h3 class="anchored" data-anchor-id="conversão-para-chuva-temporal-e-implementação-no-swmm">3.10.4 Conversão para chuva temporal e implementação no SWMM</h3>
-<p>Os arquivos <code>.inp</code> usam unidades de vazão em <code>CMS</code>, infiltração <code>CURVE_NUMBER</code> e roteamento dinâmico <code>DYNWAVE</code>, em consonância com a estrutura documentada pelo EPA SWMM (<a href="./10_referencias.html#ref-4">[4]</a>). A chuva entra por um <code>Rain Gage</code> ligado a uma <code>Time Series</code> com passo de 5 minutos. Cada subárea é conectada a um nó de saída, e os nós são encadeados por conduítes até os trechos de tronco, dissipadores e exutórios.</p>
+<p>Os arquivos <code>.inp</code> usam unidades de vazão em <code>CMS</code>, infiltração <code>CURVE_NUMBER</code> e roteamento dinâmico <code>DYNWAVE</code>, em consonância com a estrutura documentada pelo EPA SWMM (<a href="./10_referencias.html#ref-4">[4]</a>, <a href="./10_referencias.html#ref-19">[19]</a>, <a href="./10_referencias.html#ref-20">[20]</a>). A chuva entra por um <code>Rain Gage</code> ligado a uma <code>Time Series</code> com passo de 5 minutos. Cada subárea é conectada a um nó de saída, e os nós são encadeados por conduítes até os trechos de tronco, dissipadores e exutórios.</p>
 <p>Os principais controles de consistência são:</p>
 <ol type="1">
 <li>conferir se o total do hietograma coincide com a integral das intensidades;</li>
@@ -701,7 +751,11 @@ Q=
 <li><a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">Agência Nacional de Águas e Saneamento Básico — SNIRH: Curva Número na Base Ottocodificada</a>. Fonte do recorte CN 2022 usado como referência espacial.</li>
 <li><a href="https://directives.nrcs.usda.gov/sites/default/files2/1720613219/Chapter%2005%20-%20Stream%20Hydrology.pdf">USDA-NRCS — National Engineering Handbook, Chapter 05: Stream Hydrology</a>. Referência institucional para a relação entre chuva, escoamento, bacia e parâmetros hidrológicos.</li>
 <li><a href="https://www.epa.gov/water-research/storm-water-management-model-swmm">U.S. EPA — Storm Water Management Model (SWMM)</a> e <a href="https://www.epa.gov/system/files/documents/2022-04/swmm-users-manual-version-5.2.pdf">SWMM User’s Manual, Version 5.2</a>. Referências para a estrutura do modelo, infiltração, subáreas, roteamento e relatórios.</li>
-<li><a href="https://nccs.smce.nasa.gov/data-collections/nex-gddp-cmip6/">NASA — NEX-GDDP-CMIP6</a> e <a href="https://www.nccs.nasa.gov/sites/default/files/NEX-GDDP-CMIP6-v2-Tech_Note.pdf">Technical Note do NEX-GDDP-CMIP6</a>. Fonte e documentação da base climática em grade.</li>
+<li><a href="https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P100NYRA.TXT">Rossman e Huber (2016) — SWMM Reference Manual Volume I: Hydrology</a>. Referência técnica para balanço superficial, reservatório não linear, infiltração e CN.</li>
+<li><a href="https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P100S9AS.txt">Rossman (2017) — SWMM Reference Manual Volume II: Hydraulics</a>. Referência técnica para roteamento e equações de Saint-Venant.</li>
+<li><a href="https://www.nccs.nasa.gov/data-collections/nex-gddp-cmip6/">NASA — NEX-GDDP-CMIP6</a> e <a href="https://www.nccs.nasa.gov/wp-content/uploads/2025/06/NEX-GDDP-CMIP6-v2-Tech_Note.pdf">Technical Note v2 do NEX-GDDP-CMIP6</a>. Fonte e documentação da base climática em grade, com BCSD e cenários CMIP6.</li>
+<li>Thrasher et al. (2022), <a href="https://doi.org/10.1038/s41597-022-01393-4"><em>Scientific Data</em></a>, e Thrasher et al. (2012), <a href="https://doi.org/10.5194/hess-16-3309-2012"><em>Hydrology and Earth System Sciences</em></a>. Referências científicas da coleção e do mapeamento de quantis.</li>
+<li>Eyring et al. (2016), <a href="https://doi.org/10.5194/gmd-9-1937-2016"><em>Geoscientific Model Development</em></a>. Referência do desenho experimental e dos cenários do CMIP6.</li>
 <li>Maity, R.; Maity, A. (2022). <a href="https://doi.org/10.1007/s11269-022-03313-y">Changing Pattern of Intensity–Duration–Frequency Relationship of Precipitation due to Climate Change</a>. Water Resources Management, 36, 5371–5399. Referência de desenho metodológico para IDFs futuras e incerteza; não é fonte dos coeficientes de Conde.</li>
 <li>Pfafstetter, O. (1957). Chuvas intensas no Brasil. Referência histórica brasileira para relações de chuvas intensas, registrada na bibliografia da nota técnica de IDF usada como inspiração.</li>
 <li><a href="https://portal.inmet.gov.br/dadoshistoricos">INMET — dados históricos</a>. Portal institucional para aquisição e conferência das séries observadas, quando a série primária da estação 82798 for anexada.</li>

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="520" viewBox="0 0 1320 520" role="img" aria-labelledby="title desc">
+  <title id="title">Cadeia metodológica da hidrologia e do SWMM</title>
+  <desc id="desc">Fluxo em oito etapas, desde os dados pluviométricos até os indicadores de capacidade, risco e metas de reconstrução.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#16223e" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#157f80"/>
+    </marker>
+    <style>
+      .title { font: 700 27px Arial, sans-serif; fill: #162348; }
+      .subtitle { font: 400 15px Arial, sans-serif; fill: #536277; }
+      .step { font: 700 13px Arial, sans-serif; fill: #ffffff; letter-spacing: .5px; }
+      .card-title { font: 700 17px Arial, sans-serif; fill: #162348; }
+      .card-body { font: 400 13px Arial, sans-serif; fill: #536277; }
+      .card-note { font: 700 12px Arial, sans-serif; fill: #157f80; }
+      .connector-label { font: 700 11px Arial, sans-serif; fill: #157f80; }
+      .legend { font: 600 12px Arial, sans-serif; fill: #536277; }
+    </style>
+  </defs>
+
+  <rect width="1320" height="520" rx="18" fill="#f7f4ed"/>
+  <rect x="1" y="1" width="1318" height="518" rx="17" fill="none" stroke="#d8d4ca" stroke-width="2"/>
+  <text x="42" y="48" class="title">Cadeia metodológica da hidrologia e do SWMM</text>
+  <text x="42" y="75" class="subtitle">Da chuva observada e projetada aos indicadores que orientam o pré-dimensionamento</text>
+
+  <rect x="42" y="99" width="1236" height="34" rx="17" fill="#e5f2f0"/>
+  <circle cx="61" cy="116" r="7" fill="#157f80"/>
+  <text x="78" y="121" class="legend">Linha de base: estação pluviométrica e IDF tradicional</text>
+  <circle cx="458" cy="116" r="7" fill="#d4772b"/>
+  <text x="475" y="121" class="legend">Adaptação climática: NEX-GDDP-CMIP6 e envelope P10–P50–P90</text>
+
+  <!-- connectors top row -->
+  <path d="M303 216 H326" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M611 216 H634" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M919 216 H942" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <!-- turn to second row -->
+  <path d="M1138 274 V335 H188" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="1132" y="322" class="connector-label" text-anchor="end">chuva temporal de entrada</text>
+  <!-- connectors bottom row -->
+  <path d="M303 405 H326" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M611 405 H634" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M919 405 H942" stroke="#157f80" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- cards top -->
+  <g filter="url(#shadow)">
+    <rect x="42" y="155" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="42" y="155" width="261" height="8" rx="4" fill="#157f80"/>
+    <circle cx="68" cy="190" r="16" fill="#157f80"/><text x="68" y="195" class="step" text-anchor="middle">01</text>
+    <text x="95" y="193" class="card-title">Dados pluviométricos</text>
+    <text x="63" y="221" class="card-body">estação de referência</text>
+    <text x="63" y="241" class="card-body">+ projeções NEX-GDDP-CMIP6</text>
+    <text x="63" y="261" class="card-note">observado · histórico · futuro</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="350" y="155" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="350" y="155" width="261" height="8" rx="4" fill="#157f80"/>
+    <circle cx="376" cy="190" r="16" fill="#157f80"/><text x="376" y="195" class="step" text-anchor="middle">02</text>
+    <text x="403" y="193" class="card-title">Frequência</text>
+    <text x="371" y="221" class="card-body">máximas anuais e distribuição</text>
+    <text x="371" y="241" class="card-body">TR25 para coletores · TR50 para troncos</text>
+    <text x="371" y="261" class="card-note">quantis e incerteza amostral</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="658" y="155" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="658" y="155" width="261" height="8" rx="4" fill="#d4772b"/>
+    <circle cx="684" cy="190" r="16" fill="#d4772b"/><text x="684" y="195" class="step" text-anchor="middle">03</text>
+    <text x="711" y="193" class="card-title">Relação IDF</text>
+    <text x="679" y="221" class="card-body">intensidade × duração × frequência</text>
+    <text x="679" y="241" class="card-body">linha de base e cenários climáticos</text>
+    <text x="679" y="261" class="card-note">P10 · P50 · P90</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="966" y="155" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="966" y="155" width="261" height="8" rx="4" fill="#d4772b"/>
+    <circle cx="992" cy="190" r="16" fill="#d4772b"/><text x="992" y="195" class="step" text-anchor="middle">04</text>
+    <text x="1019" y="193" class="card-title">Hietograma</text>
+    <text x="987" y="221" class="card-body">desagregação temporal da chuva</text>
+    <text x="987" y="241" class="card-body">intervalo de cálculo de 5 minutos</text>
+    <text x="987" y="261" class="card-note">entrada Rain Gage / Time Series</text>
+  </g>
+
+  <!-- cards bottom -->
+  <g filter="url(#shadow)">
+    <rect x="42" y="345" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="42" y="345" width="261" height="8" rx="4" fill="#157f80"/>
+    <circle cx="68" cy="380" r="16" fill="#157f80"/><text x="68" y="385" class="step" text-anchor="middle">05</text>
+    <text x="95" y="383" class="card-title">CN e subáreas</text>
+    <text x="63" y="411" class="card-body">ANA/SNIRH 2022 + uso do solo</text>
+    <text x="63" y="431" class="card-body">Bacias A e B · áreas de contribuição</text>
+    <text x="63" y="451" class="card-note">premissa espacial auditável</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="350" y="345" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="350" y="345" width="261" height="8" rx="4" fill="#157f80"/>
+    <circle cx="376" cy="380" r="16" fill="#157f80"/><text x="376" y="385" class="step" text-anchor="middle">06</text>
+    <text x="403" y="383" class="card-title">Chuva–vazão</text>
+    <text x="371" y="411" class="card-body">perdas, infiltração e escoamento</text>
+    <text x="371" y="431" class="card-body">CN, subcatchments e nós de entrada</text>
+    <text x="371" y="451" class="card-note">volume e vazão de contribuição</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="658" y="345" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="658" y="345" width="261" height="8" rx="4" fill="#162348"/>
+    <circle cx="684" cy="380" r="16" fill="#162348"/><text x="684" y="385" class="step" text-anchor="middle">07</text>
+    <text x="711" y="383" class="card-title">Modelo SWMM</text>
+    <text x="679" y="411" class="card-body">nós · coletores · troncos</text>
+    <text x="679" y="431" class="card-body">dissipadores · exutórios · jusante</text>
+    <text x="679" y="451" class="card-note">propagação hidráulica</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="966" y="345" width="261" height="119" rx="14" fill="#ffffff" stroke="#d8d4ca"/>
+    <rect x="966" y="345" width="261" height="8" rx="4" fill="#d4772b"/>
+    <circle cx="992" cy="380" r="16" fill="#d4772b"/><text x="992" y="385" class="step" text-anchor="middle">08</text>
+    <text x="1019" y="383" class="card-title">Decisão e risco</text>
+    <text x="987" y="411" class="card-body">capacidade, velocidades e níveis</text>
+    <text x="987" y="431" class="card-body">erosão, sobrecarga e metas</text>
+    <text x="987" y="451" class="card-note">revisão · projeto · obra</text>
+  </g>
+
+  <text x="42" y="497" class="subtitle">A cada rodada, os resultados retornam ao GIS para revisar áreas, conectividade, cotas, dissipação e trechos prioritários.</text>
+</svg>

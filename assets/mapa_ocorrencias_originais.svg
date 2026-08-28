@@ -42,46 +42,79 @@
 <path d="M 391.8 358.2" fill="#00a6a6" fill-opacity="0.22" stroke="#00a6a6" stroke-width="2"/>
 <path d="M 360.6 357.5" fill="#00a6a6" fill-opacity="0.22" stroke="#00a6a6" stroke-width="2"/>
 
+
 <g id="via-rua-são-francisco">
   <path d="M 431.0,476.6 435.1,471.9 447.2,456.1 451.8,449.9 453.9,447.2 468.0,430.0 471.2,425.5 472.8,423.3 475.5,417.7 476.6,415.1 478.0,411.5 480.4,405.6 482.1,401.6 483.4,397.7 484.3,394.7 487.4,386.7 494.2,371.7 506.7,344.4 512.0,332.7 517.4,321.4 521.4,313.4 524.1,308.4" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
   <path d="M 431.0,476.6 435.1,471.9 447.2,456.1 451.8,449.9 453.9,447.2 468.0,430.0 471.2,425.5 472.8,423.3 475.5,417.7 476.6,415.1 478.0,411.5 480.4,405.6 482.1,401.6 483.4,397.7 484.3,394.7 487.4,386.7 494.2,371.7 506.7,344.4 512.0,332.7 517.4,321.4 521.4,313.4 524.1,308.4" fill="none" stroke="#c2410c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="443.0" y="404.0" width="144.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#c2410c" stroke-width="1.5"/>
-  <text x="515.0" y="421.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#16224e">Rua São Francisco</text>
 </g>
 <g id="via-rua-projetada-03">
   <path d="M 631.6,133.4 631.5,124.4 631.6,110.2 630.4,98.3 630.4,96.2 630.9,93.7 631.7,90.6 633.3,85.8" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
   <path d="M 631.6,133.4 631.5,124.4 631.6,110.2 630.4,98.3 630.4,96.2 630.9,93.7 631.7,90.6 633.3,85.8" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="593.0" y="205.0" width="144.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#2563eb" stroke-width="1.5"/>
-  <text x="665.0" y="222.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#16224e">Rua Projetada 03</text>
 </g>
 <g id="via-rua-zilda-arns-neumann">
   <path d="M 338.8,356.0 340.7,356.0 343.3,355.9 345.5,356.0 347.8,356.3 349.4,356.5 351.5,356.8 364.9,357.5 377.5,357.8 390.6,358.3" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
   <path d="M 338.8,356.0 340.7,356.0 343.3,355.9 345.5,356.0 347.8,356.3 349.4,356.5 351.5,356.8 364.9,357.5 377.5,357.8 390.6,358.3" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="279.5" y="312.0" width="161.0" height="25" rx="6" fill="#ffffff" fill-opacity="0.93" stroke="#7c3aed" stroke-width="1.5"/>
-  <text x="360.0" y="329.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">Rua Zilda Arns Neumann</text>
 </g>
-<circle cx="391.8" cy="358.2" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="399.8" y="350.2" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P08 - WA0054</text>
-<circle cx="360.6" cy="357.5" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="368.6" y="349.5" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P09 - WA0055</text>
-<circle cx="488.6" cy="385.2" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="496.6" y="389.2" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">1i</text>
-<circle cx="393.9" cy="514.0" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="401.9" y="518.0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">1f</text>
-<circle cx="452.8" cy="493.7" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="460.8" y="497.7" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">2f</text>
-<circle cx="498.6" cy="434.3" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="506.6" y="438.3" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">2i</text>
-<circle cx="391.3" cy="356.2" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="399.3" y="360.2" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">3i</text>
-<circle cx="314.8" cy="353.1" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="322.8" y="357.1" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">3f</text>
-<circle cx="342.3" cy="232.0" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="350.3" y="236.0" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">5i</text>
-<circle cx="355.2" cy="206.7" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="363.2" y="210.7" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">5f</text>
-<circle cx="409.8" cy="250.5" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="417.8" y="254.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">6f</text>
-<circle cx="412.9" cy="244.1" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="420.9" y="248.1" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">6i</text>
+<g id="diagnostico-ruas">
+  <line x1="515" y1="421" x2="585" y2="421" stroke="#c2410c" stroke-width="1.6" opacity="0.9"/>
+  <rect x="588" y="406" width="170" height="28" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#c2410c" stroke-width="1.3"/>
+  <text x="673" y="424" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">Rua São Francisco</text>
+  <line x1="360" y1="329" x2="270" y2="329" stroke="#7c3aed" stroke-width="1.6" opacity="0.9"/>
+  <rect x="70" y="314" width="188" height="28" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#7c3aed" stroke-width="1.3"/>
+  <text x="164" y="332" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#16224e">Rua Zilda Arns Neumann</text>
+  <line x1="665" y1="222" x2="665" y2="250" stroke="#2563eb" stroke-width="1.6" opacity="0.9"/>
+  <rect x="580" y="252" width="170" height="28" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#2563eb" stroke-width="1.3"/>
+  <text x="665" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#16224e">Rua Projetada 03</text>
+</g>
+<g id="diagnostico-pontos-prioritarios">
+  <line x1="488.6" y1="385.2" x2="535.0" y2="365.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="488.6" cy="385.2" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="518.0" y="351.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="535.0" y="369.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">1i</text>
+  <line x1="393.9" y1="514.0" x2="365.0" y2="542.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="393.9" cy="514.0" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="348.0" y="528.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="365.0" y="546.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">1f</text>
+  <line x1="452.8" y1="493.7" x2="485.0" y2="516.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="452.8" cy="493.7" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="468.0" y="502.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="485.0" y="520.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">2f</text>
+  <line x1="498.6" y1="434.3" x2="535.0" y2="435.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="498.6" cy="434.3" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="518.0" y="421.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="535.0" y="439.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">2i</text>
+  <line x1="391.3" y1="356.2" x2="410.0" y2="326.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="391.3" cy="356.2" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="393.0" y="312.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="410.0" y="330.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">3i</text>
+  <line x1="314.8" y1="353.1" x2="285.0" y2="326.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="314.8" cy="353.1" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="268.0" y="312.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="285.0" y="330.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">3f</text>
+  <line x1="342.3" y1="232.0" x2="315.0" y2="214.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="342.3" cy="232.0" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="298.0" y="200.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="315.0" y="218.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">5i</text>
+  <line x1="355.2" y1="206.7" x2="385.0" y2="184.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="355.2" cy="206.7" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="368.0" y="170.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="385.0" y="188.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">5f</text>
+  <line x1="409.8" y1="250.5" x2="382.0" y2="276.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="409.8" cy="250.5" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="365.0" y="262.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="382.0" y="280.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">6f</text>
+  <line x1="412.9" y1="244.1" x2="450.0" y2="220.0" stroke="#334155" stroke-width="1.4" opacity="0.85"/>
+  <circle cx="412.9" cy="244.1" r="6.5" fill="#16224e" stroke="#ffffff" stroke-width="2.5"/>
+  <rect x="433.0" y="206.0" width="34.0" height="24" rx="5" fill="#ffffff" fill-opacity="0.98" stroke="#16224e" stroke-width="1.2"/>
+  <text x="450.0" y="224.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16224e">6i</text>
+</g>
+<circle cx="391.8" cy="358.2" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="360.6" cy="357.5" r="6" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
 <text x="110" y="610" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#994b00">Bacia A</text>
 <text x="110" y="632" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#187d78">Bacia B</text>
-<circle cx="488.6" cy="385.2" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="393.9" cy="514.0" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="452.8" cy="493.7" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="498.6" cy="434.3" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="391.3" cy="356.2" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="314.8" cy="353.1" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="409.8" cy="250.5" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
-<circle cx="412.9" cy="244.1" r="10" fill="none" stroke="#0f766e" stroke-width="2.5" opacity="0.95"/>
+
+
+
 
 <g id="referencias-diagnostico">
   <rect x="610" y="92" width="210" height="102" rx="8" fill="#ffffff" fill-opacity="0.94" stroke="#d8d2c5"/>
@@ -99,13 +132,13 @@
 <rect x="865" y="245" width="270" height="270" fill="#f8f4ea" stroke="#d8d2c5"/>
 <circle cx="1112.5" cy="343.3" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="1119.5" y="337.3" font-family="Arial, sans-serif" font-size="10" fill="#16224e">4i</text>
 <circle cx="1111.4" cy="359.0" r="5" fill="#16224e" stroke="#ffffff" stroke-width="2"/><text x="1118.4" y="353.0" font-family="Arial, sans-serif" font-size="10" fill="#16224e">4f</text>
-<circle cx="1112.1" cy="352.0" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="1119.1" y="346.0" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P01 - WA0029</text>
-<circle cx="1112.5" cy="343.3" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="1119.5" y="337.3" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P02 - WA0030</text>
-<circle cx="887.5" cy="373.0" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="894.5" y="367.0" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P03 - WA0050</text>
-<circle cx="914.2" cy="411.7" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="921.2" y="405.7" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P04 - WA0038</text>
-<circle cx="916.3" cy="414.9" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="923.3" y="408.9" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P05 - WA0039</text>
-<circle cx="917.7" cy="416.7" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="924.7" y="410.7" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P06 - WA0037</text>
-<circle cx="917.5" cy="416.6" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/><text x="924.5" y="410.6" font-family="Arial, sans-serif" font-size="10" fill="#16224e">P07 - WA0051</text>
+<circle cx="1112.1" cy="352.0" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1112.5" cy="343.3" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="887.5" cy="373.0" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="914.2" cy="411.7" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="916.3" cy="414.9" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="917.7" cy="416.7" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
+<circle cx="917.5" cy="416.6" r="5" fill="#00a6a6" stroke="#ffffff" stroke-width="2"/>
 <line x1="870" y1="548" x2="900" y2="548" stroke="#d1495b" stroke-width="5"/><text x="910" y="553" font-family="Arial, sans-serif" font-size="12" fill="#16224e">Suscetibilidade alta</text>
 <line x1="870" y1="574" x2="900" y2="574" stroke="#e3a21a" stroke-width="5"/><text x="910" y="579" font-family="Arial, sans-serif" font-size="12" fill="#16224e">Suscetibilidade média</text>
 <circle cx="885" cy="600" r="5" fill="#16224e"/><text x="900" y="605" font-family="Arial, sans-serif" font-size="12" fill="#16224e">Ponto de meta original</text>

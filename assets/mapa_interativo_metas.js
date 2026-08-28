@@ -102,7 +102,7 @@
   ].join("");
 
   const estiloBacia = (cor) => ({ color: cor, weight: 2, fillColor: cor, fillOpacity: 0.06, dashArray: "6 5" });
-  const estiloForaMeta = { color: "#9aa3af", weight: 2.1, opacity: 0.82, dashArray: "8 7" };
+  const estiloForaMeta = { color: "#ffffff", weight: 2.4, opacity: 0.96, dashArray: "8 7" };
   const estiloMeta = (codigo, classe) => {
     const classeNormalizada = String(classe || "").toUpperCase();
     if (classeNormalizada === "DISSIPADOR") return { color: "#a21caf", weight: 5, opacity: 0.98 };
@@ -218,7 +218,7 @@
         {
           "Bacia A": limitesA,
           "Bacia B": limitesB,
-          "Rede fora das metas (tracejada)": redeRestante,
+          "Rede de Drenagem Concebida (tracejada)": redeRestante,
           "Meta 1 — Bacia A": metaCamadas.META_01,
           "Meta 2 — Bacia B": metaCamadas.META_02,
           "Meta 3 — Bacia B": metaCamadas.META_03,

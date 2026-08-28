@@ -67,6 +67,10 @@
     return Number.isFinite(convertido) ? convertido.toLocaleString("pt-BR", { maximumFractionDigits: 2 }) : "não informado";
   };
 
+  const nomePontoOriginal = (p) => String(
+    p.nome_exibicao || p.nome_original || p.nome || p.id || p.ID || "Identificação não informada",
+  ).replace(/\s*-\s*foto\??\s*$/i, "").trim();
+
   const popupMeta = (p) => [
     "<strong>", escapeHtml(nomeMeta(p.META_ID)), " (", escapeHtml(p.META_ID), ")</strong>",
     "<br>", escapeHtml(p.NOME),
@@ -151,8 +155,17 @@
       return camada;
     }),
     carregar("data/pontos_metas_originais.geojson", pontos, {
-      pointToLayer: (_, latlng) => L.circleMarker(latlng, { radius: 4, color: "#111827", weight: 1, fillColor: "#facc15", fillOpacity: 0.95 }),
-      onEachFeature: (f, l) => l.bindPopup("<strong>Ponto de meta original</strong><br>" + escapeHtml(f.properties?.id || f.properties?.ID || "Identificação não informada")),
+      pointToLayer: (_, latlng) => L.circleMarker(latlng, { radius: 5, color: "#111827", weight: 1.2, fillColor: "#facc15", fillOpacity: 0.95 }),
+      onEachFeature: (f, l) => {
+        const identificacao = nomePontoOriginal(f.properties || {});
+        l.bindTooltip(escapeHtml(identificacao), {
+          permanent: true,
+          direction: "right",
+          offset: [7, 0],
+          className: "metas-ponto-label",
+        });
+        l.bindPopup("<strong>Ponto original: " + escapeHtml(identificacao) + "</strong><br>Fonte: Conde_Pontos_metas.kmz<br><em>A identificação foi normalizada para a leitura cartográfica.</em>");
+      },
     }),
     carregarJson("data/metas_plano_trabalho/trechos_metas_recortados.geojson"),
     carregarJson("data/metas_plano_trabalho/rede_fora_metas_recortada.geojson"),

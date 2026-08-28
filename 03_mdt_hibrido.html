@@ -77,6 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <link rel="stylesheet" href="styles.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="assets/traducao.js" defer></script>
 </head>
 
@@ -240,9 +247,14 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="equação-idf-adotada" class="level2">
 <h2 class="anchored" data-anchor-id="equação-idf-adotada">3.2 Equação IDF adotada</h2>
 <p>A relação intensidade–duração–frequência usada na linha de base é:</p>
-<p><strong>i(Tr, t) = 1424,1 x Tr^0,1305 / (t + 23,6)^0,7468</strong> (<a href="./10_referencias.html#ref-14">[14]</a>; relação legada preservada no estudo anterior)</p>
+<div class="math display">\[
+i(T_R,t)=\frac{1424{,}1\,T_R^{0{,}1305}}{(t+23{,}6)^{0{,}7468}}
+\]</div>
+<p>(<a href="./10_referencias.html#ref-14">[14]</a>; relação legada preservada no estudo anterior).</p>
 <p>em que <code>i</code> é a intensidade média da chuva, em mm/h; <code>Tr</code> é o período de retorno, em anos; e <code>t</code> é a duração, em minutos. Os parâmetros <code>1424,1</code>, <code>0,1305</code>, <code>23,6</code> e <code>0,7468</code> são os coeficientes da relação preservada no modelo anterior. A precipitação acumulada correspondente é:</p>
-<p><strong>P(Tr, t) = i(Tr, t) x t / 60</strong></p>
+<div class="math display">\[
+P(T_R,t)=i(T_R,t)\,\frac{t}{60}
+\]</div>
 <p>com <code>P</code> em milímetros. A conversão é necessária porque a IDF fornece intensidade média na duração, enquanto o SWMM recebe uma série temporal de chuva.</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/idf_base_curvas.png" alt="Curvas IDF de linha de base para períodos de retorno de 2 a 100 anos" class="figure-img">
@@ -615,29 +627,33 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 <section id="relação-idf-e-análise-de-frequência" class="level3">
 <h3 class="anchored" data-anchor-id="relação-idf-e-análise-de-frequência">3.10.2 Relação IDF e análise de frequência</h3>
 <p>A forma funcional utilizada é a forma tradicional de quatro parâmetros:</p>
-<div class="equation">
-<strong>i(Tr,t) = a * Tr^b / (t + c)^d</strong>
-</div>
+<div class="math display">\[
+i(T_R,t)=\frac{a\,T_R^{b}}{(t+c)^{d}}
+\]</div>
 <p>Para a linha de base de Conde, os parâmetros preservados são <code>a = 1424,1</code>, <code>b = 0,1305</code>, <code>c = 23,6</code> e <code>d = 0,7468</code>. A precipitação acumulada é obtida por <code>P = i x t / 60</code>. Portanto, a curva fornece uma intensidade média para uma duração e um período de retorno; ela não fornece, sozinha, a ordem temporal dos picos que o SWMM precisa receber.</p>
 <p>Em uma reestimativa independente, a amostra deve ser montada por duração a partir das máximas anuais. Para cada duração <code>t</code>, a observação anual é o maior acumulado daquele ano nessa duração. A probabilidade anual de excedência é convertida em nível de retorno por:</p>
-<div class="equation">
-<strong>zT = F^-1(1 - 1/T)</strong>
-</div>
+<div class="math display">\[
+z_T=F^{-1}\left(1-\frac{1}{T_R}\right)
+\]</div>
 <p>onde <code>F</code> é a distribuição ajustada aos extremos. A linha de base desta minuta não executa novamente essa reestimativa porque a série observada completa e a memória do ajuste original não estão anexadas. Por isso, valores de <code>R²</code>, p-valor, intervalo de confiança e teste de aderência da equação herdada devem ser tratados como <strong>não determinados nesta versão</strong>, e não como evidências de validação local.</p>
 <p>Para o projeto básico, recomenda-se comparar pelo menos Gumbel e GEV, documentar o método de estimação — máxima verossimilhança, L-moments ou outro —, testar a sensibilidade ao período de dados e calcular intervalos de confiança por reamostragem. Também devem ser verificados falhas, anos incompletos, homogeneidade, mudanças de instrumento e independência dos máximos. A adoção de uma distribuição não deve ser decidida apenas pelo maior <code>R²</code> da regressão da IDF.</p>
 </section>
 <section id="método-cn-scs-e-atribuição-às-subáreas" class="level3">
 <h3 class="anchored" data-anchor-id="método-cn-scs-e-atribuição-às-subáreas">3.10.3 Método CN-SCS e atribuição às subáreas</h3>
 <p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>, com referência conceitual do USDA-NRCS (<a href="./10_referencias.html#ref-5">[5]</a>) e do produto CN 2022 da ANA/SNIRH (<a href="./10_referencias.html#ref-3">[3]</a>). A formulação de referência é:</p>
-<div class="equation">
-<strong>S = 25400 / CN - 254</strong>
-</div>
-<div class="equation">
-<strong>Ia = lambda * S</strong>, com <strong>lambda = 0.20</strong> na configuração tradicional; e
-</div>
-<div class="equation">
-<strong>Q = (P - Ia)^2 / (P - Ia + S)</strong>, quando <strong>P &gt; Ia</strong>; caso contrário, <strong>Q = 0</strong>.
-</div>
+<div class="math display">\[
+S=\frac{25400}{CN}-254
+\]</div>
+<div class="math display">\[
+I_a=\lambda S,\qquad \lambda=0{,}20
+\]</div>
+<div class="math display">\[
+Q=
+\begin{cases}
+\dfrac{(P-I_a)^2}{P-I_a+S}, & P>I_a,\\[6pt]
+0, & P\leq I_a.
+\end{cases}
+\]</div>
 <p>Em que <code>S</code> é a capacidade potencial de retenção, <code>Ia</code> é a abstração inicial, <code>P</code> é a precipitação acumulada e <code>Q</code> é o escoamento superficial direto, todos em milímetros. O CN aumenta quando cresce a impermeabilização ou diminui a capacidade de infiltração. A média espacial do CN 2022 fornece uma referência de ordem de grandeza, mas não deve ser aplicada sem revisão uniforme a todas as áreas: uma quadra, uma rua pavimentada, um lote permeável e uma área vegetada podem ter respostas muito diferentes.</p>
 <p>Na próxima revisão, cada área de contribuição será relacionada a uma quadra ou conjunto hidrologicamente homogêneo, com área, largura característica, declividade, percentual impermeável, CN, nó de saída e justificativa cartográfica. As áreas Voronoi atualmente disponíveis são, portanto, uma estrutura de partida e não um levantamento definitivo das contribuições.</p>
 </section>

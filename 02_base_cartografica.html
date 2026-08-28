@@ -77,6 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <link rel="stylesheet" href="styles.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <script src="assets/traducao.js" defer></script>
 </head>
 
@@ -241,7 +248,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="comparação-e-correção-vertical" class="level3">
 <h3 class="anchored" data-anchor-id="comparação-e-correção-vertical">Comparação e correção vertical</h3>
 <p>Na área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:</p>
-<p><strong>h_ortométrica = a × valor_MDE + b</strong></p>
+<div class="math display">\[
+h_{\mathrm{ortométrica}}=a\,h_{\mathrm{MDE}}+b
+\]</div>
 <p>O relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al.&nbsp;(2019) (<a href="./10_referencias.html#ref-1">[1]</a>), cujo procedimento é usado aqui como fundamento de documentação, sem transferir automaticamente coeficientes ou resultados do estudo original para Conde.</p>
 <p>A rotina deve ainda:</p>
 <ul>

@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="./10_referencias.html">
+ <span class="menu-text">8 · Referências</span></a>
+  </li>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sedec-dpm-cgnat/drenagem-conde-pb"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -275,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="parâmetro-cn-de-2022-como-premissa-hidrológica" class="level2">
 <h2 class="anchored" data-anchor-id="parâmetro-cn-de-2022-como-premissa-hidrológica">5.3 Parâmetro CN de 2022 como premissa hidrológica</h2>
-<p>Como referência espacial para a transformação chuva–escoamento, foi incorporado o produto oficial <strong>Curva Número na Base Ottocodificada (1985, 2014 e 2022)</strong>, disponibilizado pelo SNIRH/ANA. Para este relatório foi utilizado o raster <code>BR_CN-2022.tif</code>, recortado para as Bacias A e B e reprojetado para <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>, em grade de 30 m e com reamostragem por vizinho mais próximo. O registro oficial informa que o produto de 2022 foi construído com uso e cobertura do solo do MapBiomas 2023 e dados de solos do IBGE 2023, na escala declarada de 1:250.000 para a base vetorial correspondente (<a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">SNIRH/ANA — Curva Número 1985, 2014 e 2022</a>).</p>
+<p>Como referência espacial para a transformação chuva–escoamento, foi incorporado o produto oficial <strong>Curva Número na Base Ottocodificada (1985, 2014 e 2022)</strong>, disponibilizado pelo SNIRH/ANA (<a href="./10_referencias.html#ref-3">[3]</a>). Para este relatório foi utilizado o raster <code>BR_CN-2022.tif</code>, recortado para as Bacias A e B e reprojetado para <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>, em grade de 30 m e com reamostragem por vizinho mais próximo. O registro oficial informa que o produto de 2022 foi construído com uso e cobertura do solo do MapBiomas 2023 e dados de solos do IBGE 2023, na escala declarada de 1:250.000 para a base vetorial correspondente (<a href="https://metadados.snirh.gov.br/geonetwork/srv/api/records/d1c36d85-a9d5-4f6a-85f7-71c2dc801a67">registro de metadados SNIRH/ANA</a>).</p>
 <p>O recorte foi calculado sobre os limites revisados D8 das duas unidades de trabalho. Como a grade de saída está em projeção métrica e possui pixels de 30 m, a média dos pixels válidos equivale, nesta escala, à média ponderada por área. Os resultados preliminares são:</p>
 <table class="caption-top table">
 <colgroup>
@@ -442,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 <section id="discussão-sobre-mudança-climática" class="level2">
 <h2 class="anchored" data-anchor-id="discussão-sobre-mudança-climática">5.8 Discussão sobre mudança climática</h2>
-<p>A linha TR25/TR50 mantém a comparabilidade com o relatório anterior. Para incorporar a mudança climática, será adotada metodologia equivalente à de Maity e Maity (2022), que combina correção de viés por quantile mapping, ponderação do conjunto de modelos pelo Reliability Ensemble Averaging (REA), ajuste de extremos por GEV e relação de escala entre durações.</p>
+<p>A linha TR25/TR50 mantém a comparabilidade com o relatório anterior. Para incorporar a mudança climática, será adotada metodologia equivalente à de Maity e Maity (2022) (<a href="./10_referencias.html#ref-7">[7]</a>), que combina correção de viés por quantile mapping, ponderação do conjunto de modelos pelo Reliability Ensemble Averaging (REA), ajuste de extremos por GEV e relação de escala entre durações.</p>
 <p>Há, contudo, uma adaptação necessária para o banco NEX-GDDP-CMIP6 disponível neste projeto. A tabela utilizada contém máximas anuais diárias por modelo, cenário, ano e ponto de grade, e não a série diária completa ou a série subdiária. Assim, não será apresentada uma reprodução literal do componente Gamma-Gumbel do artigo. A correção será paramétrica para máximas anuais, ancorada na série/IDF observada que fundamentou o relatório tradicional; a escala subdiária será obtida a partir da IDF local e da relação de escala, com as limitações explicitadas no capítulo de Estudos Hidrológicos.</p>
 <p>Serão comparados os 34 GCMs, os cenários <code>ssp126</code>, <code>ssp245</code>, <code>ssp370</code> e <code>ssp585</code> e os horizontes histórico, 2040–2059 e 2060–2100, mantendo também uma janela operacional definida para o horizonte do plano. O resultado será reportado como curva central e faixa de incerteza, e não como um único fator de aumento. Cada curva futura será aplicada a um hietograma identificado no SWMM e comparada à linha de base, observando vazões de pico, volumes, alagamentos, velocidades e solicitações nos dissipadores.</p>
 <p>Essa abordagem amplia a faixa de teste sem substituir a observação local. A decisão de reconstrução deve considerar a robustez da solução sob mais de uma premissa, indicando quais trechos continuam adequados, quais ficam críticos e quais exigem adaptação. A especificação detalhada está em <code>04_CHUVAS_PROJETO/METODOLOGIA_IDF_MUDANCA_CLIMATICA_ADAPTADA.md</code>.</p>

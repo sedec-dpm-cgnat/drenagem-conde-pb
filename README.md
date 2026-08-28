@@ -41,6 +41,8 @@ O relatório está publicado em [https://sedec-dpm-cgnat.github.io/drenagem-cond
 
 O relatório está em construção e será atualizado progressivamente à medida que a rede, as áreas de contribuição, os dissipadores e os resultados do SWMM forem revisados.
 
+As referências metodológicas e institucionais, com citações numeradas e mapa de rastreabilidade por capítulo, estão no [Capítulo 8 — Referências e rastreabilidade metodológica](10_referencias.html). O [PDF completo](relatorio_completo.pdf) acompanha essa bibliografia na versão publicada.
+
 ## Mudança climática e IDF-MC
 
 A partir da revisão de 25/08/2026, o capítulo climático adota como fonte primária

@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="./10_referencias.html">
+ <span class="menu-text">8 · Referências</span></a>
+  </li>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sedec-dpm-cgnat/drenagem-conde-pb"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -216,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>O padrão de trabalho é <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>. Os rasters e vetores de análise devem permanecer nesse CRS métrico. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.</p>
 <p>O arquivo de trabalho principal é:</p>
 <p><strong>MDT_hibrido_Bacias_AB_5m_EPSG31985.tif</strong></p>
-<p>O arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho.</p>
+<p>O arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. A base legada de relevo deve ser interpretada com as limitações próprias de um MDE de cobertura ampla, como os produtos SRTM (<a href="./10_referencias.html#ref-2">[2]</a>). O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho.</p>
 </section>
 <section id="fontes-e-histórico-de-construção" class="level2">
 <h2 class="anchored" data-anchor-id="fontes-e-histórico-de-construção">2.2 Fontes e histórico de construção</h2>
@@ -238,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <h3 class="anchored" data-anchor-id="comparação-e-correção-vertical">Comparação e correção vertical</h3>
 <p>Na área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:</p>
 <p><strong>h_ortométrica = a × valor_MDE + b</strong></p>
-<p>O relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é <a href="https://doi.org/10.5194/nhess-19-237-2019">Araújo et al.&nbsp;(2019), NHESS 19:237–250</a>.</p>
+<p>O relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al.&nbsp;(2019) (<a href="./10_referencias.html#ref-1">[1]</a>), cujo procedimento é usado aqui como fundamento de documentação, sem transferir automaticamente coeficientes ou resultados do estudo original para Conde.</p>
 <p>A rotina deve ainda:</p>
 <ul>
 <li>descartar e contar amostras em nodata;</li>

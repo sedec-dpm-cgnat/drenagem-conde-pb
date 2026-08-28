@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="./10_referencias.html">
+ <span class="menu-text">8 · Referências</span></a>
+  </li>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sedec-dpm-cgnat/drenagem-conde-pb"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -216,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<strong>Estratégia hidrológica.</strong> A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas.
+<strong>Estratégia hidrológica.</strong> A primeira rodada preserva a hidrologia tradicional do relatório anterior para manter comparabilidade. A transformação chuva–escoamento segue a lógica de bacia e escoamento descrita no manual do USDA-NRCS (<a href="./10_referencias.html#ref-5">[5]</a>), enquanto a atualização com projeções climáticas do NEX-GDDP-CMIP6 será construída como cenário adicional, com metodologia e incertezas declaradas (<a href="./10_referencias.html#ref-6">[6]</a>).
 </div>
 </div>
 </div>
@@ -236,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <section id="equação-idf-adotada" class="level2">
 <h2 class="anchored" data-anchor-id="equação-idf-adotada">3.2 Equação IDF adotada</h2>
 <p>A relação intensidade–duração–frequência usada na linha de base é:</p>
-<p><strong>i(Tr, t) = 1424,1 x Tr^0,1305 / (t + 23,6)^0,7468</strong></p>
+<p><strong>i(Tr, t) = 1424,1 x Tr^0,1305 / (t + 23,6)^0,7468</strong> (<a href="./10_referencias.html#ref-14">[14]</a>; relação legada preservada no estudo anterior)</p>
 <p>em que <code>i</code> é a intensidade média da chuva, em mm/h; <code>Tr</code> é o período de retorno, em anos; e <code>t</code> é a duração, em minutos. Os parâmetros <code>1424,1</code>, <code>0,1305</code>, <code>23,6</code> e <code>0,7468</code> são os coeficientes da relação preservada no modelo anterior. A precipitação acumulada correspondente é:</p>
 <p><strong>P(Tr, t) = i(Tr, t) x t / 60</strong></p>
 <p>com <code>P</code> em milímetros. A conversão é necessária porque a IDF fornece intensidade média na duração, enquanto o SWMM recebe uma série temporal de chuva.</p>
@@ -606,7 +610,7 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </tr>
 </tbody>
 </table>
-<p>As referências completas, com a classificação <strong>adotada</strong>, <strong>de apoio</strong> ou <strong>pendente de incorporação</strong>, estão no arquivo <a href="data/downloads/clima/REFERENCIAS_METODOLOGIA_HIDROLOGIA.md">Referências e rastreabilidade da hidrologia</a>. O arquivo também informa quais dados primários ainda precisam ser anexados para que a equação IDF possa ser reestimada de forma independente.</p>
+<p>As referências completas, com a classificação <strong>adotada</strong>, <strong>de apoio</strong> ou <strong>pendente de incorporação</strong>, estão no arquivo <a href="data/downloads/clima/REFERENCIAS_METODOLOGIA_HIDROLOGIA.md">Referências e rastreabilidade da hidrologia</a> e no <a href="./10_referencias.html">Capítulo 8 — Referências e rastreabilidade metodológica</a>. O arquivo também informa quais dados primários ainda precisam ser anexados para que a equação IDF possa ser reestimada de forma independente.</p>
 </section>
 <section id="relação-idf-e-análise-de-frequência" class="level3">
 <h3 class="anchored" data-anchor-id="relação-idf-e-análise-de-frequência">3.10.2 Relação IDF e análise de frequência</h3>
@@ -624,7 +628,7 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </section>
 <section id="método-cn-scs-e-atribuição-às-subáreas" class="level3">
 <h3 class="anchored" data-anchor-id="método-cn-scs-e-atribuição-às-subáreas">3.10.3 Método CN-SCS e atribuição às subáreas</h3>
-<p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>. A formulação de referência é:</p>
+<p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>, com referência conceitual do USDA-NRCS (<a href="./10_referencias.html#ref-5">[5]</a>) e do produto CN 2022 da ANA/SNIRH (<a href="./10_referencias.html#ref-3">[3]</a>). A formulação de referência é:</p>
 <div class="equation">
 <strong>S = 25400 / CN - 254</strong>
 </div>
@@ -639,7 +643,7 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </section>
 <section id="conversão-para-chuva-temporal-e-implementação-no-swmm" class="level3">
 <h3 class="anchored" data-anchor-id="conversão-para-chuva-temporal-e-implementação-no-swmm">3.10.4 Conversão para chuva temporal e implementação no SWMM</h3>
-<p>Os arquivos <code>.inp</code> usam unidades de vazão em <code>CMS</code>, infiltração <code>CURVE_NUMBER</code> e roteamento dinâmico <code>DYNWAVE</code>. A chuva entra por um <code>Rain Gage</code> ligado a uma <code>Time Series</code> com passo de 5 minutos. Cada subárea é conectada a um nó de saída, e os nós são encadeados por conduítes até os trechos de tronco, dissipadores e exutórios.</p>
+<p>Os arquivos <code>.inp</code> usam unidades de vazão em <code>CMS</code>, infiltração <code>CURVE_NUMBER</code> e roteamento dinâmico <code>DYNWAVE</code>, em consonância com a estrutura documentada pelo EPA SWMM (<a href="./10_referencias.html#ref-4">[4]</a>). A chuva entra por um <code>Rain Gage</code> ligado a uma <code>Time Series</code> com passo de 5 minutos. Cada subárea é conectada a um nó de saída, e os nós são encadeados por conduítes até os trechos de tronco, dissipadores e exutórios.</p>
 <p>Os principais controles de consistência são:</p>
 <ol type="1">
 <li>conferir se o total do hietograma coincide com a integral das intensidades;</li>
@@ -654,7 +658,7 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 </section>
 <section id="atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta" class="level3">
 <h3 class="anchored" data-anchor-id="atualização-climática-o-que-já-foi-feito-e-o-que-ainda-falta">3.10.5 Atualização climática: o que já foi feito e o que ainda falta</h3>
-<p>O NEX-GDDP-CMIP6 disponibiliza, no banco consultado, máximas diárias anuais por ponto, modelo, cenário e ano. A rotina atual ajusta uma GEV por máxima verossimilhança quando há amostra suficiente, calcula fatores futuro/histórico e resume os modelos por P10, mediana e P90. Esse produto é uma <strong>triagem de sensibilidade para extremos diários</strong>; ele ainda não é uma IDF futura subdiária pronta para dimensionamento.</p>
+<p>O NEX-GDDP-CMIP6 disponibiliza, no banco consultado, máximas diárias anuais por ponto, modelo, cenário e ano (<a href="./10_referencias.html#ref-6">[6]</a>). A rotina atual ajusta uma GEV por máxima verossimilhança quando há amostra suficiente, calcula fatores futuro/histórico e resume os modelos por P10, mediana e P90. Esse produto é uma <strong>triagem de sensibilidade para extremos diários</strong>; ele ainda não é uma IDF futura subdiária pronta para dimensionamento.</p>
 <p>Não foram declarados nesta versão como já executados: quantile mapping da série diária completa, pesos REA, ajuste independente com a série observada, desagregação validada para 5 minutos e hietogramas futuros calibrados. Esses elementos permanecem na metodologia de segunda etapa porque a tabela disponibilizada contém <code>prec_max_anual</code>, e não as séries diárias e subdiárias necessárias para reproduzi-los diretamente.</p>
 <p>Para cada cenário futuro, o procedimento completo deverá:</p>
 <ul>

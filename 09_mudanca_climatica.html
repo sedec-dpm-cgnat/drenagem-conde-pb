@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="menu-text">Anexo A · Dados para download</span></a>
   </li>  
 </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="./10_referencias.html">
+ <span class="menu-text">8 · Referências</span></a>
+  </li>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sedec-dpm-cgnat/drenagem-conde-pb"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -212,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 <section id="por-que-um-capítulo-específico" class="level2">
 <h2 class="anchored" data-anchor-id="por-que-um-capítulo-específico">6.1 Por que um capítulo específico</h2>
-<p>Chuvas de projeto não são valores fixos fora do tempo. Uma rede que funciona apenas sob a linha histórica pode perder margem de segurança durante a vida útil, especialmente quando há aumento de impermeabilização, ocupação urbana e concentração do escoamento. Por isso, a reconstrução das Bacias A e B será avaliada em dois planos complementares: a linha de base hidrológica usada no relatório anterior e um conjunto de cenários que testa a sensibilidade do sistema a mudanças na precipitação extrema.</p>
+<p>Chuvas de projeto não são valores fixos fora do tempo. Uma rede que funciona apenas sob a linha histórica pode perder margem de segurança durante a vida útil, especialmente quando há aumento de impermeabilização, ocupação urbana e concentração do escoamento. Por isso, a reconstrução das Bacias A e B será avaliada em dois planos complementares: a linha de base hidrológica usada no relatório anterior e um conjunto de cenários que testa a sensibilidade do sistema a mudanças na precipitação extrema, em diálogo com a base física e os cenários do IPCC (<a href="./10_referencias.html#ref-9">[9]</a>).</p>
 <p>O objetivo não é vender uma previsão única, mas mostrar com transparência <strong>o que permanece robusto, o que se torna crítico e o que precisa ser adaptável</strong>. Essa forma de comunicação aproxima o relatório de ferramentas públicas de projeção de IDF, como o projeto do NRCC/Cornell, que organiza a leitura por período de retorno, cenário, horizonte temporal e faixa de incerteza (<a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>).</p>
 </section>
 <section id="estrutura-de-apresentação-das-idfs" class="level2">
@@ -242,7 +246,7 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 </section>
 <section id="método-adotado-nesta-versão-idf-mc" class="level2">
 <h2 class="anchored" data-anchor-id="método-adotado-nesta-versão-idf-mc">6.3 Método adotado nesta versão — IDF-MC</h2>
-<p>A análise climática desta versão passa a utilizar como fonte primária o <strong>Portal IDF-MC da SEDEC/MIDR</strong>. A ferramenta fornece uma cadeia de cálculo versionada para ir da chuva observada às curvas IDF sob cenários de mudança do clima, com fatores por modelo, quantis do conjunto, períodos de retorno equivalentes e salvaguardas de qualidade. O artigo de Maity e Maity (2022) e o painel do NRCC/Cornell permanecem como referências de apresentação e comparação conceitual; não são a fonte dos números publicados nesta seção.</p>
+<p>A análise climática desta versão passa a utilizar como fonte primária o <strong>Portal IDF-MC da SEDEC/MIDR</strong> (<a href="./10_referencias.html#ref-8">[8]</a>). A ferramenta fornece uma cadeia de cálculo versionada para ir da chuva observada às curvas IDF sob cenários de mudança do clima, com fatores por modelo, quantis do conjunto, períodos de retorno equivalentes e salvaguardas de qualidade. O artigo de Maity e Maity (2022) (<a href="./10_referencias.html#ref-7">[7]</a>) e o painel do NRCC/Cornell permanecem como referências de apresentação e comparação conceitual; não são a fonte dos números publicados nesta seção.</p>
 <p>Para Conde/PB, código IBGE <code>2504603</code>, a ficha oficial está publicada no release <code>2026.08.002</code>, com um ponto climático publicado, baseline de 44 anos (1981–2024) e status <code>com_dados</code>. A consulta auditável está disponível na <a href="https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603">API do município de Conde</a>. A cópia dos fatores usados para a leitura TR25/TR50 está em <a href="data/downloads/clima/idf_mc_conde_tr25_tr50.csv">CSV</a> e os metadados em <a href="data/downloads/clima/idf_mc_conde_metadados.json">JSON</a>.</p>
 <p>A sequência adotada pelo IDF-MC é:</p>
 <ol type="1">
@@ -490,7 +494,7 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <li><strong>Combinar infraestrutura cinza e medidas sustentáveis.</strong> Sempre que tecnicamente compatível, devem ser avaliadas soluções de retenção temporária, infiltração, revegetação, proteção de solo, redução de velocidade e controle na origem.</li>
 <li><strong>Usar a mudança climática como teste de robustez.</strong> A decisão deve considerar a linha de base e as faixas futuras, priorizando medidas que funcionem sob diferentes cenários e evitando investimentos que dependam de uma única previsão.</li>
 </ol>
-<p>Essa abordagem dá conteúdo técnico ao princípio de reconstruir melhor (<em>Build Back Better</em>): a reconstrução deixa de ser mera reposição do que falhou e passa a ser uma oportunidade de reduzir vulnerabilidade, proteger a população e preparar a infraestrutura para condições futuras. No Plano de Trabalho, a adaptação climática será tratada como critério de priorização e de desempenho, não como justificativa para inflar quantitativos sem evidência.</p>
+<p>Essa abordagem dá conteúdo técnico ao princípio de reconstruir melhor (<em>Build Back Better</em>; <a href="./10_referencias.html#ref-12">[12]</a>): a reconstrução deixa de ser mera reposição do que falhou e passa a ser uma oportunidade de reduzir vulnerabilidade, proteger a população e preparar a infraestrutura para condições futuras. No Plano de Trabalho, a adaptação climática será tratada como critério de priorização e de desempenho, não como justificativa para inflar quantitativos sem evidência.</p>
 </section>
 <section id="integração-com-o-swmm-e-com-o-plano-de-trabalho" class="level2">
 <h2 class="anchored" data-anchor-id="integração-com-o-swmm-e-com-o-plano-de-trabalho">6.7 Integração com o SWMM e com o Plano de Trabalho</h2>
@@ -519,9 +523,10 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <li><a href="https://idf-mc.dpm-sedec-sas.tech/api/v1/municipios/2504603">Ficha da API para Conde/PB (2504603)</a>.</li>
 <li><a href="data/downloads/clima/idf_mc_conde_tr25_tr50.csv">Fatores oficiais IDF-MC de Conde para TR25/TR50</a>.</li>
 <li><a href="data/downloads/clima/idf_mc_conde_metadados.json">Metadados do recorte oficial de Conde</a>.</li>
-<li><a href="https://doi.org/10.1016/j.jhydrol.2022.127956">Maity e Maity (2022), Changing pattern of intensity-duration-frequency curves</a>.</li>
+<li><a href="https://doi.org/10.1007/s11269-022-03313-y">Maity e Maity (2022), Changing Pattern of Intensity–Duration–Frequency Relationship of Precipitation due to Climate Change</a>.</li>
 <li><a href="https://ny-idf-projections.nrcc.cornell.edu/">NY Projected IDF Curves - NRCC/Cornell</a>.</li>
 </ul>
+<p>As referências completas e numeradas desta seção estão no <a href="./10_referencias.html">Capítulo 8 — Referências e rastreabilidade metodológica</a>.</p>
 <div class="info callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">

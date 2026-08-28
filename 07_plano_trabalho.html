@@ -251,43 +251,38 @@ document.addEventListener('DOMContentLoaded', function () {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>Conde_Pontos_metas.kmz</code></td>
-<td>convertido para 12 pontos em SIRGAS 2000 / UTM 25S</td>
-<td>referência para metas a conferir em campo</td>
+<td><a href="data/downloads/metas/Conde_Pontos_metas.kmz"><code>Conde_Pontos_metas.kmz</code></a></td>
+<td>KMZ original; conversão pública disponível no Anexo A</td>
+<td>referência para metas a conferir em campo; abrir no Google Earth Pro</td>
 </tr>
 <tr class="even">
-<td><code>pontos_erosao_fotos_conde.kmz</code></td>
-<td>9 pontos com registro fotográfico e coordenadas</td>
-<td>evidência de ocorrências; requer validação e vínculo com as bacias A/B</td>
+<td><a href="data/downloads/evidencias/pontos_erosao_fotos_conde.kmz"><code>pontos_erosao_fotos_conde.kmz</code></a></td>
+<td>KMZ original com pontos e referências fotográficas</td>
+<td>evidência de ocorrências; requer validação e vínculo com as Bacias A/B</td>
 </tr>
 <tr class="odd">
-<td><code>TrechosDissipacao.shp</code></td>
-<td>5 linhas em EPSG:31985, com campo <code>Id</code> igual a 0 em todas as feições</td>
+<td><a href="data/downloads/rede/TrechosDissipacao_shapefile.zip"><code>TrechosDissipacao.shp</code></a></td>
+<td>pacote ZIP/SHP com os arquivos auxiliares; 5 linhas em EPSG:31985</td>
 <td>referência da Bacia A; definir conexão, sentido e parâmetros hidráulicos</td>
 </tr>
 <tr class="even">
-<td><code>Trechos_Dissipacao_B.shp</code></td>
-<td>2 linhas em EPSG:31985</td>
+<td><a href="data/downloads/rede/Trechos_Dissipacao_B_shapefile.zip"><code>Trechos_Dissipacao_B.shp</code></a></td>
+<td>pacote ZIP/SHP com os arquivos auxiliares; 2 linhas em EPSG:31985</td>
 <td>saídas preliminares da Bacia B; validar conexão, sentido e estrutura</td>
 </tr>
 <tr class="odd">
-<td>Bacias A e B</td>
-<td>limites e revisões D8 disponíveis no pacote GIS</td>
-<td>recorte territorial e controle da continuidade</td>
+<td><a href="data/downloads/bacias/Bacia_A_revisada_D8.kmz">Bacia A — KMZ</a><br><a href="data/downloads/bacias/Bacia_A_revisada_D8.zip">Bacia A — SHP</a><br><a href="data/downloads/bacias/Bacia_B_revisada_D8.kmz">Bacia B — KMZ</a><br><a href="data/downloads/bacias/Bacia_B_revisada_D8.zip">Bacia B — SHP</a></td>
+<td>KMZ para Google Earth Pro e pacotes ZIP/SHP; revisões D8</td>
+<td>recorte territorial, visualização e controle da continuidade</td>
 </tr>
 <tr class="even">
-<td>MDT híbrido e curvas integradas</td>
-<td>disponíveis em EPSG:31985</td>
-<td>leitura preliminar de cotas, declividades e caminhos de escoamento</td>
-</tr>
-<tr class="odd">
-<td>Diagnóstico municipal REC-PB-2504603-20260802-01</td>
-<td>relatório local com ocorrências, mapas, propostas e orçamento preliminar</td>
-<td>cruzar metas, coordenadas, extensões, saídas e população afetada com o GIS/SWMM</td>
+<td><a href="data/downloads/mdt/MDT_hibrido_Bacias_AB_5m_EPSG31985.tif">MDT híbrido recortado A+B — GeoTIFF</a><br><a href="data/downloads/mdt/MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif">MDT híbrido completo — GeoTIFF</a><br><a href="data/downloads/curvas/curvas_nivel_AB_combinadas.gpkg">Curvas integradas A+B — GeoPackage</a><br><a href="data/downloads/curvas/curvas_nivel_AB_combinadas.zip">Curvas integradas A+B — SHP</a><br><a href="data/downloads/curvas/curvas_nivel_AB_5m.kmz">Curvas A+B — KMZ</a></td>
+<td>GeoTIFF, GeoPackage, ZIP/SHP e KMZ em SIRGAS 2000 / UTM 25S</td>
+<td>modelo de partida, leitura de cotas, declividades e caminhos de escoamento</td>
 </tr>
 </tbody>
 </table>
-<p>O registro detalhado da conferência está em <a href="data/inventario_pontos_criticos.json"><code>inventario_pontos_criticos.json</code></a>. Quatro linhas coincidem exatamente com nós de saída provisórios da rede; uma delas se aproxima do nó <code>N_A_0195</code>, mas requer revisão de snap. A camada ainda não foi incorporada automaticamente ao SWMM.</p>
+<p>Os arquivos vetoriais e raster acima são os produtos de referência disponibilizados para a conferência no ArcMap, QGIS e Google Earth Pro. O registro detalhado da conferência está em <a href="data/inventario_pontos_criticos.json"><code>inventario_pontos_criticos.json</code></a>. Quatro linhas coincidem exatamente com nós de saída provisórios da rede; uma delas se aproxima do nó <code>N_A_0195</code>, mas requer revisão de snap. A camada ainda não foi incorporada automaticamente ao SWMM.</p>
 <section id="evidência-de-suscetibilidade-e-recorte-das-metas" class="level3">
 <h3 class="anchored" data-anchor-id="evidência-de-suscetibilidade-e-recorte-das-metas">Evidência de suscetibilidade e recorte das metas</h3>
 <p>O mapa de suscetibilidade à erosão e o cruzamento espacial das marcações originais mostram que <strong>10 dos 12 pontos de metas estão dentro das Bacias A ou B</strong>. Quatro pontos — <code>3i</code>, <code>3f</code>, <code>6i</code> e <code>6f</code> — coincidem diretamente com as manchas originais de suscetibilidade alta e/ou média. Os pontos <code>5i</code> e <code>5f</code> estão na Bacia A, mas fora dessas manchas; os pontos <code>1i</code>, <code>1f</code>, <code>2f</code> e <code>2i - foto?</code> estão na Bacia B e precisam ser reavaliados após o lançamento da rede. Os pontos <code>4i</code> e <code>4f</code> estão fora do recorte A+B.</p>

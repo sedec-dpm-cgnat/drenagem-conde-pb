@@ -1,9 +1,11 @@
 Resultados da seleção espacial das metas
 
 MetasSelecionadas.shp foi interpretada como camada de polígonos.
-Os trechos foram selecionados quando apresentaram interseção linear superior a 0,01 m com um polígono.
+As geometrias das linhas foram cortadas pela interseção linear exata com os polígonos originais.
+Somente segmentos com comprimento superior a 0,01 m foram mantidos; um contato pontual não foi suficiente.
 Os campos COMPR_M, DPROP_M, DREQ25, DREQ50, Q25_CMS, Q50_CMS, V25_MPS, V50_MPS, STATUS_SW e CRITICO
-foram preservados da rede preliminar. OVERLAP_M indica o comprimento geométrico dentro do polígono.
+foram preservados da rede preliminar. COMP_REC_M indica o comprimento geométrico do segmento recortado;
+PERC_LINK_REC indica o percentual correspondente do link original. ID_LINK_SEG identifica cada segmento recortado.
 META_ID foi numerado como META_01, META_02... na ordem dos polígonos de entrada, pois o campo Id original
 estava zerado. A seleção é preliminar e deve ser revisada no ArcMap antes de compor a obra.
 
@@ -12,6 +14,10 @@ Meta 1 = antiga META_04 (Bacia A), incluindo o Dissipador 05;
 Meta 2 = antiga META_02 (Bacia B), incluindo o Dissipador B05;
 Meta 3 = fusão das antigas META_01 e META_03 (Bacia B), incluindo o Dissipador B01.
 O arquivo administrativo contém 71 associações de meta e 70 links físicos únicos.
+O arquivo trechos_metas_recortados.geojson contém 71 segmentos resultantes do recorte exato, distribuídos assim:
+Meta 1 = 45 segmentos e 1.108,53 m; Meta 2 = 8 segmentos e 665,45 m;
+Meta 3 = 18 segmentos e 1.729,59 m.
+O arquivo rede_fora_metas_recortada.geojson contém a diferença da rede em relação aos polígonos e serve somente como contexto.
 O link L_B_0022 é compartilhado entre as Metas 2 e 3 e deve ser tratado como
 dependência comum na revisão do Plano de Trabalho.
 Os envelopes formatados são apenas para apresentação; os polígonos originais

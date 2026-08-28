@@ -22,7 +22,6 @@
 
   const cores = { META_01: "#c35416", META_02: "#087f7b", META_03: "#6f42c1" };
   const nomesMetas = { META_01: "Meta 1", META_02: "Meta 2", META_03: "Meta 3" };
-  const metaLegadaParaFinal = { META_01: "META_03", META_02: "META_02", META_03: "META_03", META_04: "META_01" };
   const nomeMeta = (codigo) => nomesMetas[codigo] || codigo || "Meta";
   const map = L.map(container, {
     zoomControl: true,
@@ -57,48 +56,11 @@
     if (!resposta.ok) throw new Error(arquivo + " — HTTP " + resposta.status);
     return resposta.json();
   });
-  const carregarTexto = (arquivo) => fetch(arquivo).then((resposta) => {
-    if (!resposta.ok) throw new Error(arquivo + " — HTTP " + resposta.status);
-    return resposta.text();
-  });
   const carregar = (arquivo, destino, opcoes) => carregarJson(arquivo).then((dados) => {
     const camada = L.geoJSON(dados, opcoes).addTo(destino);
     camadasParaExtensao.push(camada);
     return camada;
   });
-
-  const parseCsv = (texto) => {
-    const registros = [];
-    let registro = [];
-    let campo = "";
-    let entreAspas = false;
-    for (let i = 0; i < texto.length; i += 1) {
-      const caractere = texto[i];
-      if (caractere === '"' && entreAspas && texto[i + 1] === '"') {
-        campo += '"';
-        i += 1;
-      } else if (caractere === '"') {
-        entreAspas = !entreAspas;
-      } else if (caractere === "," && !entreAspas) {
-        registro.push(campo);
-        campo = "";
-      } else if ((caractere === "\n" || caractere === "\r") && !entreAspas) {
-        if (caractere === "\r" && texto[i + 1] === "\n") i += 1;
-        registro.push(campo);
-        if (registro.some((valor) => valor.trim() !== "")) registros.push(registro);
-        registro = [];
-        campo = "";
-      } else {
-        campo += caractere;
-      }
-    }
-    if (campo !== "" || registro.length) {
-      registro.push(campo);
-      if (registro.some((valor) => valor.trim() !== "")) registros.push(registro);
-    }
-    const cabecalho = (registros.shift() || []).map((valor) => valor.replace(/^\uFEFF/, "").trim());
-    return registros.map((valores) => Object.fromEntries(cabecalho.map((chave, indice) => [chave, (valores[indice] || "").trim()])));
-  };
 
   const numero = (valor) => {
     const convertido = Number(valor);
@@ -123,11 +85,13 @@
   ].join("");
 
   const popupRede = (p, metas) => [
-    "<strong>", escapeHtml(p.id_link || "Trecho"), "</strong>",
+    "<strong>", escapeHtml(p.ID_LINK_SEG || p.id_link || "Trecho"), "</strong>",
+    p.ID_LINK_SEG ? ["<br>Link original: ", escapeHtml(p.id_link || "não informado")].join("") : "",
     "<br>Componente: ", escapeHtml(p.classe || "não informado"),
     "<br>Bacia: ", escapeHtml(p.bacia || (p.id_link || "").split("_")[1] || "não informada"),
     "<br>Meta(s): ", escapeHtml(metas.length ? metas.map(nomeMeta).join(", ") : "fora das metas"),
-    "<br>Comprimento: ", numero(p.comp_m), " m",
+    "<br>Comprimento do segmento: ", numero(p.COMP_REC_M ?? p.comp_m), " m",
+    p.COMP_REC_M ? ["<br>Percentual do link original: ", numero(p.PERC_LINK_REC), " %"].join("") : "",
     "<br>Diâmetro preliminar: ", numero(p.diam_m), " m",
     "<br>Declividade: ", numero(p.decl_pct), " %",
     "<br>Nós: ", escapeHtml(p.node_in || "não informado"), " → ", escapeHtml(p.node_out || "não informado"),
@@ -136,8 +100,10 @@
   const estiloBacia = (cor) => ({ color: cor, weight: 2, fillColor: cor, fillOpacity: 0.06, dashArray: "6 5" });
   const estiloForaMeta = { color: "#9aa3af", weight: 2.1, opacity: 0.82, dashArray: "8 7" };
   const estiloMeta = (codigo, classe) => {
-    const estilo = { color: cores[codigo], weight: classe === "TRONCO" ? 4.8 : 3.2, opacity: 0.98 };
-    if (classe === "COLETOR") estilo.dashArray = "8 6";
+    const classeNormalizada = String(classe || "").toUpperCase();
+    if (classeNormalizada === "DISSIPADOR") return { color: "#a21caf", weight: 5, opacity: 0.98 };
+    const estilo = { color: cores[codigo], weight: classeNormalizada === "TRONCO" ? 4.8 : 3.2, opacity: 0.98 };
+    if (classeNormalizada === "COLETOR") estilo.dashArray = "8 6";
     return estilo;
   };
 
@@ -188,47 +154,37 @@
       pointToLayer: (_, latlng) => L.circleMarker(latlng, { radius: 4, color: "#111827", weight: 1, fillColor: "#facc15", fillOpacity: 0.95 }),
       onEachFeature: (f, l) => l.bindPopup("<strong>Ponto de meta original</strong><br>" + escapeHtml(f.properties?.id || f.properties?.ID || "Identificação não informada")),
     }),
-    carregarJson("data/rede_linhas_A_nodal.geojson"),
-    carregarJson("data/rede_linhas_B_nodal.geojson"),
-    carregarTexto("data/metas_plano_trabalho/trechos_metas_administrativas_parametros.csv"),
+    carregarJson("data/metas_plano_trabalho/trechos_metas_recortados.geojson"),
+    carregarJson("data/metas_plano_trabalho/rede_fora_metas_recortada.geojson"),
   ];
 
   Promise.all(tarefas)
     .then((resultados) => {
-      const redeA = resultados[7];
-      const redeB = resultados[8];
-      const linhasMetas = parseCsv(resultados[9]);
-      const linksPorMeta = Object.fromEntries(Object.keys(cores).map((codigo) => [codigo, new Set()]));
-      const metasPorLink = new Map();
-
-      linhasMetas.forEach((linha) => {
-        const idLink = linha.ID_LINK;
-        const metaFinal = metaLegadaParaFinal[linha.META_ID] || linha.META_ADMIN;
-        if (!idLink || !linksPorMeta[metaFinal]) return;
-        linksPorMeta[metaFinal].add(idLink);
-        if (!metasPorLink.has(idLink)) metasPorLink.set(idLink, new Set());
-        metasPorLink.get(idLink).add(metaFinal);
-      });
-
-      const redeCompleta = [
-        ...(redeA.features || []).map((feature) => ({ ...feature, properties: { ...(feature.properties || {}), bacia: "A" } })),
-        ...(redeB.features || []).map((feature) => ({ ...feature, properties: { ...(feature.properties || {}), bacia: "B" } })),
-      ];
-      const criarCamadaRede = (features, destino, estilo) => {
-        const camada = L.geoJSON({ type: "FeatureCollection", features }, {
+      const segmentosMetas = resultados[7];
+      const segmentosFora = resultados[8];
+      const criarCamadaRede = (features, destino, estilo, metaCodigo = null) => {
+        const featuresComBacia = features.map((feature) => ({
+          ...feature,
+          properties: {
+            ...(feature.properties || {}),
+            bacia: feature.properties?.bacia || (feature.properties?.id_link || "").split("_")[1] || "",
+          },
+        }));
+        const camada = L.geoJSON({ type: "FeatureCollection", features: featuresComBacia }, {
           style: estilo,
-          onEachFeature: (feature, layer) => layer.bindPopup(popupRede(feature.properties || {}, Array.from(metasPorLink.get(feature.properties?.id_link) || []))),
+          onEachFeature: (feature, layer) => layer.bindPopup(popupRede(feature.properties || {}, metaCodigo ? [metaCodigo] : [])),
         }).addTo(destino);
         camadasParaExtensao.push(camada);
         return camada;
       };
 
-      criarCamadaRede(redeCompleta.filter((feature) => !(metasPorLink.get(feature.properties?.id_link)?.size)), redeRestante, estiloForaMeta);
+      criarCamadaRede(segmentosFora.features || [], redeRestante, estiloForaMeta);
       Object.keys(cores).forEach((codigo) => {
         criarCamadaRede(
-          redeCompleta.filter((feature) => linksPorMeta[codigo].has(feature.properties?.id_link)),
+          (segmentosMetas.features || []).filter((feature) => feature.properties?.META_ID === codigo),
           metaCamadas[codigo],
           (feature) => estiloMeta(codigo, feature.properties?.classe),
+          codigo,
         );
       });
 

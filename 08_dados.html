@@ -516,6 +516,41 @@ document.addEventListener('DOMContentLoaded', function () {
 <td>Parâmetros de diâmetro, vazão, declividade, nós e extensão, com META_ORIG e ETAPA_META para auditoria</td>
 </tr>
 <tr class="even">
+<td><a href="data/metas_plano_trabalho/trechos_metas_recortados.geojson">Trechos das metas — recorte exato</a></td>
+<td>GeoJSON</td>
+<td>Somente os segmentos da rede efetivamente contidos nos polígonos originais de auditoria, com geometria cortada nos limites</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/rede_fora_metas_recortada.geojson">Rede fora das metas — recorte complementar</a></td>
+<td>GeoJSON</td>
+<td>Diferença da rede em relação ao conjunto dos polígonos, mantida como contexto e referência</td>
+</tr>
+<tr class="even">
+<td><a href="data/metas_plano_trabalho/meta_01_trechos_recortados.geojson">Meta 1 — segmentos recortados</a></td>
+<td>GeoJSON</td>
+<td>Somente as linhas da Meta 1 efetivamente contidas no polígono original de auditoria</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/meta_02_trechos_recortados.geojson">Meta 2 — segmentos recortados</a></td>
+<td>GeoJSON</td>
+<td>Somente as linhas da Meta 2 efetivamente contidas no polígono original de auditoria</td>
+</tr>
+<tr class="even">
+<td><a href="data/metas_plano_trabalho/meta_03_trechos_recortados.geojson">Meta 3 — segmentos recortados</a></td>
+<td>GeoJSON</td>
+<td>Somente as linhas da Meta 3 efetivamente contidas nos polígonos originais de auditoria</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/trechos_metas_recortados_parametros.csv">Parâmetros dos trechos recortados</a></td>
+<td>CSV</td>
+<td>ID do link original, ID do segmento, meta, classe, comprimento recortado, percentual do link e parâmetros hidráulicos</td>
+</tr>
+<tr class="odd">
+<td><a href="data/metas_plano_trabalho/resumo_recorte_exato_metas.csv">Resumo do recorte exato por meta</a></td>
+<td>CSV</td>
+<td>Quantidade de segmentos e extensão efetivamente contida nos polígonos de auditoria</td>
+</tr>
+<tr class="even">
 <td><a href="data/metas_plano_trabalho/etapas_metas_administrativas.csv">Etapas de implantação das metas</a></td>
 <td>CSV</td>
 <td>Projeto básico, troncos, coletores, dissipadores e pavimentação, por ordem de implantação preliminar</td>
@@ -553,7 +588,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="odd">
 <td><a href="assets/mapa_indicativo_trechos_metas.svg">Mapa indicativo dos trechos das metas</a></td>
 <td>SVG</td>
-<td>Rede completa em cinza e trechos de cada meta destacados por cor, com trecho compartilhado identificado</td>
+<td>Rede fora dos polígonos em cinza e somente os segmentos recortados dentro de cada meta destacados por cor</td>
 </tr>
 <tr class="even">
 <td><a href="07_plano_trabalho.html#seleção-espacial-executada-para-as-metas">Mapa interativo das metas</a></td>
@@ -563,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <tr class="odd">
 <td><a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kml">Metas e rede completa — KML</a></td>
 <td>KML</td>
-<td>Arquivo consolidado para Google Earth Pro, com pastas por meta e contexto da rede</td>
+<td>Arquivo consolidado para Google Earth Pro, com segmentos recortados exatos por meta e contexto complementar</td>
 </tr>
 <tr class="even">
 <td><a href="data/metas_plano_trabalho/metas_administrativas_rede_completa.kmz">Metas e rede completa — KMZ</a></td>

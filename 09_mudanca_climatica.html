@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="styles.css">
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams' },
   svg: { fontCache: 'global' }
 };
 </script>
@@ -277,7 +277,7 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 <p>Esta mudança corrige a descrição anterior, que apresentava uma adaptação independente com GEV e amostra NEX-GDDP como se fosse a metodologia principal. A amostra NEX-GDDP e os gráficos anteriores ficam preservados como material exploratório/histórico; os fatores IDF-MC são os adotados para a análise de adaptação desta versão. Onde uma grandeza não puder ser determinada pela ferramenta ou pelos dados de projeto, ela deve permanecer como <code>null</code>, sem estimativa artificial.</p>
 <section id="estrutura-técnica-da-idf-e-análise-de-frequência" class="level3">
 <h3 class="anchored" data-anchor-id="estrutura-técnica-da-idf-e-análise-de-frequência">6.3.1 Estrutura técnica da IDF e análise de frequência</h3>
-<p>A organização desta subseção segue a documentação do IDF-MC e o padrão de apresentação técnica adotado nas notas de IDF consultadas. O objetivo é explicitar a origem dos dados, a equação, a formação das séries de extremos, a comparação entre a linha de base e o futuro e a incerteza do conjunto. Parâmetros, períodos e resultados de outros estados não são transferidos para Conde.</p>
+<p>A organização desta subseção segue a documentação do IDF-MC e o padrão de apresentação técnica adotado nas notas de IDF consultadas. O objetivo é explicitar a origem dos dados, a equação, a formação das séries de extremos, a comparação entre a linha de base e o futuro e a incerteza do conjunto. A formulação é apresentada em diálogo com a literatura de relações IDF (<a href="./10_referencias.html#ref-28">[28]</a>) e com a referência metodológica de IDFs sob mudança climática (<a href="./10_referencias.html#ref-7">[7]</a>). Parâmetros, períodos e resultados de outros estados não são transferidos para Conde.</p>
 <section id="agregação-dos-fatores-e-tradução-para-a-chuva-de-projeto" class="level4">
 <h4 class="anchored" data-anchor-id="agregação-dos-fatores-e-tradução-para-a-chuva-de-projeto">Agregação dos fatores e tradução para a chuva de projeto</h4>
 <p>O procedimento de adaptação climática separa três objetos que não devem ser confundidos: a <strong>linha de base</strong>, que representa a chuva de projeto atualmente adotada; a <strong>projeção climática</strong>, que representa a alteração relativa indicada pelo conjunto de modelos; e o <strong>envelope de incerteza</strong>, que expressa a dispersão entre os modelos. Essa separação segue a cadeia publicada pelo Portal IDF-MC da SEDEC/MIDR (<a href="./10_referencias.html#ref-8">[8]</a>), em diálogo com a literatura de IDFs sob mudança climática (<a href="./10_referencias.html#ref-7">[7]</a>) e com a recomendação do IPCC de explicitar cenários, períodos e incertezas (<a href="./10_referencias.html#ref-9">[9]</a>).</p>
@@ -286,29 +286,34 @@ Figura 6.2 - Regra de chuva de projeto e tradução preliminar da incerteza clim
 FC_{m,c,p}(T)=
 \frac{Q^{\mathrm{futuro}}_{m,c,p}(T)}
 {Q^{\mathrm{histórico}}_{m,c}(T)}
+\tag{6.1}
 \]</div>
-<p>Os fatores individuais são então ordenados e resumidos por quantis empíricos. Se \(\mathcal{F}_{c,p}(T)\) é o conjunto dos fatores válidos para uma combinação de cenário, período e recorrência, o envelope adotado é:</p>
+<p>Os fatores individuais são então ordenados e resumidos por quantis empíricos. Se \(\mathcal{F}_{c,p}(T)\) é o conjunto dos fatores válidos para uma combinação de cenário, período e recorrência, o envelope adotado é (<a href="./10_referencias.html#ref-7">[7]</a>, <a href="./10_referencias.html#ref-8">[8]</a>):</p>
 <div class="math display">\[
 FC_q(T,c,p)=
 \operatorname{quantil}_q\!\left(\mathcal{F}_{c,p}(T)\right),
 \qquad q\in\{0{,}10,\;0{,}50,\;0{,}90\}
+\tag{6.2}
 \]</div>
 <p>Assim, p10, p50 e p90 não são intervalos de confiança estatística da estação. São posições do conjunto de modelos e devem ser lidas como uma faixa de sensibilidade climática. A contagem de modelos válidos acompanha cada fator; modelos sem dados suficientes ou sem quantil calculável não entram silenciosamente no denominador. Também não se calcula uma “chuva média dos modelos” para substituir a linha de base: primeiro se calcula o fator por modelo e depois se resume a distribuição desses fatores.</p>
 <p>A tradução do fator para a chuva de projeto é multiplicativa, preservando a linha de base observada e tornando explícita a hipótese de transferência de escala. Para intensidade média e precipitação acumulada, respectivamente:</p>
 <div class="math display">\[
 i_q^{\mathrm{futuro}}(T,t,c,p)=
 i^{\mathrm{base}}(T,t)\,FC_q(T,c,p)
+\tag{6.3}
 \]</div>
 <div class="math display">\[
 P_q^{\mathrm{futuro}}(T,t,c,p)=
 P^{\mathrm{base}}(T,t)\,FC_q(T,c,p)
+\tag{6.4}
 \]</div>
-<p>Quando o fator oficial estiver disponível apenas para uma duração de referência, a aplicação às durações menores é uma <strong>hipótese de sensibilidade</strong>, e não uma nova IDF futura validada. No projeto básico, cada duração utilizada no SWMM deverá ser sustentada por dados subdiários, desagregação validada e documentação do release. A conversão de chuva acumulada em hietograma deve conservar o padrão temporal da chuva de base apenas como aproximação preliminar:</p>
+<p>Quando o fator oficial estiver disponível apenas para uma duração de referência, a aplicação às durações menores é uma <strong>hipótese de sensibilidade</strong>, e não uma nova IDF futura validada. No projeto básico, cada duração utilizada no SWMM deverá ser sustentada por dados subdiários, desagregação validada e documentação do release. A conversão de chuva acumulada em hietograma deve conservar o padrão temporal da chuva de base apenas como aproximação preliminar, pois a distribuição temporal é uma etapa distinta da relação IDF (<a href="./10_referencias.html#ref-27">[27]</a>):</p>
 <div class="math display">\[
 r_k=\frac{P_k^{\mathrm{base}}}{P^{\mathrm{base}}},
 \qquad
 P_{k,q}^{\mathrm{futuro}}=
 r_k\,P_q^{\mathrm{futuro}}
+\tag{6.5}
 \]</div>
 <p>O procedimento produz, portanto, uma família de hietogramas identificada por cenário, período, quantil e recorrência. Para esta concepção, <strong>TR25</strong> é aplicado à sensibilidade de coletores e bueiros e <strong>TR50</strong> à sensibilidade de troncos principais e dissipadores. A linha de base <code>BASE_TR25</code> e <code>BASE_TR50</code> permanece intacta, enquanto cada combinação <code>IDFMC_[cenário]_[período]_[p10|p50|p90]_TR25</code> ou <code>..._TR50</code> é rodada separadamente no SWMM. Nenhuma projeção sobrescreve a entrada tradicional.</p>
 <table class="caption-top table">
@@ -355,11 +360,12 @@ r_k\,P_q^{\mathrm{futuro}}
 <p>Na leitura hidráulica, a comparação deve alcançar a vazão de pico, o volume escoado, o enchimento, a sobrecarga, a velocidade, a energia na saída e a condição dos dissipadores. O fator climático não é aplicado diretamente ao diâmetro como se fosse uma relação linear. Para uma triagem de conduto circular em regime cheio, a aproximação de Manning pode orientar a ordem de grandeza, mas não substitui a verificação de nível, declividade, material, perdas, remanso, conexão e condição de jusante. O resultado final deve mostrar a faixa de desempenho entre p10 e p90, com p50 como referência central, e não apenas um único dimensionamento.</p>
 <section id="linha-de-base-local-e-forma-funcional" class="level4">
 <h4 class="anchored" data-anchor-id="linha-de-base-local-e-forma-funcional">Linha de base local e forma funcional</h4>
-<p>A linha de base climática do IDF-MC para Conde usa máximas anuais diárias de 1981–2024, com 44 anos válidos. A distribuição Gumbel ajustada por momentos pode ser escrita como:</p>
+<p>A linha de base climática do IDF-MC para Conde usa máximas anuais diárias de 1981–2024, com 44 anos válidos. A distribuição Gumbel ajustada por momentos pode ser escrita como (<a href="./10_referencias.html#ref-8">[8]</a>, <a href="./10_referencias.html#ref-28">[28]</a>):</p>
 <div class="math display">\[
 Q(T)=\beta+\alpha\left[-\ln\left(-\ln\left(1-\frac{1}{T}\right)\right)\right]
+\tag{6.6}
 \]</div>
-<p>Na parametrização retornada pela API, <code>alpha</code> é o parâmetro de escala e <code>beta</code> o parâmetro de posição. A ficha oficial informa, para Conde, <code>alpha = 23,5415</code> e <code>beta = 70,665924</code>; esses valores reproduzem a média informada pela ficha (<code>beta + gamma x alpha</code>, com <code>gamma</code> igual à constante de Euler–Mascheroni). O valor de 24 horas é obtido pela conversão fixa de 1,13. A curva tradicional da estação, usada na rodada-base do SWMM, continua sendo mantida para comparação e para não misturar automaticamente fontes com naturezas distintas.</p>
+<p>Na parametrização retornada pela API, <code>alpha</code> é o parâmetro de escala e <code>beta</code> o parâmetro de posição. A ficha oficial informa, para Conde, <code>alpha = 23,5415</code> e <code>beta = 70,665924</code>; esses valores reproduzem a média informada pela ficha (<code>beta + gamma x alpha</code>, com <code>gamma</code> igual à constante de Euler–Mascheroni). O valor de 24 horas é obtido pela conversão fixa de 1,13. A curva tradicional da estação, usada na rodada-base do SWMM, continua sendo mantida para comparação e para não misturar automaticamente fontes com naturezas distintas. A forma de quantil apresentada é uma parametrização clássica de extremos e deve ser lida em conjunto com a documentação do IDF-MC (<a href="./10_referencias.html#ref-8">[8]</a>) e com a literatura de relações IDF (<a href="./10_referencias.html#ref-28">[28]</a>).</p>
 </section>
 <section id="formação-das-séries-de-extremos" class="level4">
 <h4 class="anchored" data-anchor-id="formação-das-séries-de-extremos">Formação das séries de extremos</h4>
@@ -367,11 +373,12 @@ Q(T)=\beta+\alpha\left[-\ln\left(-\ln\left(1-\frac{1}{T}\right)\right)\right]
 </section>
 <section id="ajuste-de-extremos-quantis-e-comparação-entre-fontes" class="level4">
 <h4 class="anchored" data-anchor-id="ajuste-de-extremos-quantis-e-comparação-entre-fontes">Ajuste de extremos, quantis e comparação entre fontes</h4>
-<p>Para cada modelo climático, a Gumbel é ajustada na janela histórica 1950–2014 e na janela futura do cenário/período. O fator de mudança é calculado para o mesmo modelo e tempo de retorno:</p>
+<p>Para cada modelo climático, a Gumbel é ajustada na janela histórica 1950–2014 e na janela futura do cenário/período. O fator de mudança é calculado para o mesmo modelo e tempo de retorno, conforme a comparação relativa adotada pelo IDF-MC (<a href="./10_referencias.html#ref-8">[8]</a>) e a literatura de IDFs em clima não estacionário (<a href="./10_referencias.html#ref-7">[7]</a>):</p>
 <div class="math display">\[
 FC_{m,c,p}(T)=
 \frac{Q^{\mathrm{futuro}}_{m,c,p}(T)}
 {Q^{\mathrm{histórico}}_{m,c}(T)}
+\tag{6.7}
 \]</div>
 <p>O conjunto é resumido por p10, p50 e p90 e acompanhado da quantidade de modelos válidos. Para Conde, o release informa 31 modelos em SSP126, 30 em SSP245, 25 em SSP370 e 33 em SSP585. A IDF tradicional da estação permanece como referência operacional do SWMM; o fator IDF-MC é o envelope de adaptação.</p>
 <table class="caption-top table">
@@ -461,6 +468,7 @@ FC_{m,c,p}(T)=
 <p>Na triagem de condutos circulares, um aumento de vazão <code>F</code> não implica aumento linear de diâmetro. A aproximação de escala para um conduto em condições comparáveis é:</p>
 <div class="math display">\[
 \frac{D}{D_0}\approx F^{3/8}
+\tag{6.8}
 \]</div>
 <p>Para estruturas de dissipação, entretanto, o aumento de vazão altera também energia, velocidade, ressalto, arraste e risco de erosão; por isso, a adaptação será apresentada por vazão e desempenho da estrutura, e não por uma simples porcentagem de aumento dimensional.</p>
 </section>
@@ -472,10 +480,12 @@ FC_{m,c,p}(T)=
 <p>A operação realizada no recorte pode ser representada por:</p>
 <div class="math display">\[
 P^{max}_{g,m,c,y}=\max_{d\in y}\left(P_{g,m,c,d}\right)
+\tag{6.9}
 \]</div>
 <p>em que <code>g</code> é a célula de grade, <code>m</code> é o modelo, <code>c</code> é o cenário, <code>y</code> é o ano e <code>d</code> representa os dias do ano. Para comparar uma janela futura <code>p</code> com o histórico do mesmo modelo, calcula-se:</p>
 <div class="math display">\[
 FC_{m,c,p}(T_R)=\frac{Q^{futuro}_{m,c,p}(T_R)}{Q^{histórico}_{m,c}(T_R)}
+\tag{6.10}
 \]</div>
 <p>Os fatores são resumidos por p10, p50 e p90 e mantidos junto da contagem de modelos válidos. Nesta concepção, o NEX-GDDP-CMIP6 é uma fonte complementar de sensibilidade e contexto. A fonte operacional dos fatores climáticos aplicados à apresentação das IDFs é o Portal IDF-MC da SEDEC/MIDR, que possui sua própria cadeia de observação, ajuste, desagregação e agregação de incerteza. Assim, não se misturam silenciosamente uma projeção diária de grade, uma IDF observada e um hietograma subdiário.</p>
 </section>

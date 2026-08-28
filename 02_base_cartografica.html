@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="styles.css">
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams' },
   svg: { fontCache: 'global' }
 };
 </script>
@@ -272,15 +272,18 @@ window.MathJax = {
 <p>Há duas situações que precisam ser separadas. A <strong>calibração absoluta</strong> requerida para um produto técnico definitivo deve comparar o raster com pontos de altitude ortométrica conhecida, amostrados no próprio MDE. Seu modelo OLS é:</p>
 <div class="math display">\[
 h_{\mathrm{ortométrica}}=a\,h_{\mathrm{MDE}}+b
+\tag{2.1}
 \]</div>
 <p>O relatório deve guardar n, coeficientes <em>a</em> e <em>b</em>, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al.&nbsp;(2019) (<a href="./10_referencias.html#ref-1">[1]</a>), cujo procedimento é usado aqui como fundamento de documentação, sem transferir automaticamente coeficientes ou resultados do estudo original para Conde.</p>
 <p>Como não havia GCP independentes disponíveis, o processamento realizado adotou apenas um <strong>alinhamento relativo entre superfícies</strong>. Na área de sobreposição, a superfície drone agregada foi relacionada à base de curvas KMZ por:</p>
 <div class="math display">\[
 h_{\mathrm{drone,25m}}=-15{,}5161+0{,}8755\,h_{\mathrm{base\,KMZ}}
+\tag{2.2}
 \]</div>
 <p>A transformação inversa foi aplicada ao drone antes da composição:</p>
 <div class="math display">\[
 h_{\mathrm{drone,ajustado}}=\frac{h_{\mathrm{drone}}-b}{a}
+\tag{2.3}
 \]</div>
 <p>O registro da integração informa 1.536 células válidas na sobreposição e 1.504 após a remoção dos resíduos fora dos percentis 1% e 99%; R² = 0,9832 e RMSE dos resíduos = 2,971 m. Esses números expressam <strong>concordância relativa entre dois modelos</strong>, e não erro absoluto em relação ao terreno. A inclinação <em>a</em> = 0,8755 aciona o diagnóstico previsto para valores abaixo de 0,9: podem estar presentes atenuação por erro no preditor, faixa altimétrica limitada, diferença de suporte espacial ou observações influentes.</p>
 <figure class="map-figure figure" style="break-inside:avoid;page-break-inside:avoid;">
@@ -310,12 +313,13 @@ h_{\mathrm{híbrido}}(x,y)=\begin{cases}
 h_{\mathrm{drone,ajustado}}(x,y),&amp; (x,y)\in M_{\mathrm{drone}}\\
 h_{\mathrm{base\,legada}}(x,y),&amp; (x,y)\notin M_{\mathrm{drone}}
 \end{cases}
+\tag{2.4}
 \]</div>
 <p>O operador <span class="math inline">\(M_{\mathrm{drone}}\)</span> é uma máscara de cobertura válida, não um mapa de precisão. Em um projeto básico, a máscara deverá ser substituída ou complementada por uma especificação de acurácia e por pontos de verificação distribuídos espacialmente.</p>
 </section>
 <section id="derivados-e-recorte-ab" class="level3">
 <h3 class="anchored" data-anchor-id="derivados-e-recorte-ab">Derivados e recorte A+B</h3>
-<p>Do modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. As curvas de 1 m são uma densificação cartográfica da grade de 5 m; não significam que o MDT tenha acurácia vertical de 1 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução, nodata e metadados.</p>
+<p>Do modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. As curvas de 1 m são uma densificação cartográfica da grade de 5 m; não significam que o MDT tenha acurácia vertical de 1 m. A derivação de direções e áreas contribuintes segue a lógica de análise hidrológica em MDE descrita por Tarboton (1997) (<a href="./10_referencias.html#ref-25">[25]</a>), mas as feições urbanas devem ser conferidas no cadastro e em campo. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução, nodata e metadados.</p>
 </section>
 </section>
 <section id="produtos-derivados-para-a-drenagem" class="level2">

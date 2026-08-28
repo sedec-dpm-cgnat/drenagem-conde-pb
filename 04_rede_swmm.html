@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams' },
   svg: { fontCache: 'global' }
 };
 </script>
@@ -331,14 +331,16 @@ Figura 4.1 — Elementos e fluxo lógico do modelo SWMM. A chuva é aplicada às
 <p>Na parte hidrológica, o balanço superficial pode ser resumido por:</p>
 <div class="math display">\[
 \frac{\partial d}{\partial t}=i-e-f-q
+\tag{4.1}
 \]</div>
 <p>Na parte hidráulica, as equações unidimensionais de Saint-Venant são representadas, de forma resumida, por:</p>
 <div class="math display">\[
 \frac{\partial A}{\partial t}+\frac{\partial Q}{\partial x}=q_l,
 \qquad
 \frac{\partial Q}{\partial t}+\frac{\partial}{\partial x}\left(\frac{Q^2}{A}\right)+gA\frac{\partial H}{\partial x}+gA(S_f-S_0)=0
+\tag{4.2}
 \]</div>
-<p>Os símbolos e as hipóteses dessas equações são detalhados no capítulo de estudos hidrológicos. Aqui, o ponto operacional é que o SWMM não calcula um diâmetro a partir da chuva de forma isolada: ele simula a resposta temporal da rede inteira. O diâmetro preliminar, a vazão de chegada ao dissipador e a identificação de trechos críticos dependem conjuntamente das áreas de contribuição, dos parâmetros de perdas, das cotas, das seções, da rugosidade, das conexões e das condições de jusante. Os arquivos deste relatório são, portanto, modelos de concepção sujeitos à conferência cadastral, topográfica, geotécnica e de campo.</p>
+<p>Os símbolos e as hipóteses dessas equações são detalhados no capítulo de estudos hidrológicos. Aqui, o ponto operacional é que o SWMM não calcula um diâmetro a partir da chuva de forma isolada: ele simula a resposta temporal da rede inteira. O diâmetro preliminar, a vazão de chegada ao dissipador e a identificação de trechos críticos dependem conjuntamente das áreas de contribuição, dos parâmetros de perdas, das cotas, das seções, da rugosidade, das conexões e das condições de jusante (<a href="./10_referencias.html#ref-4">[4]</a>, <a href="./10_referencias.html#ref-19">[19]</a>, <a href="./10_referencias.html#ref-20">[20]</a>). Os arquivos deste relatório são, portanto, modelos de concepção sujeitos à conferência cadastral, topográfica, geotécnica e de campo.</p>
 </section>
 <section id="metodologia-de-construção-e-verificação-do-modelo" class="level3">
 <h3 class="anchored" data-anchor-id="metodologia-de-construção-e-verificação-do-modelo">Metodologia de construção e verificação do modelo</h3>

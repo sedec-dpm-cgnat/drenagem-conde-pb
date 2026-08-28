@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="styles.css">
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], tags: 'ams' },
   svg: { fontCache: 'global' }
 };
 </script>
@@ -258,11 +258,13 @@ window.MathJax = {
 <p>A relação intensidade–duração–frequência usada na linha de base é:</p>
 <div class="math display">\[
 i(T_R,t)=\frac{1424{,}1\,T_R^{0{,}1305}}{(t+23{,}6)^{0{,}7468}}
+\tag{3.1}
 \]</div>
-<p>(<a href="./10_referencias.html#ref-14">[14]</a>; relação legada preservada no estudo anterior).</p>
+<p>(<a href="./10_referencias.html#ref-14">[14]</a>, <a href="./10_referencias.html#ref-28">[28]</a>; relação legada preservada no estudo anterior).</p>
 <p>em que <code>i</code> é a intensidade média da chuva, em mm/h; <code>Tr</code> é o período de retorno, em anos; e <code>t</code> é a duração, em minutos. Os parâmetros <code>1424,1</code>, <code>0,1305</code>, <code>23,6</code> e <code>0,7468</code> são os coeficientes da relação preservada no modelo anterior. A precipitação acumulada correspondente é:</p>
 <div class="math display">\[
 P(T_R,t)=i(T_R,t)\,\frac{t}{60}
+\tag{3.2}
 \]</div>
 <p>com <code>P</code> em milímetros. A conversão é necessária porque a IDF fornece intensidade média na duração, enquanto o SWMM recebe uma série temporal de chuva.</p>
 <p>Na forma funcional, <code>a</code> é o coeficiente de escala, <code>b</code> controla a dependência do período de retorno, <code>c</code> desloca a duração para representar o comportamento nas chuvas curtas e <code>d</code> controla o decaimento da intensidade com a duração. Esses parâmetros não são parâmetros do SWMM: são coeficientes estatísticos da relação de chuva intensa. Nesta concepção, foram preservados por rastreabilidade do estudo anterior; a série original e a memória de ajuste ainda precisam ser anexadas para que se determinem, de forma independente, intervalo de confiança, p-valor e qualidade do ajuste.</p>
@@ -355,8 +357,9 @@ Figura 3.1 — Curvas IDF da linha de base adotada. TR25 e TR50 aparecem destaca
 <p>O período de retorno é interpretado pela relação:</p>
 <div class="math display">\[
 p_e=\frac{1}{T_R},\qquad F(z_T)=1-\frac{1}{T_R}
+\tag{3.3}
 \]</div>
-<p>em que <code>p_e</code> é a probabilidade anual de excedência do evento de referência. Assim, TR25 corresponde a uma probabilidade anual de excedência de 4% e TR50 a 2%, sem significar que o evento ocorrerá exatamente uma vez a cada 25 ou 50 anos. Eventos podem ocorrer em anos consecutivos; o período de retorno é uma medida estatística de frequência.</p>
+<p>em que <code>p_e</code> é a probabilidade anual de excedência do evento de referência. Assim, TR25 corresponde a uma probabilidade anual de excedência de 4% e TR50 a 2%, sem significar que o evento ocorrerá exatamente uma vez a cada 25 ou 50 anos. Eventos podem ocorrer em anos consecutivos; o período de retorno é uma medida estatística de frequência (<a href="./10_referencias.html#ref-28">[28]</a>).</p>
 <p>Em uma análise de máximas anuais, cada ano contribui com o maior acumulado para a duração considerada. Se <code>F</code> é a distribuição de extremos ajustada, o quantil de projeto é o valor <code>z_T</code> cuja probabilidade de não excedência é <code>1 - 1/T_R</code>. Essa interpretação pressupõe que a amostra seja suficientemente homogênea e que a distribuição adotada represente o regime de extremos; quando há não estacionariedade climática, a hipótese de uma única distribuição fixa precisa ser explicitamente revista.</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/curvas_frequencia_base.png" alt="Curvas de precipitação acumulada em função do período de retorno para quatro durações" class="figure-img">
@@ -423,8 +426,9 @@ P_j=i(T_R,t_j)\frac{t_j}{60},\qquad
 \Delta P_j=P_j-P_{j-1},\qquad
 w_j=\frac{\Delta P_j}{P_{total}},\qquad
 \sum_j w_j=1
+\tag{3.4}
 \]</div>
-<p>Quando a curva IDF é usada para obter os acumulados <code>P_j</code>, as diferenças sucessivas <code>Delta P_j</code> são as lâminas incrementais. Quando se parte de uma série já temporalizada, como a série tradicional preservada, o total é conferido diretamente por <code>P_total = soma(i_j x Delta t / 60)</code> e os pesos <code>w_j</code> registram a fração de chuva de cada intervalo. O <code>Rain Gage</code> do SWMM recebe, então, o horário, o valor de chuva e a unidade explicitamente identificados; a curva IDF, sozinha, não define a posição do pico no tempo.</p>
+<p>Quando a curva IDF é usada para obter os acumulados <code>P_j</code>, as diferenças sucessivas <code>Delta P_j</code> são as lâminas incrementais. Quando se parte de uma série já temporalizada, como a série tradicional preservada, o total é conferido diretamente por <code>P_total = soma(i_j x Delta t / 60)</code> e os pesos <code>w_j</code> registram a fração de chuva de cada intervalo. O <code>Rain Gage</code> do SWMM recebe, então, o horário, o valor de chuva e a unidade explicitamente identificados; a curva IDF, sozinha, não define a posição do pico no tempo. A escolha da distribuição temporal é uma etapa própria da chuva de projeto, documentada aqui como hietograma tradicional preservado e relacionada à literatura de padrões temporais de tempestades (<a href="./10_referencias.html#ref-27">[27]</a>).</p>
 <figure class="map-figure figure">
 <img src="data/downloads/clima/hietogramas_base_tr25_tr50.png" alt="Hietogramas e precipitações acumuladas TR25 e TR50 usados na primeira rodada do SWMM" class="figure-img">
 <figcaption>
@@ -514,18 +518,22 @@ Figura 3.3 — Hietogramas de projeto tradicionais e precipitação acumulada. A
 <p>No SWMM, a transformação não é reduzida ao método racional <code>Q = C i A</code>. O modelo representa cada subcatchment como uma unidade hidrológica com chuva, infiltração, evaporação, armazenamento superficial e escoamento para um nó. O balanço de água superficial pode ser resumido por:</p>
 <div class="math display">\[
 \frac{\partial d}{\partial t}=i-e-f-q
+\tag{3.5}
 \]</div>
 <p>em que <code>d</code> é a lâmina armazenada na superfície, <code>i</code> é a chuva incidente, <code>e</code> é a evaporação, <code>f</code> é a infiltração e <code>q</code> é a descarga superficial por unidade de área. A relação de descarga depende da largura hidráulica, da declividade, da rugosidade e da lâmina excedente; em forma proporcional, pode ser escrita como:</p>
 <div class="math display">\[
 q=\frac{K}{n}\frac{W}{A}S^{1/2}(d-d_s)^{5/3}
+\tag{3.6}
 \]</div>
 <p>O coeficiente <code>K</code> representa a conversão de unidades, <code>n</code> é a rugosidade de Manning, <code>W/A</code> é a largura característica normalizada, <code>S</code> é a declividade e <code>d_s</code> é a profundidade de armazenamento. A formulação acima é uma forma resumida da rotina de reservatório não linear do SWMM e não deve ser usada para substituir a implementação do programa (<a href="./10_referencias.html#ref-19">[19]</a>).</p>
 <p>Depois da geração do escoamento, o roteamento na rede resolve a continuidade e a quantidade de movimento. Para o roteamento dinâmico, selecionado nos arquivos pela opção <code>DYNWAVE</code>, a forma unidimensional resumida das equações de Saint-Venant é:</p>
 <div class="math display">\[
 \frac{\partial A}{\partial t}+\frac{\partial Q}{\partial x}=q_l
+\tag{3.7}
 \]</div>
 <div class="math display">\[
 \frac{\partial Q}{\partial t}+\frac{\partial}{\partial x}\left(\frac{Q^2}{A}\right)+gA\frac{\partial H}{\partial x}+gA(S_f-S_0)=0
+\tag{3.8}
 \]</div>
 <p>Nessas equações, <code>A</code> é a área molhada, <code>Q</code> é a vazão, <code>q_l</code> é a contribuição lateral, <code>H</code> é a carga hidráulica, <code>S_f</code> é a perda por atrito e <code>S_0</code> é a declividade do leito. O método considera, conforme a configuração e os dados fornecidos, efeitos de inércia, pressão, atrito, remanso, refluxo, sobrecarga e alagamento (<a href="./10_referencias.html#ref-20">[20]</a>). Por isso, a vazão de pico e o diâmetro preliminar dependem da rede inteira, das condições de jusante e da sequência temporal da chuva.</p>
 <p>O modelo deve ser avaliado por:</p>
@@ -547,10 +555,12 @@ q=\frac{K}{n}\frac{W}{A}S^{1/2}(d-d_s)^{5/3}
 <p>Para a célula <code>g</code>, o modelo <code>m</code>, o cenário <code>c</code> e o ano <code>y</code>, a tabela local representa a redução da série diária pela operação:</p>
 <div class="math display">\[
 P^{max}_{g,m,c,y}=\max_{d\in y}\left(P_{g,m,c,d}\right)
+\tag{3.9}
 \]</div>
 <p>Essa máxima anual pode ser ajustada por uma distribuição de extremos e comparada entre a janela histórica e uma janela futura. Um fator de mudança exploratório é:</p>
 <div class="math display">\[
 FC_{m,c,p}(T_R)=\frac{Q^{futuro}_{m,c,p}(T_R)}{Q^{histórico}_{m,c}(T_R)}
+\tag{3.10}
 \]</div>
 <p>O fator deve ser agregado por p10, mediana e p90, sempre acompanhado da quantidade de modelos válidos e da janela temporal. Como a tabela local possui apenas máximas diárias anuais, ela não fornece, por si só, uma IDF subdiária nem um hietograma de 5 minutos. Nesta versão, a fonte operacional dos fatores de adaptação é o Portal IDF-MC da SEDEC/MIDR; o NEX-GDDP-CMIP6 funciona como fonte complementar de sensibilidade, comparação e rastreabilidade climática.</p>
 <p>A segunda etapa deverá selecionar a célula mais próxima ou uma agregação espacial justificável e comparar:</p>
@@ -679,23 +689,27 @@ FC_{m,c,p}(T_R)=\frac{Q^{futuro}_{m,c,p}(T_R)}{Q^{histórico}_{m,c}(T_R)}
 <p>A forma funcional utilizada é a forma tradicional de quatro parâmetros:</p>
 <div class="math display">\[
 i(T_R,t)=\frac{a\,T_R^{b}}{(t+c)^{d}}
+\tag{3.11}
 \]</div>
-<p>Para a linha de base de Conde, os parâmetros preservados são <code>a = 1424,1</code>, <code>b = 0,1305</code>, <code>c = 23,6</code> e <code>d = 0,7468</code>. A precipitação acumulada é obtida por <code>P = i x t / 60</code>. Portanto, a curva fornece uma intensidade média para uma duração e um período de retorno; ela não fornece, sozinha, a ordem temporal dos picos que o SWMM precisa receber.</p>
+<p>Para a linha de base de Conde, os parâmetros preservados são <code>a = 1424,1</code>, <code>b = 0,1305</code>, <code>c = 23,6</code> e <code>d = 0,7468</code>. A precipitação acumulada é obtida por <code>P = i x t / 60</code>. Portanto, a curva fornece uma intensidade média para uma duração e um período de retorno; ela não fornece, sozinha, a ordem temporal dos picos que o SWMM precisa receber. A forma geral de quatro parâmetros é consistente com a literatura de relações intensidade–duração–frequência (<a href="./10_referencias.html#ref-28">[28]</a>), mas os coeficientes de Conde permanecem herdados da linha de base local.</p>
 <p>Em uma reestimativa independente, a amostra deve ser montada por duração a partir das máximas anuais. Para cada duração <code>t</code>, a observação anual é o maior acumulado daquele ano nessa duração. A probabilidade anual de excedência é convertida em nível de retorno por:</p>
 <div class="math display">\[
 z_T=F^{-1}\left(1-\frac{1}{T_R}\right)
+\tag{3.12}
 \]</div>
 <p>onde <code>F</code> é a distribuição ajustada aos extremos. A linha de base desta minuta não executa novamente essa reestimativa porque a série observada completa e a memória do ajuste original não estão anexadas. Por isso, valores de <code>R²</code>, p-valor, intervalo de confiança e teste de aderência da equação herdada devem ser tratados como <strong>não determinados nesta versão</strong>, e não como evidências de validação local.</p>
 <p>Para o projeto básico, recomenda-se comparar pelo menos Gumbel e GEV, documentar o método de estimação — máxima verossimilhança, L-moments ou outro —, testar a sensibilidade ao período de dados e calcular intervalos de confiança por reamostragem. Também devem ser verificados falhas, anos incompletos, homogeneidade, mudanças de instrumento e independência dos máximos. A adoção de uma distribuição não deve ser decidida apenas pelo maior <code>R²</code> da regressão da IDF.</p>
 </section>
 <section id="método-cn-scs-e-atribuição-às-subáreas" class="level3">
 <h3 class="anchored" data-anchor-id="método-cn-scs-e-atribuição-às-subáreas">3.10.3 Método CN-SCS e atribuição às subáreas</h3>
-<p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>, com referência conceitual do USDA-NRCS (<a href="./10_referencias.html#ref-5">[5]</a>) e do produto CN 2022 da ANA/SNIRH (<a href="./10_referencias.html#ref-3">[3]</a>). A formulação de referência é:</p>
+<p>O método de perdas configurado nos arquivos preliminares é <code>CURVE_NUMBER</code>, com referência conceitual do USDA-NRCS (<a href="./10_referencias.html#ref-5">[5]</a>, <a href="./10_referencias.html#ref-26">[26]</a>) e do produto CN 2022 da ANA/SNIRH (<a href="./10_referencias.html#ref-3">[3]</a>). A formulação de referência é:</p>
 <div class="math display">\[
 S=\frac{25400}{CN}-254
+\tag{3.13}
 \]</div>
 <div class="math display">\[
 I_a=\lambda S,\qquad \lambda=0{,}20
+\tag{3.14}
 \]</div>
 <div class="math display">\[
 Q=
@@ -703,6 +717,7 @@ Q=
 \dfrac{(P-I_a)^2}{P-I_a+S}, & P>I_a,\\[6pt]
 0, & P\leq I_a.
 \end{cases}
+\tag{3.15}
 \]</div>
 <p>Em que <code>S</code> é a capacidade potencial de retenção, <code>Ia</code> é a abstração inicial, <code>P</code> é a precipitação acumulada e <code>Q</code> é o escoamento superficial direto, todos em milímetros. O CN aumenta quando cresce a impermeabilização ou diminui a capacidade de infiltração. A média espacial do CN 2022 fornece uma referência de ordem de grandeza, mas não deve ser aplicada sem revisão uniforme a todas as áreas: uma quadra, uma rua pavimentada, um lote permeável e uma área vegetada podem ter respostas muito diferentes.</p>
 <p>Na próxima revisão, cada área de contribuição será relacionada a uma quadra ou conjunto hidrologicamente homogêneo, com área, largura característica, declividade, percentual impermeável, CN, nó de saída e justificativa cartográfica. As áreas Voronoi atualmente disponíveis são, portanto, uma estrutura de partida e não um levantamento definitivo das contribuições.</p>

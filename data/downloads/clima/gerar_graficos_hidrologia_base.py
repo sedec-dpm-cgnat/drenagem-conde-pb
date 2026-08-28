@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-BASE = Path(__file__).resolve().parents[1]
-OUT = BASE / "06_RESULTADOS_CLIMA"
+BASE = Path(__file__).resolve().parent
+OUT = BASE
 INPUT_HIET = BASE / "chuvas_TR25_TR50_base_relatorio.txt"
 
 NAVY = "#16224e"
@@ -72,15 +72,17 @@ def grafico_idf() -> None:
     ax.set_yscale("log")
     ax.set_xlabel("Duração da chuva (min)")
     ax.set_ylabel("Intensidade (mm/h)")
-    ax.set_title("Curvas IDF da linha de base adotada — Conde/PB", loc="left", color=NAVY, weight="bold", pad=12)
-    ax.text(0.0, 1.02, "i(Tr, t) = 1424,1 · Tr^0,1305 / (t + 23,6)^0,7468", transform=ax.transAxes,
-            color=GRAY, fontsize=10)
+    # Reserve a clear band above the plotting area: the equation is a subtitle
+    # and must not collide with the figure title in the rendered PNG/PDF.
+    ax.set_title("Curvas IDF da linha de base adotada — Conde/PB", loc="left", color=NAVY, weight="bold", pad=24)
+    ax.text(0.0, 1.008, "i(Tr, t) = 1424,1 · Tr^0,1305 / (t + 23,6)^0,7468", transform=ax.transAxes,
+            color=GRAY, fontsize=10, va="bottom")
     ax.grid(True, which="both", color="#d9dee5", linewidth=0.6, alpha=0.85)
     ax.legend(ncol=3, frameon=False, loc="upper right")
     ax.set_xlim(5, 1440)
     fig.text(0.5, 0.015, "Fonte da linha de base: relação IDF SGB/CPRM 2023 preservada no modelo anterior; t em minutos e i em mm/h.",
              ha="center", color=GRAY, fontsize=9)
-    fig.tight_layout(rect=[0, 0.045, 1, 0.95])
+    fig.tight_layout(rect=[0, 0.045, 1, 0.91])
     fig.savefig(OUT / "idf_base_curvas.png", dpi=240, bbox_inches="tight", facecolor="white")
     plt.close(fig)
 

@@ -175,8 +175,8 @@ window.MathJax = {
    
   <ul>
   <li><a href="#sistema-de-referência-e-organização" id="toc-sistema-de-referência-e-organização" class="nav-link active" data-scroll-target="#sistema-de-referência-e-organização">2.1 Sistema de referência e organização</a></li>
-  <li><a href="#fontes-e-histórico-de-construção" id="toc-fontes-e-histórico-de-construção" class="nav-link" data-scroll-target="#fontes-e-histórico-de-construção">2.2 Fontes e histórico de construção</a></li>
-  <li><a href="#fluxo-metodológico" id="toc-fluxo-metodológico" class="nav-link" data-scroll-target="#fluxo-metodológico">2.3 Fluxo metodológico</a>
+  <li><a href="#anadem-e-fontes-do-modelo" id="toc-anadem-e-fontes-do-modelo" class="nav-link" data-scroll-target="#anadem-e-fontes-do-modelo">2.2 ANADEM, fontes e histórico de construção</a></li>
+  <li><a href="#fluxo-metodológico-do-mtd-híbrido" id="toc-fluxo-metodológico-do-mtd-híbrido" class="nav-link" data-scroll-target="#fluxo-metodológico-do-mtd-híbrido">2.3 Fluxo metodológico do MDT híbrido</a>
   <ul class="collapse">
   <li><a href="#harmonização-espacial" id="toc-harmonização-espacial" class="nav-link" data-scroll-target="#harmonização-espacial">Harmonização espacial</a></li>
   <li><a href="#comparação-e-correção-vertical" id="toc-comparação-e-correção-vertical" class="nav-link" data-scroll-target="#comparação-e-correção-vertical">Comparação e correção vertical</a></li>
@@ -224,34 +224,69 @@ window.MathJax = {
 </div>
 <section id="sistema-de-referência-e-organização" class="level2">
 <h2 class="anchored" data-anchor-id="sistema-de-referência-e-organização">2.1 Sistema de referência e organização</h2>
-<p>O padrão de trabalho é <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>. Os rasters e vetores de análise devem permanecer nesse CRS métrico. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.</p>
-<p>O arquivo de trabalho principal é:</p>
+<p>O padrão de trabalho é <strong>SIRGAS 2000 / UTM zona 25S — EPSG:31985</strong>. Os rasters e vetores de análise devem permanecer nesse CRS métrico, que permite calcular distâncias, áreas, declividades e comprimentos de rede em unidades cartográficas compatíveis com o pré-dimensionamento. Os GeoJSON do painel web são cópias em WGS84 destinadas exclusivamente à visualização.</p>
+<p>O arquivo operacional que deve ser carregado no ArcMap/QGIS é:</p>
 <p><strong>MDT_hibrido_Bacias_AB_5m_EPSG31985.tif</strong></p>
-<p>O arquivo MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif preserva uma extensão maior para contexto e complementação. A base legada de relevo deve ser interpretada com as limitações próprias de um MDE de cobertura ampla, como os produtos SRTM (<a href="./10_referencias.html#ref-2">[2]</a>). O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho.</p>
+<p>O arquivo <strong>MDT_hibrido_completo_curvas_KMZ_5m_EPSG31985.tif</strong> preserva uma extensão maior para contexto e complementação. O recorte A+B, e não o arquivo regional completo, é a referência operacional para o lançamento da rede nas duas bacias de trabalho. A resolução nominal de 5 m não deve ser confundida com acurácia vertical de 5 m: ela define o espaçamento da grade de trabalho, não a precisão cadastral do terreno.</p>
 </section>
-<section id="fontes-e-histórico-de-construção" class="level2">
-<h2 class="anchored" data-anchor-id="fontes-e-histórico-de-construção">2.2 Fontes e histórico de construção</h2>
-<p>A base foi organizada pela integração de três famílias de informação:</p>
+<section id="anadem-e-fontes-do-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="anadem-e-fontes-do-modelo">2.2 ANADEM, fontes e histórico de construção</h2>
+<p>O <strong>ANADEM</strong> é o Modelo Digital de Terreno desenvolvido em cooperação entre a Agência Nacional de Águas e Saneamento Básico e o Instituto de Pesquisas Hidráulicas da UFRGS. O produto foi concebido para representar a topografia do terreno sem o viés associado à vegetação presente em modelos digitais de elevação globais. Sua cadeia combina o Copernicus GLO-30, informações espectrais de Landsat/Sentinel, perfis altimétricos GEDI e técnicas de aprendizado de máquina; a versão divulgada para a América do Sul possui resolução espacial nominal de 30 m (<a href="./10_referencias.html#ref-22">[22]</a>, <a href="./10_referencias.html#ref-23">[23]</a>). Isso torna o ANADEM uma referência nacional relevante para estudos hidrológicos e geomorfológicos, mas não elimina a necessidade de verificação local.</p>
+<div class="note callout callout-style-simple callout-none no-icon" style="break-inside:avoid;page-break-inside:avoid;">
+<div class="callout-body d-flex">
+<div class="callout-icon-container"><i class="callout-icon no-icon"></i></div>
+<div class="callout-body-container"><strong>Distinção necessária para a rastreabilidade.</strong> Embora o ANADEM seja descrito neste capítulo como referência metodológica e fonte nacional relacionada, a documentação dos arquivos efetivamente usados nesta execução identifica a base legada como um conjunto de curvas KMZ derivadas de SRTM. Não há, no acervo auditado do projeto, um raster ANADEM oficial separado que tenha sido inserido diretamente no híbrido. Portanto, as figuras e os resultados abaixo não devem atribuir ao ANADEM uma etapa que não foi comprovada pelos metadados locais.</div>
+</div>
+</div>
+<p>A base híbrida foi organizada pela integração das seguintes famílias de informação:</p>
 <ol type="1">
-<li><strong>Base legada:</strong> modelo derivado de ANADEM e curvas de nível previamente produzidas. Sua função principal é garantir cobertura territorial e continuidade, reconhecendo que resolução, suavização e incerteza podem ser maiores.</li>
-<li><strong>Levantamento fotogramétrico:</strong> imagens de drone processadas no WebODM para produzir ortomosaico e modelos de superfície/terreno na área efetivamente coberta.</li>
-<li><strong>Controles e referências altimétricas:</strong> pontos de controle e referências vinculadas ao sistema geodésico brasileiro, quando disponíveis e documentados, para verificar diferenças verticais e orientar a correção do modelo legado.</li>
+<li><strong>Base legada efetivamente utilizada:</strong> curvas de nível preservadas em KMZ, com origem declarada em SRTM de 1 arc-sec, tile S08W035, convertidas para uma superfície de 25 m por interpolação linear com fallback nearest e suavização. O SRTM é uma base radar de cobertura ampla, útil para continuidade territorial, mas sujeita a limitações de resolução, suavização e representação de feições urbanas (<a href="./10_referencias.html#ref-2">[2]</a>).</li>
+<li><strong>Levantamento fotogramétrico:</strong> imagens de drone processadas no WebODM para produzir ortomosaico, DSM e DTM. Para a composição, foi utilizado o DTM, por representar mais adequadamente o terreno do que o DSM em locais com edificações ou vegetação; ainda assim, a interpretação depende da qualidade da cobertura e do processamento fotogramétrico (<a href="./10_referencias.html#ref-24">[24]</a>).</li>
+<li><strong>Controles e referências altimétricas:</strong> a especificação da calibração por pontos de controle exige altitudes ortométricas vinculadas ao Sistema Geodésico Brasileiro, amostragem documentada e validação independente. Na situação registrada em 13/08/2026, não foram localizados MDE global explícito e pontos GCP/RTK/PPK/RRNN/RAAP utilizáveis; por isso, os coeficientes de calibração absoluta permanecem <strong>não determinados</strong>.</li>
 </ol>
-<p>O levantamento do drone não cobre integralmente as Bacias A e B. Assim, a integração não é uma simples substituição do raster antigo: é uma composição com prioridade local do produto de maior resolução, complementada pela base legada fora da cobertura.</p>
+<p>O levantamento do drone não cobre integralmente as Bacias A e B. Assim, a integração não é uma simples substituição do raster antigo: é uma composição com prioridade local do produto de maior resolução, complementada pela base legada fora da cobertura. A Figura 2.1 apresenta as três situações na mesma extensão de trabalho: a fonte legada, a cobertura válida do drone e o produto híbrido.</p>
+<figure class="map-figure figure" style="break-inside:avoid;page-break-inside:avoid;">
+<img src="assets/mdt_fontes_integracao.png" alt="Comparação entre a base legada derivada de SRTM, o levantamento do drone e o produto híbrido nas Bacias A e B" class="img-fluid figure-img">
+<figcaption>Figura 2.1 — Comparação espacial entre a base legada auditada, o levantamento fotogramétrico do drone e a composição híbrida nas Bacias A e B. A fonte legada é identificada como curvas KMZ derivadas de SRTM; ela não deve ser confundida com um raster ANADEM oficial. O painel central evidencia que a cobertura do drone é parcial, enquanto o painel direito mostra a prioridade local do drone e a complementação pela base legada.</figcaption>
+</figure>
+<p class="text-muted">A escala de cores é comum aos três painéis para facilitar a leitura relativa. As linhas coloridas representam os limites de trabalho das Bacias A e B; o mapa não substitui levantamento topográfico cadastral nem validação das feições de drenagem urbana.</p>
+<table class="caption-top table">
+<caption class="text-start">Tabela 2.2 — Indicadores de extensão, resolução e cobertura registrados no processamento.</caption>
+<thead><tr class="header"><th>Componente</th><th>Registro do processamento</th><th>Interpretação para esta concepção</th></tr></thead>
+<tbody>
+<tr class="odd"><td>Base legada</td><td>1.185 segmentos com geometria e cota; superfície interpolada a 25 m</td><td>continuidade territorial e referência relativa; maior incerteza local</td></tr>
+<tr class="even"><td>Modelo híbrido completo</td><td>1.295 × 1.890 células; grade de 5 m; cobertura válida do drone de aproximadamente 1,48%</td><td>contexto regional e complementação fora do levantamento local</td></tr>
+<tr class="odd"><td>Recorte operacional A+B</td><td>335 × 595 células; grade de 5 m; união das duas bacias</td><td>base recomendada para ArcMap/QGIS e para o lançamento da rede</td></tr>
+<tr class="even"><td>Sobreposição para alinhamento</td><td>1.536 células válidas; 1.504 após aparo dos resíduos</td><td>diagnóstico de concordância relativa, sem validação absoluta de campo</td></tr>
+</tbody>
+</table>
 </section>
-<section id="fluxo-metodológico" class="level2">
-<h2 class="anchored" data-anchor-id="fluxo-metodológico">2.3 Fluxo metodológico</h2>
+<section id="fluxo-metodológico-do-mtd-híbrido" class="level2">
+<h2 class="anchored" data-anchor-id="fluxo-metodológico-do-mtd-híbrido">2.3 Fluxo metodológico do MDT híbrido</h2>
 <section id="harmonização-espacial" class="level3">
 <h3 class="anchored" data-anchor-id="harmonização-espacial">Harmonização espacial</h3>
-<p>As fontes são reprojetadas para EPSG:31985, conferidas quanto a extensão, resolução, nodata e alinhamento de grade e reamostradas para uma malha de 5 m. A sobreposição é preservada para comparação e diagnóstico.</p>
+<p>As fontes são reprojetadas para EPSG:31985 e conferidas quanto a extensão, resolução, nodata, orientação e alinhamento de grade. A superfície legada originalmente interpolada a 25 m e o DTM do drone são colocados em uma referência espacial comum; para o produto operacional, ambos são organizados em uma malha de 5 m. A reamostragem muda o suporte espacial do dado, mas não cria informação altimétrica nova. A sobreposição válida é preservada para comparação e diagnóstico.</p>
 </section>
 <section id="comparação-e-correção-vertical" class="level3">
 <h3 class="anchored" data-anchor-id="comparação-e-correção-vertical">Comparação e correção vertical</h3>
-<p>Na área de sobreposição, o valor do raster global/legado é amostrado na posição dos controles ou das referências disponíveis. O ajuste recomendado é documentado como regressão OLS:</p>
+<p>Há duas situações que precisam ser separadas. A <strong>calibração absoluta</strong> requerida para um produto técnico definitivo deve comparar o raster com pontos de altitude ortométrica conhecida, amostrados no próprio MDE. Seu modelo OLS é:</p>
 <div class="math display">\[
 h_{\mathrm{ortométrica}}=a\,h_{\mathrm{MDE}}+b
 \]</div>
-<p>O relatório de calibração deve guardar n, coeficientes a e b, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al.&nbsp;(2019) (<a href="./10_referencias.html#ref-1">[1]</a>), cujo procedimento é usado aqui como fundamento de documentação, sem transferir automaticamente coeficientes ou resultados do estudo original para Conde.</p>
+<p>O relatório deve guardar n, coeficientes <em>a</em> e <em>b</em>, R², p-valor, RMSE, viés, faixa altimétrica, método de amostragem, CRS e versão do MAPGEO utilizado. A fonte metodológica de referência é Araújo et al.&nbsp;(2019) (<a href="./10_referencias.html#ref-1">[1]</a>), cujo procedimento é usado aqui como fundamento de documentação, sem transferir automaticamente coeficientes ou resultados do estudo original para Conde.</p>
+<p>Como não havia GCP independentes disponíveis, o processamento realizado adotou apenas um <strong>alinhamento relativo entre superfícies</strong>. Na área de sobreposição, a superfície drone agregada foi relacionada à base de curvas KMZ por:</p>
+<div class="math display">\[
+h_{\mathrm{drone,25m}}=-15{,}5161+0{,}8755\,h_{\mathrm{base\,KMZ}}
+\]</div>
+<p>A transformação inversa foi aplicada ao drone antes da composição:</p>
+<div class="math display">\[
+h_{\mathrm{drone,ajustado}}=\frac{h_{\mathrm{drone}}-b}{a}
+\]</div>
+<p>O registro da integração informa 1.536 células válidas na sobreposição e 1.504 após a remoção dos resíduos fora dos percentis 1% e 99%; R² = 0,9832 e RMSE dos resíduos = 2,971 m. Esses números expressam <strong>concordância relativa entre dois modelos</strong>, e não erro absoluto em relação ao terreno. A inclinação <em>a</em> = 0,8755 aciona o diagnóstico previsto para valores abaixo de 0,9: podem estar presentes atenuação por erro no preditor, faixa altimétrica limitada, diferença de suporte espacial ou observações influentes.</p>
+<figure class="map-figure figure" style="break-inside:avoid;page-break-inside:avoid;">
+<img src="assets/mdt_comparacao_regressao.png" alt="Gráfico de dispersão e histograma dos resíduos da comparação entre a base legada e o MDT do drone" class="img-fluid figure-img">
+<figcaption>Figura 2.2 — Diagnóstico gráfico da comparação entre a base legada e o DTM do drone agregado à grade de 25 m. A reta 1:1 é apresentada apenas como referência; a reta ajustada mostra o alinhamento relativo utilizado como apoio à composição. A comparação não substitui pontos de controle ortométricos independentes.</figcaption>
+</figure>
 <p>A rotina deve ainda:</p>
 <ul>
 <li>descartar e contar amostras em nodata;</li>
@@ -268,16 +303,25 @@ h_{\mathrm{ortométrica}}=a\,h_{\mathrm{MDE}}+b
 </section>
 <section id="composição-híbrida" class="level3">
 <h3 class="anchored" data-anchor-id="composição-híbrida">Composição híbrida</h3>
-<p>Depois da verificação vertical, o produto do drone recebe prioridade somente na máscara em que sua cobertura e qualidade são conhecidas. Fora dessa máscara, a base legada mantém a cobertura. As bordas devem ser examinadas para evitar degraus artificiais, vazios ou mudanças abruptas de declividade.</p>
+<p>Depois do alinhamento relativo, o produto do drone recebe prioridade somente na máscara em que sua cobertura e qualidade são conhecidas. Fora dessa máscara, a base legada mantém a cobertura. Na transição foi aplicado feathering de duas células — aproximadamente 10 m na grade final — para reduzir degraus artificiais. Esse procedimento suaviza a borda visual e numérica, mas não corrige automaticamente erros sistemáticos, aterros, muros, pontes, bueiros, meios-fios ou outras estruturas urbanas.</p>
+<p>Em forma esquemática, a superfície de trabalho pode ser representada por:</p>
+<div class="math display">\[
+h_{\mathrm{híbrido}}(x,y)=\begin{cases}
+h_{\mathrm{drone,ajustado}}(x,y),&amp; (x,y)\in M_{\mathrm{drone}}\\
+h_{\mathrm{base\,legada}}(x,y),&amp; (x,y)\notin M_{\mathrm{drone}}
+\end{cases}
+\]</div>
+<p>O operador <span class="math inline">\(M_{\mathrm{drone}}\)</span> é uma máscara de cobertura válida, não um mapa de precisão. Em um projeto básico, a máscara deverá ser substituída ou complementada por uma especificação de acurácia e por pontos de verificação distribuídos espacialmente.</p>
 </section>
 <section id="derivados-e-recorte-ab" class="level3">
 <h3 class="anchored" data-anchor-id="derivados-e-recorte-ab">Derivados e recorte A+B</h3>
-<p>Do modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução e metadados.</p>
+<p>Do modelo composto foram derivados direção e acumulação de fluxo, linhas de fluxo principais, setas de direção superficial e curvas de nível de 1 m e 5 m. As curvas de 1 m são uma densificação cartográfica da grade de 5 m; não significam que o MDT tenha acurácia vertical de 1 m. Por fim, o MDT foi recortado pela união das Bacias A e B, mantendo CRS, resolução, nodata e metadados.</p>
 </section>
 </section>
 <section id="produtos-derivados-para-a-drenagem" class="level2">
 <h2 class="anchored" data-anchor-id="produtos-derivados-para-a-drenagem">2.4 Produtos derivados para a drenagem</h2>
 <table class="caption-top table">
+<caption class="text-start">Tabela 2.1 — Produtos derivados do MDT híbrido e uso preliminar na concepção.</caption>
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
